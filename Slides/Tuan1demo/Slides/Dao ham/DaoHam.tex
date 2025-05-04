@@ -1,0 +1,36 @@
+\begin{frame}{Đạo hàm}
+    \begin{tcolorbox}[colback=blue!10, colframe=blue!50!black, title=Định nghĩa]
+    \textbf{Đạo hàm} của hàm số $f$ tại giá trị $a$, kí hiệu bởi $f'(a)$, là
+    \begin{equation}
+        f'(a)=\lim_{\Delta x\rightarrow 0}\dfrac{f(a+\Delta x)-f(a)}{\Delta x}
+    \end{equation}
+    nếu giới hạn này tồn tại.
+    \end{tcolorbox}
+\end{frame}
+\begin{frame}{Đạo hàm}
+    \textbf{Các định lý của đạo hàm:}
+\begin{tcolorbox}[colback=blue!10, colframe=blue!50!black, title=Định lý]
+Nếu $f$ khả vi tại $a$, thì $f$ liên tục tại $a$.
+\end{tcolorbox}
+\textit{Lưu ý: Mệnh đề đảo của định lý này là sai, có các hàm liên tục khưng không khả vi. Ví dụ, hàm $f(x)=|x|$ là hàm liên tục nhưng không khả vi.}
+\end{frame}
+\begin{frame}{Đạo hàm}
+\begin{tcolorbox}[colback=blue!10, colframe=blue!50!black, title=Định lý]
+Nếu $f$ và $g$ khả vi
+$$
+    (f\pm g)'=f'\pm g',\quad (fg)'=f'g+g'f,\quad \left(\dfrac{f}{g}\right)'=\dfrac{f'g+g'f}{g^2}\text{ với }g(x)\neq 0.
+$$
+\end{tcolorbox}
+\end{frame}
+\begin{frame}{Đạo hàm}
+    \begin{tcolorbox}[colback=blue!10, colframe=blue!50!black, title=Định lý đạo hàm hợp]
+    Nếu $g$ khả vi tại $x$ và $f$ khả vi tại $g(x)$, thì hàm hợp $F=f\circ g\equiv f(g(x))$ khả vi tại $x$ và $F'$ được xác định bởi tích
+    \begin{equation}
+        F'(x)=f'(g(x))\dot g'(x)
+    \end{equation}
+    Theo ký hiệu của Leibniz, nếu $y=f(u)$ và $u=g(x)$ đều là hàm khả vi, thì
+    \begin{equation}
+        \dfrac{dy}{dx}=\dfrac{dy}{du}\dfrac{du}{dx}
+    \end{equation}
+    \end{tcolorbox}
+\end{frame}
