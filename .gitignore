@@ -24,3 +24,6 @@
 *.toc
 *.fdb_latexmk
 *.fls
+*.nav
+*.synctex.gz
+*.bcf
