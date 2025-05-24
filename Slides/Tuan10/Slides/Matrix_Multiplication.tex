@@ -1,0 +1,79 @@
+\begin{frame}{Phép toán cơ bản với ma trận}
+    \begin{itemize}
+        \item Nhân một số với một ma trận.
+    \end{itemize}
+    {\footnotesize
+    \begin{equation}
+        P =
+        a_1
+        \left[ \begin{array}{c}
+            \cos \left( q_1 \right) \\
+            \sin \left( q_1 \right) \\
+            0
+        \end{array} \right]
+        +
+        a_2
+        \left[ \begin{array}{c}
+            \cos \left( q_1 + q_2 \right) \\
+            \sin \left( q_1 + q_2 \right) \\
+            0
+        \end{array} \right]
+        +
+        q_3
+        \left[ \begin{array}{c}
+            0 \\
+            0 \\
+            -1
+        \end{array} \right]
+        =
+        \left[ \begin{array}{c}
+            a_1 \cos \left( q_1 \right) + a_2 \cos \left( q_1 + q_2 \right) \\
+            a_1 \sin \left( q_1 \right) + a_2 \sin \left( q_1 + q_2 \right) \\
+            -q_3
+        \end{array} \right].
+    \end{equation}
+    }
+    
+    \begin{itemize}
+        \item Nhân một ma trận với một ma trận.
+    \end{itemize}
+    {\footnotesize
+    \begin{equation}
+        \left[ \begin{array}{ccc}
+            1 & 2 & 3 \\
+            4 & 5 & 6
+        \end{array} \right]
+        \times
+        \left[ \begin{array}{cc}
+            7 & 8 \\
+            9 & 10 \\
+            11 & 12
+        \end{array} \right]
+        =
+        \left[ \begin{array}{cc}
+            1 \cdot 7 + 2 \cdot 9 + 3 \cdot 11 & 1 \cdot 8 + 2 \cdot 10 + 3 \cdot 12 \\
+            4 \cdot 7 + 5 \cdot 9 + 6 \cdot 11 & 4 \cdot 8 + 5 \cdot 10 + 6 \cdot 12
+        \end{array} \right]
+        =
+        \left[ \begin{array}{cc}
+            58 & 64 \\
+            139 & 154
+        \end{array} \right].
+    \end{equation}  
+    }
+    \begin{itemize}
+        \item Ma trận chuyển vị
+    \end{itemize}
+    \begin{equation}
+        \left[ \begin{array}{ccc}
+            1 & 2 & 3 \\
+            4 & 5 & 6
+        \end{array} \right]^T
+        =
+        \left[ \begin{array}{cc}
+            1 & 4 \\
+            2 & 5 \\
+            3 & 6
+        \end{array} \right].
+    \end{equation}
+\end{frame}

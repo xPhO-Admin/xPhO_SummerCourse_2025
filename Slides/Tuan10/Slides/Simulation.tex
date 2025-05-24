@@ -1,0 +1,21 @@
+\begin{frame}{Mô phỏng hệ Robotic bằng phương pháp số}
+    \begin{itemize}
+        \item Hệ phương trình vi phân
+    \end{itemize}
+    \begin{align}
+        \dfrac{d}{dt} q &= \dot{q}, \\
+        \dfrac{d}{dt} \dot{q} &= H(q)^{-1} \left[ - C(q,\dot{q}) \dot{q} -\nabla U(q) + F \right].
+    \end{align}
+    \vspace{-5mm}
+    \begin{itemize}
+        \item Lấy sai phân, rời rạc hóa biểu thức trong mô phỏng số
+    \end{itemize}
+    \begin{align}
+        q|_{t+\Delta t} &= q|_{t} + \dot{q} \Delta t, \\
+        \dot{q}|_{t+\Delta t} &= \dot{q}|_t + H(q)^{-1} \left[ - C(q,\dot{q}) \dot{q} -\nabla U(q) + F \right] \Delta t.
+    \end{align}
+    \vspace{-5mm}
+    \begin{itemize}
+        \item Chọn \(\Delta t\) rất nhỏ và tiến hành rất nhiều vòng lặp, thu được đồ thị của \(q\) và \(\dot{q}\) theo thời gian.
+    \end{itemize}
+\end{frame}
