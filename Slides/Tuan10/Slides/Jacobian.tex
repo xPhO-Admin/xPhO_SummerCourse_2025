@@ -1,0 +1,55 @@
+\begin{frame}{Ma trận Jacobian và liên hệ vận tốc giữa các tọa độ}
+    \begin{columns}
+        \column{0.5\textwidth}
+            \begin{itemize}
+                \item Cho hai hệ tọa độ: \( q = \left[ q_1, q_2, q_3 \right]^T\) và \( P = \left[ x, y, z \right]^T\).
+                \item Dựa vào phép đạo hàm toàn phần
+            \end{itemize}
+            \begin{align}
+                \dot{x} &= \dfrac{\partial x}{\partial q_1} \dot{q}_1 + \dfrac{\partial x}{\partial q_2} \dot{q}_2 + \dfrac{\partial x}{\partial q_3} \dot{q}_3, \\
+                \dot{y} &= \dfrac{\partial y}{\partial q_1} \dot{q}_1 + \dfrac{\partial y}{\partial q_2} \dot{q}_2 + \dfrac{\partial y}{\partial q_3} \dot{q}_3, \\
+                \dot{x} &= \dfrac{\partial x}{\partial q_1} \dot{q}_1 + \dfrac{\partial z}{\partial q_2} \dot{z}_2 + \dfrac{\partial z}{\partial q_3} \dot{q}_3.
+            \end{align}
+        \column{0.5\textwidth}
+            \begin{itemize}
+                \item Ma trận Jacobian
+            \end{itemize}
+            \begin{equation}
+                J = \left[ \begin{array}{ccc}
+                    \dfrac{\partial x}{\partial q_1} & \dfrac{\partial x}{\partial q_2} & \dfrac{\partial x}{\partial q_3} \\
+                    \dfrac{\partial y}{\partial q_1} & \dfrac{\partial y}{\partial q_2} & \dfrac{\partial y}{\partial q_3} \\
+                    \dfrac{\partial x}{\partial q_1} & \dfrac{\partial z}{\partial q_2} & \dfrac{\partial z}{\partial q_3}
+                \end{array} \right].
+            \end{equation}
+            \begin{itemize}
+                \item Ứng dụng: \(\dot{P} = J \dot{q}\).
+            \end{itemize}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{Ma trận Jacobian và liên hệ vận tốc giữa các tọa độ}
+    \begin{itemize}
+        \item Ứng dụng cho Robot Scara.
+    \end{itemize}
+            \begin{align}
+                \dot{x} &= \left[ -a_1 \sin \left( q_1 \right) - a_2 \sin \left( q_1 + q_2 \right) \right] \dot{q}_1 - a_2 \sin \left( q_1 + q_2 \right) \dot{q}_2, \\
+                \dot{y} &= \left[ a_1 \cos \left( q_1 \right) + a_2 \cos \left( q_1 + q_2 \right) \right] \dot{q}_1 - a_2 \cos \left( q_1 + q_2 \right) \dot{q}_2, \\
+                \dot{z} &= -\dot{q}_3.
+            \end{align}
+    \begin{itemize}
+        \item Tính độ lớn vận tốc
+    \end{itemize}
+    \begin{equation}
+        v^2 = \dot{x}^2 + \dot{y}^2 + \dot{z}^2
+        = \left[ \begin{array}{ccc}
+            \dot{x} & \dot{y} & \dot{z}
+        \end{array} \right]
+        \left[ \begin{array}{c}
+            \dot{x} \\
+            \dot{y} \\
+            \dot{z}
+        \end{array} \right]
+        = \dot{P}^T \dot{P}
+        = \dot{q}^T \left( J^T J \right) \dot{q}.
+    \end{equation}
+\end{frame}
