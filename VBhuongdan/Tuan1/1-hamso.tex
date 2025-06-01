@@ -2,6 +2,7 @@
 \newtheorem{theorem}{Định lý}
 \newtheorem{corollary}[theorem]{Hệ quả}
 \newtheorem{lemma}[theorem]{Bổ đề}
+
 %%Khái niệm
 \section{Hàm Số}    
 \begin{definition}
@@ -127,7 +128,7 @@ Sau khi cả hai lần lượt tới điểm $(0.999;0.9980)$ và $(1.001;1.0020
 \end{figure}
 
 Như vậy sự phóng to này có thể tiếp tục vô hạn lần nữa trong khi khoảng cách giữa hai con bọ và điểm màu đỏ càng nhỏ dần. Dù vậy, ta biết rằng trong thực thế rồi chúng sẽ đến được điểm màu đỏ.\footnote{Đoạn đường mà chúng trải qua sẽ nhỏ dần. Quãng đường chúng phải đi sẽ là một tổng có vô số hạng tử với các hạng tử phía sau ngày càng nhỏ mà may thay, tổng này có giá trị hữu hạn. }\newline
-Nhưng nếu giả sự tại hai điểm nào đó rất rất gần $(1;1)$, đường bị gãy (và phía dưới chúng là vực sâu), hai chú bọ không thể tiến lên được nữa. Rồi vấn đề tiếp tục xảy đến rằng chỉ cần vị trí của các điểm này \emph{luôn gần điểm $(1;1)$ hơn chúng}, hai chú bọ đáng thương sẽ phải tiếp tục di chuyển với một quá trình "phóng to vô hạn" như vậy mãi mãi.(dĩ nhiên là điều không xảy ra trong trường hợp này)
+Nhưng nếu giả sự tại hai điểm nào đó rất rất gần $(1;1)$, đường bị gãy (và phía dưới chúng là vực sâu), hai chú bọ không thể tiến lên được nữa. Rồi vấn đề tiếp tục xảy đến rằng chỉ cần vị trí của các điểm này \emph{luôn gần điểm $(1;1)$ hơn chúng}, hai chú bọ đáng thương sẽ phải tiếp tục di chuyển với một quá trình "phóng to vô hạn" như vậy mãi mãi.
 
 \begin{definition}
     Giả sử $f(x)$ xác định trong một khoảng (miền) giá trị nào đó của $x$ có chứa $a$ (có thể xác định hoặc không xác định tại $a$). Khi đó ta viết
@@ -154,9 +155,23 @@ Ta cũng thừa nhận nếu hàm số tồn tại giới hạn tại điểm n�
     $$\lim_{x\rightarrow a}f(x)=\infty$$
 nếu f(x) có thể nhận các giá trị lớn tuỳ ý khi cho $x$ nhận các giá trị đủ gần $a$, nhưng không được bằng $a$.
 \end{definition}
-Điều này dễ hiểu nếu xét hàm $1/x$ : lấy 1 chia 100, rồi lấy 1 chia $10$, chia $0.1$, $0.01,...$ kết quả thu được sẽ ngày càng lớn. Nếu lấy 1 chia $1/10^6$, sẽ có được $10^6$. Và cứ thế.
+Điều này dễ hiểu nếu xét hàm $1/x$ với $a=0$ : lấy 1 chia 100, rồi lấy 1 chia $10$, chia $0.1$, $0.01,...$ kết quả thu được sẽ ngày càng lớn. Nếu lấy 1 chia $1/10^6$, sẽ có được $10^6$. Và cứ thế.
 Chú ý rằng vô hạn không phải một con số. Nó, ở đây, là một giới hạn.\newline
-Ta cũng có thể có điều ngược lại:$$\lim_{x\rightarrow\infty}f(x)=L$$ hay, $$\lim_{x\rightarrow\infty}f(x)=\infty.$$ 
+Ta cũng có thể có điều ngược lại:$$\lim_{x\rightarrow\infty}f(x)=L$$ để diễn tả khi $x$ nhận các giá trị lớn tuỳ ý (tiến tới vô cùng) thì $f(x)$ tiến tới gần giá trị xác định $L$ một cách tuỳ ý. Trong trường hợp hàm số là 1/$x$, ý của ta là tương đương với cho $x$ nhận một giá trị nào đó đủ lớn ($10^2,10^3,10^4,10^n...$) sao cho có thể coi $1/x =10^{-n}\approx 0.$ 
+
+Cũng có thể viết  $$\lim_{x\rightarrow\infty}f(x)=\infty.$$ để nói rằng $f(x)$ có thể nhận các giá trị lớn tuỳ ý khi $x$ đủ lớn.\newline    
 \vspace{5pt}
 
-Để kết thúc phần này, ta sẽ thừa nhận và tổng kết những tính chất sau:
+Để kết thúc phần này, ta thừa nhận và tổng kết những tính chất sau: Giả sử $c$ là một hằng số, $\lim_{x\rightarrow a}f(x)=A$ và $\lim_{x\rightarrow a}g(x)$=B
+\begin{multicols}{2}
+    \begin{itemize}
+        \item $\lim_{x\rightarrow a}c = c$.
+        \item $\lim_{x\rightarrow a}(f(x)\pm g(x))=A \pm B $.
+        \item $\lim_{x\rightarrow a}f(x)g(x)=AB.$
+        \item $\lim_{x\rightarrow a}f(x)/g(x)=A/B, B\neq 0.$
+        \item $\lim_{x\rightarrow a
+        }cf(x)=cA.$
+        \item  $\lim_{x\rightarrow a}(f(x))^{m/n}=A^{m/n}.$
+        \item Nếu $f(x)=g(x)~khi~x\neq a$, $A=B$.
+    \end{itemize}     
+\end{multicols}
