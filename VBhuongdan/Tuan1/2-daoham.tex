@@ -1,28 +1,68 @@
-Đầu tiên các bạn sẽ được làm quen với lý thuyết về đạo hàm.
-
+Tiếp theo ta sẽ làm quen với lý thuyết về đạo hàm.
+\begin{definition}
 \textbf{Đạo hàm} của hàm số $f$ tại giá trị $a$, kí hiệu bởi $f'(a)$, là
     \begin{equation}
         f'(a)=\lim_{\Delta x\rightarrow 0}\frac{f(a+\Delta x)-f(a)}{\Delta x}
     \end{equation}
 nếu giới hạn này tồn tại.
+\end{definition}
 
-Đạo hàm còn có ý nghĩa là độ dốc của đồ thị, thể hiện tốc độ biến thiên của hàm số.
+Một trong những ý nghĩa của đạo hàm là nó thể hiện độ dốc của đồ thị và tốc độ biến thiên của hàm số, như ta có thể thấy trong hình vẽ dưới đây:
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=1\textwidth]{Tuan1/Figures/tocdobienthien.png}
-\caption{Liên hệ giữa đạo hàm và độ dốc của đồ thị}
+\caption{Liên hệ giữa đạo hàm và độ dốc (độ lớn góc $\theta$) của đồ thị}
 \end{figure}
-Ở lân cận điểm $x=a$, đồ thị hàm số gần giống với tiếp tuyến của nó tại điểm đó:
+Một ví dụ Vật Lý có thể kể đến là chuyển động của một vật. Nếu ta xét hàm số $s(t)$ là quãng đường vật đi được theo thời gian $t$, thì đạo hàm của nó tại thời điểm $t$ chính là vận tốc của vật tại thời điểm đó, kí hiệu là $v(t)=s'(t)$.
+
+Cũng từ hình vẽ trên, ta có thể thấy đạo hàm chính là hệ số góc của tiếp tuyến đồ thị. Vì thế, ta có thể biểu diễn phương trình của đường tiếp tuyến tại $x=a$:
+\begin{equation}
+    y=f(a)+f'(a)(x-a)
+\end{equation}
+Dưới đây là đạo hàm của một số hàm thông dung:
+
+\textit{Đạo hàm của hàm đa thức}:
+\begin{equation}
+    \frac{d}{dx}x^n=nx^{n-1}
+\end{equation}
+\textit{Đạo hàm của các hàm lượng giác}:
+\begin{equation}
+    \begin{aligned}
+        &\frac{d}{dx}(\sin x)=\cos x\\
+        &\frac{d}{dx}(\cos x)=-\sin x\\
+        &\frac{d}{dx}(\tan x)=\sec^2 x\\
+        &\frac{d}{dx}(\cot x)=-\csc^2 x
+    \end{aligned}
+\end{equation}
+\textit{Đạo hàm của hàm mũ và hàm logarit}:
+\begin{equation}
+    \frac{d}{dx}e^x=e^x,\quad \frac{d}{dx}\ln x=\frac{1}{x}
+\end{equation}
+
+Ta sẽ nói về một ứng dụng quan trọng khác của đạo hàm. Nếu phóng to đồ thị tại điểm $x=a$, ta có thể thấy đồ thị hàm số trông khá giống với tiếp tuyến của nó tại điểm này.
+\begin{figure}[H]
+\centering
+\includegraphics[width=1\textwidth]{Tuan1/Figures/xapxituyentinh.png}
+\caption{Phóng to đồ thị hàm số tại điểm $x=a$}
+\end{figure}
+Từ quan sát trên, ta có thể nghĩ tới một phép xấp xỉ.
+
+\begin{definition}
+    Ở lân cận điểm $x=a$, ta có thể xấp xỉ hàm số $f(x)$ bằng phương trình đường tiếp tuyến tại điểm này:
 \begin{equation}
         f(x)\approx f(a)+f'(a)(x-a)
     \end{equation}
 đây được gọi là \textbf{xấp xỉ tuyến tính}.
+\end{definition}
+Ý tưởng đằng sau phép xấp xỉ tuyến tính đôi khi được phát biểu bằng \textbf{phép lấy vi phân}
 
-\textbf{Vi phân} $dy$ của hàm số $y=f(x)$ được xác định theo vi phân $dx$:
+\begin{definition}
+    Nếu $y=f(x)$, \textbf{vi phân} $dx$ là một biến độc lập. Lúc đó \textbf{vi phân} $dy$ được xác định theo $dx$ bởi phương trình:
 \begin{equation}
     dy=f'(x)dx
 \end{equation}
+\end{definition}
 và \textbf{phép lấy vi phân} trên có ý nghĩa hình học như hình vẽ:
 
 \begin{figure}[H]
@@ -30,5 +70,3 @@ và \textbf{phép lấy vi phân} trên có ý nghĩa hình học như hình v�
 \includegraphics[width=1\textwidth]{Tuan1/Figures/viphan.png}
 \caption{Ý nghĩa hình học của phép lấy vi phân}
 \end{figure}
-
-Một ví dụ Vật Lý về đạo hàm thường thấy là chuyển động một chiều. Một vật có độ rời $x(t)$ sẽ có vận tốc $v(t)=x'(t)$ và gia tốc $a(t)=x''(t)$.
