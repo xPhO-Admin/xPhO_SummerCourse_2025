@@ -22,25 +22,52 @@ Cũng từ hình vẽ trên, ta có thể thấy đạo hàm chính là hệ s�
 \end{equation}
 Dưới đây là đạo hàm của một số hàm thông dung:
 
-\textit{Đạo hàm của hàm đa thức}:
+\begin{itemize}
+\item\textit{Đạo hàm của hàm đa thức}:
 \begin{equation}
     \frac{d}{dx}x^n=nx^{n-1}
 \end{equation}
-\textit{Đạo hàm của các hàm lượng giác}:
-\begin{equation}
-    \begin{aligned}
-        &\frac{d}{dx}(\sin x)=\cos x\\
-        &\frac{d}{dx}(\cos x)=-\sin x\\
-        &\frac{d}{dx}(\tan x)=\sec^2 x\\
-        &\frac{d}{dx}(\cot x)=-\csc^2 x
-    \end{aligned}
-\end{equation}
-\textit{Đạo hàm của hàm mũ và hàm logarit}:
+\item\textit{Đạo hàm của các hàm lượng giác}:
+\begin{center}
+\begin{tabular}{cc}
+\(
+\begin{aligned}
+    &\dfrac{d}{dx}(\sin x)=\cos x\\
+    &\dfrac{d}{dx}(\cos x)=-\sin x
+\end{aligned}
+\)
+&
+\(
+\begin{aligned}
+    &\dfrac{d}{dx}(\tan x)=\sec^2 x\\
+    &\dfrac{d}{dx}(\cot x)=-\csc^2 x
+\end{aligned}
+\)
+\end{tabular}
+\end{center}
+\item\textit{Đạo hàm của hàm mũ và hàm logarit}:
 \begin{equation}
     \frac{d}{dx}e^x=e^x,\quad \frac{d}{dx}\ln x=\frac{1}{x}
 \end{equation}
+\end{itemize}
 
-Ta sẽ nói về một ứng dụng quan trọng khác của đạo hàm. Nếu phóng to đồ thị tại điểm $x=a$, ta có thể thấy đồ thị hàm số trông khá giống với tiếp tuyến của nó tại điểm này.
+Tương tự như giới hạn, đạo hàm cũng có một số tính chất quan trọng:
+\begin{itemize}
+    \item \textit{Tính chất tuyến tính}: Nếu $f(x)$ và $g(x)$ là hai hàm số theo $x$, và $c$ là một hằng số, thì
+    \begin{equation}
+        (cf+g)'=cf'+g'
+    \end{equation}
+    \item \textit{Quy tắc nhân}: Nếu $f(x)$ và $g(x)$ là hai hàm số theo $x$, thì
+    \begin{equation}
+        (fg)'=fg'+f'g
+    \end{equation}
+    \item \textit{Quy tắc chia}: Nếu $f(x)$ và $g(x)$ là hai hàm số theo $x$, với $g(x)\neq 0$, thì
+    \begin{equation}
+        \left(\frac{f}{g}\right)'=\frac{f'g-fg'}{g^2}
+    \end{equation}
+\end{itemize}
+
+Tiếp theo ta sẽ nói về một ứng dụng quan trọng khác của đạo hàm. Nếu phóng to đồ thị tại điểm $x=a$, ta có thể thấy đồ thị hàm số trông khá giống với tiếp tuyến của nó tại điểm này.
 \begin{figure}[H]
 \centering
 \includegraphics[width=1\textwidth]{Tuan1/ảnh/xapxituyentinh.png}
@@ -55,7 +82,7 @@ Từ quan sát trên, ta có thể nghĩ tới một phép xấp xỉ.
     \end{equation}
 đây được gọi là \textbf{xấp xỉ tuyến tính}.
 \end{definition}
-Ý tưởng đằng sau phép xấp xỉ tuyến tính đôi khi được phát biểu bằng \textbf{phép lấy vi phân}
+Ý tưởng đằng sau phép xấp xỉ tuyến tính đôi khi được phát biểu bằng \textbf{phép lấy vi phân}.
 
 \begin{definition}
     Nếu $y=f(x)$, \textbf{vi phân} $dx$ là một biến độc lập. Lúc đó \textbf{vi phân} $dy$ được xác định theo $dx$ bởi phương trình:
