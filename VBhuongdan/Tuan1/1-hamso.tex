@@ -132,19 +132,19 @@ Nhưng nếu giả sự tại hai điểm nào đó rất rất gần $(1;1)$, �
 
 \begin{definition}
     Giả sử $f(x)$ xác định trong một khoảng (miền) giá trị nào đó của $x$ có chứa $a$ (có thể xác định hoặc không xác định tại $a$). Khi đó ta viết
-    $$\lim_{x\rightarrow a}f(x)=L$$
+    \begin{equation*}\lim_{x\rightarrow a}f(x)=L\end{equation*}
 và nói\qquad\qquad\qquad "giới hạn của $f(x)$, khi $x$ tiến tới $a$, bằng $L$"\newline nếu chúng ta có thể lấy các giá trị $f(x)$ gần $L$ một cách tuỳ ý bằng cách lấy các giá trị của $x$ đủ gần $a$ (từ bất cứ phía nào), nhưng không được bằng $a$.
 \end{definition}
 
 Định nghĩa vừa đưa ra về giới hạn có vẻ khá trừu tượng và thiếu chặt chẽ. Dẫu thế trong khuôn khổ chương trình, ta sẽ không đào sâu vào vấn đề chặt chẽ trong lí luận giới hạn. Thay vào đó, hy vọng với ví dụ vừa rồi, các bạn có thể phần nào thu được trực giác về khái niệm này.\newline
 \begin{definition}
-    Ta viết $$\lim_{x\rightarrow a^-}f(x)=L$$
+    Ta viết \begin{equation*}\lim_{x\rightarrow a^-}f(x)=L\end{equation*}
 để nói rằng giới hạn của $f(x)$ khi $x$ tiến tới $a$ từ phía bên trái (tức là $x$ nhỏ hơn $a$) bằng $L$. 
 \end{definition}
 
 Tương tự, với $x>a$, ta viết $$\lim_{x\rightarrow a^+}f(x)=L .$$ 
 \begin{theorem}
-    $$\lim_{x\rightarrow a}f(x)=L \leftrightarrow \lim_{x\rightarrow a^-}f(x)=L, \lim_{x\rightarrow a^-}f(x)=L.$$
+    \begin{equation*}\lim_{x\rightarrow a}f(x)=L \leftrightarrow \lim_{x\rightarrow a^-}f(x)=L, \lim_{x\rightarrow a^-}f(x)=L.\end{equation*}   
 \end{theorem}
 
 Nghĩa là nếu giới hạn trái và phái khi $x\rightarrow a$ cùng bằng nhau thì giới hạn của hàm số tại điểm đó là tồn tại.
@@ -152,7 +152,7 @@ Ta cũng thừa nhận nếu hàm số tồn tại giới hạn tại điểm n�
 
 
 \begin{definition} Ta viết
-    $$\lim_{x\rightarrow a}f(x)=\infty$$
+    \begin{equation*}\lim_{x\rightarrow a}f(x)=\infty\end{equation*}
 nếu f(x) có thể nhận các giá trị lớn tuỳ ý khi cho $x$ nhận các giá trị đủ gần $a$, nhưng không được bằng $a$.
 \end{definition}
 Điều này dễ hiểu nếu xét hàm $1/x$ với $a=0$ : lấy 1 chia 100, rồi lấy 1 chia $10$, chia $0.1$, $0.01,...$ kết quả thu được sẽ ngày càng lớn. Nếu lấy 1 chia $1/10^6$, sẽ có được $10^6$. Và cứ thế.
