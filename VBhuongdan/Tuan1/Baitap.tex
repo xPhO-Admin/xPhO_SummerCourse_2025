@@ -1,0 +1,86 @@
+\subsection*{Hàm số}
+\textbf{Bài 1.1:} Tìm miền xác định của các hàm số sau
+\begin{enumerate}[label=(\alph*)]
+\item $\frac{\ln(1+x)}{x-1}$
+\item $\sqrt{1-2x}+3\arcsin\left(\frac{3x-1}{2}\right)$ \quad ($\sin{x}=y\leftrightarrow x=\arcsin y$)
+\item $\frac{1}{x e^x}$
+\item $\ln{(3x+1)}+2\ln{(x+1)}$
+\end{enumerate}
+
+\vspace{5pt}
+\textbf{Bài 1.2:} Tìm tập hợp giá trị của các hàm số sau
+\begin{enumerate}[label=(\alph*)]
+\item $x^2 -6x+5$
+\item $2=3\sin x$
+\item $|x| + x + 1 = y + |y|$
+\item $4^{-x^2}$
+\end{enumerate}
+\vspace{5pt}
+
+\textbf{Bài 1.3:} Chứng minh
+\begin{enumerate}[label=(\alph*)]
+\item $\cos(\alpha+\beta)=\cos\alpha\cos\beta - \sin\alpha\sin\beta.$
+\item $\sin(\alpha+\beta)=\sin\alpha\cos\beta + \sin\beta\cos\alpha.$
+\end{enumerate}
+
+\emph{Gợi ý:} \href{https://vi.wikipedia.org/wiki/%C4%90%E1%BB%8Bnh_l%C3%BD_Ptoleme}{Định lý Ptoleme}
+
+\subsection*{Vẽ đồ thị của hàm}
+\emph{Chú ý}: Ta có thể vẽ đồ thị của hàm có dạng $y=Af(k(x-a))+b$ theo đồ thị của hàm $f(x)$
+\begin{itemize}
+    \item $y=f(x-a)$: đồ thị ban đầu được tịnh tiến theo trục $Ox$ một đại lượng $a$.
+    \item $y=f(x)+b$: đồ thị ban đầu được tịnh tiến theo trục $Oy$ một đại lượng $b$.
+    \item $y=Af(x)$: đồ thị xuất phát được giãn ra $A$ lần theo trục $Oy$.
+    \item $y=f(kx)$: đồ thị xuất phát được giãn ra $1/k$ lần theo trục $Ox$.
+\end{itemize}
+\textbf{Bài 1.4:} Vẽ đồ thị các hàm số trong hai bài tập ở trên bằng
+
+a. Desmos 
+\vspace{5pt}
+b. Python (đối với hàm tuần hoàn thì vẽ trong khoảng $[-\pi;\pi]$; đối với các hàm khác, lựa chọn điểm đầu và cuối sao cho thu được mọi miền của hàm)
+\vspace{5pt}
+
+\textbf{Bài 1.5}: Vẽ một hình tam/tứ/ngũ/lục giác đều bằng Desmos và Python.
+\vspace{5pt}
+
+\textbf{Bài 1.6:} Giải các phương trình sau thông qua việc vẽ đồ thị bằng Python
+\begin{enumerate}[label=(\alph*)]
+    \item $\tan x= x.$
+    \item $\ln x = x-2.$
+    \item $x^3 -15x =4.$
+    \item $x^5 -4x^2 +3=0.$
+\end{enumerate}
+\subsection*{Hàm hợp}
+<<<<<<< HEAD
+\textbf{Bài 1.7:} Các hàm số trong phần là hàm hợp của những hàm nào? Hãy phân tích cụ thể thứ tự của chúng.
+\vspace{5pt}
+
+\textbf{Bài 1.8:} Nguyên lý quy nạp\newline
+
+Cho $S_n$ là một phát biểu về số nguyên dương $n$. Giả sử rằng:
+\begin{itemize}
+    \item $S_1$ đúng.
+    \item $S_{k+1}$ đúng khi $S_k$ đúng.
+\end{itemize}
+Khi đó $S_n$ đúng với tất cả các số nguyên dương $n$.\newline
+Sử dụng điều này để giải các bài toán sau:
+\begin{enumerate}[label=(\alph*)]
+    \item Nếu $f_0(x) =x/(x+1)$ và $f_{n+1}(x)=f_0(f_n(x))$ với $n=0, 1, 2,\dots$, tìm một công thức cho $f_n(x)$.
+\item Nếu $f_0(x) =x^2$ và $f_{n+1}(x)=f_0(f_n(x))$ với $n=0, 1, 2,\dots$, tìm một công thức cho $f_n(x)$.
+\end{enumerate}
+\subsection*{Giới hạn hàm số}
+\textbf{Bài 1.9:} Chứng minh
+\begin{enumerate}[label=(\alph*)]
+    \item $$\lim_{x\rightarrow 0}\frac{\sin x}{x}=1.$$
+    \item $$\lim_{x\rightarrow\infty}\left(1+\frac{1}{x}\right)^x =e=2,71828... .$$
+    \item $\lim_{x\rightarrow 0}\frac{(1+x)^m -1}{x}=m.$
+\end{enumerate}
+\vspace{5pt}
+
+\textbf{Bài 1.10:} Tính các giới hạn sau 
+\begin{enumerate}[label=(\alph*)]
+    \item $$\lim_{x\rightarrow 4}\frac{5x+2}{2x+3}.$$
+    \item $$\lim_{x\rightarrow \infty}\frac{3x+5}{2x+7} .$$
+    \item $$\lim_{x\rightarrow\infty}\frac{x^3 +2x^2 +3x+4}{4x^3 +3x^2 +2x+1}.$$
+    \item $$\lim_{x\rightarrow\infty}\frac{3x^4 -2}{\sqrt{x^8+3x+4}}.$$
+\end{enumerate}
