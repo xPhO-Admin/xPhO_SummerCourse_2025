@@ -18,7 +18,7 @@ Hàm $f$ là một quy tắc cho tương ứng mỗi phần tử $x$ thuộc t�
     \centering
     \includegraphics[width=8cm, height=5cm]{Tuan1/ảnh/anhxa.png}\label{anh1.1}
 \end{figure}
-\subsection{Đồ thị hàm số}
+\subsection{Đồ thị Hàm Số}
 Hàm số có thể được biểu diễn bằng công thức, bảng, đồ thị hoặc mô tả bằng lời nói. Trong đó trực quan nhẩt là biểu diễn thông qua đồ thị. 
 \begin{definition}
     Đồ thị của hàm số $f$ có miền xác định $X$ là tập hợp các cặp có thứ tự  \[ \{\left(x,f(x)\right)\vert x\in X \} .\] 
@@ -85,7 +85,7 @@ Trước khi sang phần tiếp theo, hãy nói qua thêm một khái niệm n�
 Xét hai hàm $f(x)$ và $g(x)$, hàm hợp của chúng được ký hiệu là $f(g(x))$ và được đọc là "hàm $f$ của hàm $g$ tại $x$". Hàm hợp này sẽ nhận đầu vào là giá trị của hàm $g(x)$ và trả về giá trị của hàm $f$ tại điểm đó.\newline    
 Ví dụ: $f(x)=x^2$, $g(x)=\sin x$ vậy $f(g(x))=f(\sin x)=\sin^2 x$.
 \section{Giới Hạn Hàm Số}
-\subsection{Ví dụ về giới hạn}
+\subsection{Ví dụ về Giới Hạn}
 Xét hàm số $y=x^2$, phóng to đồ thị vào gần điểm $(1;1)$:
 \begin{figure}[h!]
     \centering
@@ -134,7 +134,7 @@ và nói\qquad\qquad\qquad "giới hạn của $f(x)$, khi $x$ tiến tới $a$,
 \end{definition}
 
 Định nghĩa vừa đưa ra về giới hạn có vẻ khá trừu tượng và thiếu chặt chẽ. Dẫu thế trong khuôn khổ chương trình, ta sẽ không đào sâu vào vấn đề chặt chẽ trong lí luận giới hạn. Thay vào đó, hy vọng với ví dụ vừa rồi, các bạn có thể phần nào thu được trực giác về khái niệm này.\newline
-\subsection{Giới hạn ở vô cùng và một số quy tắc tính giới hạn}
+\subsection{Giới Hạn ở vô cùng và một số quy tắc tính Giới Hạn}
 \begin{definition}
     Ta viết \begin{equation*}\lim_{x\rightarrow a^-}f(x)=L\end{equation*}
 để nói rằng giới hạn của $f(x)$ khi $x$ tiến tới $a$ từ phía bên trái (tức là $x$ nhỏ hơn $a$) bằng $L$. 
@@ -163,13 +163,17 @@ Cũng có thể viết  $$\lim_{x\rightarrow\infty}f(x)=\infty.$$ để nói r�
 Để kết thúc phần này, ta thừa nhận và tổng kết những tính chất sau: Giả sử $c$ là một hằng số, $\lim_{x\rightarrow a}f(x)=A$ và $\lim_{x\rightarrow a}g(x)$=B
 \begin{multicols}{2}
     \begin{itemize}
-        \item $\lim_{x\rightarrow a}c = c$.
-        \item $\lim_{x\rightarrow a}(f(x)\pm g(x))=A \pm B $.
-        \item $\lim_{x\rightarrow a}f(x)g(x)=AB.$
-        \item $\lim_{x\rightarrow a}f(x)/g(x)=A/B, B\neq 0.$
-        \item $\lim_{x\rightarrow a
-        }cf(x)=cA.$
-        \item  $\lim_{x\rightarrow a}(f(x))^{m/n}=A^{m/n}.$
-        \item Nếu $f(x)=g(x)~khi~x\neq a$, $A=B$.
+        \item \(\lim_{x\rightarrow a}c = c\).
+        \item \(\lim_{x\rightarrow a}(f(x)\pm g(x))=A \pm B \).
+        \item \(\lim_{x\rightarrow a}f(x)g(x)=AB.\)
+        \item \(\lim_{x\rightarrow a}f(x)/g(x)=A/B, B\neq 0.\)
+        \item \(\lim_{x\rightarrow a }cf(x)=cA.\)
+        \item  \(\lim_{x\rightarrow a}(f(x))^{m/n}=A^{m/n}.\)
+        \item Nếu \(f(x)=g(x)~khi~x\neq a,\text{thì} A=B.\)
     \end{itemize}     
 \end{multicols}
+\begin{theorem}
+    Xét các hàm só $g(x), f(x), h(x)$ xác định trên miền chứa $a$ (có thể có hoặc không xác định tại $a$), với mọi $x$ khác $a$:
+    \[g(x)\leq f(x)\leq h(x)\] ,và giả sử \[\lim_{x\rightarrow a}g(x)=\lim_{x\rightarrow a}h(x)=L.\]
+    Thì, \[\lim_{x\rightarrow a}f(x)=L.\]
+\end{theorem}

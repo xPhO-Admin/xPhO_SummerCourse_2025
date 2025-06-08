@@ -1,6 +1,7 @@
 \subsection*{Hàm số}
 \textbf{Bài 1.1:} Tìm miền xác định của các hàm số sau
 \begin{enumerate}[label=(\alph*)]
+\item \(\frac{x-2}{2x-1}\)
 \item $\frac{\ln(1+x)}{x-1}$
 \item $\sqrt{1-2x}+3\arcsin\left(\frac{3x-1}{2}\right)$ \quad ($\sin{x}=y\leftrightarrow x=\arcsin y$)
 \item $\frac{1}{x e^x}$
@@ -69,19 +70,99 @@ Sử dụng điều này để giải các bài toán sau:
     \item Nếu $f_0(x) =x/(x+1)$ và $f_{n+1}(x)=f_0(f_n(x))$ với $n=0, 1, 2,\dots$, tìm một công thức cho $f_n(x)$.
 \item Nếu $f_0(x) =x^2$ và $f_{n+1}(x)=f_0(f_n(x))$ với $n=0, 1, 2,\dots$, tìm một công thức cho $f_n(x)$.
 \end{enumerate}
+\vspace{5pt}
+\subsection*{Phương trình hàm}
+\textbf{Bài 1.9:} Tìm hàm \(f: \mathbb{R}\rightarrow\mathbb{R}\) sao cho
+\begin{enumerate}[label=(\alph*)]
+    \item \(f(a+b)=f(a)+f(b)\)
+    \item \(f(ab)=f(a)f(b)\)
+    \item \(f(a+b)=f(a)f(b)\)
+    \item \(f(ab)=f(a)+f(b)\)
+\end{enumerate}
+
 \subsection*{Giới hạn hàm số}
-\textbf{Bài 1.9:} Chứng minh
+\textbf{Bài 1.10:} Chứng minh
 \begin{enumerate}[label=(\alph*)]
     \item $$\lim_{x\rightarrow 0}\frac{\sin x}{x}=1.$$
     \item $$\lim_{x\rightarrow\infty}\left(1+\frac{1}{x}\right)^x =e=2,71828... .$$
-    \item $\lim_{x\rightarrow 0}\frac{(1+x)^m -1}{x}=m.$
+    \item \[\lim_{x\rightarrow 0}\frac{(1+x)^m -1}{x}=m.\]
 \end{enumerate}
 \vspace{5pt}
 
-\textbf{Bài 1.10:} Tính các giới hạn sau 
+\textbf{Bài 1.11:} Tính các giới hạn sau 
 \begin{enumerate}[label=(\alph*)]
-    \item $$\lim_{x\rightarrow 4}\frac{5x+2}{2x+3}.$$
-    \item $$\lim_{x\rightarrow \infty}\frac{3x+5}{2x+7} .$$
-    \item $$\lim_{x\rightarrow\infty}\frac{x^3 +2x^2 +3x+4}{4x^3 +3x^2 +2x+1}.$$
-    \item $$\lim_{x\rightarrow\infty}\frac{3x^4 -2}{\sqrt{x^8+3x+4}}.$$
+    \item $$\lim_{x\rightarrow 4}\frac{5x+2}{2x+3}$$
+    \item $$\lim_{x\rightarrow \infty}\frac{3x+5}{2x+7} $$
+    \item $$\lim_{x\rightarrow\infty}\frac{x^3 +2x^2 +3x+4}{4x^3 +3x^2 +2x+1}$$
+    \item $$\lim_{x\rightarrow\infty}\frac{3x^4 -2}{\sqrt{x^8+3x+4}}$$
+    \item \[\lim_{x\rightarrow\infty}\sqrt{x^2 +8x+3}-\sqrt{x^2+4x+3}\]
+    \item \[\lim_{x\rightarrow 3}\frac{x^2 -9}{x^2-3x}\]
+    \item \[\lim_{x\rightarrow 1}\frac{x^3 -x^2 -x+1}{x^3+x^2 -x-1}\]
+    \item \[\lim_{x\rightarrow 2}\frac{\sqrt{1+x+x^2}-\sqrt{7+2x-x^2}}{x^2-2x}\]
+\end{enumerate}
+\vspace{5pt}
+
+\textbf{Bài 1.12:} Sử dụng các kết quả trong \textbf{Bài 1.10} tính
+\begin{enumerate}[label=(\alph*)]
+    \item \[\lim_{x\rightarrow 0}\frac{\sin mx}{x}\]
+    \item \[\lim_{x\rightarrow 0}\frac{1=\cos 5x}{x^2}\]
+    \item \[\lim_{x\rightarrow\infty}\left(\frac{x^2+5x+4}{x^2-3x+7}\right)^x\]
+    \item \[\lim_{x\rightarrow 2}\left(\frac{x}{2}\right)^{\frac{1}{x-2}}\]
+\end{enumerate}
+
+\subsection*{So sánh các vô cùng bé}
+ Giả sử \(\alpha(x)\text{ và }\beta(x)\) là các vô cùng bé khi $x\rightarrow a$. Hay, \(\lim_{x\rightarrow a}\alpha(x)=0\) và \(\lim_{x\rightarrow a}\beta(x)=0\).
+\begin{itemize}
+    \item Nếu \(\lim_{x\rightarrow a}\frac{\alpha}{\beta}=0\), thì ta nói rằng $\alpha$ là vô cùng bé bậc cao so với $\beta$, kí hiệu $\alpha=o(\beta).$ 
+    \item Nếu \(\lim_{x\rightarrow a}\frac{\alpha}{\beta}=m ( m\neq 0)\), thì ta nói \(\alpha\text{ và }\beta\) là các vô cùng bé cùng bậc. Đặc biệt nếu \(m=1\), ta gọi chúng là các vô cùng bé tương đương, kí hiệu $\alpha\sim \beta.$
+    \item Nếu \(\alpha^k\) và \(\beta\) là các vô cùng bé cùng bậc, trong đó \(k>0\), ta nói rằng vô cùng bé \(\beta\) có bậc \(k\) so với \(\alpha\).
+\end{itemize}
+Ta chú ý một số tính chất của các đại lượng vô cùng bé:
+\begin{itemize}
+    \item Tích hai vô cùng bé là vô cùng bé cấp cao so với các nhân thức.
+    \item Các vô cùng bé là tương đương khi và chỉ khi hiệu của chúng là vô cùng bé cấp cao so với chúng.
+    \item Nếu tỷ số của hai vô cùng bé có giới hạn, thì giới hạn này không đổi nếu ta thay mỗi vô cùng bé bằng một vô cùng bé tương đương.
+\end{itemize}
+Lưu ý sự tương đương của các đại lượng vô cùng bé sau đây: nếu \(x\rightarrow 0\) thì \[\sin x\sim x, \tan x\sim x, \arcsin x\sim x, \arctan x\sim x, \ln(1+x)\sim x\]
+
+\textbf{Bài 1.13:} 
+Bằng cách thay tử và mẫu số bằng các vô cùng bé tương đương, tính 
+\begin{enumerate}[label=(\alph*)]
+    \item \[\lim_{x\rightarrow 0}\frac{\sqrt{1+2x}-1}{\tan 3x}\]
+    \item \[\lim_{x\rightarrow 0}\frac{\ln \cos x}{\ln (1+x^2)}\]
+    \item \[\lim_{x\rightarrow 0}\frac{(1+x)^{3/5}-1}{(1+x)(1+x)^{2/3}-1}\]
+\end{enumerate}
+
+\subsection*{Đạo hàm}
+\textbf{Bài 1.14:} Tính \(y'(x)\)
+\begin{enumerate}[label=(\alph*)]
+    \item \[y=\ln (x+\sqrt{x^2 +1}).\]
+    \item \[y=\ln (\sqrt{2\sin x +1}+\sqrt{2\sin x -1}).\]
+    \item \[y=\frac{x}{2}\sqrt{x^2 +k}+\frac{k}{2}\ln (x+\sqrt{x^2 +k}).\]
+    \item \[y=\ln^2 \frac{\sqrt{4\tan x +1}-2\sqrt{\tan x}}{\sqrt{4\tan x +1}+2\sqrt{\tan x}}.\]
+    \item \[y=\frac{1}{2}[(x+\alpha)\sqrt{x^2 +2\alpha x +\beta}+(\beta -\alpha^2)\ln(x+\alpha+\sqrt{x^2 +2\alpha x+\beta})].\]
+    \item \[y=\sqrt{x+\sqrt{x+\sqrt{x}}}.\]
+\end{enumerate}
+
+\subsection*{Phương pháp đạo hàm lấy lô-ga(tạm dịch)\footnote{Đọc thêm tại \href{https://en.wikipedia.org/wiki/Logarithmic_differentiation}{Logarithmic differentiation}}}
+\textbf{Bài 1.15:} Tính 
+\begin{enumerate}[label=(\alph*)]
+    \item \[\frac{(2x-1)^3 \sqrt{3x+2}}{(5x+4)^2 \sqrt[3]{1-x}}.\]
+    \item \[y=x^{x^2}.\]
+\end{enumerate}
+Hàm logarit nói chung và hàm \(\ln\) nói riêng đặc biệt có nhiều công dụng trong tính toán. Ta hãy liệt kê ra hai tính chất sẽ được bàn đến sau đây:
+\begin{itemize}
+    \item \(\ln(xy)=\ln x +\ln y \).
+    \item \(\ln x^{\alpha} = \alpha \ln x\).
+\end{itemize}
+Tính chất đầu tiên là khả năng biến một tích thành một tổng, một thứ dễ tính hơn rất nhiều. Tính chất thứ hai lại có khả năng biến một hàm mũ phức tạp thành một tích rõ ràng hơn về sự phụ thuộc vào biến. \newline
+Xét hàm \(y(x)\) có thể được viết thành tích của nhiều hàm số: \[y=f_{1}^{\alpha_1}(x).f_{2}^{\alpha_2}(x)\dots f_{n}^{\alpha_n}(x)\implies \ln y = \alpha_{1}\ln f_1 +\alpha_{2}\ln f_2 +\dots +\alpha_{n}\ln f_n.\]
+Đạo hàm hai vế, \[\frac{y'}{y}=\alpha_{1} \frac{f'_1}{f_1}+\alpha_{2} \frac{f'_2}{f_2}+\dots +\alpha_{n} \frac{f'_n}{f_n}.\]
+Hãy quay lại xử lý \textbf{Bài 1.15}  với công cụ này.
+\vspace{5pt}
+
+\textbf{Bài 1.16:} Tính 
+\begin{enumerate}[label=(\alph*)]
+  \item \[y=x^{\ln x}.\]  
+  \item \[y=\frac{x^2 \sqrt{1+x}}{(x-1)^3 \sqrt[5]{5x-1}}.\]
 \end{enumerate}
