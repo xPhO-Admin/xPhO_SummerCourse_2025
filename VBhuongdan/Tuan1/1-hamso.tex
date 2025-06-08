@@ -18,7 +18,7 @@ Hàm $f$ là một quy tắc cho tương ứng mỗi phần tử $x$ thuộc t�
     \centering
     \includegraphics[width=8cm, height=5cm]{Tuan1/ảnh/anhxa.png}\label{anh1.1}
 \end{figure}
-
+\subsection{Đồ thị hàm số}
 Hàm số có thể được biểu diễn bằng công thức, bảng, đồ thị hoặc mô tả bằng lời nói. Trong đó trực quan nhẩt là biểu diễn thông qua đồ thị. 
 \begin{definition}
     Đồ thị của hàm số $f$ có miền xác định $X$ là tập hợp các cặp có thứ tự  \[ \{\left(x,f(x)\right)\vert x\in X \} .\] 
@@ -60,7 +60,8 @@ Một cách trực quan,\emph{ không có đường thẳng thẳng đứng (vu�
     \end{figure}
 
 %%%Các hàm
-\vspace{8pt}
+\subsection{Các hàm thông dụng}
+
 Trong khi xử lý các bài toán, chúng ta thường gặp các hàm số có dạng tổng quát. Các hàm này được phân loại theo dạng biểu thức của chúng. Dưới đây là một số loại hàm số cơ bản:   \begin{itemize}
     \item Hàm \emph{tuyến tính} có dạng $f(x) = ax + b$, với $a$ và $b$ là các hằng số. Đồ thị của hàm tuyến tính là một đường thẳng.\newline Ví dụ: $ 2x+3$.
     \item Hàm \emph{đa thức} có dạng $P(x) = a_n x^n + a_{n-1} x^{n-1} + \ldots + a_1 x + a_0$, với $a_n, a_{n-1}, \ldots, a_0$ là các hằng số và $n\in\mathbb{N}$ là bậc của đa thức.\newline Ví dụ: $x^2 - 4x + 4; x^5 + 2x^2 - 5x + 1$; $3x+2$.
@@ -78,17 +79,13 @@ Ví dụ như các hàm \emph{siêu việt}:\begin{itemize}
 \end{itemize}
 Hay, hàm xác định từng phần là các hàm được xác định bởi các công thức khác nhau trên các miền khác nhau của tập xác định.\newline
 Ví dụ, hàm giá trị tuyệt đối $f(x) = |x|$ được định nghĩa là:\[
-f(x) = 
-% \begin{cases}
-%  - x, & \text{nếu } x \leq 0. \\
-% x, & \text{nếu } x \geq 0.
-% \end{cases}
-\]
+f(x) =\]
 Trong tất cả những hàm vừa liệt kê lại có một số hàm có tính chất chung. Chẳng hạn như tính chẵn lẻ, tính đồng biến nghịch biến, tính liên tục,...\newline
 Trước khi sang phần tiếp theo, hãy nói qua thêm một khái niệm nữa, đó là \emph{hàm hợp}. Ta biết rằng hàm số là một thứ mà ta cho vào một giá trị và sẽ cho ra một giá trị nào đó. Trên cơ sở này, hàm hợp là một hàm số mà đầu vào của nó là đầu ra của một hàm số khác.\newline
 Xét hai hàm $f(x)$ và $g(x)$, hàm hợp của chúng được ký hiệu là $f(g(x))$ và được đọc là "hàm $f$ của hàm $g$ tại $x$". Hàm hợp này sẽ nhận đầu vào là giá trị của hàm $g(x)$ và trả về giá trị của hàm $f$ tại điểm đó.\newline    
 Ví dụ: $f(x)=x^2$, $g(x)=\sin x$ vậy $f(g(x))=f(\sin x)=\sin^2 x$.
 \section{Giới Hạn Hàm Số}
+\subsection{Ví dụ về giới hạn}
 Xét hàm số $y=x^2$, phóng to đồ thị vào gần điểm $(1;1)$:
 \begin{figure}[h!]
     \centering
@@ -137,6 +134,7 @@ và nói\qquad\qquad\qquad "giới hạn của $f(x)$, khi $x$ tiến tới $a$,
 \end{definition}
 
 Định nghĩa vừa đưa ra về giới hạn có vẻ khá trừu tượng và thiếu chặt chẽ. Dẫu thế trong khuôn khổ chương trình, ta sẽ không đào sâu vào vấn đề chặt chẽ trong lí luận giới hạn. Thay vào đó, hy vọng với ví dụ vừa rồi, các bạn có thể phần nào thu được trực giác về khái niệm này.\newline
+\subsection{Giới hạn ở vô cùng và một số quy tắc tính giới hạn}
 \begin{definition}
     Ta viết \begin{equation*}\lim_{x\rightarrow a^-}f(x)=L\end{equation*}
 để nói rằng giới hạn của $f(x)$ khi $x$ tiến tới $a$ từ phía bên trái (tức là $x$ nhỏ hơn $a$) bằng $L$. 
