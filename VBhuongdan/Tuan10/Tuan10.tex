@@ -25,7 +25,54 @@
 
 \subsection{Động học thuận và bảng Denavit-Hartenberg}
 
+\begin{table}[h]
+    \centering
+    \caption{Tham số Denavit–Hartenberg.}
+    \begin{tabular}{|c|c|c|c|c|}
+        \hline
+        \textbf{Khớp} & \( \theta_i \) & \( d_i \) & \( a_i \) & \( \alpha_i \) \\
+        \hline
+        1 & \( \theta_1 \) & \( d_1 \) & \( a_1 \) & \( \alpha_1 \) \\
+        \hline
+        2 & \( \theta_2 \) & \( d_2 \) & \( a_2 \) & \( \alpha_2 \) \\
+        \hline
+        3 & \( \theta_3 \) & \( d_3 \) & \( a_3 \) & \( \alpha_3 \) \\
+        \hline
+        \vdots & \vdots & \vdots & \vdots & \vdots \\
+        \hline
+        \( n \) & \( \theta_n \) & \( d_n \) & \( a_n \) & \( \alpha_n \) \\
+        \hline
+    \end{tabular}
+\end{table}
+
+\begin{equation}
+    T_i^{i-1} =
+    \left[ \begin{array}{cccc}
+    \cos\theta_i & -\sin\theta_i \cos\alpha_i & \sin\theta_i \sin\alpha_i & a_i \cos\theta_i \\
+    \sin\theta_i & \cos\theta_i \cos\alpha_i & -\cos\theta_i \sin\alpha_i & a_i \sin\theta_i \\
+    0 & \sin\alpha_i & \cos\alpha_i & d_i \\
+    0 & 0 & 0 & 1
+    \end{array} \right].
+\end{equation}
+
 \subsection{Động học nghịch Robotic}
 
-\subsection{Thay thế ma trận Christoffel bằng ma trận hướng tâm/Coriolis}
+\subsection{Thay thế ma trận Christoffel bằng ma trận hướng tâm/Coriolis - Tích Kronecker}
+
+\begin{itemize}
+        \item Phương trình động lực học tổng quát sử dụng tích Kronecker %\cite{Tuan_Chung_Khoa_Phong_2019}:
+    \end{itemize}
+    \begin{equation}
+        H(q) \ddot{q} + C(q) \dot{q} \otimes \dot{q} = - \nabla U + F.
+    \end{equation}
+    \begin{itemize}
+        \item Ma trận hướng tâm/Coriolis \(C(q)\) được tính bằng biểu thức
+    \end{itemize}
+    \begin{equation}
+        C(q) = \dfrac{\partial H(q)}{\partial q} - \dfrac{1}{2} \left( \dfrac{\partial \text{vec}(H)}{\partial q} \right)^T.
+    \end{equation}
+
+\subsection{Bài tập}
+
+\subsection{Lời giải}
 
