@@ -3,23 +3,32 @@
   
 \chapter{Nhập Môn Cơ Học Giải Tích}
 
-\section{Liên kết động học}
+\section{Liên kết động học} 
+\label{sec_9:Kinematic_link}
+
+Phần lớn các học sinh bắt đầu khảo sát các liên kết chuyển động dựa trên những trực giác mơ hồ, các nhận định cảm tính các phương pháp đổi hệ quy chiếu.
+Thoạt đầu, sự thông minh và sự nhạy bén về khả năng tưởng tượng hình học giúp cho nhiều học sinh nhanh chóng giải quyết được vấn đề một cách hiệu quả.
+Song, với các cơ hệ phức tạp bao gồm nhiều liên kết chuyển động, các vật chuyển động trong không gian 3 chiều, những quan sát cảm tính thường xuyên mang đến những kết luận sai.
+Các lý thuyết về liên kết động học, ứng dụng giải tích trong khảo sát các liên hệ về tọa độ, lực, gia tốc mang đến sự chặt chẽ.
+Không những giúp cho chúng ta có một lời giải chắc chắn, các lý thuyết về liên kết là một đường lối chuẩn mực cho lời giải các bài toán cơ học, giúp không chỉ con người với trí khả năng tư duy trừu tượng sâu sắc, mà ngay cả các hệ thống máy tính, lập trình cũng có thể tự thiết lập được các phương trình vi phân mô tả chuyển động.
+
+Trong mục này, chúng ta sẽ khảo sát các liên kết chuyển động dựa trên hệ thống các bậc tự do, hệ tọa độ suy rộng, phân biệt các loại liên kết và ứng dụng lý thuyết giải tích trong tính toán các vận tốc, gia tốc trong hệ cơ học.
 
 
 \subsection{Bậc tự do}
 
 Tập hợp các thông số \textbf{đủ} để xác định được vị trí của cơ hệ trong một hệ quy chiếu xác định, được gọi là các tọa độ suy rộng của cơ hệ.\\
-Các tọa độ suy rộng được kí hiệu là $q_1, q_2, ..., q_m$. Các tọa độ suy rộng có thể là các tọa độ Đề các của các chất điểm thuộc cơ hệ, có thể là góc quay, các tọa độ cong...\\
+Các tọa độ suy rộng được kí hiệu là $q_1, q_2, \ldots, q_m$. Các tọa độ suy rộng có thể là các tọa độ Đề các của các chất điểm thuộc cơ hệ, có thể là góc quay, các tọa độ cong\ldots\\
 Bản chất vật lý của tọa độ suy rộng là bất kỳ, do đó thứ nguyên của nó có thể không phải là độ dài như tọa độ Đề các.\footnote{Dựa theo quyển sách "Bài tập Cơ học Tập 2: Động lực học" của giáo sư Đỗ Sanh.}\\
 Vị trí của cơ hệ được xác định nhờ tọa độ suy rộng, nên các tọa độ Decartes của các chất điểm của cơ hệ có thể biểu diễn qua các tọa độ suy rộng:
 \begin{align*}
-    x_k = x_k(t, q_1, q_2, ..., q_m)\\
-    y_k = y_k(t, q_1, q_2, ..., q_m)\\
-    z_k = z_k(t, q_1, q_2, ..., q_m)
+    x_k &= x_k(t, q_1, q_2, \ldots, q_m)\\
+    y_k &= y_k(t, q_1, q_2, \ldots, q_m)\\
+    z_k &= z_k(t, q_1, q_2, \ldots, q_m)
 \end{align*}
 Hoặc viết ở dạng rút gọn:
 \begin{equation*}
-    \mathbf{r_k} = \mathbf{r_k}(t, q_1, q_2, ..., q_m)
+    \mathbf{r_k} = \mathbf{r_k}(t, q_1, q_2, \ldots, q_m)
 \end{equation*}
 Ta xét trường hợp con lắc đôi, để xác định vị trí của con lắc ta có những tọa độ sau: (ĐANG CẬP NHẬT HÌNH MINH HỌA)
 \begin{align*}
@@ -45,7 +54,7 @@ Một phương trình liên kết động học thông thường sẽ có dạng
 \begin{equation}
     f(\mathbf{q}, \mathbf{\dot{q}}, t) = 0.
 \end{equation}
-Với $\mathbf{q} = [q_1,q_2,...,q_n]$ và $\mathbf{\dot{q}} = [\dot{q}_1,\dot{q}_2,...,\dot{q}_n]$ là các tọa độ, tọa độ suy rộng của cơ hệ và đạo hàm bậc nhất (vận tốc) của chúng.
+Với $\mathbf{q} = [q_1,q_2,\ldots,q_n]$ và $\mathbf{\dot{q}} = [\dot{q}_1,\dot{q}_2,\ldots,\dot{q}_n]$ là các tọa độ, tọa độ suy rộng của cơ hệ và đạo hàm bậc nhất (vận tốc) của chúng.
 
 Từ phương trình liên kết trên, ta có thể phân loại các cơ hệ thành một số loại như sau \footnote{Dựa theo quyển sách "Cơ học giải tích" của giáo sư Nguyễn Quang Đạo.}:
 \begin{itemize}
@@ -55,17 +64,17 @@ Từ phương trình liên kết trên, ta có thể phân loại các cơ hệ 
     \end{equation*}
     và ngược lại là \textbf{ liên kết phi holonom (nonholonomic)}.
     \item \textbf{Liên kết scleronom (scleronomous)}, hay còn được gọi là \textbf{liên kết dừng}, là các liên kết không phụ thuộc tường minh vào thời gian (tức là $\partial \mathbf{q} / t = 0$), ngược lại với nó là \textbf{liên kết Rheonom (Rheonomous)}, hay còn được gọi là \textbf{liên kết không dừng}.
-    \item Liên kết giữ và không giữ... %sẽ được bổ sung sau
+    \item Liên kết giữ và không giữ\ldots %sẽ được bổ sung sau
 \end{itemize}
 Trong các ứng dụng kỹ thuật, các cánh tay robot, các cơ cấu tay chi tiết máy thường là các liên kết holonom. 
-Còn các liên kết phi holonom thường xuất hiện trong các hệ mobile robot, máy bay, drone,... 
+Còn các liên kết phi holonom thường xuất hiện trong các hệ mobile robot, máy bay, drone,\ldots 
 Để xác định tọa độ qua các liên kết holonom, ta chỉ cần xác định thông qua các tính chất hình học. 
-Trong khi đó, với các hệ liên kết phi holonom, việc xác định tọa độ của các vật thể trở nên tương đối phức tạp, đòi hỏi ta phải ứng dụng các kỹ thuật định vị ngoài cơ học như sử dụng các cảm biến, sóng điện từ, radar,... 
+Trong khi đó, với các hệ liên kết phi holonom, việc xác định tọa độ của các vật thể trở nên tương đối phức tạp, đòi hỏi ta phải ứng dụng các kỹ thuật định vị ngoài cơ học như sử dụng các cảm biến, sóng điện từ, radar,\ldots 
 Trong tài liệu này, ta sẽ chỉ tập trung vào lĩnh vực cơ lý thuyết, vì vậy, cụ thể ta sẽ chỉ phân tích về các cơ hệ có các liên kết holonom.
 
 \subsection{Ứng dụng đạo hàm toàn phần và ma trận Jacobian trong tính toán vận tốc, gia tốc các điểm của cơ hệ Holonom}
 
-Giả sử trong một cơ hệ có $n$ bậc tự do với các tọa độ suy rộng tương ứng là $\mathbf{q} = [q_1,q_2,...,q_n]$. Với một tọa độ bất kỳ nào đó có liên kết phụ thuộc vào các tọa độ suy rộng kia theo dạng có thể tách biến được:
+Giả sử trong một cơ hệ có $n$ bậc tự do với các tọa độ suy rộng tương ứng là $\mathbf{q} = [q_1,q_2,\ldots,q_n]$. Với một tọa độ bất kỳ nào đó có liên kết phụ thuộc vào các tọa độ suy rộng kia theo dạng có thể tách biến được:
 \begin{equation*}
     x = f(\mathbf{q})
 \end{equation*}
