@@ -76,7 +76,7 @@ Tương tự như giới hạn, đạo hàm cũng có một số tính chất qu
     \end{equation}
 \end{itemize}
 \subsection{Xấp xỉ tuyến tính và vi phân}
-Tiếp theo ta sẽ nói về một ứng dụng quan trọng khác của đạo hàm. Nếu phóng to đồ thị tại điểm $x=a$, ta có thể thấy đồ thị hàm số trông khá giống với tiếp tuyến của nó tại điểm này.
+Tiếp theo ta sẽ nói về một ứng dụng quan trọng khác của đạo hàm. Nếu phóng to đồ thị tại điểm $x=a$, ta có thể thấy đồ thị hàm số trông khá gần với tiếp tuyến của nó tại điểm này.
 \begin{figure}[H]
 \centering
 \includegraphics[width=1\textwidth]{Tuan1/ảnh/xapxituyentinh.png}
@@ -111,14 +111,15 @@ Từ kí hiệu bên trên, ta có thể viết lại đạo hàm theo cách kh�
     f'(x)=\frac{dy}{dx} 
 \end{equation}
 Đây được gọi là \textbf{kí hiệu Leibniz cho đạo hàm}.
+\subsection{Quy tắc đạo hàm hợp}
 
 Đối với một hàm số \(f(x)\) có dạng phức tạp theo \(x\), ta có thể viết lại nó dưới dạng hàm hợp \(f(g(x))\) sao cho \(f(g)\) và \(g(x)\) có dạng đơn giản hơn, sau đó áp dụng quy tắc sau để thực hiện phép đạo hàm:
-\begin{definition}
+\begin{theorem}
 \textbf{Quy tắc đạo hàm hợp}: Nếu \(f\) là hàm số có đạo hàm tại \(g(x)\), và \(g\) là hàm số có đạo hàm tại \(x\), thì đạo hàm của hàm hợp \(f(g(x))\) được tính theo công thức:
 \begin{equation}
     f'(x)=\frac{df}{dx}=\frac{df}{dg}\cdot\frac{dg}{dx}=f'(g(x))\cdot g'(x)
 \end{equation}
-\end{definition}
-Thực tế, quy tắc này không đơn giản là khử đi tử và mẫu số giống như phép nhân phân số. Việc chứng minh quy tắc sẽ phức tạp hơn, nhưng đó sẽ là nhiệm vụ của bạn trong bài tập ....
+\end{theorem}
+\textit{Ví dụ: \(f(x)=\sqrt{x^2+1}\) có thể được viết lại dưới dạng hàm hợp \(f(g(x))\) với \(g(x)=x^2+1\).}
 
-Ví dụ: \(f(x)=\sqrt{x^2+1}\) có thể được viết lại dưới dạng hàm hợp \(f(g(x))\) với \(g(x)=x^2+1\).
+\textbf{Lưu ý:} Quy tắc đạo hàm hợp không đơn giản chỉ là khử đi tử và mẫu số giống như phép nhân phân số vì ý nghĩa của kí hiệu Leibniz không hoàn toàn giống với phân số thông thường. Việc chứng minh quy tắc này sẽ phức tạp hơn và sẽ là nhiệm vụ của bạn trong bài tập ....
