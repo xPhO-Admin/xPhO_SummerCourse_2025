@@ -1,0 +1,39 @@
+
+Ta xét bảng số sau:
+\[ A=
+\begin{bmatrix}
+    1&5&12\\
+    3&0&4\\
+    0&7&9
+\end{bmatrix}.
+\]
+Đây là một ô vuông có kích thước \(3\times 3\), tức là có \(3\) \emph{hàng} và \(3\) \emph{cột}. Hàng được đọc từ trên xuống và cột được đọc từ trái sang. Mỗi một phần tử  trong \(9\) phần tử  của bảng số này được xác định với một cặp số duy nhất của hàng và cột. Ví dụ, số \(4\) nằm ở hàng thứ hai và cột thứ ba. 
+Các số \(12,4,9\) đều nằm ở cột thứ ba và các số \(3,0,4\) đều nằm ở hàng thứ hai. 
+
+Hay ta cũng có thể lấy thêm một bảng số khác, chẳng hạn
+\[B=\begin{bmatrix}
+    -1.3&0.6\\
+    20.4&5.5\\
+    9.7&-6.2
+\end{bmatrix}\] Đây là một bảng số với \(3\) hàng và \(2\) cột. Nếu vẫn giữ nguyên cách đọc bảng số trước đó, thì số \(9.7\) có vị trí là hàng thứ ba, cột thứ nhất. 
+
+Vậy ý nghĩa của những bảng số (\(A\) và \(B\)) vừa rồi là gì? Ta hãy cùng xem xét thêm một ví dụ: hai bảng số có \(3\) hàng và \(1\) cột, 
+\[\mathbf{v}=\begin{bmatrix}
+    a\\b\\c
+\end{bmatrix}, \quad \mathbf{w}=\begin{bmatrix}
+    c\\d\\f
+\end{bmatrix}.
+\] Điều đáng chú ý ở đây là ta có thể gọi \(\mathbf{v}\) và \(\mathbf{w}\) là các \emph{vector}. Thật vậy, nếu ta để chúng tuân theo các quy tắc của vector, các thành phần của hai bảng số vừa rồi sẽ giống như là các thành phần của một vector. 
+Nghĩa là, \[\mathbf{v}+\mathbf{w}=\begin{bmatrix}
+    a+c\\b+d\\c+f
+\end{bmatrix},\] hay \[
+    4\cdot\mathbf{v}=\begin{bmatrix}
+        4a\\4b\\4c
+\end{bmatrix}.\]
+Về cơ bản, đây chỉ là một sự thay đổi về cách viết. Cụ thể là thay vì viết \((a,b,c)\), ta viết \(\begin{bmatrix}
+    a\\b\\c
+\end{bmatrix}\). Như vậy chuyện gì xảy ra với  \(A\) và \(B ?\) Chúng cũng là các vector (theo nghĩa trừu tượng hơn), nhưng tạm thời ta có thể chỉ cần nhìn nhận theo khía cạnh: \emph{các cột của chúng là các vector. }
+\begin{definition}
+    \emph{Ma trận} là một mảng chữ nhật hoặc hình vuông (ma trận vuông) chứa các số hoặc những đối tượng toán học khác, mà có thể định nghĩa một số phép toán như cộng hoặc nhân trên các ma trận.
+\end{definition}
+Một ma trận \(A\) có \(m\) hàng và \(n\) cột được gọi là một ma trận \(m\times n\), điều này xác dịnh độ lớn của ma trận. Ta viết \(A_{m\times n}\) để chỉ ma trận \(A\) có kích thước \(m\times n\). Chú ý rằng ta đọc hàng trước cột. 
