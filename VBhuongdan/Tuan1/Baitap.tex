@@ -124,7 +124,7 @@ Ta chú ý một số tính chất của các đại lượng vô cùng bé:
     \item Các vô cùng bé là tương đương khi và chỉ khi hiệu của chúng là vô cùng bé cấp cao so với chúng.
     \item Nếu tỷ số của hai vô cùng bé có giới hạn, thì giới hạn này không đổi nếu ta thay mỗi vô cùng bé bằng một vô cùng bé tương đương.
 \end{itemize}
-Lưu ý sự tương đương của các đại lượng vô cùng bé sau đây: nếu \(x\rightarrow 0\) thì \[\sin x\sim x, \tan x\sim x, \arcsin x\sim x, \arctan x\sim x, \ln(1+x)\sim x\]
+Lưu ý sự tương đương của các đại lượng vô cùng bé sau đây: nếu \(x\rightarrow 0\) thì \[\sin x\sim x, \tan x\sim x, \arcsin x\sim x, \arctan x\sim x, \ln(1+x)\sim x, (1+x)^m\sim 1+mx\]
 
 \textbf{Bài 1.13:} 
 Bằng cách thay tử và mẫu số bằng các vô cùng bé tương đương, tính 
@@ -193,7 +193,15 @@ Hãy quay lại xử lý \textbf{Bài 1.15}  với công cụ này.
 
 
 \subsection*{Ứng dụng của đạo hàm và vi phân}
-\textbf{Bài 1.20:} Các điếm \(x=0\) của các hàm dưới đây là cực đại, cực tiểu hay điểm uốn?
+\textbf{Bài 1.20:}
+\begin{theorem}
+\textbf{(Quy tắc L'Hospital)} Giả sử hàm số \(f(x)\) và \(g(x)\) đều khả vi trên một khoảng mở chứa \(a\) (trừ có thể tại \(a\)), và \(\lim_{x\rightarrow a}f(x)=\lim_{x\rightarrow a}g(x)=0\) hoặc \(\pm \infty\). Khi đó, nếu giới hạn sau tồn tại, thì ta có 
+\end{theorem}
+Với công cụ này, hãy tính lại các bài tập về giới hạn hàm số ở trên.
+\vspace{5pt}
+
+
+\textbf{Bài 1.21:} Các điếm \(x=0\) của các hàm dưới đây là cực đại, cực tiểu hay điểm uốn?
 \begin{enumerate}[label=(\alph*)]
     \item \(f(x)=1-3x^2+2x^4\)
     \item \(f(x)=x^3+x^5\)
@@ -201,13 +209,13 @@ Hãy quay lại xử lý \textbf{Bài 1.15}  với công cụ này.
 \end{enumerate}
 \vspace{5pt}
 
-\textbf{Bài 1.21:} Chứng minh định lý Rolle.
+\textbf{Bài 1.22:} Chứng minh định lý Rolle.
 \vspace{5pt}
 
-\textbf{Bài 1.22:} Chứng minh định lý giá trị trung bình.
+\textbf{Bài 1.23:} Chứng minh định lý giá trị trung bình.
 \vspace{5pt}
 
-\textbf{Bài 1.23:} Tìm chuỗi Taylor của các hàm sau tại điểm \(x=0\) (chuỗi Maclaurin):
+\textbf{Bài 1.24:} Tìm chuỗi Taylor của các hàm sau tại điểm \(x=0\) (chuỗi Maclaurin):
 \begin{enumerate}[label=(\alph*)]
     \item \(f(x)=\sin x\)
     \item \(f(x)=\cos x\)
@@ -217,4 +225,4 @@ Hãy quay lại xử lý \textbf{Bài 1.15}  với công cụ này.
 \end{enumerate}
 \vspace{5pt}
 
-\textbf{Bài 1.24:} Tính \(\sqrt{e}\) chính xác đến \(0,0001\). 
+\textbf{Bài 1.25:} Tính \(\sqrt{e}\) chính xác đến \(0,0001\). 
