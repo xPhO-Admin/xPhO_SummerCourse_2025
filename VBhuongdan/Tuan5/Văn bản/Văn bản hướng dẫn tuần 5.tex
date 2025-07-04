@@ -1,0 +1,658 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{vietnam}
+%\usepackage[english]{babel}
+\usepackage[T5]{fontenc}
+\usepackage[top=2cm, bottom=2cm, left=2cm,right=2cm]{geometry} %%%% Margin %%%%%
+\usepackage[dvipsnames]{xcolor}
+\usepackage[pdftex]{graphicx}
+\usepackage{wrapfig}
+\usepackage{tcolorbox}
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{eqnarray}
+\usepackage{siunitx}
+\usepackage{array, lipsum, bibentry,fancyhdr}
+\usepackage{hyperref}
+\usepackage{natbib}
+\setlength{\parindent}{0pt}
+\usepackage{enumitem}
+\usepackage[noframe]{showframe}
+\usepackage{framed}
+\usepackage{titling}
+\usepackage{float}
+\usepackage{multicol}
+\usepackage{url}
+\usepackage{authblk}
+\usepackage{sectsty}
+\usepackage{eqparbox}
+
+%%%%%%%%%% Pictures drawing %%%%%%%%%%%%%
+
+\usepackage{pgfplots} %%%%%% Regression %%%%
+\pgfplotsset{compat = newest}
+\usepackage{pgfplotstable}
+\usepackage{tikz}
+\usepackage{tikz-3dplot} %%%%%% Draw %%%%%%
+\usepackage{tikz,tkz-euclide}
+\usetikzlibrary{arrows,calc,patterns}
+\usetikzlibrary{quotes,angles}
+\usetikzlibrary{shapes.geometric}
+\usepackage{circuitikz} %%%%% Circuit %%%%
+\usetikzlibrary{decorations.pathmorphing,patterns}
+
+\setlength{\unitlength}{1cm}
+
+%%%%%%%%%% Hyperlink %%%%%%%%%%%%%
+
+\hypersetup{
+	colorlinks=true,
+	linkcolor=black,
+	filecolor=mangeta,      
+	urlcolor=blue,
+	pdftitle={Overleaf Example},
+	pdfpagemode=FullScreen,
+}
+
+%%%%%%%%%% Header & Footer %%%%%%%%%%%%%
+
+\setlength{\headheight}{10mm}
+\RequirePackage{fancyhdr}  % Needed to define custom headers/footers
+\RequirePackage{lastpage}  % Number of pages in the document
+\pagestyle{fancy}          % Enables the custom headers/footers
+% Headers
+%\lhead{\includegraphics[width=.8in]{xPhO.png}}%
+\chead{}%
+\rhead{\small\sffamily\bfseries{Phương pháp giải các bài toán dao động} --- \thepage/\pageref{LastPage}}
+% Footers
+\lfoot{}%
+\cfoot{}%
+\rfoot{}%
+\renewcommand{\headrulewidth}{1pt}% % header rule
+\renewcommand{\footrulewidth}{1pt}% % footer rule
+
+% \pagestyle{fancy}
+% 	\fancyhead[L]{\empty}
+% 	\fancyhead[R]{\empty}
+% 	\fancyhead[C]{\empty}
+% 	\fancyfoot[C]{\empty}
+% 	\fancyfoot[L]{\empty}
+% 	\renewcommand{\headrulewidth}{0pt}
+% 	\fancyfoot[C]{\normalcolor{\thepage/\pageref{LastPage}}}
+% 	\setcounter{page}{1}
+
+%%%%%%%%%% Color setup %%%%%%%%%%%%%
+
+\RequirePackage{xcolor}
+\definecolor{wsdred}{HTML}{8E1728}
+\definecolor{wsdgrey}{HTML}{75787B}
+\renewcommand{\normalcolor}{\color{wsdred}}
+\colorlet{ColorOr}{white}
+
+\begin{document}
+
+%% Title %%
+{\fontsize{50}{24}\fontfamily{phv}\fontseries{b}
+\LARGE \normalcolor{ \textbf{Dao động cơ học} } }
+
+\textcolor{blue}{\textbf{\textit{Câu lạc bộ vật lý xPhO}}}
+\vspace{3mm}
+
+Trong phần này, chúng ta sẽ tìm hiểu về chuyển động dao động. Bắt đầu từ những thứ cơ bản nhất như con lắc đơn, đến những hệ phức tạp như dao động liên kết giữa các vật. 
+
+\tableofcontents
+\newpage
+
+
+\section{Dao động hệ 1 chất điểm}
+\subsection{Dao động điều hoà}
+Đầu tiên chúng ta xem xét hệ cơ bản nhất của dao động. Chỉ bao gồm duy nhất 1 chất điểm có khối lượng \(m\). Trong quá trình chuyển động của chất điểm, nó phải chịu một lực có dạng \(F = - k x\). Lực này có đặc điểm luôn hướng về vị trí có \(x = 0\). 
+
+\begin{figure}[!htb]
+    \centering
+    \input{Image/1.1}
+    \caption{}
+    \label{fig:1.1}
+\end{figure}
+
+Ta sẽ dễ dàng viết được phương trình vi phân chuyển động (Hay nói cách khác chính là phương trình định luật II Newton).
+\begin{equation}
+    m \ddot{x} = -kx.
+    \label{eq:1.1}
+\end{equation}
+Từ các phương pháp giải phương trình vi phân, ta có thể thu được nghiệm của phương trình trên.
+\begin{equation}
+    x = A \cos{ \left(\omega t + \varphi \right)}.
+    \label{eq:1.2}
+\end{equation}
+Với \(A\) là biên độ; \(\omega = \sqrt{k/m}\) là tần số góc; \(\varphi\) góc thể hiện vị trí ban đầu. 
+\vspace{4mm}
+
+Ta có nhiều cách để biểu diễn một phương trình dao động tương tự như phương trình \ref{eq:1.2}. Ta có thể biểu diễn phương trình dao động bằng số phức.
+\begin{equation}
+    x^* = A e^{i \left( \omega t + \varphi \right)}.
+    \label{eq:1.2-2}
+\end{equation}
+Cách này không làm thay đổi tính đúng đắn của phương trình dao động và hoàn toàn tương đương phương trình \ref{eq:1.2}. Để giải thích, ta sử dụng công thức Euler.
+\begin{equation*}
+    x^* = A \cos{\left( \omega t + \varphi \right)} + i A \sin{\left( \omega t + \varphi \right)}.
+\end{equation*}
+Ta thấy rằng phương trình \ref{eq:1.2} là phần thực của phương trình \ref{eq:1.2-2}. Ta có liên hệ
+\begin{equation}
+    x = Re (x^*).
+\end{equation}
+\subsection{Dao động có cản}
+Ở hệ dao động trên, chỉ có lực dạng lực lò xo tác dụng lên vật. Vật sẽ chuyển động điều hoà vĩnh viễn. Nhưng trong thực tế, luôn tồn tại những lực ma sát làm suy giảm chuyển động của hệ. 
+
+
+\subsubsection{Lực ma sát khô (ma sát trượt)}
+
+Lực ma sát khô (hay ma sát trượt) là lực có dạng sau. Lực này có đặc điểm luôn ngược chiều với xu hướng chuyển động của hệ vật. Hay nói chính xác hơn là lực này ngược chiều với chiều vận tốc hệ vật. Độ lớn của lực thường là hằng số trong các trường hợp cơ bản.
+
+\begin{equation}
+\begin{array}{ccc}
+    F_1 = - \mu N &\text{Hoặc} & \Vec{F_1} = - \mu N {\displaystyle  \frac{\Vec{v}}{|\Vec{v}|}}. \\
+    \text{Với} \ N = mg & &
+\end{array}
+\label{eq:1.3}
+\end{equation}
+
+\begin{figure}[!htb]
+    \centering
+    \scalebox{0.8}{\input{Image/1.2}}
+    \caption{}
+    \label{fig:1.2}
+\end{figure}
+
+
+Ta thấy rằng, hướng của lực ma sát bị thay đổi trong quá trình chuyển động. Một cách tổng quát, ta có thể sử dụng dạng vector của lực ma sát. Nhưng như thế thì khá khó để giải quyết. Ta sẽ chia thành 2 quá trình, quá trình (1) là khi vật đang đi theo chiều dương; quá trình (2) là khi vật đang đi theo chiều âm.
+
+
+
+\vspace{2mm}
+
+\underline{\textit{Quá trình (1): chuyển động theo chiều dương.}}
+\vspace{2mm}
+
+Khi này, lực ma sát sẽ luôn hướng theo chiều âm trong cả quá trình. Ta viết được phương trình vi phân chuyển động
+\begin{equation}
+    m \ddot{x} =  - k x - \mu  m g.
+    \label{eq:1.4}
+\end{equation}
+Để giải phương trình vi phân này, ta sẽ đặt biến là $u = x + \mu mg/k$. Thực hiện việc đổi biến, ta thu được phương trình
+\begin{equation*}
+    \ddot{u} + {\frac{k}{m} \displaystyle} u = 0.
+\end{equation*}
+Từ đó ta thu được nghiệm có dạng
+\begin{equation}
+    \begin{split}
+        u &= A_n \cos{\left(\sqrt{k/m} \ t + \varphi \right)} \\
+        \Rightarrow x &= A_n \cos{\left(\sqrt{k/m} \ t + \varphi \right)} - {\displaystyle \frac{\mu m g}{k}}.
+    \end{split}
+    \label{eq:1.5}
+\end{equation}
+Phương trình này giống hệ như một phương trình dao động điều hoà. Nhưng vị trí cân bằng bị lệch đi một đoạn $OO' = \mu m g/k$, $O'$ là vị trí cân bằng mới. Điểm $O'$ bị lệch về phía chiều âm so với $O$.
+\begin{figure}[!htb]
+    \centering
+    \input{Image/1.3}
+    \caption{}
+    \label{fig:1.3}
+\end{figure}
+
+Ta sẽ suy ra được một số điều sau
+\begin{enumerate}
+    \item \(O'A_0 = O'A_1 = \alpha\).
+    \item 
+    \(
+    \left\{
+        \begin{array}{ccc}
+        OA_0 &=& \alpha + \mu mg/k. \\ 
+        OA_1 &=& \alpha - \mu mg/k.
+        \end{array}
+    \right.
+    \)
+    
+    Hay sau mỗi \(T/2\) thì biên độ mới và cũ sẽ có sự chênh lệch
+    \(OA_1 = OA_0 - 2 \mu mg/k\).
+\end{enumerate}
+\vspace{2mm}
+
+\underline{\textit{Quá trình (2): chuyển động theo chiều âm.}}
+\vspace{2mm}
+
+Khi này, lực ma sát sẽ luôn hướng theo chiều âm trong cả quá trình. Ta viết được phương trình vi phân chuyển động
+\begin{equation}
+    m \ddot{x} =  - kx + \mu m g.
+    \label{eq:1.6}
+\end{equation}
+Tương tự với quá trình (1), ta đặt biến là $v = x - \mu mg/k$. Ta thu được phương trình
+\begin{equation*}
+    \ddot{v} + {\frac{k}{m} \displaystyle} v = 0.
+\end{equation*}
+Từ đó ta thu được nghiệm có dạng
+\begin{equation}
+    \begin{split}
+        v &= B_n \cos{\left(\sqrt{k/m} \ t + \varphi \right)} \\
+        \Rightarrow x &=  B_n \cos{\left(\sqrt{k/m} \ t + \varphi \right)} + {\displaystyle \frac{\mu m g}{k}}.
+    \end{split}
+    \label{eq:1.7}
+\end{equation}
+
+Phương trình này cũng tương tự như phương trình dao động. Nhưng ở trường hợp này thì vị trí cân bằng bị lệch về phía chiều dương so với $O$, $OO' = \mu mg/k$. 
+
+\begin{figure}[!htb]
+    \centering
+    \input{Image/1.4}
+    \caption{}
+    \label{fig:1.4}
+\end{figure}
+
+Ta sẽ suy ra được một số điều sau
+\begin{enumerate}
+    \item \(O'A_0 = O'A_1 = A\).
+    \item 
+    \(
+    \left\{
+        \begin{array}{ccc}
+        OA_0 &=& A + \mu mg/k. \\ 
+        OA_1 &=& A - \mu mg/k.
+        \end{array}
+    \right.
+    \) 
+
+    Hay sau mỗi \(T/2\) thì biên độ mỡi và cũ sẽ có sự chênh lệch
+    \(OA_1 = OA_0 - 2 \mu mg/k\).
+\end{enumerate}
+
+**Lý do tại sao phải ghi rõ là biên độ thứ n, bởi vì biên độ của vật sẽ giảm dần và khác nhau biệt lẫn nhau. Biên độ sẽ bị thay đổi ở mỗi "nửa" chu kỳ. 
+\vspace{2mm}
+
+\underline{\textit{Ví dụ trực quan}}
+
+Chúng ta sẽ xét một ví dụ đơn giản (hình \ref{fig:1.5}) để có thể hiểu tốt phần này. Ta thả một vật cách vị trí lò xo đang co và cách vị trí không giãn một đoạn $A_0$.
+\vspace{2mm}
+
+\begin{enumerate}[label = \textbullet]
+    \item Khi từ trạng thái (A) sang trạng thái (B). Thì biên độ của vật giảm \(2\mu mg/k \). \\ Hay \(A_0 - A_1 = 2 \mu mg/k\). Quá trình này tốn nửa chu kỳ.
+    \item Khi đi từ trạng thái (B) sang trạng thái (C). Thì biên độ của vật cũng giảm \(2\mu mg/k \). \\ Hay \(A_1 - A_2 = 2 \mu mg/k\). Quá trình này tốn nửa chu kỳ.
+\end{enumerate}
+
+
+
+
+\begin{figure}[!htb]
+    \centering
+    \scalebox{0.8}{\input{Image/1.5}}
+    \caption{}
+    \label{fig:1.5}
+\end{figure}
+
+Vậy thì ta có công thức liên hệ giữa các biên độ liền kề nhau.
+
+\begin{equation}
+    A_{k+1} = A_{k} - 2 \mu mg/k.
+\end{equation}
+
+
+\subsubsection{Lực ma sát nhớt}
+\label{sec:1.2.2}
+
+\begin{figure}[!htb]
+    \centering
+    \input{Image/1.6}
+    \caption{}
+\end{figure}
+
+Lực ma sát nhớt sẽ bị phụ vào độ lớn và hướng của vận tốc hệ vật theo biểu thức sau. Ở đây lực ma sát nhớt mà chúng ta khảo sát là lực phụ thuộc bậc 1 vào vận tốc hệ vật\footnote{Tồn tại lực ma sát nhớt phụ thuộc bậc 2 vào vận tốc vật. Nhưng trong bài toán này ta không xét tới.}. 
+\begin{equation}
+    \vec{F}_2 = - b \vec{v}.
+    \label{eq:1.8}
+\end{equation}
+Ta có thể viết được phương trình vi phân chuyển động của nó.
+\begin{equation*}
+    m \ddot{x} = - k x - b \dot{x}.
+\end{equation*}
+Đây chính là phương trình vi phân bậc 2, để trở thành đúng dạng đã học thì ta sẽ ghi thành
+\begin{equation}
+    \ddot{x} + {\displaystyle \frac{b}{m}} \dot{x} + {\displaystyle \frac{k}{m}} x = 0. 
+    \label{eq:1.9}
+\end{equation}
+Ta giả sử \(x = A e^{\lambda t}\). Thay nó vào phương trình \ref{eq:1.9}. Ta đặt \(b/m = 2 \gamma\), \(\omega = \sqrt{k/m}\).
+\begin{equation*}
+    \lambda^2 + (2\gamma) \lambda + \omega^2 = 0.
+\end{equation*}
+
+Tính \(\Delta\) của phương trình bậc 2, ta thu được
+\begin{equation}
+    \Delta = 4 \gamma^2 - 4 \omega^2
+    \label{eq:1.10}
+\end{equation}
+\vspace{2mm}
+
+\underline{\textit{Trường hợp (1): $\Delta$ < 0 - Lực cản nhỏ}}
+
+Ta thu được \(\lambda\) và nghiệm tổng quát của phương trình vi phân.
+\begin{equation}
+    \left\{
+    \begin{array}{ccc}
+    \lambda &=& - \gamma \pm  i \sqrt{\omega^2 - \gamma^2} \\
+    x &=& e^{-\gamma t} \left(A e^{i\sqrt{\omega^2 - \gamma^2} \ t} + B e^{- i\sqrt{\omega^2 - \gamma^2} \ t} \right).
+    \end{array}
+    \right.
+    \label{eq:1.11}
+\end{equation}
+
+Nhưng kết quả ta thu được buộc phải là số thực, vậy nên các hằng số $A, B$ sẽ đảm bảo cho $x$ là một số thực. Cụ thể thì $A$ và $B$ phải có liên hệ
+\begin{equation*}
+    \left\{
+    \begin{array}{ccc}
+    A + B &=& C \cos \phi \\
+    A - B &=& i C \sin \phi
+    \end{array}
+    \right.
+\end{equation*}
+Vậy thì ta sẽ thu được nghiệm tổng quát \(x\) như sau
+\begin{equation}
+\begin{split}
+    x = e^{-\gamma t} C \cos{\left(\sqrt{\omega^2 - \gamma^2} \ t + \phi \right)}
+\end{split}
+\label{eq:1.12}
+\end{equation}
+
+\begin{figure}[!htb]
+    \centering
+    \begin{tikzpicture}[scale=1]
+      \begin{axis}[
+          domain=0:5,
+          samples=100,
+          axis lines=middle,
+          xlabel=$t$,
+          ylabel=$x$
+        ]
+        \addplot[blue, thick, dash pattern=on 5pt off 2pt] {e^(-x)};
+        \addplot[blue, thick, dash pattern=on 5pt off 2pt] {-e^(-x)};
+        \addplot[blue, thick] {e^(-x)*cos(deg(5*x + 5))};
+      \end{axis}
+    \end{tikzpicture}
+    \caption{Hàm \(e^{-t} \cos{\left(5t + 5 \right)}\)}
+    \label{fig:1.6}
+\end{figure}
+
+\newpage
+\vspace{2mm}
+
+\underline{\textit{Trường hợp (2): \(\Delta\) > 0 - Lực cản lớn}}
+
+Ta thu được \(\lambda\) và nghiệm tổng quát của phương trình vi phân.
+\begin{equation}
+    \left\{
+    \begin{array}{ccc}
+    \lambda &=& - \gamma \pm   \sqrt{\gamma^2 - \omega^2} \\
+    x &=& A e^{- \left( \gamma - \sqrt{\gamma^2 - \omega^2}\right)  t} + B e^{- \left( \gamma + \sqrt{\gamma^2 - \omega^2}\right) t}.
+    \end{array}
+    \right.
+    \label{eq:1.13}
+\end{equation}
+
+Trong trường hợp lực cản lớn, vật sẽ không thực hiện quá trình dao động. Mà bị tắt dần (nhưng chậm).
+
+\begin{figure}[!htb]
+    \centering
+    \begin{tikzpicture}[scale=1]
+      \begin{axis}[
+          domain=0:2,
+          samples=100,
+          axis lines=middle,
+          xlabel=$t$,
+          ylabel=$x$
+        ]
+        \addplot[blue, thick] {20*e^(-(5-2)*x) +10*e^(-(5+2)*x};
+      \end{axis}
+    \end{tikzpicture}
+    \caption{Hàm \(20 e^{-(5-2)t} + 10 e^{-(5+2)t}\)}
+    \label{fig:1.7}
+\end{figure}
+\vspace{2mm}
+
+\underline{\textit{Trường hợp (3): \(\Delta = 0\) - Tới hạn}}
+
+Trong trường hợp này, khi ta giải phương trình bậc 2 nó sẽ bị trùng nghiệm. Và ta sẽ không thể áp dụng cách đã làm với trường hợp (1) và (2) vào đây được. Lúc này, dựa vào lý thuyết để giải phương trình vi phân, ta sẽ biết dạng tổng quát của \(x\). Chuyển động sẽ tắt dần rất nhanh. 
+\begin{equation}
+    \left\{
+    \begin{array}{ccc}
+    \lambda &=& \omega = \gamma \\
+    x &=& e^{-\gamma t} \left( A + B t\right).
+    \end{array}
+    \right.
+    \label{eq:1.14}
+\end{equation}
+
+\begin{figure}[!htb]
+    \centering
+    \begin{tikzpicture}[scale=1]
+      \begin{axis}[
+          domain=0:2,
+          samples=100,
+          axis lines=middle,
+          xlabel=$t$,
+          ylabel=$x$
+        ]
+        \addplot[blue, thick] {e^(-5*x)*(20 + 10*x)};
+      \end{axis}
+    \end{tikzpicture}
+    \caption{Hàm \(e^{-5t} \left(20 + 10t\right)\)}
+    \label{fig:1.8}
+\end{figure}
+\vspace{2mm}
+
+Tóm lại, với trường hợp có lực cản nhớt trong hệ thì ta có một vài trường hợp xảy ra. Từ đấy, ta tổng hợp thành một bảng. Xét phương trình đặc trưng của phương trình vi phân bậc 2 là:
+\begin{equation*}
+    a\lambda^2 + b\lambda + c = 0 
+\end{equation*}
+
+\begin{table}[!htb]
+    \centering
+    \caption{Tóm tắt nghiệm}
+    \input{Image/1.7}
+    \label{tab:1.7}
+\end{table}
+
+**Trong đó, \(A, B, C, \phi\) là những hằng số dựa vào những điều kiện biên đề cho.
+
+\subsection{Dao động có lực cưỡng bức}
+Khi này, hệ vật chịu thêm một lực từ một nguồn khác. Lực này có dạng là một dạng lực điều hoà.
+\begin{equation}
+    F(t) = F_0 \cos{\left(\Omega t + \phi \right)}.
+    \label{eq:1.15}
+\end{equation}
+
+\begin{figure}[!htb]
+    \centering
+    \input{Image/1.8}
+    \caption{}
+    \label{fig:1.9}
+\end{figure}
+
+Lực này cưỡng bức vật và khiến cho chuyển động theo có xu hướng theo chu kỳ của lực cưỡng bức. Ta viết phương trình vi phân chuyển động của hệ.
+\begin{equation}
+    m \ddot{x} + b \dot{x} + k x  = F_0 \cos{\left(\Omega t + \phi \right)}.
+    \label{eq:1.16}
+\end{equation}
+Để giải quyết phương trình này, ta sẽ giải lần lượt nghiệm thuần nhất và nghiệm riêng của nó.
+\vspace{2mm}
+
+\underline{\textit{Nghiệm thuần nhất}}
+
+Đặt nghiệm thuần nhất là \(x_{tn}\). Ta sẽ giải phương trình sau.
+\begin{equation}
+    \ddot{x}_{tn} + {\displaystyle \frac{b}{m}} \dot{x}_{tn} + {\displaystyle \frac{k}{m}} x_{tn} = 0.
+    \label{eq:1.17}
+\end{equation}
+Phương trình này sẽ được giải quyết giống như mục (\ref{sec:1.2.2}). 
+\vspace{2mm}
+
+\underline{\textit{Nghiệm riêng}}
+
+Đặt nghiệm riêng là \(x_r\). Nghiệm riêng sẽ mang đặc trưng của lực cưỡng bức. Hiểu đơn giản là nếu thế $x_r$ vào vế trái phương trình \ref{eq:1.16} nó sẽ thu gọn thành vế phải. Vì \(x_r\) mang đặc trưng của hàm lực cưỡng bức nên ta giả sử \(x_r\) có dạng sau.
+\begin{equation}
+    x_r = A \cos{\left(\Omega t + \phi\right)} + B \sin{\left(\Omega t + \phi \right)}.
+    \label{eq:1.18}
+\end{equation}
+
+Thế phương trình \ref{eq:1.18} vào phương trình \ref{eq:1.16}. Rồi ta đồng nhất hai vế. Ở đây, đồng nhất hai vế là hệ số đi với cos() ở hai vế sẽ bằng nhau; hệ số đi với sin() ở hai vế sẽ bằng nhau.
+
+\begin{equation*}
+    \left(-A \Omega^2 + {\displaystyle \frac{b}{m}} B \Omega + {\displaystyle \frac{k}{m}} A  \right) \cos{\left(\Omega t + \phi \right)} + \left(-B \Omega^2 - {\displaystyle \frac{b}{m}} A \Omega + {\displaystyle \frac{k}{m}} B \right) \sin{\left(\Omega t + \phi\right)} = {\displaystyle \frac{F_0}{m}} \cos{\left(\Omega t + \phi \right)}.
+\end{equation*}
+Đồng nhất ta có
+\begin{equation*}
+\left\{
+    \begin{array}{ccc}
+    -A \Omega^2 + {\displaystyle \frac{b}{m}} B \Omega + {\displaystyle \frac{k}{m}} A  &=& {\displaystyle \frac{F_0}{m}} 
+    \\
+    \\
+    -B \Omega^2 - {\displaystyle \frac{b}{m}} A \Omega + {\displaystyle \frac{k}{m}} B  &=& 0.
+    \end{array}
+\right.         
+\end{equation*}
+Để dễ biểu diễn, ta đặt \(c = b/m; \omega^2 = k/m\)
+\begin{equation}
+    \begin{array}{ccc}
+    A &=& \displaystyle \frac{F_0}{m} \frac{\omega^2 - \Omega^2}{\left(\omega^2 - \Omega^2 \right)^2 + \left( c \Omega \right)^2}. 
+    \\
+    \\
+    B &=& \displaystyle \frac{F_0}{m} \frac{c \Omega}{\left(\omega^2 - \Omega^2 \right)^2 + \left( c \Omega \right)^2}.
+    \end{array}
+    \label{eq:1.19}
+\end{equation}
+Vậy ta sẽ tìm được dạng của nghiệm riêng khi thế \(A, B\) vào phương trình \ref{eq:1.18}. 
+\vspace{2mm}
+
+\underline{\textit{Nghiệm tổng quát}}
+
+Đặt nghiệm tổng quát là \(x\), ta sẽ tính được nghiệm tổng quát bằng biểu thức
+\begin{equation}
+    x = x_{tn} + x_r.
+\end{equation}
+
+Đây là lý thuyết trong việc giải các phương trình vi phân. Nghiệm tổng quát của phương trình vi phân tuyến tính sẽ là tổng các nghiệm. Một chú thích của mình để khiến cho các bạn đọc thấy được điều này một các trực quan hơn
+\begin{equation*}
+\begin{array}{cc}
+    &m (\ddot{x}_{tn} + \ddot{x}_r) + b (\dot{x}_{tn} + \dot{x}_r) + k (x_{tn} + x_{r})  = F_0 \cos{\left(\Omega t + \phi \right)}. 
+    \\
+    \\
+    
+    \Leftrightarrow &  \left( \ddot{x}_{tn} + {\displaystyle \frac{b}{m}} \dot{x}_{tn} + {\displaystyle \frac{k}{m}} x_{tn}\right) + \left(    \ddot{x}_{r} + {\displaystyle \frac{b}{m}} \dot{x}_{r} + {\displaystyle \frac{k}{m}} x_{r} \right) = 0 +{\displaystyle \frac{F_0}{m}} \cos{\left(\Omega t + \phi \right)}.
+\end{array}
+\end{equation*}
+Thành phần thuần nhất sẽ bằng \(0\) còn thành phần riêng sẽ tạo ra hàm lực cưỡng bức.
+\subsection{Giản đồ Fresnel}
+Giản đồ Fresnel là cách biểu diễn một phương trình dao động trên một mặt phẳng \(Oxy\). 
+\begin{figure}[!htb]
+    \centering
+    \input{Image/1.9}
+    \caption{}
+    \label{fig:1.10}
+\end{figure}
+Trên giản đồ, vector biểu diễn sự dao động của hệ sẽ xoay quanh gốc toạ độ với vận tốc góc \(\omega\), độ dài vector là \(A\). 
+\vspace{2mm}
+
+Nếu vật thể là tổng hợp của nhiều dao động điều hoà
+\begin{equation*}
+    x = x_1 + x_2 + x_3 + ... + x_n
+\end{equation*}
+Thì trên giản đồ, vector biểu diển cho \(x\) sẽ là tổng vector các thành phần dao động điều hoà.
+\begin{figure}[!htb]
+    \centering
+    \input{Image/1.10}
+    \caption{}
+    \label{fig:1.11}
+\end{figure}
+\subsection{Toạ độ suy rộng (giới thiệu)}
+\label{sec:1.5}
+Trong các cơ hệ, biến của phương trình vi phân không nhất thiết là toạ độ dịch chuyển \(x\). Nó có thể là các đại lượng khác như 
+\begin{equation*}
+    \begin{array}{cl}
+    \theta & \text{góc lệch} \\
+    x_1 + x_2 & \text{tổng hợp các dao động thành phần (giống hình \ref{fig:1.11})} 
+    \end{array}
+\end{equation*}
+Ta gọi chung các toạ độ suy rộng là \(q\). Nếu lúc đấy ta phương trình vi phân sau, thì ta vẫn nói hệ tuân theo quy luật dao động điều hoà.
+\begin{equation}
+    \ddot{q} + \omega^2 q = 0.
+    \label{eq:1.20}
+\end{equation}
+**\textit{Tìm một ví dụ cho toạ độ suy rộng \(x_1 + x_2\) dao động điều hoà trong trường hợp của hình \ref{fig:1.11}.}
+
+\section{Dao động hệ nhiều chất điểm liên kết}
+Bây giờ hệ sẽ không chỉ gồm một chất điểm duy nhất dao động. Hệ có thể bao gồm 2, 3 hoặc nhiều chất điểm dao động hơn. Điểm khác biệt dễ thấy nhất là không chỉ có 1 phương trình động lực học, nhưng bây giờ sẽ là một hệ phương trình vi phân gồm n ẩn. 
+\vspace{2mm}
+
+Ta sẽ đi từ những ví dụ đơn giản, nơi mà chúng ta sẽ dùng trực quan toán học và vật lý để giải quyết. Sau đó, ta sẽ nói về các phương pháp dùng để giải quyết một các (tương đối) tổng quát.
+
+\subsection{Hệ 2 chất điểm 3 lò xo}
+\begin{figure}[!htb]
+    \centering
+    \input{Image/2.1}
+    \caption{}
+    \label{fig:2.1}
+\end{figure}
+
+Trong hệ này ta có các khối lượng \(m_1, m_2\) được liên kết với nhau bằng lò xo \(k_2\). Coi như hệ lý tưởng và tại vị trí như hình \ref{fig:2.1} các lo xò đang ở trạng thái tự nhiên. Ta xét trường hợp cơ bản với các giả thiết sau: \(m_1 = m_2 = m\), \(k_1 = k_3\). 
+\vspace{2mm}
+
+Phương trình động lực học cho từng chất điểm là
+\begin{equation*}
+    \begin{array}{ccc}
+        m_1: & m \ddot{x}_1 &= - k_1 x_1 + k_2 (x_2 - x_1) \\
+        m_2: & m \ddot{x}_2 &= - k_3 x_2 - k_2 (x_2 - x_1)
+    \end{array}
+\end{equation*}
+Để giải quyết phương trình này, ta lần lượt cộng 2 phương trình; trừ 2 phương trình với nhau.
+\begin{equation}
+    \left\{
+    \begin{array}{ccc}
+    m ( \ddot{x}_1 + \ddot{x}_2) &=& - k_1 (x_1 + x_2).   \\
+    m ( \ddot{x}_1 - \ddot{x}_2) &=& - (k_1 +2 k_2) (x_1 +x_2).
+    \end{array}
+    \right.
+    \label{eq:2.1}
+\end{equation}
+Như mục \ref{sec:1.5}, ta đặt \(q_1 = x_1 + x_2\) và \(q_2 = x_1 - x_2\). Ta sẽ có hệ phương trình.
+\begin{equation}
+    \left\{
+    \begin{array}{ccl}
+    \ddot{q}_1 + \omega_1^2 q_1 &= 0 & \ , \text{với} \ \omega_1^2 = k_1/m \\
+    \ddot{q}_2 + \omega_2^2 q_2 &= 0 & \ , \text{với} \ \omega_2^2 = (k_1+2k_2)/m
+    \end{array}
+    \right.
+    \label{eq:2.2}
+\end{equation}
+Sau đấy ta có hệ phương trình
+\begin{equation}
+    \left\{ 
+    \begin{array}{ccc}
+    q_1 = x_1 + x_2 &=& A \cos{\left( \omega_1 t + \varphi_1\right)} \\
+    q_2 = x_1 - x_2 &=& B \cos{\left( \omega_2 t + \varphi_2 \right)}
+    \end{array}
+    \right.
+    \label{eq:2.3}
+\end{equation}
+Tương đương
+\begin{equation}
+    \left\{ 
+    \begin{array}{ccc}
+    x_1 &=& \frac12 \left(A \cos{\left( \omega_1 t + \varphi_1\right)} + B \cos{\left( \omega_2 t + \varphi_2 \right)} \right) \\
+    \\
+    x_2 &=& \frac12 \left(A \cos{\left( \omega_1 t + \varphi_1\right)} - B \cos{\left( \omega_2 t + \varphi_2 \right)} \right)
+    \end{array}
+    \right.
+\end{equation}
+Nhận xét: ở đây ta có thể thấy rằng toạ độ \(x_1\) là tổng hợp của hai dao động điều hoà \(q_1, q_2\) (tương tự với \(x_2\)). 
+
+\subsection{Toạ độ trực giao}
+Chúng ta đã giải quyết bài toán dao động liên kết ở trên bằng một số mẹo toán học. Ta nhận thấy rằng, nếu chỉ xét riêng toạ độ \(x_1\) hoặc \(x_2\) thì hệ sẽ không tạo nên một dao động điều hoà cơ bản. Nhưng nếu ta sử dụng toạ độ suy rộng \(q_1, q_2\) thì ta lại có thể giải quyết được. Người ta gọi các toạ độ thoả tính chất giống \(q_1, q_2\) là các toạ độ trực giao trong dao động liên kết. 
+\vspace{2mm}
+
+Các toạ độ trực giao sẽ khiến phương trình vi phân trở thành dạng như phương trình \ref{eq:1.20}. 
+\end{document}

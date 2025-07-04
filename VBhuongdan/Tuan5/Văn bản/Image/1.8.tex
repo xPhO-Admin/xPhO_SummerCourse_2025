@@ -1,0 +1,77 @@
+
+
+
+% Pattern Info
+ 
+\tikzset{
+pattern size/.store in=\mcSize, 
+pattern size = 5pt,
+pattern thickness/.store in=\mcThickness, 
+pattern thickness = 0.3pt,
+pattern radius/.store in=\mcRadius, 
+pattern radius = 1pt}
+\makeatletter
+\pgfutil@ifundefined{pgf@pattern@name@_o3npe040r}{
+\pgfdeclarepatternformonly[\mcThickness,\mcSize]{_o3npe040r}
+{\pgfqpoint{0pt}{0pt}}
+{\pgfpoint{\mcSize+\mcThickness}{\mcSize+\mcThickness}}
+{\pgfpoint{\mcSize}{\mcSize}}
+{
+\pgfsetcolor{\tikz@pattern@color}
+\pgfsetlinewidth{\mcThickness}
+\pgfpathmoveto{\pgfqpoint{0pt}{0pt}}
+\pgfpathlineto{\pgfpoint{\mcSize+\mcThickness}{\mcSize+\mcThickness}}
+\pgfusepath{stroke}
+}}
+\makeatother
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,15225); %set diagram left start at 0, and has height of 15225
+
+%Straight Lines [id:da03890405315517542] 
+\draw [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ]   (77.5,595.22) -- (78,680.22) ;
+%Straight Lines [id:da6771080202521618] 
+\draw [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ]   (303.5,680.22) -- (78,680.22) ;
+%Shape: Rectangle [id:dp8957593748114105] 
+\draw  [draw opacity=0][pattern=_o3npe040r,pattern size=6pt,pattern thickness=0.75pt,pattern radius=0pt, pattern color={rgb, 255:red, 0; green, 0; blue, 0}] (77.5,595.22) -- (52.5,595.22) -- (52.5,680.22) -- (77.5,680.22) -- cycle ;
+%Shape: Resistor [id:dp9587285208573366] 
+\draw  [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ] (77.75,621.72) -- (94.4,621.72) -- (98.1,612.84) -- (105.5,630.59) -- (112.9,612.84) -- (120.3,630.59) -- (127.7,612.84) -- (135.1,630.59) -- (142.5,612.84) -- (149.9,630.59) -- (153.6,621.72) -- (170.25,621.72) ;
+%Shape: Square [id:dp46764462046986255] 
+\draw  [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ] (170.5,595.22) -- (255.5,595.22) -- (255.5,680.22) -- (170.5,680.22) -- cycle ;
+%Straight Lines [id:da1727736810609144] 
+\draw [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ]   (322.5,710.22) -- (216.5,710.22) ;
+\draw [shift={(216.5,710.22)}, rotate = 360] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ][line width=0.75]    (0,5.59) -- (0,-5.59)   ;
+\draw [shift={(325.5,710.22)}, rotate = 180] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ][line width=0.08]  [draw opacity=0] (8.93,-4.29) -- (0,0) -- (8.93,4.29) -- cycle    ;
+%Straight Lines [id:da5324610265708711] 
+\draw [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ]   (216.5,710.22) -- (107.5,710.22) ;
+%Straight Lines [id:da24682222137677545] 
+\draw [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ]   (78.5,668.22) -- (114.5,668.22) ;
+%Straight Lines [id:da08809092762479498] 
+\draw [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ]   (131.5,668.22) -- (169.5,668.22) ;
+%Shape: Rectangle [id:dp729685852038932] 
+\draw  [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ][fill={rgb, 255:red, 155; green, 155; blue, 155 }  ,fill opacity=1 ][line width=0.75]  (129.42,664.02) -- (135.5,664.02) -- (135.5,673.22) -- (129.42,673.22) -- cycle ;
+%Straight Lines [id:da9203533268837498] 
+\draw [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ][line width=0.75]    (114,660.62) -- (139.96,660.62) ;
+%Straight Lines [id:da1854839912471089] 
+\draw [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ][line width=0.75]    (114.51,660.22) -- (114.51,676.22) ;
+%Straight Lines [id:da7739527238409212] 
+\draw [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ][line width=0.75]    (114.51,675.82) -- (140.47,675.82) ;
+
+%Straight Lines [id:da7046823744172879] 
+\draw [line width=2.25]    (255,641) -- (294.5,641) ;
+\draw [shift={(299.5,641)}, rotate = 180] [fill={wsdred}  ][line width=0.08]  [draw opacity=0] (14.29,-6.86) -- (0,0) -- (14.29,6.86) -- cycle    ;
+
+% Text Node
+\draw (119,585.22) node [anchor=north west][inner sep=0.75pt]   [align=left] {\textcolor{black}{k}};
+% Text Node
+\draw (213,637.72) node   [align=left] {M};
+% Text Node
+\draw (216.5,717) node [anchor=north] [inner sep=0.75pt]   [align=left] {\textcolor{black}{O}};
+% Text Node
+\draw (118,637.22) node [anchor=north west][inner sep=0.75pt]   [align=left] {\textcolor{black}{b}};
+% Text Node
+\draw (291,601) node [anchor=north west][inner sep=0.75pt]    {$\vec{F} \ =\ F_{0} \ \cos( \si{\ohm}t + \phi) \ \overrightarrow{e_{x}}$};
+
+
+\end{tikzpicture}
