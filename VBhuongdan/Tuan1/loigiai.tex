@@ -26,4 +26,50 @@ và biểu thức này trở thành, sau khi ta thay các giá trị sine/cosine
 Sử dụng định lý Pythagoras, ta chứng minh được đẳng thức còn lại.
 
 \vspace{5pt}
-\textbf{Bài 1.4:}
+\textbf{Bài 1.5:}
+
+\vspace{5pt}
+\textbf{Bài 1.11:}
+\begin{enumerate}[label=(\alph*)]   
+    \item Hàm số liên tục tại \(x=4\). Vậy nên \[\lim_{x\rightarrow 4}\frac{5x+2}{2x+3}=\frac{5\times 4+2}{2\times 4+3}=2.\]
+    \item Ta thấy hàm số có dạng vô định \(\frac{\infty}{\infty}\) khi \(x\rightarrow\infty\). Một phương pháp điển hình để giải quyết tình huống này đó là chia bậc lớn nhất của \(x\) cho cả tử và mẫu, mà ở đây là bậc một. Khi đó, \[\lim_{x\rightarrow\infty}\frac{3x+5}{2x+7}=\lim_{x\rightarrow\infty}\frac{3+\frac{5}{x}}{2+\frac{7}{x}}=\frac{3}{2}.\] 
+    \item Giới hạn của hàm số này cũng có dạng vô định \(\frac{\infty}{\infty}\). Tương tự, ta chia bậc lớn nhất của \(x\) cho cả tử và mẫu, mà ở đây là bậc ba. Khi đó, \[\lim_{x\rightarrow\infty}\frac{x^3 +2x^2 +3x+4}{4x^3 +3x^2 +2x+1}=\lim_{x\rightarrow\infty}\frac{1+\frac{2}{x}+\frac{3}{x^2}+\frac{4}{x^3}}{4+\frac{3}{x}+\frac{2}{x^2}+\frac{1}{x^3}}=\frac{1}{4}.\]
+    \item Ta cũng có dạng vô định \(\frac{\infty}{\infty}\). Chia bậc lớn nhất  \(x^4\) cho cả tử và mẫu . Khi đó, \[\lim_{x\rightarrow\infty}\frac{3x^4 -2}{\sqrt{x^8+3x+4}}=\lim_{x\rightarrow\infty}\frac{3-\frac{2}{x^4}}{\sqrt{1+\frac{3}{x^7}+\frac{4}{x^8}}}=\frac{3}{1}=3.\]
+    \item Ta có thể viết lại biểu thức này như sau: \[\lim_{x\rightarrow\infty}\sqrt{x^2 +8x+3}-\sqrt{x^2+4x+3}=\lim_{x\rightarrow\infty}\frac{(x^2 +8x+3)-(x^2+4x+3)}{\sqrt{x^2 +8x+3}+\sqrt{x^2+4x+3}}.\] Khi đó, chia bậc lớn nhất \(x\) cho cả tử và mẫu, và thu được, \[\lim_{x\rightarrow\infty}\frac{4}{\sqrt{1+\frac{8}{x}+\frac{3}{x^2}}+\sqrt{1+\frac{4}{x}+\frac{3}{x^2}}}=\lim_{x\rightarrow\infty}\frac{4}{2}=2.\]
+    \item Giới hạn của hàm số này, nếu thay trực tiếp \(x=3\) sẽ có dạng vô định \(\frac{0}{0}\). Một phương pháp điển hình để giải quyết tình huống này, nếu có thể, là khử đi các nhân tử chung trong tử và mẫu. Dễ thấy, \[\lim_{x\rightarrow 3}\frac{x^2 -9}{x^2-3x}=\lim_{x\rightarrow 3}\frac{(x-3)(x+3)}{(x-3)x}=\lim_{x\rightarrow 3}\frac{x+3}{x}=6.\]  
+    \item Giới hạn của hàm số này, nếu thay trực tiếp, cũng có dạng vô định \(\frac{0}{0}\). Triển khai tương tự, ta thu được \[\lim_{x\rightarrow 1}\frac{x^3 -x^2 -x+1}{x^3+x^2 -x-1}=\lim_{x\rightarrow 1}\frac{(x-1)(x^2+x+1)}{(x-1)(x^2+2)}=\lim_{x\rightarrow 1}\frac{x^2+x+1}{x^2+2}=1.\]
+    \item Để khử nhân tử chung, trước tiên, nhân liên hợp tử và mẫu với \(\sqrt{1+x+x^2}+\sqrt{7+2x-x^2}\). Như vậy, ta có thể viết lại giới hạn này như sau: \[\lim_{x\rightarrow 2}\frac{(1+x+x^2)-(7+2x-x^2)}{(x^2-2x)(\sqrt{1+x+x^2}+\sqrt{7+2x-x^2})}.\] Kết quả thu được là \[\lim_{x\rightarrow 2}\frac{(2x+3)(x-2)}{x(x-2)(\sqrt{1+x+x^2}+\sqrt{7+2x-x^2})}=\frac{\sqrt{7}}{4}.\]    
+\end{enumerate}
+\vspace{5pt}
+
+\textbf{Bài 1.12:}
+\begin{enumerate}[label=(\alph*)]
+\item \[\lim_{x\rightarrow 0}\frac{\sin mx}{x}=m\lim_{x\rightarrow 0}\frac{\sin mx}{mx}=m.\]
+\item Sử dụng kết quả của \textbf{Bài 1.5}, ta có \[\cos 5x =\cos^2 \left(\frac{5x}{2}\right)-\sin^2\left(\frac{5x}{2}\right)=1-2\sin^2\left(\frac{5x}{2}\right).\] Thay vào giới hạn, kết quả thu được là \[\lim_{x\rightarrow 0}\frac{2\sin^2\left(\frac{5x}{2}\right)}{x^2}=2\times\frac{25}{4}\lim_{x\rightarrow 0}\frac{\sin^2 \left(\frac{5x}{2}\right)}{\left(\frac{5x}{2}\right)^2}=\frac{25}{2}.\]
+\item Hướng giải quyết ở đây sẽ là đưa giới hạn hàm số này về giới hạn đáng nhớ (b): 
+\begin{align*}
+    \lim_{x\rightarrow\infty}\left(\frac{x^2+5x+4}{x^2-3x+7}\right)^x&=\lim_{x\rightarrow\infty}\left(1+\frac{8x-3}{x^2 -3x+7}\right)^{\frac{x^2-3x+7}{8x-3}\cdot\frac{8x^2-3x}{x^2-3x+7}}\\ &=
+\lim_{x\rightarrow\infty}\left(\left(1+\frac{8x-3}{x^2 -3x+7}\right)^{\frac{x^2-3x+7}{8x-3}}\right)^{\frac{8x^2-3x}{x^2-3x+7}}.
+\end{align*}
+ Dễ thấy, \[\lim_{x\rightarrow\infty}\frac{8x^2-3x}{x^2-3x+7}=8,\] và \[\lim_{x\rightarrow\infty}\frac{x^2-3x+7}{8x-3}=\infty.\] Thành thử, kết quả thu được là \[\lim_{x\rightarrow\infty}\left(\frac{x^2+5x+4}{x^2-3x+7}\right)^x=e^8.\] 
+\item Tương tự, kết quả sẽ thu được là \(\sqrt{e}\).
+\end{enumerate}
+\vspace{5pt}
+
+\textbf{Bài 1.13:}  
+\begin{enumerate}[label=(\alph*)]   
+    \item \(\frac{1}{3}\)
+    \item \(-\frac{1}{2}\)
+    \item \(\frac{9}{25}\)
+\end{enumerate}
+\vspace{5pt}
+
+\textbf{Bài 1.14:}
+\begin{enumerate}[label=(\alph*)]
+\item \[y' =\frac{1}{\sqrt{x^2+1}}.\]
+\item \[y'= \frac{\cos x}{\sqrt{4\sin^2 x -1}}.\]
+\item \[y'= \sqrt{x^2+k}.\]
+\item \[y'=\frac{\tan^2 x+1}{\sqrt{\tan x (4\tan x +1)}}\ln \left(8\tan x +4\sqrt{\tan x (4\tan x +1)}+1\right).\]
+\item \[y'=\sqrt{x^2 +2\alpha x +\beta}.\]
+\item \[y'=\frac{4\sqrt{x\left(x+\sqrt{x}\right)}+2\sqrt{x}+1}{8\sqrt{\left(x+\sqrt{x+\sqrt{x}}\right)(x+\sqrt{x})x}}.\]
+\end{enumerate}  
