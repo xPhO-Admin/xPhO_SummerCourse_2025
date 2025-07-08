@@ -1,3 +1,5 @@
+Phần này cung cấp cho người đọc một công cụ toán học mạnh mẽ để mô tả các đối tượng toán học phức tạp với khả năng nén thông tin cao. 
+
 \subsection{Giới thiệu về ma trận}
 Ta xét bảng số sau:
 \[ \mathbf{A}=
@@ -167,7 +169,7 @@ Các tổng này, như đã biết, có thể được viết thành tích của
 2\\-3\\1
 \end{bmatrix}.\] Quan sát phương trình này, ta nhận thấy sự lặp của \(\mathbf{B}\); điều này liên tưởng ta đến một phép nhân. 
 Tức là, ta có thể viết 
-\[\begin{bmatrix}
+\begin{equation}\begin{bmatrix}
     2\\5\\-4
 \end{bmatrix}=\mathbf{B}\begin{bmatrix}
     1&-1.625&-7.875\\
@@ -175,7 +177,7 @@ Tức là, ta có thể viết
     1&-2.125&-6.375
 \end{bmatrix}\begin{bmatrix}
     2\\-3\\1
-\end{bmatrix},\] bằng cách định nghĩa một phép nhân mới, và ta gọi phép nhân này là một phép nhân ma trận với ma trận.
+\end{bmatrix},\end{equation}\label{eqmatrix} bằng cách định nghĩa một phép nhân mới, và ta gọi phép nhân này là một phép nhân ma trận với ma trận.
 \vspace{8pt}
 
 Xét một ma trận \(\mathbf{A}_{m\times n}\) và một ma trận \(\mathbf{C}_{n\times p}\), \emph{tích của của chúng là một ma trận \(\mathbf{C}_{m\times p}\); các cột của ma trận này là các vector, bằng với tích ma trận-vector của ma trận \(\mathbf{A}\) và các cột tương ứng  của ma trận \(B\).}
@@ -186,6 +188,8 @@ Xét một ma trận \(\mathbf{A}_{m\times n}\) và một ma trận \(\mathbf{C}
     \mathbf{C}_{ij}=\mathbf{AB}_{ij}=\sum_{k=1}^n \mathbf{A}_{ik}\mathbf{B}_{kj}.
 \end{equation}\label{eq2.2.2}
 Hay, nói cách khác, phần tử thứ \((i,j)\) của \(\mathbf{C}\) bằng tích vô hướng của hàng thứ \(i\) của ma trận \(\mathbf{A}\) với cột thứ \(j\) của ma trận \(\mathbf{B}\).
+
+Một phương trình vector mà ta thường gặp tương đương với ba (hoặc hai) phương trình đại số. Còn, như ta đã thấy, phương trình \eqref{eqmatrix} tương đương với bốn phương trình vector, tức là tận 12 phương trình đại số. Điều này chứng tỏ khả năng nén thông tin của ma trận. Một lượng rất lớn thông tin có thể được nén lại trong một ma trận, và ta có thể thực hiện các phép toán trên đó để đồng thời xử lý chúng. 
 \vspace{8pt}
 
 Để kết thúc phần này, ta hãy xét thêm một ví dụ. Hãy tính tích
@@ -239,5 +243,21 @@ Dễ thấy, \begin{align*}
         14\\3
     \end{bmatrix}.
 \end{align*}
+\vspace{8pt}
+
+\textbf{Các quy tắc cho các phép toán trên ma trận.} Ta tổng kết lại các quy tắc chung nhất.
+Tiếp tục xét các ma trận \(\mathbf{A},\mathbf{B}\), và \(\mathbf{C}\) có kích thước phù hợp-hai ma trận để cộng được với nhau cần có cùng kích thước, để nhân được với nhau cần có số cột của ma trận bên trái bằng với số hàng của ma trận bên phải:
+\begin{enumerate}[label=(\alph*)]
+    \item Quy luật giao hoán: \(\mathbf{A}+\mathbf{B}=\mathbf{B}+\mathbf{A}.\)
+    \item Quy luật phân phối: \(\alpha(\mathbf{A}+\mathbf{B})=\alpha\mathbf{A}+\alpha\mathbf{B}.\)
+    \item Quy luật liên kết: \(\mathbf{A}+(\mathbf{B}+\mathbf{C})=(\mathbf{A}+\mathbf{B})+\mathbf{C}.\)
+    \item Quy luật liên kết: \((\mathbf{AB})\mathbf{C}=\mathbf{A}(\mathbf{BC}).\)
+    \item Quy luật phân phối (trái): \(\mathbf{A}(\mathbf{B}+\mathbf{C})=\mathbf{AB}+\mathbf{AC}.\)
+    \item Quy luật phân phối (phải): \((\mathbf{A}+\mathbf{B})\mathbf{C}=\mathbf{AC}+\mathbf{BC}.\)
+    \item Quy luật giao hoán: \(\mathbf{AB}\neg\mathbf{BA}\).
+\end{enumerate}
+Chú ý quy luật cuối cùng, tích ma trận không mang tính giao hoán.
+
 
 \subsection{Phép biến đổi tuyến tính}
+
