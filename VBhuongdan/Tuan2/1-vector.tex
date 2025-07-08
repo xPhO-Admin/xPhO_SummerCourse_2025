@@ -24,7 +24,45 @@ Ta sẽ tiếp tục với một số định nghĩa liên quan đến vector.
 \end{definition}
 Để hiểu được vì sao vector lại quan trọng, ta sẽ tìm hiểu các phép toán với vector.
 
-\subsection{Các phép toán với vector}
+\subsection{Các phép toán trên vector}
 
+\subsubsection{Phép cộng vector}
+Quay trở lai bài toán ở phần 2.1.1, thay vì cộng độ lớn của hai quãng đường để có được tổng quãng đường đi được, ta sẽ coi hai quãng đường là hai vector và thực hiện phép cộng vector để có được vector độ dịch chuyển từ điểm đầu đến điểm cuối.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{Tuan2/Figures/congvector.png}
+    \caption{$\overrightarrow{a}+\overrightarrow{b}+\overrightarrow{c}+\overrightarrow{d}=\overrightarrow{AB}$}
+\end{figure}
 
+\subsubsection{Tích một vector với một đại lượng vô hướng}
+Khi nhân một vector với một đại lượng vô hướng, độ dài của vector sẽ được nhân lên với hệ số bằng đại lượng đó, trong khi hướng của vector không đổi.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{Tuan2/Figures/vector x vo huong.png}
+    \caption{phép nhân vector với một đại lượng vô hướng}
+\end{figure}
+
+\subsubsection{Tích vô hướng hai vector}
+Phép nhân vô hướng hai vector \(\overrightarrow{a}\) và \(\overrightarrow{b}\) có kết quả là một đại lượng vô hướng có giá trị bằng:
+\begin{equation}
+    \overrightarrow{a} \cdot \overrightarrow{b} = |\overrightarrow{a}| |\overrightarrow{b}| \cos (\overrightarrow{a}, \overrightarrow{b})
+\end{equation}
+Ý nghĩa của phép nhân vô hướng được thể hiện như hình vẽ
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{Tuan2/Figures/tichcham.png}
+    \caption{phép nhân vô hướng hai vector}
+\end{figure}
+\subsubsection{Tích có hướng hai vector}
+Phép nhân có hướng hai vector \(\overrightarrow{a}\) và \(\overrightarrow{b}\) có kết quả là một vector hướng vuông góc với mặt phẳng chứa hai vector này:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{Tuan2/Figures/tichcheo.png}
+    \caption{phép nhân có hướng hai vector}
+\end{figure}
+Vector này có độ dài bằng:
+\begin{equation}
+    |\overrightarrow{a} \times \overrightarrow{b}| = |\overrightarrow{a}| |\overrightarrow{b}| \sin (\overrightarrow{a}, \overrightarrow{b})
+\end{equation}
+Chiều của vector này có thể được xác định bằng quy tắc bàn tay phải, hoặc quy tắc vặn nút chai.
 
