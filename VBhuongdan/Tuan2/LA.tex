@@ -1,6 +1,55 @@
-Phần này cung cấp cho người đọc một công cụ toán học mạnh mẽ để mô tả các đối tượng toán học phức tạp với khả năng nén thông tin cao. 
 \subsection{Không gian vector}
-\subsection{Phép biến đổi tuyến tính}
+\subsubsection*{Cơ sở}
+Trong phần vừa rồi, khi giới thiệu về khái niệm vector cơ sở, chúng được giới thiệu là một hệ vector trực chuẩn, tức là lẫn nhau vuông góc (có tích vô hướng bằng \(0\)) và có độ dài bằng \(1\).
+Nhưng điều này không hề tổng quát, hay cụ thể hơn, một hệ vector cơ sở có thể hoặc là hoặc không là một hệ vector trực chuẩn, và có thể có vô số hệ cơ sở trong không gian. 
+\vspace{5pt}
+
+Dựa theo định nghĩa, một hệ vector cơ sở là hệ vector sao cho mọi vector trong không gian đều có thể được phân tích thành một \emph{tổ hợp tuyến tính} của chúng. Nói cách khác, giả sử ta có hai vector cơ sở \(\mathbf{e}_i\) và \(\mathbf{e}_j\), một vector \(\mathbf{v}\) bất kỳ có thể được viết thành \[\mathbf{v}=\alpha\mathbf{e}_1 +\beta\mathbf{e}_2,\] với \[\alpha,~\beta \quad \in\mathbb{R}.\] Ta lại xét một hệ cơ sở khác gồm hai vector \(\mathbf{e}_{3}, \mathbf{e}_4\), lúc này \[\mathbf{v}=\gamma\mathbf{e}_3 +\sigma\mathbf{e}_4.\]
+Ví dụ sau đây sẽ làm sáng rõ nội dung vừa rồi: 
+\[\mathbf{v}=\begin{bmatrix}
+    5\\3
+\end{bmatrix}=5\begin{bmatrix}
+    1\\0
+\end{bmatrix}+3\begin{bmatrix}
+0\\1
+\end{bmatrix}=1\begin{bmatrix}
+    2\\-3
+\end{bmatrix}+3\begin{bmatrix}
+    1\\2
+\end{bmatrix}.\] Vector \(\mathbf{v}\) đầu tiên được phân tích thành hai vector cơ sở ta đã quen thuộc, rồi sau đó lại được phân tích thành hai vector \[
+\begin{bmatrix}
+    2\\-3
+\end{bmatrix},\qquad \begin{bmatrix}
+    1\\2
+\end{bmatrix}.\] Dễ thấy, hai vector này không trực giao, cũng không có độ lớn bằng \(1\). 
+\vspace{8pt}
+
+\begin{definition}[Bao tuyến tính]
+    Nếu \(S={\mathbf{u}_{1}, \mathbf{u}_{2},\dots,  \mathbf{u}_{n}}\) là một tập hợp \(n\) vector trong không gian, thì tất cả các tổ hợp tuyến tính của chúng được gọi là bao tuyến tính của \(\mathbf{u}_{1}, \mathbf{u}_{2},\dots \mathbf{u}_{n}\), và được kí hiệu là span(\(S\)).
+    \vspace{8pt}
+
+    Nếu span(S) chứa toàn bộ vector trong không gian, vậy ta gọi S là một hệ sinh cho không gian.
+\end{definition}
+
+\begin{definition}[Độc lập tuyến tính]
+    Một tập hợp các vector được gọi là \emph{độc lập tuyến tính} với nhau nếu tổ hợp tuyến tính của chúng không bao giờ bằng \(\mathbf{0}\) trừ khi \textbf{tất cả} các hệ số vô hướng đều bằng \(0\).
+\end{definition}
+\begin{definition}[Hệ cơ sở]
+    Một cơ sở của không gian là một tập hợp các vector trong không gian sao cho 
+    \begin{itemize}
+        \item tạo thành hệ sinh cho không gian, và
+        \item độc lập tuyến tính.
+    \end{itemize}
+\end{definition}
+Trong ví dụ cụ thể ta đã lấy ở trên, không gian của ta (một mặt phẳng) có hai hệ sinh là \(S_1 ={\mathbf{e}_{1}, \mathbf{e}_2}\), và \(S_2 ={\mathbf{e}_{3}, \mathbf{e}_{4}}\). Đồng thời, hai cặp vector tạo thành hai hệ sinh này cũng là các cơ sở khác nhau. Ngoài ra cũng chú ý rằng, \(S_{3}={\mathbf{e}_{3}, \mathbf{e}_{4}, 2\mathbf{e}_{3}}\) cũng là một hệ sinh cho mặt phẳng này nhưng tập hợp ba vector này không phải là một hệ cơ sở, vì nó không độc lập tuyến tính (phụ thuộc tuyến tính). Cụ thể, dễ thấy rằng \[-2\mathbf{e}_{3}+1(2\mathbf{e}_{3})+0\mathbf{e}_{4}=\mathbf{0},\] nhưng ta lại có các hệ số khác \(0\) là \(-2\) và \(1\).
+
+\subsubsection*{Không gian vector}
+Khi đề cập đến vector, ta không tránh khỏi đề cập đến từ "không gian". Trong phần \ref{vector}, từ này được hiểu là không gian ba chiều mà ta sinh hoạt, có trên dưới, phải trái, trước sau. Song, trong phần vừa rồi, từ "không gian" được dùng một cách nhập nhằng, tối nghĩa. Thoạt đầu là nghĩa ở \ref{vector}. Rồi trong các phần định nghĩa mới được đưa ra, nó dường như cũng chỉ để chỉ mặt phẳng toạ độ Oxy, chỉ chứa các vector có hai thành phần toạ độ. Số vector cơ sở cho không gian này cũng chỉ là \(2\) mà không phải \(3\). Việc nói rằng "bởi vì vector đại diện cho trên dưới lúc này bằng \(\mathbf{0}\) nên không được xét vào" là vô nghĩa và không đúng với các định nghĩa được đưa ra. Hơn nữa, các vector là các đại lượng thuần tuý toán học, chúng chỉ là các mảng số; có thể được mường tượng thành các mũi tên treo trên không trung, nhưng rõ ràng đó chỉ là tưởng tượng, không có thật. Nói rằng không gian chúng ta sinh hoạt chứa đầy các vector cũng giống như nói không gian chúng ta sinh hoạt chứa đầy các con số; có thể không sai, nhưng khá kỳ cục, không chuẩn xác.
+Thành thử, ta cân chuẩn hoá lại nghĩa của từ "không gian" này, hay rõ ràng hơn là nghĩa của cụm "không gian chứa các vector".
+\vspace{8pt}
+
+
+
 
 \subsection{Giới thiệu về ma trận}
 Ta xét bảng số sau:
@@ -260,13 +309,8 @@ Tiếp tục xét các ma trận \(\mathbf{A},\mathbf{B}\), và \(\mathbf{C}\) c
 \end{enumerate}
 Chú ý quy luật cuối cùng, tích ma trận không mang tính giao hoán.
 
-
+\subsection{Phép biến đổi tuyến tính}
 
 \subsection{Sơ lược về không gian vector trừu tượng}
 
 
-%%À thế này. Phần vector thì ta cứ theo cung cách của dân vật lý như cũ.
-%%Xong sang đến ngay đầu phần 2 tôi sẽ bổ sung một section viết về không gian vector của số thực; 
- %%sau đó giới thiệu phép biến đổi tuyến tính luôn-theo khía cạnh trừu tượng; 
- %%tiếp theo đến hai phần về ma trận đã được, và nối tiếp là về toán tử tuyến tính, 
- %%tức liên hệ giữa biến đổi tuyến tính và ma trận cùng các loại ma trận.
