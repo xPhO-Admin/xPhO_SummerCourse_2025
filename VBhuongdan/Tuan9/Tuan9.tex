@@ -3,8 +3,7 @@
   
 \chapter{Nhập Môn Cơ Học Giải Tích}
 
-\section{Liên kết động học} 
-\label{sec_9:Kinematic_link}
+\section{Liên kết động học} \label{sec_9:Kinematic_link}
 
 Phần lớn các học sinh bắt đầu khảo sát các liên kết chuyển động dựa trên những trực giác mơ hồ, các nhận định cảm tính các phương pháp đổi hệ quy chiếu.
 Thoạt đầu, sự thông minh và sự nhạy bén về khả năng tưởng tượng hình học giúp cho nhiều học sinh nhanh chóng giải quyết được vấn đề một cách hiệu quả.
@@ -19,7 +18,7 @@ Trong mục này, chúng ta sẽ khảo sát các liên kết chuyển động d
 
 Tập hợp các thông số \textbf{đủ} để xác định được vị trí của cơ hệ trong một hệ quy chiếu xác định, được gọi là các tọa độ suy rộng của cơ hệ.\\
 Các tọa độ suy rộng được kí hiệu là $q_1, q_2, \ldots, q_m$. Các tọa độ suy rộng có thể là các tọa độ Đề các của các chất điểm thuộc cơ hệ, có thể là góc quay, các tọa độ cong\ldots\\
-Bản chất vật lý của tọa độ suy rộng là bất kỳ, do đó thứ nguyên của nó có thể không phải là độ dài như tọa độ Đề các.\footnote{Dựa theo quyển sách "Bài tập Cơ học Tập 2: Động lực học" của giáo sư Đỗ Sanh.}\\
+Bản chất vật lý của tọa độ suy rộng là bất kỳ, do đó thứ nguyên của nó có thể không phải là độ dài như tọa độ Decartes.\footnote{Dựa theo quyển sách "Bài tập Cơ học Tập 2: Động lực học" của giáo sư Đỗ Sanh.}\\
 Vị trí của cơ hệ được xác định nhờ tọa độ suy rộng, nên các tọa độ Decartes của các chất điểm của cơ hệ có thể biểu diễn qua các tọa độ suy rộng:
 \begin{align*}
     x_k &= x_k(t, q_1, q_2, \ldots, q_m)\\
@@ -56,7 +55,7 @@ Một phương trình liên kết động học thông thường sẽ có dạng
 \end{equation}
 Với $\mathbf{q} = [q_1,q_2,\ldots,q_n]$ và $\mathbf{\dot{q}} = [\dot{q}_1,\dot{q}_2,\ldots,\dot{q}_n]$ là các tọa độ, tọa độ suy rộng của cơ hệ và đạo hàm bậc nhất (vận tốc) của chúng.
 
-Từ phương trình liên kết trên, ta có thể phân loại các cơ hệ thành một số loại như sau \footnote{Dựa theo quyển sách "Cơ học giải tích" của giáo sư Nguyễn Quang Đạo.}:
+Từ phương trình liên kết trên, ta có thể phân loại các cơ hệ thành một số loại như sau\footnote{Dựa theo quyển sách "Cơ học giải tích" của giáo sư Nguyễn Quang Đạo.}:
 \begin{itemize}
     \item \textbf{Liên kết holonom (honomic)}, hay còn được gọi là \textbf{liên kết hình học}, \textbf{liên kết hữu hạn}, là các liên hệ không phụ thuộc vào các đạo hàm bậc nhất của các tọa độ, tức là
     \begin{equation*}
@@ -75,9 +74,9 @@ Trong tài liệu này, ta sẽ chỉ tập trung vào lĩnh vực cơ lý thuy�
 \subsection{Ứng dụng đạo hàm toàn phần và ma trận Jacobian trong tính toán vận tốc, gia tốc các điểm của cơ hệ Holonom}
 
 Giả sử trong một cơ hệ có $n$ bậc tự do với các tọa độ suy rộng tương ứng là $\mathbf{q} = [q_1,q_2,\ldots,q_n]$. Với một tọa độ bất kỳ nào đó có liên kết phụ thuộc vào các tọa độ suy rộng kia theo dạng có thể tách biến được:
-\begin{equation*}
+\begin{equation}
     x = f(\mathbf{q})
-\end{equation*}
+\end{equation}
 Ta sẽ có thể tìm vận tốc, tức là đạo hàm bậc nhất của $x$ theo thời gian $t$ theo công thức của đạo hàm toàn phần:
 \begin{equation}
     x = \dfrac{\partial f(\mathbf{q})}{\partial \mathbf{q}} \mathbf{\dot{q}} + \dfrac{\partial f (\mathbf{q})}{\partial t}.
@@ -86,6 +85,114 @@ Ta sẽ có thể tìm vận tốc, tức là đạo hàm bậc nhất của $x$
 \begin{equation}
     x = \dfrac{\partial f(\mathbf{q})}{\partial \mathbf{q}} \mathbf{\dot{q}}.
 \end{equation}
+Tổng quát hơn, khi ta muốn biểu diễn đạo hàm theo thời gian của một hệ tọa độ \(\mathbf{x} = \left[ x_1, x_2, \ldots, x_m \right]^T\), ta có thể biểu diễn dưới dạng
+\begin{equation} \label{eq:jacobian_coordinate}
+    \left[
+    \begin{array}{c}
+        \dot{x}_1 \\
+        \dot{x}_2 \\
+        \vdots \\
+        \dot{x}_m
+    \end{array}
+    \right]
+    =
+    \left[
+    \begin{array}{cccc}
+        \dfrac{\partial x_1}{\partial q_1} & \dfrac{\partial x_1}{\partial q_2} & \cdots & \dfrac{\partial x_1}{\partial q_n} \\
+        \dfrac{\partial x_2}{\partial q_1} & \dfrac{\partial x_2}{\partial q_2} & \cdots & \dfrac{\partial x_2}{\partial q_n} \\
+        \vdots & \vdots & \ddots & \vdots \\
+        \dfrac{\partial x_m}{\partial q_1} & \dfrac{\partial x_m}{\partial q_2} & \cdots & \dfrac{\partial x_m}{\partial q_n}
+    \end{array}
+    \right]
+    \left[
+    \begin{array}{c}
+        \dot{q}_1 \\
+        \dot{q}_2 \\
+        \vdots \\
+        \dot{q}_n
+    \end{array}
+    \right].
+\end{equation}
+Biểu thức (\ref{eq:jacobian_coordinate}) là mối quan hệ giữa các vận tốc của hệ tọa độ \(\mathbf{x}\) theo các vận tốc của hệ tọa độ suy rộng \(\mathbf{q}\). Trong đó, ma trận Jacobian được định nghĩa là ma trận đạo hàm riêng bậc nhất của các tọa độ suy rộng theo các tọa độ suy rộng:
+\begin{equation}
+    \mathbf{J} = 
+    \left( \dfrac{\partial \mathbf{x}}{\partial \mathbf{q}}\right)
+    = \left[
+    \begin{array}{cccc}
+        \dfrac{\partial x_1}{\partial q_1} & \dfrac{\partial x_1}{\partial q_2} & \cdots & \dfrac{\partial x_1}{\partial q_n} \\
+        \dfrac{\partial x_2}{\partial q_1} & \dfrac{\partial x_2}{\partial q_2} & \cdots & \dfrac{\partial x_2}{\partial q_n} \\
+        \vdots & \vdots & \ddots & \vdots \\
+        \dfrac{\partial x_m}{\partial q_1} & \dfrac{\partial x_m}{\partial q_2} & \cdots & \dfrac{\partial x_m}{\partial q_n}
+    \end{array}
+    \right].
+\end{equation}
+Qua đó, ta rút gọn biểu thức (\ref{eq:jacobian_coordinate}) thành
+\begin{equation} \label{eq:jacobian_velocity}
+    \mathbf{\dot{x}} = \mathbf{J} \mathbf{\dot{q}}.
+\end{equation}
+Đạo hàm hai vế của biểu thức (\ref{eq:jacobian_velocity}) theo thời gian, ta có thể tìm được gia tốc của các tọa độ suy rộng:
+\begin{equation} \label{eq:jacobian_acceleration}
+    \mathbf{\ddot{x}} = \mathbf{J} \mathbf{\ddot{q}} + \left( \sum_{1}^{n} \dfrac{\partial \mathbf{J}}{\partial q_i} \dot{q}_i \right) \mathbf{\dot{q}}.
+\end{equation}
+hay
+\begin{equation}
+    \mathbf{\ddot{x}} = \mathbf{J} \mathbf{\ddot{q}} + \left( \dfrac{\partial \mathbf{J}}{\partial \mathbf{q}} \right) \left( \mathbf{\dot{q}} \otimes \mathbf{\dot{q}} \right).
+\end{equation}
+trong đó:
+\begin{equation}
+    \left( \dfrac{\partial \mathbf{J}}{\partial \mathbf{q}} \right) = 
+    \left[
+    \begin{array}{ccccccccccccc}
+        \dfrac{\partial J_{11}}{\partial q_1} & \dfrac{\partial J_{11}}{\partial q_2} & \cdots & \dfrac{\partial J_{11}}{\partial q_n} & \dfrac{\partial J_{12}}{\partial q_1} & \dfrac{\partial J_{12}}{\partial q_2} & \cdots & \dfrac{\partial J_{12}}{\partial q_n} & \cdots & \dfrac{\partial J_{1n}}{\partial q_1} & \dfrac{\partial J_{1n}}{\partial q_2} & \cdots & \dfrac{\partial J_{1n}}{\partial q_n} \\
+        \dfrac{\partial J_{21}}{\partial q_1} & \dfrac{\partial J_{21}}{\partial q_2} & \cdots & \dfrac{\partial J_{21}}{\partial q_n} & \dfrac{\partial J_{22}}{\partial q_1} & \dfrac{\partial J_{22}}{\partial q_2} & \cdots & \dfrac{\partial J_{22}}{\partial q_n} & \cdots & \dfrac{\partial J_{2n}}{\partial q_1} & \dfrac{\partial J_{2n}}{\partial q_2} & \cdots & \dfrac{\partial J_{2n}}{\partial q_n} \\
+        \vdots & \vdots & \ddots & \vdots & \vdots & \vdots & \ddots & \vdots & \ddots & \vdots & \vdots & \ddots & \vdots \\
+        \dfrac{\partial J_{m1}}{\partial q_1} & \dfrac{\partial J_{m1}}{\partial q_2} & \cdots & \dfrac{\partial J_{m1}}{\partial q_n} & \dfrac{\partial J_{m2}}{\partial q_1} & \dfrac{\partial J_{m2}}{\partial q_2} & \cdots & \dfrac{\partial J_{m2}}{\partial q_n} & \cdots & \dfrac{\partial J_{mn}}{\partial q_1} & \dfrac{\partial J_{mn}}{\partial q_2} & \cdots & \dfrac{\partial J_{mn}}{\partial q_n}
+    \end{array}
+    \right].
+\end{equation}
+Phép toán \(\otimes\) ở đây được gọi là tích Kronecker. Phép tích Kronecker của hai ma trận \(\mathbf{A}\) và \(\mathbf{B}\) được định nghĩa là ma trận có kích thước bằng tích của hai ma trận \(\mathbf{A}\) và \(\mathbf{B}\), với các phần tử được tính theo công thức:
+\begin{equation}
+    \mathbf{A} \otimes \mathbf{B} = 
+    \left[
+    \begin{array}{cccc}
+        A_{11} B_{11} & A_{11} B_{12} & \cdots & A_{11} B_{1n} \\
+        A_{12} B_{11} & A_{12} B_{12} & \cdots & A_{12} B_{1n} \\
+        \vdots & \vdots & \ddots & \vdots \\
+        A_{m1} B_{11} & A_{m1} B_{12} & \cdots & A_{m1} B_{1n} \\
+        A_{m2} B_{11} & A_{m2} B_{12} & \cdots & A_{m2} B_{1n} \\
+        \vdots & \vdots & \ddots & \vdots \\
+        A_{mn} B_{11} & A_{mn} B_{12} & \cdots & A_{mn} B_{1n}
+    \end{array}
+    \right].
+\end{equation}
+Trong phạm vi ứng dụng đối với học sinh, sinh viên, phần lớn các bài toán giải trong phòng thi thường được giới hạn dưới 3 bậc tự do và cách biểu diễn các phép toán ma trận trên không thực sự phổ biến và không mang lại hiệu quả cao. Tuy nhiên, trong các bài toán nghiên cứu rộng hơn, ứng dụng thực tế cho các cánh tay robot, hệ thống nhiều bậc tự do phức tạp, các biểu thức tổng quát trên đóng vai trò quan trọng trong việc thiết lập thuật toán trên các công cụ lập trình, mô phỏng chuyển động của các cơ hệ. 
+
+Trong bài toán yêu cầu tính cụ thể độ lớn của vận tốc, gia tốc, ta chọn \(\mathbf{x}\) là hệ tọa độ Decartes. Khi đó, độ lớn vận tốc của một chất điểm trong cơ hệ được tính theo công thức\footnote{Trong cơ hệ cổ điển thông thường, không gian có 3 chiều và \(m=3\), song, ở đây, tác giả quyết định viết tổng quát nhất có thể.}:
+\begin{equation}
+    v^2 = \dot{x}_1^2 + \dot{x}_2^2 + \cdots +\dot{x}_m^2 = \mathbf{\dot{x}}^T \mathbf{\dot{x}} = \mathbf{\dot{q}}^T \left( \mathbf{J}^T \mathbf{J} \right) \mathbf{\dot{q}}.
+\end{equation}
+Tương tự, độ lớn gia tốc của một chất điểm trong cơ hệ được tính theo công thức:
+\begin{equation}
+    a^2 = \mathbf{\ddot{x}}^T \mathbf{\ddot{x}}.
+\end{equation}
+% \begin{equation}
+%     a^2 = \mathbf{\ddot{x}}^T \mathbf{\ddot{x}} = \mathbf{\ddot{q}}^T \mathbf{J}^T \mathbf{J} \mathbf{\ddot{q}} + 2 \mathbf{\dot{q}}^T \left( \dfrac{\partial \mathbf{J}}{\partial \mathbf{q}} \right) \left( \mathbf{\dot{q}} \otimes \mathbf{\dot{q}} \right) + \left( \dfrac{\partial \mathbf{J}}{\partial \mathbf{q}} \right)^T \left( \mathbf{\dot{q}} \otimes \mathbf{\dot{q}} \right)  \left( \dfrac{\partial \mathbf{J}}{\partial \mathbf{q}} \right).
+% \end{equation}
+
+\textbf{Ví dụ 9.1} Chứng minh rằng vận tốc \(v\) của một chất điểm chuyển động trong hệ tọa độ cầu \(\left( r, \theta, \varphi \right)\) có độ lớn thỏa mãn:
+\begin{equation*}
+    v^2 = \dot{r}^2 + r^2 \dot{\theta}^2 + r^2 \sin^2 \theta \dot{\varphi}^2.
+\end{equation*}
+
+\textbf{Ví dụ 9.2:} Cho một hệ con lắc kép với độ dài hai con lắc là \(l_1\) và \(l_2\). Tính vận tốc và gia tốc của đầu $B$ trong bài toán con lắc kép (hình \ref{fig:Double_Pendulum}).
+
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{Tuan9/Figures/Double_Pendulum/Double_Pendulum.pdf}
+    \caption{Con lắc kép.}
+    \label{fig:Double_Pendulum}
+\end{figure}
+
 \subsection{Lực bị động trong bài toán liên kết Holonom}
 
 
@@ -185,7 +292,7 @@ Xét trong hệ quy chiếu gắn với mặt đất, ta cần xác định các
     x_C &= \sqrt{l^2 - \left( L - l \sin \theta \right)^2} \Rightarrow v_C = \dot{\theta} \dfrac{(L-l \sin \theta) l \cos \theta}{\sqrt{l^2 - \left( L - l \sin \theta \right)^2}}.
 \end{align*}
 
-\textbf{2.} Tại thời điểm $v_A=v$ và $a_A=a$, ta có thể tìm lại $\dot{\theta}$ và $\ddot{\theta}$ theo các bước:
+\textbf{2.} Tại thời điểm \(v_A=v\) và \(a_A=a\), ta có thể tìm lại \(\dot{\theta}\) và \(\ddot{\theta}\) theo các bước:
 \begin{equation} \label{eq1_rectangle_collision}
     v=\dot{\theta} l \sin \theta \Rightarrow \dot{\theta}= \dfrac{v}{l \sin \theta}.
 \end{equation}
