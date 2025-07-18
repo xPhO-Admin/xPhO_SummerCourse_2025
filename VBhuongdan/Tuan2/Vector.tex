@@ -5,7 +5,7 @@ Xét một tình huống mà ở đó bạn di chuyển 3m về phía Bắc, sau
 \includegraphics[width=1\textwidth]{Tuan2/Figures/gioithieuvector.png}
 \end{figure}
 Chúng ta sẽ làm việc với những bài toán như vậy khá nhiều, vì vậy sẽ là cần thiết để định nghĩa một đối tượng toán học có thể mô tả cả độ lớn và hướng. Đối tượng này được gọi là \textbf{vector}.
-\begin{definition} Vector \(AB\) (hình vẽ), kí hiệu là \(\overrightarrow{AB}\), là một mũi tên được đặc trưng bởi độ dài \(a\) của nó (do đó còn được kí hiệu là \(\overrightarrow{a}\)) và hướng mà nó chỉ.
+\begin{definition} Vector \(AB\) (hình vẽ), kí hiệu là \(\mathbf{AB}\), là một mũi tên được đặc trưng bởi độ dài \(a\) của nó (do đó còn được kí hiệu là \(\mathbf{a}\)) và hướng mà nó chỉ.
 \end{definition}
 \begin{figure}[H]
 \centering
@@ -17,9 +17,9 @@ Ta sẽ tiếp tục với một số định nghĩa liên quan đến vector.
 \begin{definition}
     So sánh hai vector:
     \begin{itemize}
-        \item Hai vector \(\overrightarrow{a}\) và \(\overrightarrow{b}\) được coi là bằng nhau nếu chúng có cùng độ dài và cùng hướng, kí hiệu là \(\overrightarrow{a}=\overrightarrow{b}\).
-        \item Hai vector \(\overrightarrow{a}\) và \(\overrightarrow{b}\) có cùng phương nếu chúng song song.
-        \item Hai vector \(\overrightarrow{a}\) và \(\overrightarrow{b}\) có cùng giá nếu chúng cùng nằm trên một đường thẳng.
+        \item Hai vector \(\mathbf{a}\) và \(\mathbf{b}\) được coi là bằng nhau nếu chúng có cùng độ dài và cùng hướng, kí hiệu là \(\mathbf{a}=\mathbf{b}\).
+        \item Hai vector \(\mathbf{a}\) và \(\mathbf{b}\) có cùng phương nếu chúng song song.
+        \item Hai vector \(\mathbf{a}\) và \(\mathbf{b}\) có cùng giá nếu chúng cùng nằm trên một đường thẳng.
     \end{itemize}
 \end{definition}
 Để hiểu được vì sao vector lại quan trọng, ta sẽ tìm hiểu các phép toán với vector.
@@ -31,7 +31,7 @@ Quay trở lai bài toán ở phần 2.1.1, thay vì cộng độ lớn của ha
 \begin{figure}[H]
     \centering
     \includegraphics[width=1\textwidth]{Tuan2/Figures/congvector.png}
-    \caption{$\overrightarrow{a}+\overrightarrow{b}+\overrightarrow{c}+\overrightarrow{d}=\overrightarrow{AB}$}
+    \caption{$\mathbf{a}+\mathbf{b}+\mathbf{c}+\mathbf{d}=\mathbf{AB}$}
 \end{figure}
 
 \subsubsection{Tích một vector với một đại lượng vô hướng}
@@ -43,9 +43,9 @@ Khi nhân một vector với một đại lượng vô hướng, độ dài củ
 \end{figure}
 
 \subsubsection{Tích vô hướng hai vector}
-Phép nhân vô hướng hai vector \(\overrightarrow{a}\) và \(\overrightarrow{b}\) có kết quả là một đại lượng vô hướng có giá trị bằng:
+Phép nhân vô hướng hai vector \(\mathbf{a}\) và \(\mathbf{b}\) có kết quả là một đại lượng vô hướng có giá trị bằng:
 \begin{equation}
-    \overrightarrow{a} \cdot \overrightarrow{b} = |\overrightarrow{a}| |\overrightarrow{b}| \cos (\overrightarrow{a}, \overrightarrow{b})
+    \mathbf{a} \cdot \mathbf{b} = |\mathbf{a}| |\mathbf{b}| \cos (\mathbf{a}, \mathbf{b})
 \end{equation}
 Ý nghĩa của phép nhân vô hướng được thể hiện như hình vẽ
 \begin{figure}[H]
@@ -54,7 +54,7 @@ Phép nhân vô hướng hai vector \(\overrightarrow{a}\) và \(\overrightarrow
     \caption{phép nhân vô hướng hai vector}
 \end{figure}
 \subsubsection{Tích có hướng hai vector}
-Phép nhân có hướng hai vector \(\overrightarrow{a}\) và \(\overrightarrow{b}\) có kết quả là một vector hướng vuông góc với mặt phẳng chứa hai vector này:
+Phép nhân có hướng hai vector \(\mathbf{a}\) và \(\mathbf{b}\) có kết quả là một vector hướng vuông góc với mặt phẳng chứa hai vector này:
 \begin{figure}[H]
     \centering
     \includegraphics[width=1\textwidth]{Tuan2/Figures/tichcheo.png}
@@ -62,7 +62,58 @@ Phép nhân có hướng hai vector \(\overrightarrow{a}\) và \(\overrightarrow
 \end{figure}
 Vector này có độ dài bằng:
 \begin{equation}
-    |\overrightarrow{a} \times \overrightarrow{b}| = |\overrightarrow{a}| |\overrightarrow{b}| \sin (\overrightarrow{a}, \overrightarrow{b})
+    |\mathbf{a} \times \mathbf{b}| = |\mathbf{a}| |\mathbf{b}| \sin (\mathbf{a}, \mathbf{b})
 \end{equation}
 Chiều của vector này có thể được xác định bằng quy tắc bàn tay phải, hoặc quy tắc vặn nút chai.
 
+\subsection{Đạo hàm vector}
+\begin{definition}
+    Cho \(\mathbf{u}(t)\) là một hàm vector. Đạo hàm của hàm vector này tại điểm \(t_0\) được định nghĩa là:
+    \begin{equation}
+        \mathbf{u}'(t_0) = \lim_{t \to t_0} \frac{\mathbf{u}(t) - \mathbf{u}(t_0)}{t - t_0}
+    \end{equation}
+\end{definition}
+Cũng giống như đạo hàm của một hàm số, đạo hàm của một hàm vector cũng có một số tính chất đặc biệt:
+\begin{itemize}
+\item Nếu \(\mathbf{w}(t)=a(t)\mathbf{u}(t)\), thì \(\dfrac{d\mathbf{w}}{dt} = a'(t)\mathbf{u}(t) + a(t)\dfrac{d\mathbf{u}}{dt}\)
+\item Nếu \(\mathbf{w}(t)=\mathbf{u}(t) + \mathbf{v}(t)\), thì \(\dfrac{d\mathbf{w}}{dt} = \dfrac{d\mathbf{u}}{dt} + \dfrac{d\mathbf{v}}{dt}\)
+\item Nếu \(\mathbf{w}(t)=\mathbf{u}(t) \cdot \mathbf{v}(t)\), thì \(\dfrac{d\mathbf{w}}{dt} = \dfrac{d\mathbf{u}}{dt} \cdot \mathbf{v}(t) + \mathbf{u}(t) \cdot \dfrac{d\mathbf{v}}{dt}\)
+\item Nếu \(\mathbf{w}(t)=\mathbf{u}(t) \times \mathbf{v}(t)\), thì \(\dfrac{d\mathbf{w}}{dt} = \dfrac{d\mathbf{u}}{dt} \times \mathbf{v}(t) + \mathbf{u}(t) \times \dfrac{d\mathbf{v}}{dt}\)
+\end{itemize}
+
+\subsection{Cơ sở vector, tọa độ}
+\subsubsection{Vector đơn vị}
+Một vector đơn vị là một vector có độ dài bằng 1. Vector đơn vị thường được sử dụng để biểu diễn hướng của một vector khác. Ví dụ, nếu \(\mathbf{a}\) là một vector bất kỳ, thì vector đơn vị theo hướng của \(\mathbf{a}\) được tính bằng:
+\begin{equation}
+    \mathbf{u} = \frac{\mathbf{a}}{|\mathbf{a}|} 
+\end{equation}
+Vector này có độ dài bằng 1 và cùng hướng với \(\mathbf{a}\).
+\subsubsection{Cơ sở vector}
+Trong không gian ba chiều, một vector cơ sở chuẩn hóa là tập hợp của ba vector đơn vị không đồng phẳng. Một vector có thể được xác định bằng cách biểu diễn nó dưới dạng tổ hợp tuyến tính của các vector đơn vị trong cơ sở.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{Tuan2/Figures/cosovector.png}
+    \caption{Cơ sở \((\mathbf{i}, \mathbf{j}, \mathbf{k})\)}
+\end{figure}
+\begin{equation}
+    \mathbf{u}=a\mathbf{i}+b\mathbf{j}+c\mathbf{k}
+\end{equation}
+\subsubsection{Hệ tọa độ}
+Hệ tọa độ (\(O; \mathbf{i}, \mathbf{j}, \mathbf{k}\)) bao gồm một điểm gốc \(O\) và một vector cơ sở chuẩn hóa. Trong không gian ba chiều, chỉ cần ba tọa độ là đủ để xác định vị trí của một điểm \(M\) thông qua vector \(\mathbf{OM}\).
+
+Hệ tọa độ mà trong đó các vector đơn vị của vector cơ sở vuông góc với nhau đôi một được gọi là \textbf{Hệ tọa độ trực chuẩn}. Chúng ta sẽ thường xuyên làm việc với loại tọa độ này.
+
+Tiếp theo, chúng ta sẽ đến với các hệ tọa độ thông dụng.
+
+\subsubsection{Hệ tọa độ Descartes}
+\begin{definition}
+    Hệ tọa độ Descartes là một hệ tọa độ trực chuẩn, được xác định bởi một gốc tọa độ và một vector trực chuẩn (\(O, \mathbf{i}, \mathbf{j}, \mathbf{k}\)). Trong hệ tọa độ này, một điểm \(M\) trong không gian được xác định bởi ba tọa độ \((x, y, z)\)
+    \begin{equation}
+        \mathbf{r}=\mathbf{OM} = x\mathbf{i} + y\mathbf{j} + z\mathbf{k}
+    \end{equation}
+\end{definition}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{Tuan2/Figures/toadodescartes.png}
+    \caption{Hệ tọa độ Descartes}
+\end{figure}
