@@ -18,7 +18,7 @@ Hàm $f$ là một quy tắc cho tương ứng mỗi phần tử $x$ thuộc t�
     \centering
     \includegraphics[width=8cm, height=5cm]{Tuan1/ảnh/anhxa.png}\label{anh1.1}
 \end{figure}
-\subsection{Đồ thị Hàm Số}
+\subsection{Đồ thị hàm số}
 Hàm số có thể được biểu diễn bằng công thức, bảng, đồ thị hoặc mô tả bằng lời nói. Trong đó trực quan nhẩt là biểu diễn thông qua đồ thị. 
 \begin{definition}
     Đồ thị của hàm số $f$ có miền xác định $X$ là tập hợp các cặp có thứ tự  \[ \{\left(x,f(x)\right)\vert x\in X \} .\] 
@@ -28,13 +28,13 @@ Nói cách khác, đồ thị của $f$ bao gồm mọi điểm $(x,y)$ sao cho 
     \centering
     \begin{subfigure}{0.4\textwidth}
         \centering
-        \includegraphics[width= 11cm, height=7cm]{Tuan1/ảnh/hamso1.png}
+        \includegraphics[width= 0.8\linewidth]{Tuan1/ảnh/hamso1.png}
         \caption{}
     \end{subfigure}
     \hfill
-    \begin{subfigure}{0.5\textwidth}
+    \begin{subfigure}{0.4\textwidth}
         \centering
-        \includegraphics[width=11cm, height=7cm]{Tuan1/ảnh/hamso2.png}
+        \includegraphics[width=0.8\linewidth]{Tuan1/ảnh/hamso2.png}
         \caption{}
     \end{subfigure}
     \caption{Ví dụ về đồ thị hàm số}\label{anh1.2}
@@ -51,7 +51,7 @@ Một cách trực quan,\emph{ không có đường thẳng thẳng đứng (vu�
         \caption{Đồ thị hàm số}
     \end{subfigure}
     \hfill
-    \begin{subfigure}{0.5\textwidth}
+    \begin{subfigure}{0.4\textwidth}
         \centering
         \includegraphics[width=7cm, height=6cm]{Tuan1/ảnh/khongphaihamso.png}
         \caption{Không phải đồ thị hàm số}
@@ -93,7 +93,7 @@ Trước khi sang phần tiếp theo, hãy nói qua thêm một khái niệm n�
 Xét hai hàm $f(x)$ và $g(x)$, hàm hợp của chúng được ký hiệu là $f(g(x))$ và được đọc là "hàm $f$ của hàm $g$ tại $x$". Hàm hợp này sẽ nhận đầu vào là giá trị của hàm $g(x)$ và trả về giá trị của hàm $f$ tại điểm đó.\newline    
 Ví dụ: $f(x)=x^2$, $g(x)=\sin x$ vậy $f(g(x))=f(\sin x)=\sin^2 x$.
 \section{Giới Hạn Hàm Số}
-\subsection{Ví dụ về Giới Hạn}
+\subsection{Ví dụ về giới hạn}
 Xét hàm số $y=x^2$, phóng to đồ thị vào gần điểm $(1;1)$:
 \begin{figure}[h!]
     \centering
@@ -156,7 +156,7 @@ Tương tự, với $x>a$, ta viết $$\lim_{x\rightarrow a^+}f(x)=L .$$
 Nghĩa là nếu giới hạn trái và phái khi $x\rightarrow a$ cùng bằng nhau thì giới hạn của hàm số tại điểm đó là tồn tại.
 Ta cũng thừa nhận nếu hàm số tồn tại giới hạn tại điểm nào đó, giới hạn đó là duy nhất. Như đã thể hiện thông qua ví dụ ở trên.
 
-\subsection{Giới Hạn ở vô cùng và một số quy tắc tính Giới Hạn}
+\subsection{Giới hạn ở vô cùng và một số quy tắc tính giới hạn}
 \begin{definition} Ta viết
     \begin{equation*}\lim_{x\rightarrow a}f(x)=\infty\end{equation*}
 nếu f(x) có thể nhận các giá trị lớn tuỳ ý khi cho $x$ nhận các giá trị đủ gần $a$, nhưng không được bằng $a$.
@@ -176,7 +176,7 @@ Cũng có thể viết  $$\lim_{x\rightarrow\infty}f(x)=\infty.$$ để nói r�
  \item \emph{Quy tắc chia:} \[\lim_{x\rightarrow a}f(x)/g(x)=A/B, B\neq 0.\]
  \item \emph{Quy tắc luỹ thừa:} \[\lim_{x\rightarrow a}(f(x))^{m/n}=A^{m/n}.\]
 \end{itemize}
-\begin{theorem}
+\begin{theorem}{Định lý kẹp}
     Xét các hàm só $g(x), f(x), h(x)$ xác định trên miền chứa $a$ (có thể có hoặc không xác định tại $a$), với mọi $x$ khác $a$:
     \[g(x)\leq f(x)\leq h(x),\] và giả sử \[\lim_{x\rightarrow a}g(x)=\lim_{x\rightarrow a}h(x)=L.\]
     Thì, \[\lim_{x\rightarrow a}f(x)=L.\]
