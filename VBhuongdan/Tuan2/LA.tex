@@ -87,7 +87,7 @@ Ta không cần phải biết vector, một cách tường minh, là cái gì ha
 
 
 \subsection{Giới thiệu về ma trận}
-Ta xét bảng số sau:
+Ta xét bảng số- mảng số hai chiều sau:
 \[ \mathbf{A}=
 \begin{bmatrix}
     1&5&12\\
@@ -127,8 +127,17 @@ Về cơ bản, đây chỉ là một sự thay đổi về cách viết. Cụ t
 \vspace{8pt}
 
 Một ma trận \(\mathbf{A}\) có \(m\) hàng và \(n\) cột được gọi là một ma trận \(m\times n\), điều này xác dịnh độ lớn của ma trận. Ta viết \(\mathbf{A}_{m\times n}\) để chỉ ma trận \(A\) có kích thước \(m\times n\). Chú ý rằng ta đọc hàng trước cột. 
+\vspace{8pt}
 
-
+Về tổng quát, một ma trận \(m\times n\) có dạng
+\[\begin{bmatrix}
+    \mathbf{A}_{11} &   \mathbf{A}_{12} &\cdots &\mathbf{A}_{1j} &\cdots      & \mathbf{A}_{1n}\\  
+    \mathbf{A}_{21} &   \mathbf{A}_{22} &\cdots &\mathbf{A}_{2j} &\cdots      & \mathbf{A}_{2n}\\
+    \vdots          &   \vdots          &\ddots &\vdots          &\ddots      & \vdots         \\
+    \mathbf{A}_{i1} &   \mathbf{A}_{i2} &\cdots &\mathbf{A}_{ij} &\cdots      & \mathbf{A}_{in}\\
+    \vdots          &   \vdots          &\ddots &\vdots          &\ddots      &\vdots          \\
+    \mathbf{A}_{m1} &   \mathbf{A}_{m2} &\cdots &\mathbf{A}_{mj} &\cdots      & \mathbf{A}_{mn}              
+\end{bmatrix}.\]
 \subsection{Các phép toán trên ma trận}
 Cũng như với các số và vector, ta có thể thực hiện pháp cộng, trừ với các ma trận, cũng có thể nhân một số với ma trận và cuối cùng là nhân ma trận với ma trận, ma trận với vector. 
 \vspace{8pt}
