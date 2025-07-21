@@ -181,7 +181,7 @@ Phép toán \(\otimes\) ở đây được gọi là tích Kronecker. Phép tíc
 Trong phạm vi ứng dụng đối với học sinh, sinh viên, phần lớn các bài toán giải trong phòng thi thường được giới hạn dưới 3 bậc tự do và cách biểu diễn các phép toán ma trận trên không thực sự phổ biến và không mang lại hiệu quả cao. Tuy nhiên, trong các bài toán nghiên cứu rộng hơn, ứng dụng thực tế cho các cánh tay robot, hệ thống nhiều bậc tự do phức tạp, các biểu thức tổng quát trên đóng vai trò quan trọng trong việc thiết lập thuật toán trên các công cụ lập trình, mô phỏng chuyển động của các cơ hệ. 
 
 Trong bài toán yêu cầu tính cụ thể độ lớn của vận tốc, gia tốc, ta chọn \(\mathbf{x}\) là hệ tọa độ Decartes. Khi đó, độ lớn vận tốc của một chất điểm trong cơ hệ được tính theo công thức\footnote{Trong cơ hệ cổ điển thông thường, không gian có 3 chiều và \(m=3\), song, ở đây, tác giả quyết định viết tổng quát nhất có thể.}:
-\begin{equation}
+\begin{equation} \label{eq:velocity_magnitude}
     v^2 = \dot{x}_1^2 + \dot{x}_2^2 + \cdots +\dot{x}_m^2 = \mathbf{\dot{x}}^T \mathbf{\dot{x}} = \mathbf{\dot{q}}^T \left( \mathbf{J}^T \mathbf{J} \right) \mathbf{\dot{q}}.
 \end{equation}
 Tương tự, độ lớn gia tốc của một chất điểm trong cơ hệ được tính theo công thức:
@@ -210,18 +210,30 @@ Tương tự, độ lớn gia tốc của một chất điểm trong cơ hệ đ
 
 Động năng của một cơ hệ được định nghĩa là tổng động năng của tất cả các chất điểm trong cơ hệ, tức là
 \begin{equation}
-    T = \sum_{k=1}^{n} \dfrac{m_k}{2} \mathbf{\dot{r}}_k^T \mathbf{\dot{r}}_k.
+    T = \sum_{k=1}^{n} \dfrac{m_k}{2} v_k^2.
 \end{equation}
-Trong đó, \(m_k\) là khối lượng của chất điểm thứ \(k\), \(\mathbf{\dot{r}}_k\) là vận tốc của chất điểm thứ \(k\).
-Động năng của cơ hệ có thể được biểu diễn dưới dạng ma trận quán tính \(\mathbf{H}\) và các tọa độ suy rộng \(\mathbf{q}\):
+Trong đó, \(m_k\) là khối lượng của chất điểm thứ \(k\), \(v_k\) là vận tốc của chất điểm thứ \(k\). Áp dụng công thức tính vận tốc theo các Jacobian và vector tọa độ suy rộng, ta có thể viết lại động năng của cơ hệ theo các tọa độ suy rộng:
+\begin{equation}
+    T = \dfrac{1}{2} \mathbf{\dot{q}}^T \left( \sum_{k=1}^{n} m_k \mathbf{J}_k^T \mathbf{J}_k \right) \mathbf{\dot{q}}.
+\end{equation}
+
+
+Để thuận tiện cho việc phân tích các số hạng trong bài toán cơ học, ta định nghĩa ma trận quán tính \(\mathbf{H}\) của cơ hệ là ma trận có kích thước bằng số bậc tự do của cơ hệ, với các phần tử được định nghĩa theo công thức:
+\begin{equation}
+    \mathbf{H} = \sum_{k=1}^{n} m_k \mathbf{J}_k^T \mathbf{J}_k,
+\end{equation}
+tức là động năng của cơ hệ có thể được viết lại dưới dạng:
 \begin{equation}
     T = \dfrac{1}{2} \mathbf{\dot{q}}^T \mathbf{H} \mathbf{\dot{q}}.
 \end{equation}
-Ma trận quán tính \(\mathbf{H}\) được định nghĩa là ma trận có kích thước bằng số bậc tự do của cơ hệ, với các phần tử được tính theo công thức:
+Ma trận quán tính \(\mathbf{H}\) là ma trận đối xứng xác định dương, tức là các phần tử của nó được tính theo công thức:
 \begin{equation}
     H_{ij} = \dfrac{\partial^2 T}{\partial \dot{q}_i \partial \dot{q}_j}.
 \end{equation}
-Ma trận quán tính là ma trận đối xứng xác định dương.
+
+Việc hiểu ý nghĩa của từng số hạng trong ma trận quán tính là một cơ hội để người đọc có thể kiểm soát từng tính toán, dễ dàng phát hiện lỗi biến đổi toán học trong quá trình giải bài toán cơ học.
+
+Quan trọng hơn, ma trận quán tính là một bước để tiếp cận việc giải các bài toán cơ học bằng công cụ lập trình, mô phỏng.
 
 \subsection{Phương trình tổng quát trong điều khiển hệ đa vật và ma trận Christoffel}
 
