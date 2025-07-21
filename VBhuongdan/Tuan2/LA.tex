@@ -6,26 +6,23 @@ Nhưng điều này không hề tổng quát, hay cụ thể hơn, một hệ ve
 
 Dựa theo định nghĩa, một hệ vector cơ sở là hệ vector sao cho mọi vector trong không gian đều có thể được phân tích thành một \emph{tổ hợp tuyến tính} của chúng. Nói cách khác, giả sử ta có hai vector cơ sở \(\mathbf{e}_i\) và \(\mathbf{e}_j\), một vector \(\mathbf{v}\) bất kỳ có thể được viết thành \[\mathbf{v}=\alpha\mathbf{e}_1 +\beta\mathbf{e}_2,\] với \[\alpha,~\beta \quad \in\mathbb{R}.\] Ta lại xét một hệ cơ sở khác gồm hai vector \(\mathbf{e}_{3}, \mathbf{e}_4\), lúc này \[\mathbf{v}=\gamma\mathbf{e}_3 +\sigma\mathbf{e}_4.\]
 Ví dụ sau đây sẽ làm sáng rõ nội dung vừa rồi: 
-\[\mathbf{v}=\begin{bmatrix}
-    5\\3
-\end{bmatrix}=5\begin{bmatrix}
-    1\\0
-\end{bmatrix}+3\begin{bmatrix}
-0\\1
-\end{bmatrix}=1\begin{bmatrix}
-    2\\-3
-\end{bmatrix}+3\begin{bmatrix}
-    1\\2
-\end{bmatrix}.\] Vector \(\mathbf{v}\) đầu tiên được phân tích thành hai vector cơ sở ta đã quen thuộc, rồi sau đó lại được phân tích thành hai vector \[
-\begin{bmatrix}
-    2\\-3
-\end{bmatrix},\qquad \begin{bmatrix}
-    1\\2
-\end{bmatrix}.\] Dễ thấy, hai vector này không trực giao, cũng không có độ lớn bằng \(1\). 
+\[\mathbf{v}= (5;3)=5(1;0)+3(0;1)=1(2;-3)
++3(1;2).\] Vector \(\mathbf{v}\) đầu tiên được phân tích thành hai vector cơ sở ta đã quen thuộc, rồi sau đó lại được phân tích thành hai vector \[
+\mathbf{e}_3 =(2;-3),\qquad \text{ và } \mathbf{e}_4 =(1;2).\] 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{Tuan2/Figures/e3e4.png}
+\end{figure}
+Dễ thấy, hai vector này không trực giao, cũng không có độ lớn bằng \(1\). 
+
+Một tổ hợp tuyến tính của hai vector nói rằng ta đã kéo giãn mỗi vector theo một hệ số nào đó và sau đó cộng chúng với nhau. Đặc biệt, đối với hai vector mới được chọn, bằng cách lựa chọn một bộ hệ số vô hướng thích hợp, ta có thể biểu diễn mọi vector trên mặt phẳng thành một tổ hợp tuyến tính của chúng (do đó ta chọn chúng làm cơ sở, như đã đề cập). 
+Mặt khác, nếu hai vector ta chọn chỉ là \(\mathbf{e}_3\) và, chẳng hạn, \(2\mathbf{e}_3\), những vector có thể được biểu diễn bởi hệ cơ sở này chỉ có những vector nằm trên cùng một đường thẳng với \(\mathbf{e}_3\). Nhưng đồng thời, nếu ta chỉ quan tâm tới 
+những thứ xảy ra trên đường thẳng đó, thì bất kỳ một vector nào nằm trên đó đều là cơ sở cho \emph{không gian}(đường thẳng) mà ta quan tâm.
 \vspace{8pt}
 
+Một cách tự nhiên, ta đi tới những khái niệm sau:
 \begin{definition}[Bao tuyến tính]
-    Nếu \(S={\mathbf{u}_{1}, \mathbf{u}_{2},\dots,  \mathbf{u}_{n}}\) là một tập hợp \(n\) vector trong không gian, thì tất cả các tổ hợp tuyến tính của chúng được gọi là bao tuyến tính của \(\mathbf{u}_{1}, \mathbf{u}_{2},\dots \mathbf{u}_{n}\), và được kí hiệu là span(\(S\)).
+    Nếu \(S={\mathbf{u}_{1}, \mathbf{u}_{2},\dots,  \mathbf{u}_{n}}\) là một tập hợp \(n\) vector trong không gian, thì tập hợp tất cả các tổ hợp tuyến tính của chúng được gọi là bao tuyến tính của \(\mathbf{u}_{1}, \mathbf{u}_{2},\dots \mathbf{u}_{n}\), và được kí hiệu là span(\(S\)).
     \vspace{8pt}
 
     Nếu span(S) chứa toàn bộ vector trong không gian, vậy ta gọi S là một hệ sinh cho không gian.
@@ -38,21 +35,65 @@ Ví dụ sau đây sẽ làm sáng rõ nội dung vừa rồi:
     Một cơ sở của không gian là một tập hợp các vector trong không gian sao cho 
     \begin{itemize}
         \item tạo thành hệ sinh cho không gian, và
-        \item độc lập tuyến tính.
+        \item độc lập tuyến tính.\footnote{Có thể chứng minh rằng mỗi vector trong không gian tương ứng với duy nhất một tổ hợp tuyến tính của cùng một hệ cơ sở. Đây là một bài tập cho các bạn.}
     \end{itemize}
 \end{definition}
 Trong ví dụ cụ thể ta đã lấy ở trên, không gian của ta (một mặt phẳng) có hai hệ sinh là \(S_1 ={\mathbf{e}_{1}, \mathbf{e}_2}\), và \(S_2 ={\mathbf{e}_{3}, \mathbf{e}_{4}}\). Đồng thời, hai cặp vector tạo thành hai hệ sinh này cũng là các cơ sở khác nhau. Ngoài ra cũng chú ý rằng, \(S_{3}={\mathbf{e}_{3}, \mathbf{e}_{4}, 2\mathbf{e}_{3}}\) cũng là một hệ sinh cho mặt phẳng này nhưng tập hợp ba vector này không phải là một hệ cơ sở, vì nó không độc lập tuyến tính (phụ thuộc tuyến tính). Cụ thể, dễ thấy rằng \[-2\mathbf{e}_{3}+1(2\mathbf{e}_{3})+0\mathbf{e}_{4}=\mathbf{0},\] nhưng ta lại có các hệ số khác \(0\) là \(-2\) và \(1\).
 
 \subsubsection*{Không gian vector}
-Khi đề cập đến vector, ta không tránh khỏi đề cập đến từ "không gian". Trong phần \ref{vector}, từ này được hiểu là không gian ba chiều mà ta sinh hoạt, có trên dưới, phải trái, trước sau. Song, trong phần vừa rồi, từ "không gian" được dùng một cách nhập nhằng, tối nghĩa. Thoạt đầu là nghĩa ở \ref{vector}. Rồi trong các phần định nghĩa mới được đưa ra, nó dường như cũng chỉ để chỉ mặt phẳng toạ độ Oxy, chỉ chứa các vector có hai thành phần toạ độ. Số vector cơ sở cho không gian này cũng chỉ là \(2\) mà không phải \(3\). Việc nói rằng "bởi vì vector đại diện cho trên dưới lúc này bằng \(\mathbf{0}\) nên không được xét vào" là vô nghĩa và không đúng với các định nghĩa được đưa ra. Hơn nữa, các vector là các đại lượng thuần tuý toán học, chúng chỉ là các mảng số; có thể được mường tượng thành các mũi tên treo trên không trung, nhưng rõ ràng đó chỉ là tưởng tượng, không có thật. Nói rằng không gian chúng ta sinh hoạt chứa đầy các vector cũng giống như nói không gian chúng ta sinh hoạt chứa đầy các con số; có thể không sai, nhưng khá kỳ cục, không chuẩn xác.
-Thành thử, ta cân chuẩn hoá lại nghĩa của từ "không gian" này, hay rõ ràng hơn là nghĩa của cụm "không gian chứa các vector".
+Khi đề cập đến vector, ta không tránh khỏi đề cập đến từ "không gian". Trong phần \ref{vector}, từ này được hiểu là không gian ba chiều mà ta sinh hoạt, có trên dưới, phải trái, trước sau; tức là không gian hình học. Song, trong phần vừa rồi, từ "không gian" được dùng một cách nhập nhằng, tối nghĩa. Thoạt đầu là nghĩa ở \ref{vector}. Rồi trong các phần định nghĩa mới được đưa ra, nó dường như cũng chỉ để chỉ mặt phẳng toạ độ Oxy, chỉ chứa các vector có hai thành phần toạ độ. Số vector cơ sở cho không gian này cũng chỉ là \(2\) mà không phải \(3\). Việc nói rằng "bởi vì vector đại diện cho trên dưới lúc này bằng \(\mathbf{0}\) nên không được xét vào" là vô nghĩa và không đúng với các định nghĩa được đưa ra. 
+Thành thử, cần làm rõ nghĩa của cụm "không gian chứa các vector".
 \vspace{8pt}
 
+\begin{definition}\label{def2.2.4}
+    Một không gian vector \(V\) là một tập hợp mà các phần tử trong đó, được gọi là vector thoả mãn 
+    \begin{enumerate}
+        \item[(i)] Với mọi \(\mathbf{v}, \mathbf{w}\in V , \mathbf{v}+\mathbf{w}\in V\).
+        \item[(ii)] Với mọi \(\mathbf{v}\in V, \alpha\in \mathbb{R}, \alpha\mathbf{v}\in V\).
+        \item[(iii)]  \(\mathbf{v}+\mathbf{w}=\mathbf{w}+\mathbf{v}\).
+        \item[(iv)]    \(\mathbf{u}+(\mathbf{v}+\mathbf{w})=(\mathbf{u}+\mathbf{v})+\mathbf{w}\).
+        \item[(v)] Tồn tại một vector \(\mathbf{0}\) sao cho \(\mathbf{v}+\mathbf{0}=\mathbf{v}\).
+        \item[(vi)] Với mọi vector \(\mathbf{v}\), tồn tại một vector \(\mathbf{v}'\) sao cho \(\mathbf{v}+\mathbf{v}'=\mathbf{0}\).
+        \item[(vii)] \(\alpha(\beta\mathbf{v})=(\alpha\beta)\mathbf{v}\).
+        \item[(viii)] \(1\mathbf{v}=\mathbf{v}\).
+        \item[(ix)]  \(\alpha(\mathbf{v}+\mathbf{w})=\alpha\mathbf{v}+\alpha\mathbf{w}\).
+        \item[(x)] \((\alpha+\beta)\mathbf{v}=\alpha\mathbf{v}+\beta\mathbf{v}\).    
+    \end{enumerate}
+\end{definition}
+Dưới góc nhìn của một tập hợp, ta quay lại với ba ví dụ quen thuộc cho không gian vector:
+\begin{enumerate}[label=(\alph*)]
+    \item Trục số thực: \(\mathbb{R}^1\)
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.8\linewidth]{Tuan2/Figures/realaxis.png}
+    \end{figure}
+    Rõ ràng, tập hợp các số thực \(\mathbb{R}\) cũng là một không gian vector với duy nhất một vector cơ sở là \(1\) (hoặc bất kỳ số thực nào khác). Mỗi vector có thể được biểu diễn bằng một toạ độ -một điểm trên trục số, và từ đó là toàn bộ hệ sinh.
+    \item Mặt phẳng toạ độ: \(\mathbb{R}^2\)
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.6\linewidth]{Tuan2/Figures/2Dvectorspace.png}
+    \end{figure}
+    Với không gian vector quen thuộc này, ta kí hiệu nó là \(\mathbb{R}^2\). Hai cơ sở quen thuộc là \((1;0)\) và \((0;1)\), với mỗi vector được biểu diễn bằng hai toạ độ, và do đó là một nút của hai đường thẳng vuông góc với trục tung, trục hoành. Rồi từ đó là toàn bộ hệ sinh.
+    \item Không gian hình học: \(\mathbb{R}^3\)
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.6\linewidth]{Tuan2/Figures/3Dvectorspace.png}
+    \end{figure}
+    Với trường hợp này, ta cần ba vector cơ sở và tương ứng là ba toạ độ cho mỗi vector. Hệ sinh của không gian được minh hoạ như trong hình.
+\end{enumerate}
+Nhận thấy rằng các trường hợp trên khác nhau bởi số lượng của vector cơ sở\footnote{Có thể chứng minh rằng số lượng vector cơ sở cho cùng một không gian là duy nhẩt. Xem \emph{Chapter 3. Introduction to Linear Algebra. Gilbert Strange. 5th} cho một chứng minh với các vector thực.}, khái niệm \emph{chiều} của một không gian vector vì vậy dược định nghĩa là số lượng của các vector cơ sở trong hệ cơ sở của không gian đó. Các trường hợp có chiều là \(1,2,3\) đã được đề cập. Vậy \(4,5,\dots n\) thì sao? Ta không thể minh hoạ được các ví dụ này, nhưng có thể biểu diễn các vector trong, không gian vector \(\mathbb{R}^4\) bằng một vector có bốn toạ độ là, chẳng hạn, \((1,2,3,3)\), tức là một mảng số một chiều có bốn thành phần. Tương tự, \(n\) toạ độ cho \(\mathbb{R}^n\).
+\vspace{8pt}
+
+Ký hiệu \(\mathbb{R}^n\) chỉ rằng các vector trong không gian này có thành phần là các số thực. Điều này có thể được mở rộng sang số phức, và thậm chí còn đối với các đối tượng không phải là số. Đến lúc này, ta cần nhìn lại rằng vector là gì? Vật lý giới thiệu đến cho ta những mũi tên có thể được mô tả bởi một mảng số. Nhưng không còn mũi tên nào có thể được tưởng tượng đối với 
+\(\mathbb{R}^4\) và cao hơn, thay vào đó là các mảng số. Vậy có phải vector là các mảng số nhưng được minh hoạ bằng các mũi tên? Ở phần \ref{morexample}, ta thấy rằng vector cũng có thể được hiểu là hàm số, với các thành phần là các luỹ thừa của biến. Thực ra điều này không quan trọng. 
+Ta không cần phải biết vector, một cách tường minh, là cái gì hay là những cái gì. Ta chỉ đơn giản là gọi những đối tượng thuộc về cùng một tập hợp nào đó thoả mãn các tiên đề trong định nghĩa \ref{def2.2.4} là vector. Cũng dựa vào đó, các phép toán mang tính khái quát cao, gắn liền với khái niệm vector được xây dựng, áp dụng cho nhiều đối tượng; tất cả được gói gọn trong một khái niệm trừu tượng.
+
+\subsubsection*{Không gian con}
 
 
 
 \subsection{Giới thiệu về ma trận}
-Ta xét bảng số sau:
+Ta xét bảng số- mảng số hai chiều sau:
 \[ \mathbf{A}=
 \begin{bmatrix}
     1&5&12\\
@@ -92,8 +133,17 @@ Về cơ bản, đây chỉ là một sự thay đổi về cách viết. Cụ t
 \vspace{8pt}
 
 Một ma trận \(\mathbf{A}\) có \(m\) hàng và \(n\) cột được gọi là một ma trận \(m\times n\), điều này xác dịnh độ lớn của ma trận. Ta viết \(\mathbf{A}_{m\times n}\) để chỉ ma trận \(A\) có kích thước \(m\times n\). Chú ý rằng ta đọc hàng trước cột. 
+\vspace{8pt}
 
-
+Về tổng quát, một ma trận \(m\times n\) có dạng
+\[\begin{bmatrix}
+    \mathbf{A}_{11} &   \mathbf{A}_{12} &\cdots &\mathbf{A}_{1j} &\cdots      & \mathbf{A}_{1n}\\  
+    \mathbf{A}_{21} &   \mathbf{A}_{22} &\cdots &\mathbf{A}_{2j} &\cdots      & \mathbf{A}_{2n}\\
+    \vdots          &   \vdots          &\ddots &\vdots          &\ddots      & \vdots         \\
+    \mathbf{A}_{i1} &   \mathbf{A}_{i2} &\cdots &\mathbf{A}_{ij} &\cdots      & \mathbf{A}_{in}\\
+    \vdots          &   \vdots          &\ddots &\vdots          &\ddots      &\vdots          \\
+    \mathbf{A}_{m1} &   \mathbf{A}_{m2} &\cdots &\mathbf{A}_{mj} &\cdots      & \mathbf{A}_{mn}              
+\end{bmatrix}.\]
 \subsection{Các phép toán trên ma trận}
 Cũng như với các số và vector, ta có thể thực hiện pháp cộng, trừ với các ma trận, cũng có thể nhân một số với ma trận và cuối cùng là nhân ma trận với ma trận, ma trận với vector. 
 \vspace{8pt}
@@ -311,6 +361,6 @@ Chú ý quy luật cuối cùng, tích ma trận không mang tính giao hoán.
 
 \subsection{Phép biến đổi tuyến tính}
 
-\subsection{Sơ lược về không gian vector trừu tượng}
+\subsection{Một số ví dụ khác về không gian vector}\label{morexample}
 
 
