@@ -92,8 +92,9 @@ Trong tất cả những hàm vừa liệt kê lại có một số hàm có tí
 Trước khi sang phần tiếp theo, hãy nói qua thêm một khái niệm nữa, đó là \emph{hàm hợp}. Ta biết rằng hàm số là một thứ mà ta cho vào một giá trị và sẽ cho ra một giá trị nào đó. Trên cơ sở này, hàm hợp là một hàm số mà đầu vào của nó là đầu ra của một hàm số khác.\newline
 Xét hai hàm $f(x)$ và $g(x)$, hàm hợp của chúng được ký hiệu là $f(g(x))$ và được đọc là "hàm $f$ của hàm $g$ tại $x$". Hàm hợp này sẽ nhận đầu vào là giá trị của hàm $g(x)$ và trả về giá trị của hàm $f$ tại điểm đó.\newline    
 Ví dụ: $f(x)=x^2$, $g(x)=\sin x$ vậy $f(g(x))=f(\sin x)=\sin^2 x$.
+
 \section{Giới Hạn Hàm Số}
-\subsection{Ví dụ về giới hạn}
+\subsection{Một ví dụ về giới hạn}
 Xét hàm số $y=x^2$, phóng to đồ thị vào gần điểm $(1;1)$:
 \begin{figure}[h!]
     \centering
@@ -132,7 +133,7 @@ Sau khi cả hai lần lượt tới điểm $(0.999;0.9980)$ và $(1.001;1.0020
     \caption{Khoảng \([0.999;1.001]\) với hai vị trí ban đầu mới được đánh dấu }
 \end{figure}
 
-Như vậy sự phóng to này có thể tiếp tục vô hạn lần nữa trong khi khoảng cách giữa hai con bọ và điểm màu đỏ càng nhỏ dần. Dù vậy, ta biết rằng trong thực thế rồi chúng sẽ đến được điểm màu đỏ.\footnote{Đoạn đường mà chúng trải qua sẽ nhỏ dần. Quãng đường chúng phải đi sẽ là một tổng có vô số hạng tử với các hạng tử phía sau ngày càng nhỏ mà may thay, tổng này có giá trị hữu hạn. }\newline
+Như vậy sự phóng to này có thể tiếp tục vô hạn lần nữa trong khi khoảng cách giữa hai con bọ và điểm màu đỏ càng nhỏ dần. Dù vậy, ta biết rằng trong thực tế rồi chúng sẽ đến được điểm màu đỏ.\footnote{Đoạn đường mà chúng trải qua sẽ nhỏ dần. Quãng đường chúng phải đi sẽ là một tổng có vô số hạng tử với các hạng tử phía sau ngày càng nhỏ mà may thay, tổng này có giá trị hữu hạn. }\newline
 Nhưng nếu giả sử tại hai điểm nào đó rất rất gần $(1;1)$, đường bị gãy (và phía dưới chúng là vực sâu), hai chú bọ không thể tiến lên được nữa. Rồi vấn đề tiếp tục xảy đến rằng chỉ cần vị trí của các điểm này \emph{luôn gần điểm $(1;1)$ hơn chúng}, hai chú bọ đáng thương sẽ phải tiếp tục di chuyển với một quá trình "phóng to vô hạn" như vậy mãi mãi.
 
 \begin{definition}
@@ -141,7 +142,7 @@ Nhưng nếu giả sử tại hai điểm nào đó rất rất gần $(1;1)$, �
 và nói\qquad\qquad\qquad "giới hạn của $f(x)$, khi $x$ tiến tới $a$, bằng $L$"\newline nếu chúng ta có thể lấy các giá trị $f(x)$ gần $L$ một cách tuỳ ý bằng cách lấy các giá trị của $x$ đủ gần $a$ (từ bất cứ phía nào), nhưng không được bằng $a$.
 \end{definition}
 
-Định nghĩa vừa đưa ra về giới hạn có vẻ khá trừu tượng và thiếu chặt chẽ. Dẫu thế trong khuôn khổ chương trình, ta sẽ không đào sâu vào vấn đề chặt chẽ trong lí luận giới hạn. Thay vào đó, hy vọng với ví dụ vừa rồi, các bạn có thể phần nào thu được trực giác về khái niệm này.\newline
+Định nghĩa vừa đưa ra về giới hạn có vẻ khá trừu tượng và thiếu chặt chẽ. Dẫu thế trong khuôn khổ phần này, ta sẽ không đào sâu vào vấn đề chặt chẽ trong lí luận giới hạn. Thay vào đó, hy vọng với ví dụ vừa rồi, các bạn có thể phần nào thu được trực giác về khái niệm này.\newline
 
 \begin{definition}
     Ta viết \begin{equation*}\lim_{x\rightarrow a^-}f(x)=L\end{equation*}
