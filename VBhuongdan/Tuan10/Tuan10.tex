@@ -255,7 +255,7 @@ Ma trận hướng tâm/Coriolis là ma trận đối xứng.
 
 \begin{table}[h]
     \centering
-    \caption{Tham số Denavit–Hartenberg.}
+    \caption{Tham số Denavit–Hartenberg.\cite{craig2011introduction}}
     \begin{tabular}{|c|c|c|c|c|}
         \hline
         \textbf{Khớp} & \( \theta_i \) & \( d_i \) & \( a_i \) & \( \alpha_i \) \\
@@ -274,7 +274,7 @@ Ma trận hướng tâm/Coriolis là ma trận đối xứng.
 \end{table}
 
 \begin{equation}
-    T_i^{i-1} =
+    \mathbf{T}_i^{i-1} =
     \left[ \begin{array}{cccc}
     \cos\theta_i & -\sin\theta_i \cos\alpha_i & \sin\theta_i \sin\alpha_i & a_i \cos\theta_i \\
     \sin\theta_i & \cos\theta_i \cos\alpha_i & -\cos\theta_i \sin\alpha_i & a_i \sin\theta_i \\
@@ -288,16 +288,16 @@ Ma trận hướng tâm/Coriolis là ma trận đối xứng.
 \subsection{Thay thế ma trận Christoffel bằng ma trận hướng tâm/Coriolis - Tích Kronecker}
 
 \begin{itemize}
-        \item Phương trình động lực học tổng quát sử dụng tích Kronecker %\cite{Tuan_Chung_Khoa_Phong_2019}:
+        \item Phương trình động lực học tổng quát sử dụng tích Kronecker \cite{tuan2019kinematic}
     \end{itemize}
     \begin{equation}
-        H(q) \ddot{q} + C(q) \dot{q} \otimes \dot{q} = - \nabla U + F.
+        \mathbf{H}(\mathbf{q}) \mathbf{\ddot{q}} + \mathbf{C}(\mathbf{q}) \mathbf{\dot{q}} \otimes \mathbf{\dot{q}} = - \nabla U + \mathbf{F}.
     \end{equation}
     \begin{itemize}
-        \item Ma trận hướng tâm/Coriolis \(C(q)\) được tính bằng biểu thức
+        \item Ma trận hướng tâm/Coriolis \(\mathbf{C}(\mathbf{q})\) được tính bằng biểu thức
     \end{itemize}
     \begin{equation}
-        C(q) = \dfrac{\partial H(q)}{\partial q} - \dfrac{1}{2} \left( \dfrac{\partial \text{vec}(H)}{\partial q} \right)^T.
+        \mathbf{C}(\mathbf{q}) = \dfrac{\partial \mathbf{H}(\mathbf{q})}{\partial \mathbf{q}} - \dfrac{1}{2} \left( \dfrac{\partial \text{vec}(\mathbf{H})}{\partial \mathbf{q}} \right)^T.
     \end{equation}
 
 \subsection{Bài tập}
@@ -323,7 +323,7 @@ Ta lần lượt gọi 3 điểm đầu các thanh là \(A\), \(B\), \(C\) (như
 
 \textbf{Bài 10.2:} Cơ cấu tay quay con trượt (VPhO 2020)
 
-Một cơ cấu cơ khí thanh truyền tay quay (như hình \ref{fig:9_P2}). 
+Một cơ cấu cơ khí thanh truyền tay quay (như hình \ref{fig:Slider_Crank}). 
 Tay quay \(OA\) có chiều dài \(r\) và quay đều với vận tốc góc \(\omega\) quanh trục quay cố định \(O\), chiều quay cùng chiều kim đồng hồ. 
 Thanh truyền \(AB\) có chiều dài \(l\) và điểm \(B\) ở đầu thanh gắn với con trượt luôn chuyển động thẳng trên một rãnh nằm ngang. 
 Xét trong hệ quy chiếu gắn với mặt đất, ta cần xác định các đặc trưng động học của thanh \(AB\).
@@ -385,3 +385,9 @@ Thế $\dot{\theta}$ và $\ddot{\theta}$ từ phương trình trên vào, thay $
 
 
 \textbf{Bài 10.2:}
+
+
+\begin{refsection}
+\nocite{tuan2019kinematic,craig2011introduction}
+\printbibliography
+\end{refsection}
