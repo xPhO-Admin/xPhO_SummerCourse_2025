@@ -53,6 +53,34 @@ Phương trình \eqref{eq:EL} được gọi là phương trình Euler, hay phư
 
 Như vậy, phiếm hàm \(S\) đạt cực tiểu khi và chỉ khi hàm số \(\mathbf{q}(t)\) thỏa mãn phương trình Euler-Lagrange \eqref{eq:EL}.
 
+\subsection{Phương trình tích phân Euler}
+
+Xét hàm Lagrange \(L\) phụ thuộc vào một hàm số \(\mathbf{q}(t)\), đạo hàm theo biến \(t\) của nó \(\mathbf{\dot{q}}(t)\) và biến \(t\), đạo hàm toàn phần của hàm Lagrange theo biến \(t\) là
+\begin{equation}
+    \dfrac{\mathrm{d} L}{\mathrm{d} t} = \frac{\partial L}{\partial t} + \frac{\partial L}{\partial \mathbf{q}} \frac{\mathrm{d} \mathbf{q}}{\mathrm{d} t} + \frac{\partial L}{\partial \mathbf{\dot{q}}} \frac{\mathrm{d} \mathbf{\dot{q}}}{\mathrm{d} t}.
+\end{equation}
+Mặt khác
+\begin{equation}
+    \dfrac{\mathrm{d} }{\mathrm{d} t} \left( \mathbf{\dot{q}} \dfrac{\partial L}{\partial \mathbf{\dot{q}}} \right) = \dfrac{\mathrm{d} \mathbf{\dot{q}}}{\mathrm{d} t} \dfrac{\partial L}{\partial \mathbf{\dot{q}}} + \mathbf{\dot{q}} \dfrac{\mathrm{d}}{\mathrm{d} t} \left( \dfrac{\partial L}{\partial \mathbf{\dot{q}}} \right).
+\end{equation}
+Kết hợp hai biểu thức trên, ta có
+\begin{equation}
+    \dfrac{\mathrm{d} }{\mathrm{d} t} \left( \mathbf{\dot{q}} \dfrac{\partial L}{\partial \mathbf{\dot{q}}} \right) = \dfrac{\mathrm{d} L}{\mathrm{d} t} - \dfrac{\partial L}{\partial t} - \mathbf{\dot{q}} \left[ \dfrac{\partial L}{\partial \mathbf{q}} - \dfrac{\mathrm{d}}{\mathrm{d}t} \left( \dfrac{\partial L}{\partial \mathbf{\dot{q}}}\right) \right].
+\end{equation}
+Từ phương trình Euler-Lagrange \eqref{eq:EL}, thu gọn biểu thức trên, ta có
+\begin{equation}
+    \dfrac{\mathrm{d} }{\mathrm{d} t} \left( \mathbf{\dot{q}} \dfrac{\partial L}{\partial \mathbf{\dot{q}}} \right) = \dfrac{\mathrm{d} L}{\mathrm{d} t} - \dfrac{\partial L}{\partial t}.
+\end{equation}
+hay
+\begin{equation}
+    \dfrac{\partial L}{\partial t} - \dfrac{\mathrm{d} }{\mathrm{d} t} \left( L - \mathbf{\dot{q}} \dfrac{\partial L}{\partial \mathbf{\dot{q}}} \right) = 0.
+\end{equation}
+Trong trường hợp hàm Lagrange không phụ thuộc vào biến thời gian \(t\), tức là \(\partial L/\partial t = 0\), ta tìm được một đại lượng bảo toàn
+\begin{equation}
+    H = L - \mathbf{\dot{q}} \dfrac{\partial L}{\partial \mathbf{\dot{q}}}.
+\end{equation}
+Đại lượng này được gọi là tích phân Euler, hay trong cơ học giải tích là hàm Hamilton của hệ.
+
 \subsection{Ứng dụng phương trình Euler: Nguyên lý Fermat trong quang học}
 
 Nguyên lý Fermat trong quang học phát biểu rằng ánh sáng sẽ đi theo đường đi có thời gian truyền ánh sáng ngắn nhất giữa hai điểm. Để mô tả nguyên lý này bằng phương trình Euler, ta cần xác định hàm Lagrange cho hệ thống.
@@ -123,11 +151,25 @@ với \(i\) là góc tạo bởi tia tới và đường bán kính tại vị t
 
 \subsection{Ứng dụng phương trình Euler: Các hệ cân bằng tĩnh tại vị trí có thế năng cực tiểu}
 
+Ta biết rằng, khi một hệ cơ học cân bằng tĩnh, thế năng của hệ đạt cực tiểu. Ở các cơ hệ chứa các phần tử phân bố theo tọa độ, ta thường quan sát thấy thế năng được viết dưới dạng một phiếm hàm tích phân phụ thuộc vào hàm phân bố của các phần tử trong hệ. Tức là
+\begin{equation}
+    U = \int L \mathrm{d}x,
+\end{equation}
+trong đó \(L\) là hàm Lagrange phụ thuộc vào hàm phân bố của các phần tử trong hệ và các đạo hàm của nó theo biến \(x\).
+
+\textbf{Ví dụ 9.3: Catenary.} Xét một dây treo giữa hai điểm \(A\) và \(B\) với chiều dài dây là \(L\) và khoảng cách giữa hai điểm là \(d\). Chứng minh rằng hình dạng của dây treo là một đường cong catenary, tức là đường cong có phương trình
+\begin{equation}
+    y = a \cosh \left( \frac{x}{a} \right),
+\end{equation}
+trong đó \(a\) là một hằng số phụ thuộc vào chiều dài dây và khoảng cách giữa hai điểm.
+
+\textbf{Ví dụ 9.4: Mặt bong bóng (TST 2012)} 
+
 \section{Cơ học Lagrange}
 
-\subsection{Phương trình Lagrange loại II}
+\subsection{Nguyên lý D'Alembert về công ảo}
 
-\subsection{Phương trình Lagrange loại I}
+
 
 \subsection{Động lượng suy rộng}
 
@@ -178,6 +220,6 @@ Liệu có hệ vật lý nào được mô tả bởi hàm Lagrange như trên 
 
 
 \begin{refsection}
-\nocite{cline2017variational,morin2008introduction,kompaneyets2013theoretical}
+\nocite{cline2017variational,morin2008introduction,kompaneyets2013theoretical,dao2002cohocgiaitich}
 \printbibliography
 \end{refsection}
