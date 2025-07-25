@@ -64,7 +64,7 @@ Sử dụng tích phân từng phần để biến đổi, chúng ta có:
     \int\limits_0^1 \frac{\partial u^h}{\partial x} \frac{\partial v}{\partial x}dx - v(1) - \int\limits_0^1 v x dx =0
 \end{equation}
 
-Phương trình \cref{eq_weakform} được gọi là phương trình dạng yếu. Theo nguyen ly Bubnov-Galerkin, ham thu se duoc chon sao cho no co cung ham noi suy doi voi $u^h$. Viec xac dinh cac ham noi suy se duoc trinh bay trong phuong phap phan tu huu han.
+Phương trình \cref{eq_weakform} được gọi là phương trình dạng yếu. Theo nguyên lý Bubnov-Galerkin, hàm thử $v$ sẽ được chọn sao cho nó có cùng hàm nội suy với nghiệm xấp xỉ $u^h$. Việc xác định các hàm nội suy sẽ được trình bày trong phần phương pháp phần tử hữu hạn.
 
 \subsection{Phương pháp số}
 
@@ -89,25 +89,25 @@ Từ đây, chúng ta có các cách để xấp xỉ đạo hàm bậc nhất n
     \end{aligned}
 \end{equation}
 
-Xấp xỉ đạo hàm bậc 2 cũng được suy ra như sau:
+\textcolor{red}{Chứng minh rằng sai số của sai phân trung tâm thì bé hơn sai phân tiến và sai phân lùi}. Tương tự, ta có thể xấp xỉ đạo hàm bậc 2:
 
 \begin{equation}\label{eq_bac2}
     f^{\prime \prime}(x) \approx \frac{f(x+h) -2f(x) + f(x-h)}{h^2}
 \end{equation}
 
-Ap dung cho bai toan tren, ta chia mien tich phan thanh $N=3$ diem luoi voi toa do lan luot la $x_1 = 0$, $x_2 = 0.5$, $x_3=1$ ($h=1/(N-1)$). Ap dung xap xi Taylor bac 2 cho nut 2:
+Áp dụng cho ví dụ của chúng ta. Giả sử ta chia miền $x \in (0, 1)$ thành $N=3$ điểm lưới đều với khoảng cách giữa các điểm là $h = \frac{1}{N-1}$. Ta có thể xấp xỉ đạo hàm bậc 2 của hàm $u$ tại điểm $x_2$ như sau:
 
 \begin{equation}
     - \frac{u_1 - 2u_2 +u_3}{h^2} = x_2
 \end{equation}
 
-Dieu kien bien Neumann duoc xac dinh nhu sau:
+Điều kiện biên Neumann được xấp xỉ bằng cách sử dụng sai phân lùi:
 
 \begin{equation}
     \frac{u_3 -u_2}{h} = 1
 \end{equation}
 
-Ket hop cac phuong trinh va voi dieu kien bien Dirichlet, ta co he sau:
+Kết hợp 2 PT trên và điều kiện biên Dirichlet, ta có hệ phương trình:
 
 \begin{equation}
     \begin{bmatrix}
@@ -119,7 +119,7 @@ Ket hop cac phuong trinh va voi dieu kien bien Dirichlet, ta co he sau:
     \end{bmatrix}
 \end{equation}
 
-Giai he phuong trinh tren ta thu duoc gia tri tai cac nut. Do chinh xac cua phuong phap nay phu thuoc vao do min cua luoi da chia. Voi 3 nut thi ket qua co sai so kha lon so voi nghiem chinh xac. Tuy nhien neu tang dan so luong nut len thi ta se thu duoc ket qua cang gan voi nghiem chinh xac \cref{fig_SPHHresults}
+Giải phương trình tuyến tính trên ta sẽ thu được giá trị tại các nút. Kết quả của phương pháp này phụ thuộc vào độ mịn của lưới chia. Nếu lưới chia quá thô thì kết quả sẽ không chính xác. Tuy nhiên nếu lưới chia quá mịn thì sẽ dẫn đến việc tính toán tốn thời gian và tài nguyên máy tính. Số lượng nút chia lưới sẽ ảnh hưởng đến độ chính xác của phương pháp này. Với 3 nút thì kết quả thu được có sai số khá lớn so với nghiệm chính xác. Tuy nhiên nếu tăng số lượng nút lên thì kết quả sẽ gần với nghiệm chính xác hơn (xem \cref{fig_SPHHresults}).
 
 \begin{figure}[htbp]
     \centering
@@ -162,29 +162,29 @@ Nghiệm xấp xỉ theo phương pháp phần tử hữu hạn lúc này sẽ �
     \end{bmatrix}}_{\bf u}
 \end{equation}
 
-Vector ${\bf u}$ chứa các phần tử là giá trị của $u^h(x)$ tại các nút và được gọi là bậc tự do của bài toán. Chia lưới càng mịn thì sẽ dẫn đến số lượng bậc tự do sẽ tăng lên càng nhiều.
+Vector ${\bf u}$ chứa các phần tử là giá trị của $u^h(x)$ tại các nút và được gọi là bậc tự do của bài toán. Chia lưới càng mịn thì sẽ dẫn đến số lượng bậc tự do sẽ tăng lên càng nhiều nhưng kết quả sẽ càng chính xác.
 
-Ham thu $v$ cung duoc bieu dien bang cach tuong tu: 
+Theo nguyên lý Bubnov-Galerkin, hàm thử $v$ sẽ được chọn sao cho nó có cùng hàm nội suy với nghiệm xấp xỉ $u^h$. Vì vậy ta có:
 
 \begin{equation}\label{eq_interpolation_test}
     v(x) = \sum\limits_{i=1}^n N_i(x) v_i = {{\bf N}(x)}{\bf v}
 \end{equation}
 
-Thay cac xap xi nay vao phuong trinh dang yeu \cref{eq_weakform}, ta co:
+Thay các xấp xỉ này vào \cref{eq_weakform}, ta có:
 
 \begin{equation}
     {\bf v}^T\left(\int\limits_0^1\left(\frac{\partial{\bf N}}{\partial x}\right)^T\frac{\partial{\bf N}}{\partial x} dx\right){\bf u} - {\bf v}^T[{\bf N}(1)]^T - {\bf v}^T\int\limits_0^1 [{\bf N}(x)]^Tx dx = 0
 \end{equation}
 
-Rut gon phuong trinh nay ta co:
+Rút gọn PT trên, ta có:
 
 \begin{equation}\label{eq_matrixform}
     \underbrace{\left(\int\limits_0^1\left(\frac{\partial{\bf N}}{\partial x}\right)^T\frac{\partial{\bf N}}{\partial x} dx\right)}_{\bf K}{\bf u} = \underbrace{[{\bf N}(1)]^T + \int\limits_0^1 [{\bf N}(x)]^Tx dx}_{\bf F} 
 \end{equation}
 
-Giai PT \cref{eq_matrixform}, chung ta se tim duoc gia tri cua vector bac tu do. ${\bf u} = {\bf K}^{-1}{\bf F}$
+Giải PT \cref{eq_matrixform}, chúng ta sẽ tìm được giá trị của vector bac tu do. ${\bf u} = {\bf K}^{-1}{\bf F}$.
 
-Xet voi bai toan 1D. Cac phan tu la cac doan thang co 2 nut, voi ham dang duoc viet nhu sau (\cref{eq_shape1D,fig_shape_func}):
+Việc còn lại bây giờ là xác định các hàm dạng $N_i(x)$ và ma trận ${\bf K}$, ${\bf F}$. Các hàm dạng này sẽ được xác định dựa trên hình dạng của phần tử. Đối với miền 1D, các phần tử là các đoạn thẳng nối các nút với nhau. Hàm dạng sẽ là các hàm nội suy tuyến tính. Hàm dạng tuyến tính 1D được biểu diễn như sau (\cref{eq_shape1D,fig_shape_func}):
 
 \begin{equation}\label{eq_shape1D}
     \begin{aligned}
@@ -200,9 +200,9 @@ Xet voi bai toan 1D. Cac phan tu la cac doan thang co 2 nut, voi ham dang duoc v
     \label{fig_shape_func}
 \end{figure}
 
-Chung ta de thay rang cac ham dang la nhu nhau doi voi cac phan tu co hinh dang giong nhau. Day la diem dac biet cua phuong phap phan tu huu han. Gia su mien tich phan duoc chia thanh 100 phan tu voi 101 nut thi chung ta khong can phai tich phan de tim tung phan tu trong ma tran ${\bf K}$, ma thay vao do chung ta xac dinh ma tran ${\bf K}_e$ cua tung phan tu va \textbf{lap rap} chung vao ma tran ${\bf K}$.
+Chúng ta có thể thấy rằng các hàm dạng là như nhau đối với các phần tử có hình dạng giống nhau. Đây là điểm đặc biệt của phương pháp phần tử hữu hạn. Giả sử miền tích phân được chia thành 100 phần tử với 101 nút thì chúng ta không cần phải tích phân để tìm từng phần tử trong ma trận ${\bf K}$, mà thay vào đó chúng ta xác định ma trận ${\bf K}_e$ của từng phần tử và \textbf{lắp ráp} chúng vào ma trận ${\bf K}$. Ví dụ sau đây sẽ minh họa cách lắp ráp ma trận ${\bf K}$ từ ma trận ${\bf K}_e$ của từng phần tử.
 
-Quay lai voi phuong trinh poisson 1D, chung ta xe bat dau bang viec xac dinh ma tran ${\bf K}_e$ cua 1 phan tu gioi han boi $[x_1, x_2]$. Dat $L_e = x_2 -x_1$, ta co:
+Quay lại với phương trình Poisson 1D, chúng ta sẽ xác định ma trận ${\bf K}_e$ của một phần tử giới hạn bởi $[x_1, x_2]$. Đặt $L_e = x_2 -x_1$, ta có:
 
 \begin{equation}\label{eq_Ke}
     \begin{aligned}
@@ -229,7 +229,7 @@ Quay lai voi phuong trinh poisson 1D, chung ta xe bat dau bang viec xac dinh ma 
     \end{aligned}
 \end{equation}
 
-So hang $ \int\limits_0^1 [{\bf N}(x)]^Tx dx$ cung duoc tinh bang cach tuong tu:
+Số hạng $ \int\limits_0^1 [{\bf N}(x)]^Tx dx$ cũng được tính bằng cách tương tự:
 
 \begin{equation}
     \begin{aligned}
@@ -246,7 +246,9 @@ So hang $ \int\limits_0^1 [{\bf N}(x)]^Tx dx$ cung duoc tinh bang cach tuong tu:
     \end{aligned}
 \end{equation}
 
-Chung ta da co ma tran ${\bf K}_e$ cho moi phan tu. Gia su mien tich phan cua chung ta duoc chia thanh 2 phan tu bang nhau $e1$ va $e2$. Toa do cua cac nut lan luot la $x_1 = 0, x_2 = 0.5, x_3 = 1$. Luc nay vector bac tu do se la ${\bf u} = [u_1 \; u_2 \; u_3]^T$. Trong do nut 2 se la diem ket noi giua 2 phan tu, vi vay $u_2 = u_2^{e1} + u_2^{e2}$. Ta co:
+Chúng ta đã xác định được ma trận ${\bf K}_e$ và vector ${\bf F}_e$ cho một phần tử. Bây giờ chúng ta sẽ lắp ráp chúng để có ma trận toàn cục ${\bf K}$ và vector ${\bf F}$.
+
+Giả sử miền tích phân được chia thành 2 phần tử $e1$ và $e2$ với các nút lần lượt là $x_1 = 0$, $x_2 = 0.5$, $x_3 = 1$. Vector bậc tự do của chúng ta sẽ là ${\bf u} = [u_1 \; u_2 \; u_3]^T$. Trong đó nút 2 sẽ là điểm kết nối giữa 2 phần tử, vì vậy $u_2 = u_2^{e1} + u_2^{e2}$. Ta có:
 
 \begin{equation}
     {\bf K}_{e1}{\bf u}_{e1} = \begin{bmatrix}
@@ -262,7 +264,7 @@ Chung ta da co ma tran ${\bf K}_e$ cho moi phan tu. Gia su mien tich phan cua ch
     \end{bmatrix}
 \end{equation}
 
-Ket hop 2 PT tren voi $u_2 = u_2^{e1} + u_2^{e2}$, ta co:
+Kết hợp 2 PT trên với lưu ý rằng $u_2 = u_2^{e1} + u_2^{e2}$, ta có:
 
 \begin{equation}
     {\bf K}{\bf u} = \begin{bmatrix}
@@ -274,7 +276,7 @@ Ket hop 2 PT tren voi $u_2 = u_2^{e1} + u_2^{e2}$, ta co:
     \end{bmatrix}
 \end{equation}
 
-Lam tuong tu voi tich phan $ \int\limits_0^1 [{\bf N}(x)]^Tx dx$, ta co:
+làm tương tự với tích phân $ \int\limits_0^1 [{\bf N}(x)]^Tx dx$, ta có:
 
 \begin{equation}
     \int\limits_0^1 [{\bf N}(x)]^Tx dx = \begin{bmatrix}
@@ -282,7 +284,7 @@ Lam tuong tu voi tich phan $ \int\limits_0^1 [{\bf N}(x)]^Tx dx$, ta co:
     \end{bmatrix}
 \end{equation}
 
-Thay vao phuong trinh \cref{eq_matrixform}, ta co:
+Thay vào phương trình \cref{eq_matrixform}, ta có:
 
 \begin{equation}
     \begin{bmatrix}
@@ -298,7 +300,7 @@ Thay vao phuong trinh \cref{eq_matrixform}, ta co:
     \end{bmatrix}
 \end{equation}
 
-Thay so vao PT tren:
+Thay số cụ thể vào, ta có:
 
 \begin{equation}
     \begin{bmatrix}
@@ -312,7 +314,7 @@ Thay so vao PT tren:
     \end{bmatrix}
 \end{equation}
 
-Phuong trinh tuyen tinh nay van chua the giai duoc vi dinh thuc cua ma tran ${\bf K}$ la bang 0. De giai duoc phuong trinh nay can phai ket hop voi dieu kien bien Dirichlet ban dau. Ta co $u(0) = 2$. Thay vao phuong trinh tren va luot bo hang dau, ta co:
+Phương trình tuyến tính trên không thể giải được vì định thức của ma trận ${\bf K}$ là bằng 0. Điều này xảy ra do điều kiện biên Dirichlet chưa được. Để giải quyết vấn đề này, chúng ta cần loại bỏ một bậc tự do bằng cách áp dụng điều kiện biên Dirichlet ban đầu.
 
 \begin{equation}
     \begin{bmatrix}
@@ -334,14 +336,15 @@ Phuong trinh tuyen tinh nay van chua the giai duoc vi dinh thuc cua ma tran ${\b
     \end{bmatrix}
 \end{equation}
 
-Giai phuong trinh tim $u_2$ va $u_3$. Chung ta co:
+Giải phương trình tìm $u_2$ va $u_3$. Chúng ta thu được:
+
 \begin{equation}
     {\bf u} = \begin{bmatrix}
         2 \\ 131/48 \\ 10/3
     \end{bmatrix}
 \end{equation}
 
-Thay doi so phan tu chung ta thu duoc ket qua duoi day \cref{fig_PTHHresults}:
+Dưới đây là các kết quả thu được với số phần tử thay đổi \cref{fig_PTHHresults}:
 
 \begin{figure}[htbp]
     \centering
@@ -366,33 +369,37 @@ Thay doi so phan tu chung ta thu duoc ket qua duoi day \cref{fig_PTHHresults}:
     \caption{Nghiệm của PT Poisson bằng phương pháp phần tử hữu hạn: (a) 2 phần tử, (b) 10 phần tử, (c) 100 phần tử.}
     \label{fig_PTHHresults}
 \end{figure}
-\textbf{\textcolor{red}{Cau hoi: Moi nguoi co nhan xet gi ve 2 PP da duoc trinh bay? (uu diem, nhuoc diem, gioi han, etc.)}}
 
-\subsection{Tich phan theo thoi gian}
+\textbf{\textcolor{red}{Cau hoi: Đưa ra một số nhận xét về các phương pháp đã trình bày? (ưu điểm, nhược điểm, độ chính xác, xem xét đến khả năng của mỗi phương pháp trong các miền 2D, 3D, etc.)}}
 
-Phuong trinh Poisson khao sat ben tren la mot phuong trinh khong phu thuoc vao thoi gian. Cau hoi dat ra la neu voi nhung bai toan co phu thuoc vao thoi gian thi cac phuong phap ben tren co giai duoc khong. Cau tra loi la hoan toan co the. Y tuong chung la mien tich phan thoi gian se duoc chia thanh cac buoc thoi gian $t_0, t_1, t_2, t_3, t_4, \dots, t_n$ voi buoc thoi gian la $\Delta t = (t_n-t_0)/n$
+\subsection{Tích phân số theo thời gian}
 
-Voi phuong phap sai phan huu han thi chung ta tiep tuc xap xi dao ham theo thoi gian cua ham so bang phuong phap tuong tu. Luc nay ngoai viec giai phuong trinh tuyen tinh de tim gia tri tai tung nut thi chung ta can ap dung cac phuong phap lap de tim bien thien cua cac nut theo thoi gian (VD: phuong phap Crank–Nicolson). Phan nay se khong duoc gioi thieu trong nay, neu can moi nguoi co the tu tim hieu them
+Phương trình Poisson khảo sát bên trên là một phương trình không phụ thuộc vào thời gian. Câu hỏi đặt ra là nếu với những bài toán có phụ thuộc vào thời gian thì các phương pháp bên trên có giải được không. Câu trả lời là hoàn toàn có thể. Ý tưởng chung là miền tích phân thời gian cũng sẽ được rời rạc hóa thành các bước thời gian $t_0, t_1, t_2, t_3, t_4, \dots, t_n$ với $\Delta t = (t_n-t_0)/n$.
 
-Doi voi phuong phap phan tu huu han thi ngoai ma tran ${\bf K}_e$ ben tren, mot ma tran ${\bf M}_e$ tuong ung cho moi phan tu se xuat hien. Phuong trinh phan tu huu han cho mot phuong trinh dao ham rieng co phu thuoc thoi gian bat ky co dang tong quat nhu sau.
+Với phương pháp sai phân hữu hạn chúng ta sẽ xấp xỉ đạo hàm theo thời gian bằng các sai phân. Lúc này ngoài việc giải phương trình tuyến tính để tìm giá trị tại các nút thì chúng ta còn cần sử dụng các vòng lặp để tính giá trị tại các bước thời gian tiếp theo (VD: phương pháp Euler, phương pháp Crank-Nicolson, etc.). Phần này sẽ không được trình bày trong bài viết này, tuy nhiên nếu bạn muốn tìm hiểu thêm thì có thể tham khảo các tài liệu về phương pháp sai phân hữu hạn theo thời gian.
+
+Đối với phương pháp phần tử hữu hạn ngoài ma trận ${\bf K}$ và vector ${\bf F}$ bên trên, chúng ta còn cần một ma trận ${\bf M}$ để mô tả khối lượng của hệ thống. Phương trình phần tử hữu hạn tổng quát lúc này sẽ có dạng:
+
 
 \begin{equation}\label{eq_PTHH_general}
     {\bf M}\ddot{\bf u} + {\bf C}\dot{\bf u} + {\bf K}{\bf u} = {\bf F}
 \end{equation}
 
-Chung ta co the thay rang phuong trinh nay co dang tuong tu voi phuong trinh ma tran cua bai toan dao dong dieu hoa 2 bac tu do phia tren !!!
+Chúng ta dễ dàng nhận thấy rằng phương trình này có dạng tương tự như phương trình của bài toán dao động điều hòa 2 bậc tự do mà chúng ta đã học ở trên \textcolor{red}{!!!}.
 
-Mot trong nhung phuong phap thong dung de giai quyet bai toan nay la phuong phap Runge-Kutta. Day la mot phuong phap vong lap dung de giai phuong trinh dao ham bac 1. 
+Một trong những phương pháp số để tính toán phương trình dạng này là phương pháp Runge-Kutta. Phương pháp này là một phương pháp lặp để giải phương trình đạo hàm bậc nhất.
 
 \begin{equation}
     \frac{d {\bf u}}{d t}={\bf f}(t,{\bf u}) ,\quad {\bf u}\left(t_0\right)={\bf u}_0
 \end{equation}
 
-Tren python phuong phap nay co san trong thu vien \textbf{scipy.integrate}. De su dung chung ta dung ham \textbf{odeint}. Tuy nhien mot diem can luu y la phuong phap nay giai phuong trinh vi phan bac 1 theo thoi gian. Con phuong trinh cua chung ta la phuong trinh vi phan bac 2 theo thoi gian. De giai quyet van de nay chung ta can thuc hien mot thao tac doi bien. 
+Trên python, phương pháp này có sẵn trong thư viện \textbf{scipy.integrate}. Để sử dụng chúng ta dùng hàm \textbf{odeint}. Trong tài liệu này chúng ta sẽ không đi sâu vào phương pháp Runge-Kutta, tuy nhiên bạn có thể tham khảo thêm trong các tài liệu về phương pháp số hoặc tài liệu của thư viện \textbf{scipy.integrate}. Thay vào đó chúng ta sẽ tìm hiểu về cách áp dụng phương pháp này để giải phương trình phần tử hữu hạn.
 
-Dau tien chung ta dat ${\bf u}_1 = {\bf u}$ va ${\bf u}_2 = \dot{\bf u}$. Do do ta co: $\dot{\bf u}_1 = \dot{\bf u}$ va $\dot{\bf u}_2 = \ddot{\bf u}$.
+Một điểm cần lưu ý là phương pháp này giải phương trình đạo hàm bậc 1 theo thời gian. Còn phương trình của chúng ta là phương trình đạo hàm bậc 2 theo thời gian. Để giải quyết vấn đề này chúng ta cần thực hiện một thao tác đổi biến.
 
-Thay cac bien moi vao phuong trinh ta co:
+Bước đầu tiên là biến đổi phương trình \cref{eq_PTHH_general} về dạng phương trình đạo hàm bậc nhất. Để làm được điều này, chúng ta sẽ định nghĩa các biến mới: ${\bf u}_1 = {\bf u}$ và ${\bf u}_2 = \dot{\bf u}$. Do đó ta có: $\dot{\bf u}_1 = \dot{\bf u}$ va $\dot{\bf u}_2 = \ddot{\bf u}$.
+
+Thay các biến mới vào phương trình \cref{eq_PTHH_general}, ta có:
 
 \begin{equation}
     \begin{aligned}
@@ -414,11 +421,11 @@ Thay cac bien moi vao phuong trinh ta co:
     \end{aligned}
 \end{equation}
 
-Tu day chung ta co the ap dung ham \textbf{odeint} de giai phuong trinh tim gia tri cua ${\bf U}$.
+Từ đây chúng ta có thể sử dụng hàm \textbf{odeint} để giải phương trình đạo hàm bậc nhất này và tìm các giá trị của ${\bf U}$ theo từng bước thời gian.
 
-Phuong phap nay la phuong phap duoc su dung rong rai nhat hien nay de tinh toan so cac tich phan. Tuy nhien khi ap dung de giai phuong trinh phan tu huu han \cref{eq_PTHH_general} thi no co mot nhuoc diem. Do la viec ap dung PP Runge-Kutta se lam tang gap doi so bac tu do cua phuong trinh. Trong phuong phap phan tu huu han, so luong bac tu do phu thuoc vao so phan tu va co the len den hang nghin hoac hang trieu. Vi vay Runge-Kutta khong phai la mot phuong phap toi uu trong truong hop nay.
+Phương pháp Runge-Kutta là một phương pháp mạnh mẽ và linh hoạt để  tính tích phân số. Tuy nhiên nó có một nhược điểm khi áp dụng cho phương trình phần tử hữu hạn. Đó là việc áp dụng phương pháp Runge-Kutta sẽ làm tăng bậc tự do của phương trình. Trong phương trình phần tử hữu hạn, số lượng bậc tự do phụ thuộc vào số lượng phần tử và có thể lên đến hàng nghìn hoặc hàng triệu. Vì vậy, Runge-Kutta không phải là một phương pháp tối ưu trong trường hợp này.
 
-Trong phan tu huu han, phuong phap tich phan so thuong duoc su dung hon do la phuong phap Newmark. Phuong phap Newmark xap xi cac dao ham bac nhat va bac 2 nhu sau:
+Thay vào đó, chúng ta sẽ sử dụng phương pháp Newmark để giải phương trình phần tử hữu hạn. Phương pháp Newmark là một phương pháp tích phân số theo thời gian được sử dụng rộng rãi trong cơ học tính toán. Nó cho phép tính toán các giá trị của ${\bf u}$ và $\dot{\bf u}$ tại các bước thời gian tiếp theo dựa trên các giá trị tại bước thời gian trước đó. Nguyên lý của phương pháp này là xấp xỉ các đạo hàm bậc nhất và bậc 2 của nghiệm theo thời gian như sau:
 
 \begin{equation}\label{eq_newmark}
     \begin{aligned}
@@ -427,9 +434,9 @@ Trong phan tu huu han, phuong phap tich phan so thuong duoc su dung hon do la ph
 \end{aligned}
 \end{equation}
 
-$(\gamma, \beta)$ la cac tham so Newmark. Mot vai gia tri thuong duoc su dung la $(1/2, 1/4)$, $(1/2, 1/6)$, $(1/2, 0)$.
+$(\gamma, \beta)$ là các tham số Newmark. Một vài giá trị thường được sử dụng là $(1/2, 1/4)$, $(1/2, 1/6)$, $(1/2, 0)$.
 
-Thay PT \cref{eq_newmark} vao \cref{eq_PTHH_general}, ta co:
+Thay PT \cref{eq_newmark} vào \cref{eq_PTHH_general}, ta có:
 
 \begin{equation}
     \begin{aligned}
@@ -438,6 +445,6 @@ Thay PT \cref{eq_newmark} vao \cref{eq_PTHH_general}, ta co:
 \end{aligned}
 \end{equation}
 
-Voi ${\bf S} = {\bf M} + {\bf C}\gamma\Delta t + {\bf K}\beta(\Delta t)^2$.
+Với ${\bf S} = {\bf M} + {\bf C}\gamma\Delta t + {\bf K}\beta(\Delta t)^2$.
 
-O thoi diem ban dau $t_0=0$, ta da biet ${\bf u}_0$ va $\dot{\bf u}_0$. Ta tinh duoc $\ddot{\bf u}_0$ nho vao phuong trinh \cref{eq_PTHH_general}. Tu do ta tim duoc $\ddot{\bf u}_1$. ${\bf u}_1$ va $\dot{\bf u}_1$ duoc suy ra tu \cref{eq_newmark}. Tiep tuc nhu vay ta se tim duoc tat cac cac gia tri tai cai thoi diem tiep theo.
+Để thực hiện tích phân số chúng ta làm như sau. Ở thời điểm ban đầu $t_0=0$, chúng ta đã biết ${\bf u}_0$ và $\dot{\bf u}_0$. Chúng ta có thể tính được $\ddot{\bf u}_0$ từ phương trình \cref{eq_PTHH_general}. Từ đó, chúng ta tìm được $\ddot{\bf u}_1$. ${\bf u}_1$ và $\dot{\bf u}_1$ được suy ra từ \cref{eq_newmark}. Tiếp tục như vậy, chúng ta sẽ tìm được tất cả các giá trị tại thời điểm tiếp theo.

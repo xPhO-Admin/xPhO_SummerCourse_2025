@@ -1,11 +1,11 @@
 \section{Ứng dụng ma trận trong vật lý và cơ học}\label{sec_1}
 
-Muc tieu cua phan nay la su dung bieu dien ma tran de tim lai cac ket qua da trinh bay trong tuan truoc. Cac ket qua trinh bay duoi day hoan toan co the ap dung duoc cho cac he thong dao phuc tap co nhieu bac tu do hon. Ve mat toan hoc he dao dong 2 bac tu do voi cac he dao dong co 3,4,5 hoac tham chi 100 bac tu do la tuong tu.
+Mục tiêu của phần này là sử dụng các tính chất của ma trận để tìm lại các kết quả đã trình bày trong tuần trước. Các kết quả trình bày dưới đây hoàn toàn có thể áp dụng được cho các hệ thống dao động phức tạp có nhiều bậc tự do hơn. Về mặt toán học hệ dao động 2 bậc tự do với các hệ dao động có 3,4,5 hoặc thậm chí 100 bậc tự do là tương tự.
 
 \subsection{Làm quen với ma trận trong cơ học}
-\subsubsection{Dao dong tu do}
+\subsubsection{Dao động tự do}
 
-De lam quen voi cac khai niem moi va on lai cac phep toan ma tran, chung ta se su dung lai vi du ve he thong dao dong 2 bac tu do da trinh bay trong tuan truoc \cref{fig_2dofs}.
+Để làm quen với các khái niệm mới và ôn lại các phép toán ma trận, chúng ta sẽ sử dụng lại ví dụ về hệ dao động 2 bậc tự do đã trình bày trong tuần trước \cref{fig_2dofs}.
 
 \begin{figure}[htbp]
     \centering
@@ -14,7 +14,7 @@ De lam quen voi cac khai niem moi va on lai cac phep toan ma tran, chung ta se s
     \label{fig_2dofs}
 \end{figure}
 
-Dieu dau tien trong khao sat mot he thong dao dong nhu tren hinh do la xac dinh cac modes dao dong rieng cua he. Cac modes dao dong rieng cua he la cac modes ma o do tat ca cac bac tu do bien thien theo thoi gian voi cung tan so. Vi day la mot he thong tuyen tinh nen nghiệm tổng quát (bất kỳ chuyển động nào của hai khối lượng) se được thể hiện dưới dạng tổ hợp tuyến tính của các nghiệm liên quan đến từng chế độ. De xac dinh cac modes dao dong rieng, ta bat dau voi viec khao xat he trong che do dao dong tu do. Co nghia la $c=0$ et $f_1=f_2=0$. Ta co phuong trinh can bang cho he ben tren.
+Điều đầu tiên trong khảo sát một hệ thống dao động như trên hình đó là xác định các modes dao động riêng của hệ. Các modes dao động riêng của hệ là các modes mà ở đó tất cả các bậc tự do biến thiên theo thời gian với cùng tần số. Vì đây là một hệ thống tuyến tính nên nghiệm tổng quát (bất kỳ chuyển động nào của hai khối lượng) sẽ được thể hiện dưới dạng tổ hợp tuyến tính của các nghiệm liên quan đến từng chế độ. Để xác định các modes dao động riêng, ta bắt đầu với việc khảo sát hệ trong chế độ dao động tự do. Có nghĩa là $c=0$ và $f_1=f_2=0$. Ta có phương trình cân bằng cho hệ bên trên.
 
 \begin{equation}\label{eq_PT2dofs}
     \begin{cases}
@@ -23,9 +23,10 @@ Dieu dau tien trong khao sat mot he thong dao dong nhu tren hinh do la xac dinh 
     \end{cases}
 \end{equation}
 
-Bieu dien duoi dang ma tran.
+Biểu diễn dưới dạng mà trận
 
-\begin{equation}\label{eq_PTmatrix}
+\begin{equation}
+    \label{eq_PTmatrix}
     \underbrace{\begin{bmatrix}
         m & 0\\ 0 & m
     \end{bmatrix}}_{\bf M}\underbrace{\begin{bmatrix}
@@ -39,7 +40,7 @@ Bieu dien duoi dang ma tran.
     \end{bmatrix}}_{\bf O} 
 \end{equation}
 
-Cac bac tu do dao dong voi cung su phu thuoc theo thoi gian nen chung ta co:
+Các bậc tự do dao động với cùng sự phụ thuộc theo thời gian nên chúng ta có:
 
 \begin{equation}
     {\bf u} = \begin{bmatrix}
@@ -47,25 +48,25 @@ Cac bac tu do dao dong voi cung su phu thuoc theo thoi gian nen chung ta co:
     \end{bmatrix} = {\bf X}cos(\Omega t)
 \end{equation}
 
-Thay vao PT phia tren, ta co:
+Thay vào PT \cref{eq_PTmatrix} ta có:
 
 \begin{equation}
     {\bf K}{\bf X} - \Omega^2{\bf M}{\bf X} = 0 \Leftrightarrow ({\bf K-\Omega^2{\bf M}}){\bf X} = 0
 \end{equation}
 
-Day la mot he phuong trinh tuyen tinh voi ve trai bang 0, co 2 truong hop xay ra do la he co 1 nghiem duy nhat ${\bf X} =0$ (vo nghia) va truong hop he co vo so nghiem (truong hop chung ta quan tam). Truong hop thu 2 xay ra khi va chi khi:
+Đây là một hệ phương trình tuyến tính với vế trái bằng 0. Để có nghiệm khác không, ma trận $\bf K-\Omega^2{\bf M}$ phải suy biến. Nghĩa là định thức của nó phải bằng 0:
 
 \begin{equation}
     det({\bf K}-\Omega^2{\bf M}) = 0
 \end{equation}
 
-Day la bai toan tim tri rieng cua ma tran. Giai he phuong trinh tren chung ta thu duoc:
+Đây là bài toán tìm trị riêng và vector riêng cua ma trận. Ta có thể giải bài toán này bằng cách sử dụng các hàm của Python như \textbf{numpy.linalg.eig} hoặc \textbf{scipy.linalg.eig}. Tuy nhiên vì đây là một ma trận $2\times 2$ nên ta có thể giải trực tiếp. Trị riêng (hay là tần số riêng) của ma trận này là nghiệm của phương trình bậc 2:
 
 \begin{equation}
     \Omega^2 =  \Omega_1^2 = \frac{k}{m} \quad \hbox{va} \quad \Omega^2 = \Omega_2^2 = \frac{3k}{m}
 \end{equation}
 
-Vector rieng cua he la:
+Vector riêng của hệ là
 
 \begin{equation}
     {\bf X} = {\bf X}_1 = \begin{bmatrix}
@@ -75,31 +76,31 @@ Vector rieng cua he la:
     \end{bmatrix}
 \end{equation}
 
-Nghiem tong quat cua he la mot to hop tuyen tinh cua 2 modes nay. Vi vay ta co:
+Nghiệm tổng quát của hệ là tổ hợp tuyến tính của hai modes này. Ta có thể viết lại nghiệm tổng quát của hệ như sau:
 
 \begin{equation}
     {\bf u}=\underbrace{\left(A_1 \cos \left(\Omega_1 t\right)+B_1 \sin \left(\Omega_1 t\right)\right) {\bf X}_1}_{\hbox{Mode 1}}+\underbrace{\left(A_2 \cos \left(\Omega_2 t\right)+B_2 \sin \left(\Omega_2 t\right)\right) {\bf X}_2}_{\hbox{Mode 2}}
 \end{equation}
 
-Cac hang so $A_1, B_1, A_2, B_2$ duoc xac dinh bang cac dieu kien ban dau cua he.
+Các hằng số $A_1, B_1, A_2, B_2$ được xác định từ các điều kiện ban đầu của hệ. Ví dụ nếu ta biết vận tốc và vị trí ban đầu của hai khối lượng thì ta có thể xác định được các hằng số này.
 
-\subsubsection{Dao dong cuong buc - Khong giam chan}
+\subsubsection{Dao động cưỡng bức - Không có giảm chấn}
 
-Xet truong hop $f_1 = F_1cos(\omega t)$ va $f_2 = F_2cos(\omega t)$. Dat ${\bf f} = \begin{bmatrix} F_1 \\ F_2\end{bmatrix}cos(\omega t) = {\bf F}cos(\omega t)$. Nghiem cua phuong trinh luc nay co dang ${\bf u} = \begin{bmatrix} U_1 \\ U_2\end{bmatrix}cos(\omega t) = {\bf U}cos(\omega t)$. Thay vao PT \cref{eq_PTmatrix}, ta co:
+Xét trường hợp $f_1 = F_1cos(\omega t)$ va $f_2 = F_2cos(\omega t)$. Đặt ${\bf f} = \begin{bmatrix} F_1 \\ F_2\end{bmatrix}cos(\omega t) = {\bf F}cos(\omega t)$. Nghiệm của PT lúc này có dạng ${\bf u} = \begin{bmatrix} U_1 \\ U_2\end{bmatrix}cos(\omega t) = {\bf U}cos(\omega t)$. Thay vào PT \cref{eq_PTmatrix}, ta có:
 
 \begin{equation}
     -\omega^2{\bf M}{\bf U} + {\bf K}{\bf U} = {\bf F} \Rightarrow {\bf U} = (-\omega^2{\bf M}+{\bf K})^{-1} {\bf F}
 \end{equation}
 
-Ta tim duoc gia tri cua $U_1$ va $U_2$
+Ta tìm được giá trị của $U_1$ va $U_2$
 
 \begin{equation}
     U_1 = \frac{F_1(2k-m\omega^2)+F_2k}{(k-m\omega^2)(3k-m\omega^2)} \quad \hbox{va} \quad U_2 = \frac{F_1k+F_2(2k-m\omega^2)}{(k-m\omega^2)(3k-m\omega^2)}
 \end{equation}
 
-\subsubsection{Dao dong cuong buc - co giam chan}
+\subsubsection{Dao động cưỡng bức - có giảm chấn}
 
-Truong hop he so $c \neq 0$, phuong trinh can bang duoc viet nhu sau:
+Trường hợp hệ số giảm chấn  $c \neq 0$, phương trình cân bằng được viết lại như sau:
 
 \begin{equation}\label{eq_PT2dofs_c}
     \begin{cases}
@@ -108,7 +109,7 @@ Truong hop he so $c \neq 0$, phuong trinh can bang duoc viet nhu sau:
     \end{cases}
 \end{equation}
 
-Dang ma tran cua phuong trinh nay la:
+Dạng ma trận của phương trình này là:
 
 \begin{equation}\label{eq_PT2dofs_c_matrix}
     \underbrace{\begin{bmatrix}
@@ -128,9 +129,9 @@ Dang ma tran cua phuong trinh nay la:
     \end{bmatrix}}_{\bf f} 
 \end{equation}
 
-De giai phuong trinh nay, cach don gian nhat la chuyen ve dang so phuc. Vector ngoai luc $\bf f$ luc nay se duoc bieu dien o dang phuc ${\bf f} = {\bf F}e^{j\omega t}$. Nghiem cua phuong trinh se co dang ${\bf u} = {\bf U}e^{j\omega t}$.
+Để giải phương trình này, chúng ta sẽ viết nó về dạng số phức. Vector ngoại lực ${\bf f}$ lúc này sẽ được biểu diễn ở dạng phức ${\bf f} = {\bf F}e^{j\omega t}$. Nghiệm của phương trình sẽ có dạng ${\bf u} = {\bf U}e^{j\omega t}$.
 
-Thay vao phuong trinh ta til duoc:
+Thay vào phương trình \cref{eq_PT2dofs_c_matrix} ta có (\textcolor{red}{việc biến đổi để suy ra nghiệm dưới đây là một bài tập dành cho các bạn}):
 
 \begin{equation}\label{eq_nghiemphuc}
     \begin{aligned}
@@ -139,5 +140,5 @@ Thay vao phuong trinh ta til duoc:
     \end{aligned}
 \end{equation}
 
-\textbf{\textcolor{red}{Cau hoi: se the nao neu vector ngoai luc ${\bf f}$ co dang ${\bf f} = {\bf F}_1cos(\omega_1t) + {\bf F}_2sin(\omega_2t)$ ?}}
+\textbf{\textcolor{red}{Câu hỏi: chúng ta sẽ giải quyết bài toán như thế nào nếu ${\bf f}$ có dạng ${\bf f} = {\bf F}_1cos(\omega_1t) + {\bf F}_2sin(\omega_2t)$ ?}}
 
