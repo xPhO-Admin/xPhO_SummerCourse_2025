@@ -203,8 +203,14 @@ Từ một phương trình có dạng \(F(x,y)=0\), không phải lúc nào ta c
 \subsection*{Ứng dụng của đạo hàm và vi phân}
 \textbf{Bài 1.20:}
 \begin{theorem}
-\textbf{(Quy tắc L'Hospital)} Giả sử \(f\) và \(g\) là các hàm số liên tục trên một khoảng mở chứa \(a\), và \(f(a)=g(a)=0\) hoặc \(f(a)=g(a)=\pm \infty\). Nếu \(f'(x)\) và \(g'(x)\) đều tồn tại trên khoảng đó, và \(g'(x)\neq 0\) với mọi \(x\) trong khoảng đó, thì
-\[\lim_{x\rightarrow a}\]
+\textbf{(Quy tắc L'Hospital)} Giả sử \( \lim_{x \to a} f(x) = \lim_{x \to a} g(x) = 0\) hoặc \(\pm \infty\), và tồn tại đạo hàm \(f'(x)\), \(g'(x)\) lân cận \(a\), ngoại trừ có thể tại \(a\); nếu
+\[
+\lim_{x \to a} \frac{f'(x)}{g'(x)} = L
+\]
+tồn tại hoặc bằng $\pm \infty$, thì:
+\[
+\lim_{x \to a} \frac{f(x)}{g(x)} = L
+\]
 \end{theorem}
 Với công cụ này, hãy tính lại các bài tập về giới hạn hàm số ở trên.
 \vspace{5pt}
@@ -254,9 +260,11 @@ Nếu hàm \(y\) của đối \(x\) được cho bởi các phương trình \(x=
 \textbf{Bài 1.30:} Dựng một đường tròn lớn, trong hình tròn tạo bởi đường tròn đó có 4 đường tròn nhỏ khác nhau, biết rằng mỗi đường tròn nhỏ lại tiếp xúc với hai đường tròn gần nó.
 \vspace{5pt}
 
+\textbf{Bài 1.31:} Dựng đường tròn nội tiếp của một tam giác bất kỳ.
+
 \subsection*{Ứng dụng của đạo hàm trong vật lý}
 
-\textbf{Bài 1.31: Nguyên lý Fermat và định luật Snellius} Nguyên lý Fermat phát biểu rằng: "Trong số tất cả các đường đi từ một điểm đến một điểm khác, ánh sáng sẽ chọn đường đi sao cho thời gian truyền là ngắn nhất". Đây là nguyên lý nền tảng để phát triển các lý thuyết về quang hình học.
+\textbf{Bài 1.32: Nguyên lý Fermat và định luật Snellius} Nguyên lý Fermat phát biểu rằng: "Trong số tất cả các đường đi từ một điểm đến một điểm khác, ánh sáng sẽ chọn đường đi sao cho thời gian truyền là ngắn nhất". Đây là nguyên lý nền tảng để phát triển các lý thuyết về quang hình học.
 
 Chiết suất của một môi trường là tỷ số giữa tốc độ ánh sáng trong chân không và tốc độ ánh sáng trong môi trường đó, ký hiệu là \(n\).
 
