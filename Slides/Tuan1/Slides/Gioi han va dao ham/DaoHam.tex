@@ -68,3 +68,63 @@ Khi điểm điểm \(M\) tiến gần đến điểm \(A\), độ dốc của c
     \end{columns}
     \end{tcolorbox}
     \end{frame}
+\begin{frame}{Đạo hàm}
+Nước trong ấm siêu tốc có nhiệt độ \(T\), đang nhận công suất nhiệt \(\mathcal{P}_0\) từ ấm. Trong quá trình đó, nước đồng thời tỏa nhiệt ra môi trường (có nhiệt độ \(T_0\)) với công suất \(\mathcal{P}_1=k(T-T_0)\). Biết rằng nước có khối lượng \(m\) và nhiệt dung riêng là \(c\).
+\begin{figure}
+    \centering
+    \includegraphics[width=0.25\textwidth]{Slides/figure/dunnuoc.png}
+\end{figure}
+Tính nhiệt độ của nước tại thời điểm \(t\), biết ban đầu nước có nhiệt độ \(T_0\).
+\end{frame}
+\begin{frame}{Đạo hàm}
+\textbf{Giải:} Trong khoảng thời gian \(\Delta t\), nước nhận nhiệt lượng \(\Delta Q\) và tăng nhiệt độ một lượng \(\Delta T\).
+\begin{columns}
+    \begin{column}{0.5\textwidth}
+\begin{equation}
+\Delta Q=mc\Delta T
+\end{equation}
+\begin{equation}
+\dfrac{\Delta Q}{\Delta t}=mc\dfrac{\Delta T}{\Delta t}
+\end{equation}
+\begin{equation}
+\lim_{\Delta t\to 0}\dfrac{\Delta Q}{\Delta t}=mc\lim_{\Delta t\to 0}\dfrac{\Delta T}{\Delta t}
+\end{equation}
+\begin{equation}
+    Q'(t)=mcT'(t)
+\end{equation}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+    \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{Đạo hàm}
+\textbf{Giải:} Trong khoảng thời gian \(\Delta t\), nước nhận nhiệt lượng \(\Delta Q\) và tăng nhiệt độ một lượng \(\Delta T\).
+\begin{columns}
+    \begin{column}{0.5\textwidth}
+\begin{equation}
+\Delta Q=mc\Delta T
+\end{equation}
+\begin{equation}
+\dfrac{\Delta Q}{\Delta t}=mc\dfrac{\Delta T}{\Delta t}
+\end{equation}
+\begin{equation}
+\lim_{\Delta t\to 0}\dfrac{\Delta Q}{\Delta t}=mc\lim_{\Delta t\to 0}\dfrac{\Delta T}{\Delta t}
+\end{equation}
+\begin{equation}
+    Q'(t)=mcT'(t)
+\end{equation}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+\begin{equation}
+Q'(t)=\mathcal{P}_0-k(T-T_0)
+\end{equation}
+\begin{equation}
+mcT'(t)=\mathcal{P}_0-k(T-T_0)
+\end{equation}
+\begin{equation}
+    T(t)=T_0+\dfrac{\mathcal P_0}{k}(1-\exp(-kt/mc))
+\end{equation}
+    \end{column}
+\end{columns}
+\end{frame}
