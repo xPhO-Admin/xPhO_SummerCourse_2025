@@ -1,0 +1,117 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{1}
+  \datalist[entry]{none/global//global/global/global}
+    \entry{calculusjame}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=37b12c56a8629449e8994f442b4d8c35}{%
+           family={Stewart},
+           familyi={S\bibinitperiod},
+           given={James},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Cengage Learning}%
+      }
+      \strng{namehash}{37b12c56a8629449e8994f442b4d8c35}
+      \strng{fullhash}{37b12c56a8629449e8994f442b4d8c35}
+      \strng{fullhashraw}{37b12c56a8629449e8994f442b4d8c35}
+      \strng{bibnamehash}{37b12c56a8629449e8994f442b4d8c35}
+      \strng{authorbibnamehash}{37b12c56a8629449e8994f442b4d8c35}
+      \strng{authornamehash}{37b12c56a8629449e8994f442b4d8c35}
+      \strng{authorfullhash}{37b12c56a8629449e8994f442b4d8c35}
+      \strng{authorfullhashraw}{37b12c56a8629449e8994f442b4d8c35}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{7th}
+      \field{title}{Calculus 1}
+      \field{year}{2012}
+      \true{nocite}
+    \endentry
+    \entry{engineeringHob}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=fc9d3a7912d292b412e8099f9dd4121f}{%
+           family={Hobson},
+           familyi={H\bibinitperiod},
+           given={Riley},
+           giveni={R\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Cambridge University Press}%
+      }
+      \strng{namehash}{fc9d3a7912d292b412e8099f9dd4121f}
+      \strng{fullhash}{fc9d3a7912d292b412e8099f9dd4121f}
+      \strng{fullhashraw}{fc9d3a7912d292b412e8099f9dd4121f}
+      \strng{bibnamehash}{fc9d3a7912d292b412e8099f9dd4121f}
+      \strng{authorbibnamehash}{fc9d3a7912d292b412e8099f9dd4121f}
+      \strng{authornamehash}{fc9d3a7912d292b412e8099f9dd4121f}
+      \strng{authorfullhash}{fc9d3a7912d292b412e8099f9dd4121f}
+      \strng{authorfullhashraw}{fc9d3a7912d292b412e8099f9dd4121f}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{2nd}
+      \field{title}{Mathmatical Methods for Physics and Engineering}
+      \field{year}{2011}
+      \true{nocite}
+    \endentry
+    \entry{demical}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=1fede8e938fece3fc22aa600db108bed}{%
+           family={Đêmiđôvic},
+           familyi={Đ\bibinitperiod}}}%
+      }
+      \name{translator}{1}{}{%
+        {{hash=950e8ee8ba02e8395d25b41be7491df0}{%
+           family={Nguyễn\bibnamedelimb Hữu\bibnamedelima Ngự},
+           familyi={N\bibinitperiod\bibinitdelim H\bibinitperiod\bibinitdelim N\bibinitperiod},
+           given={Võ\bibnamedelima Đức\bibnamedelima Tôn},
+           giveni={V\bibinitperiod\bibinitdelim Đ\bibinitperiod\bibinitdelim T\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Nhà xuất bản Đại học và Trung học chuyên nghiệp}%
+      }
+      \strng{namehash}{1fede8e938fece3fc22aa600db108bed}
+      \strng{fullhash}{1fede8e938fece3fc22aa600db108bed}
+      \strng{fullhashraw}{1fede8e938fece3fc22aa600db108bed}
+      \strng{bibnamehash}{1fede8e938fece3fc22aa600db108bed}
+      \strng{authorbibnamehash}{1fede8e938fece3fc22aa600db108bed}
+      \strng{authornamehash}{1fede8e938fece3fc22aa600db108bed}
+      \strng{authorfullhash}{1fede8e938fece3fc22aa600db108bed}
+      \strng{authorfullhashraw}{1fede8e938fece3fc22aa600db108bed}
+      \strng{translatorbibnamehash}{950e8ee8ba02e8395d25b41be7491df0}
+      \strng{translatornamehash}{950e8ee8ba02e8395d25b41be7491df0}
+      \strng{translatorfullhash}{950e8ee8ba02e8395d25b41be7491df0}
+      \strng{translatorfullhashraw}{950e8ee8ba02e8395d25b41be7491df0}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Bài tập Giải tích toán học tập I}
+      \field{year}{1975}
+      \true{nocite}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
