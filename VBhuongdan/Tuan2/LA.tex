@@ -3,22 +3,27 @@
 Dựa theo định nghĩa, một hệ vector cơ sở là hệ vector sao cho mọi vector trong không gian đều có thể được phân tích thành một \emph{tổ hợp tuyến tính} của chúng. Nói cách khác, giả sử ta có hai vector cơ sở \(\mathbf{e}_i\) và \(\mathbf{e}_j\), một vector \(\mathbf{v}\) bất kỳ có thể được viết thành \[\mathbf{v}=\alpha\mathbf{e}_1 +\beta\mathbf{e}_2.\] Ta lại xét một hệ cơ sở khác gồm hai vector \(\mathbf{e}_{3}, \mathbf{e}_4\), lúc này \[\mathbf{v}=\gamma\mathbf{e}_3 +\sigma\mathbf{e}_4.\]
 Một ví dụ  minh hoạ điều này:
 \[\mathbf{v}= (5;3)=5(1;0)+3(0;1)=1(2;-3)
-+3(1;2).\] Vector \(\mathbf{v}\) đầu tiên được phân tích thành hai vector cơ sở ta đã quen thuộc, rồi sau đó lại được phân tích thành hai vector \[
++3(1;2).\] Vector \(\mathbf{v}\) đầu tiên được phân tích thành hai vector cơ sở trực chuẩn, rồi sau đó lại được phân tích thành hai vector \[
 \mathbf{e}_3 =(2;-3),\qquad \text{ và } \mathbf{e}_4 =(1;2).\] 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\linewidth]{Tuan2/Figures/e3e4.png}
 \end{figure}
-Ở đây ta đã biểu diễn \(\mathbf{e}_3\), \(\mathbf{e}_4\) thông qua \(\mathbf{e}_1\), \(\mathbf{e}_2\)-để thuận tiện. Tức về mặt con số, cơ sở vector là hai vector trực chuẩn được đánh số 1,2. 
+Lúc này hai vector cơ sở 3,4 không trực chuẩn và được viết trong toạ độ tạo bởi hai vector cơ sở trực chuẩn 1,2- hai vector được chọn để có toạ độ \((1,0)\) và \((0,1)\).
 
 Một tổ hợp tuyến tính của hai vector nói rằng ta đã kéo giãn mỗi vector theo một hệ số nào đó và sau đó cộng chúng với nhau. Đặc biệt, đối với hai vector mới được chọn, bằng cách lựa chọn một bộ hệ số vô hướng thích hợp, ta có thể biểu diễn mọi vector trên mặt phẳng thành một tổ hợp tuyến tính của chúng (do đó ta chọn chúng làm cơ sở, như đã đề cập). 
-Mặt khác, nếu hai vector ta chọn chỉ là \(\mathbf{e}_3\) và, chẳng hạn, \(2\mathbf{e}_3\), những vector có thể được biểu diễn bởi hệ cơ sở này chỉ có những vector nằm trên cùng một đường thẳng với \(\mathbf{e}_3\). Nhưng đồng thời, nếu ta chỉ quan tâm tới 
-những thứ xảy ra trên đường thẳng đó, thì bất kỳ một vector nào nằm trên đó đều là cơ sở cho \emph{không gian}(đường thẳng) mà ta quan tâm.
+Mặt khác, nếu hai vector ta chọn chỉ là \(\mathbf{e}_3\) và, chẳng hạn, \(2\mathbf{e}_3\), những vector có thể được biểu diễn bởi hệ vector (không phải cơ sở) này chỉ có những vector nằm trên cùng một đường thẳng với \(\mathbf{e}_3\). Nhưng đồng thời, nếu ta chỉ quan tâm tới 
+những thứ xảy ra trên đường thẳng đó, thì bất kỳ một (và chỉ một) vector nào nằm trên đó đều là cơ sở cho \emph{không gian}(đường thẳng) mà ta quan tâm.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Tuan2/Figures/avectoronaline.png}
+\end{figure}
+
 \vspace{8pt}
 
 Một cách tự nhiên, ta đi tới những khái niệm sau:
 \begin{definition}[Bao tuyến tính]
-    Nếu \(S={\mathbf{u}_{1}, \mathbf{u}_{2},\dots,  \mathbf{u}_{n}}\) là một tập hợp \(n\) vector trong không gian, thì tập hợp tất cả các tổ hợp tuyến tính của chúng được gọi là bao tuyến tính của \(\mathbf{u}_{1}, \mathbf{u}_{2},\dots \mathbf{u}_{n}\), và được kí hiệu là span(\(S\)).
+    Nếu \(S=\{\mathbf{u}_{1}, \mathbf{u}_{2},\dots,  \mathbf{u}_{n}\}\) là một tập hợp \(n\) vector trong không gian, thì tập hợp tất cả các tổ hợp tuyến tính của chúng được gọi là bao tuyến tính của \(\mathbf{u}_{1}, \mathbf{u}_{2},\dots \mathbf{u}_{n}\), và được kí hiệu là span(\(S\)).
     \vspace{8pt}
 
     Nếu span(S) chứa toàn bộ vector trong không gian, vậy ta gọi S là một hệ sinh cho không gian.
@@ -34,7 +39,7 @@ Một cách tự nhiên, ta đi tới những khái niệm sau:
         \item độc lập tuyến tính.\footnote{Có thể chứng minh rằng mỗi vector trong không gian tương ứng với duy nhất một tổ hợp tuyến tính của cùng một hệ cơ sở. Đây là một bài tập cho các bạn.}
     \end{itemize}
 \end{definition}
-Trong ví dụ cụ thể ta đã lấy ở trên, không gian của ta (một mặt phẳng) có hai hệ sinh là \(S_1 ={\mathbf{e}_{1}, \mathbf{e}_2}\), và \(S_2 ={\mathbf{e}_{3}, \mathbf{e}_{4}}\). Đồng thời, hai cặp vector tạo thành hai hệ sinh này cũng là các cơ sở khác nhau. Ngoài ra cũng chú ý rằng, \(S_{3}={\mathbf{e}_{3}, \mathbf{e}_{4}, 2\mathbf{e}_{3}}\) cũng là một hệ sinh cho mặt phẳng này nhưng tập hợp ba vector này không phải là một hệ cơ sở, vì nó không độc lập tuyến tính (phụ thuộc tuyến tính). Cụ thể, dễ thấy rằng \[-2\mathbf{e}_{3}+1(2\mathbf{e}_{3})+0\mathbf{e}_{4}=\mathbf{0},\] nhưng ta lại có các hệ số khác \(0\) là \(-2\) và \(1\).
+Trong ví dụ cụ thể ta đã lấy ở trên, không gian của ta (một mặt phẳng) có hai hệ sinh là \(S_1 =\{\mathbf{e}_{1}, \mathbf{e}_2\}\), và \(S_2 =\{\mathbf{e}_{3}, \mathbf{e}_{4}\}\). Đồng thời, hai cặp vector tạo thành hai hệ sinh này cũng là các cơ sở khác nhau. Ngoài ra cũng chú ý rằng, \(S_{3}=\{\mathbf{e}_{3}, \mathbf{e}_{4}, 2\mathbf{e}_{3}\}\) cũng là một hệ sinh cho mặt phẳng này nhưng tập hợp ba vector này không phải là một hệ cơ sở, vì nó không độc lập tuyến tính (phụ thuộc tuyến tính). Cụ thể, dễ thấy rằng \[-2\mathbf{e}_{3}+1(2\mathbf{e}_{3})+0\mathbf{e}_{4}=\mathbf{0},\] nhưng ta lại có các hệ số khác \(0\) là \(-2\) và \(1\). Ngoài ra, bất kỳ một tập hợp vector nào chứa vector \(\mathbf{0}\) đều không độc lập tuyến tính, và do đó không phải là một hệ cơ sở.
 
 \subsubsection*{Không gian vector}
 Khi đề cập đến vector, ta không tránh khỏi đề cập đến từ "không gian". Trong phần \ref{vector}, từ này được hiểu là không gian ba chiều mà ta sinh hoạt, có trên dưới, phải trái, trước sau; tức là không gian hình học. Song, trong phần vừa rồi, từ "không gian" được dùng một cách nhập nhằng, tối nghĩa. Thoạt đầu là nghĩa ở \ref{vector}. Rồi trong các phần định nghĩa mới được đưa ra, nó dường như cũng chỉ để chỉ mặt phẳng toạ độ Oxy, chỉ chứa các vector có hai thành phần toạ độ. Số vector cơ sở cho không gian này cũng chỉ là \(2\) mà không phải \(3\). Việc nói rằng "bởi vì vector đại diện cho trên dưới lúc này bằng \(\mathbf{0}\) nên không được xét vào" là vô nghĩa và không đúng với các định nghĩa được đưa ra. 
@@ -50,8 +55,8 @@ Thành thử, cần làm rõ nghĩa của cụm "không gian chứa các vector"
         \item[(iv)]    \(\mathbf{u}+(\mathbf{v}+\mathbf{w})=(\mathbf{u}+\mathbf{v})+\mathbf{w}\).
         \item[(v)] Tồn tại một vector \(\mathbf{0}\) sao cho \(\mathbf{v}+\mathbf{0}=\mathbf{v}\).
         \item[(vi)] Với mọi vector \(\mathbf{v}\), tồn tại một vector \(\mathbf{v}'\) sao cho \(\mathbf{v}+\mathbf{v}'=\mathbf{0}\).
-        \item[(vii)] \(\alpha(\beta\mathbf{v})=(\alpha\beta)\mathbf{v}\).
-        \item[(viii)] \(1\mathbf{v}=\mathbf{v}\).
+        \item[(vii)] \(1\mathbf{v}=\mathbf{v}\).
+        \item[(viii)] \(\alpha(\beta\mathbf{v})=(\alpha\beta)\mathbf{v}\).
         \item[(ix)]  \(\alpha(\mathbf{v}+\mathbf{w})=\alpha\mathbf{v}+\alpha\mathbf{w}\).
         \item[(x)] \((\alpha+\beta)\mathbf{v}=\alpha\mathbf{v}+\beta\mathbf{v}\).    
     \end{enumerate}
@@ -61,7 +66,7 @@ Dưới góc nhìn của một tập hợp, ta quay lại với ba ví dụ quen
     \item Trục số thực: \(\mathbb{R}^1\)
     \begin{figure}[H]
         \centering
-        \includegraphics[width=0.8\linewidth]{Tuan2/Figures/realaxis.png}
+        \includegraphics[width=0.8\linewidth]{Tuan2/Figures/1Dvectorspace.png}
     \end{figure}
     Rõ ràng, tập hợp các số thực \(\mathbb{R}\) cũng là một không gian vector với duy nhất một vector cơ sở là \(1\) (hoặc bất kỳ số thực nào khác). Mỗi vector có thể được biểu diễn bằng một toạ độ -một điểm trên trục số, và từ đó là toàn bộ hệ sinh.
     \item Mặt phẳng toạ độ: \(\mathbb{R}^2\)
@@ -77,7 +82,7 @@ Dưới góc nhìn của một tập hợp, ta quay lại với ba ví dụ quen
     \end{figure}
     Với trường hợp này, ta cần ba vector cơ sở và tương ứng là ba toạ độ cho mỗi vector. Hệ sinh của không gian được minh hoạ như trong hình.
 \end{enumerate}
-Nhận thấy rằng các trường hợp trên khác nhau bởi số lượng của vector cơ sở\footnote{Có thể chứng minh rằng số lượng vector cơ sở cho cùng một không gian là duy nhẩt. Xem \emph{Chapter 3. Introduction to Linear Algebra. Gilbert Strange. 5th} cho một chứng minh với các vector thực.}, \textbf{khái niệm \emph{chiều} của một không gian vector vì vậy dược định nghĩa là số lượng của các vector cơ sở trong hệ cơ sở của không gian đó}. Các trường hợp có chiều là \(1,2,3\) đã được đề cập. Vậy \(4,5,\dots n\) thì sao? Ta không thể minh hoạ được các ví dụ này, nhưng có thể biểu diễn các vector trong, không gian vector \(\mathbb{R}^4\) bằng một vector có bốn toạ độ là, chẳng hạn, \((1,2,3,3)\), tức là một mảng số một chiều có bốn thành phần. Tương tự, \(n\) toạ độ cho \(\mathbb{R}^n\).
+Nhận thấy rằng các trường hợp trên khác nhau bởi số lượng của vector cơ sở\footnote{Có thể chứng minh rằng số lượng vector cơ sở cho cùng một không gian là duy nhẩt. Xem \emph{Chapter 3. Introduction to Linear Algebra. Gilbert Strange. 5th} cho một chứng minh với các vector thực.}, \textbf{khái niệm \emph{chiều} của một không gian vector vì vậy dược định nghĩa là số lượng của các vector cơ sở trong hệ cơ sở của không gian đó}. Các trường hợp có chiều là \(1,2,3\) đã được đề cập. Vậy \(4,5,\dots n\) thì sao? Ta không thể minh hoạ được các ví dụ này, nhưng có thể biểu diễn các vector trong, không gian vector \(\mathbb{R}^4\) bằng một vector có bốn toạ độ là, chẳng hạn, \((1,2,3,4)\), tức là một mảng số một chiều có bốn thành phần. Tương tự, \(n\) toạ độ cho \(\mathbb{R}^n\).
 \vspace{8pt}
 
 Ký hiệu \(\mathbb{R}^n\) chỉ rằng các vector trong không gian này có thành phần là các số thực. Điều này có thể được mở rộng sang số phức, và thậm chí còn đối với các đối tượng không phải là số. Đến lúc này, ta cần nhìn lại rằng vector là gì? Vật lý giới thiệu đến cho ta những mũi tên có thể được mô tả bởi một mảng số. Nhưng không còn mũi tên nào có thể được tưởng tượng đối với 
@@ -109,6 +114,13 @@ Một không gian con \(S\) trong một không gian vector \(V\) là một tập
 \end{definition}
 
 Nghĩa là mọi tổ hợp tuyến tính của các vector trong không gian con \(S\) đều nằm trong không gian con đó, và nằm trong cả \(V\).
+\begin{definition}
+    Một cơ sở cho một không gian con \(S\) của \(\mathbb{R}^n\) là một tập hợp các vector trong \(S\) sao cho 
+    \begin{enumerate}
+        \item tạo thành \(S\), và
+        \item là độc lập tuyến tính.
+    \end{enumerate}
+\end{definition}
 Hai không gian vector trong ví dụ trên đều là không gian con của \(\mathbb{R}^3\). Tương tự, nếu ta xét một đường thẳng đi qua gốc toạ độ nằm trên mặt phẳng trong ví dụ, đường thẳng này cũng là một không gian con của mặt phẳng, và đồng thời là một không gian con của \(\mathbb{R}^3\).
 Hơn nữa, vector \(\mathbf{0}\) tự nó tạo thành một không gian vector, và là không gian con của chính nó cùng các không gian \(\mathbb{R}^n\) khác. Đây là lý do cần có điều kiện "đi qua gốc toạ độ".
 \begin{figure}[H]
@@ -210,7 +222,8 @@ Tương tự, chúng ta có thể nhân ma trận với một hằng số \(c\in
     0\\11\\-19
 \end{bmatrix}.\]
 Bằng cách định nghĩa một phép toán mới, ta có thể viết lại thành dạng
-\begin{equation}\begin{bmatrix}
+\begin{equation}\label{eq2.2.1}
+    \begin{bmatrix}
     2\\5\\-4
 \end{bmatrix}=\begin{bmatrix}
     1&0&0\\
@@ -218,10 +231,24 @@ Bằng cách định nghĩa một phép toán mới, ta có thể viết lại t
     0&-5&-19
 \end{bmatrix}\begin{bmatrix}
     2\\-3\\1
-\end{bmatrix}.\end{equation}\label{eq2.2.1} Ta đã đặt các vector cơ sở vào cột của ma trận \(3\times 3\) vừa rồi, và các hệ số của tổ hợp tuyến tính vào một vector cột. Về tổng quát, một phép nhân ma trận \(m\times n\) với một vector \(n\times 1\) sẽ cho ra một vector \(m\times 1\), và phần tử thứ \(i\) được tính bởi 
+\end{bmatrix}.\end{equation} Ta đã đặt các vector cơ sở vào cột của ma trận \(3\times 3\) vừa rồi, và các hệ số của tổ hợp tuyến tính vào một vector cột. Về tổng quát, một phép nhân ma trận \(m\times n\) với một vector \(n\times 1\) sẽ cho ra một vector \(m\times 1\), và phần tử thứ \(i\) được tính bởi 
 \begin{equation}
     (\mathbf{Ax})_i = \sum_{j=1}^n \mathbf{A}_{ij}\mathbf{x}_j.
 \end{equation}
+Cũng có thể viết thành, trong trường hợp \(n=3\),
+\[\begin{bmatrix}
+    \vert &\vert&\vert\\
+    \mathbf{A}_{i1}&\mathbf{A}_{i2}&\mathbf{A}_{i3}\\
+    \vert &\vert&\vert\\
+\end{bmatrix}\begin{bmatrix}
+    x_1\\x_2\\x_3
+\end{bmatrix}=x_1\begin{bmatrix}
+    \vert\\\mathbf{A}_{i1}\\ \vert
+\end{bmatrix}+x_2 \begin{bmatrix}
+    \vert\\\mathbf{A}_{i2}\\ \vert
+\end{bmatrix}+x_3\begin{bmatrix}
+    \vert\\\mathbf{A}_{i1}\\ \vert
+\end{bmatrix}.\]
 Vector mới là một tổ hợp tuyến tính của các cột của ma trận \(\mathbf{A}\) với các hệ số là các phần tử của vector \(\mathbf{x}\). Cũng dễ thấy rằng, phần tử thứ \(i\) của vector này là tích vô hướng của hàng thứ \(i\) của \(\mathbf{A}\) với vector \(\mathbf{x}\). Nghĩa là, chẳng hạn, 
 \[\begin{bmatrix}
     0&2&11
@@ -231,7 +258,7 @@ Vector mới là một tổ hợp tuyến tính của các cột của ma trận
     0\\2\\11
 \end{bmatrix}\cdot \begin{bmatrix}
     2\\-3\\1
-\end{bmatrix} =5.\]
+\end{bmatrix}=0\times 2+2\times(-3)+11\times 1 =5.\]
 Vì tích vô hướng có tính phân phối là \(\mathbf{a}\cdot(\mathbf{b}+\mathbf{c})=\mathbf{a}\cdot\mathbf{b}+\mathbf{a}\cdot\mathbf{c},\)
 phép nhân ma trận-vector cũng có tính chất tương tự: \[\mathbf{A}(\mathbf{a}+\mathbf{b})=\mathbf{A}\mathbf{a}+\mathbf{A}\mathbf{b}.\]
 \vspace{8pt}
@@ -306,7 +333,7 @@ Các tổng này, như đã biết, có thể được viết thành tích của
 2\\-3\\1
 \end{bmatrix}.\] Quan sát phương trình này, ta nhận thấy sự lặp của \(\mathbf{B}\); điều này liên tưởng ta đến một phép nhân. 
 Tức là, ta có thể viết 
-\begin{equation}\begin{bmatrix}
+\begin{equation}\label{eqmatrix}\begin{bmatrix}
     2\\5\\-4
 \end{bmatrix}=\mathbf{B}\begin{bmatrix}
     1&-1.625&-7.875\\
@@ -314,22 +341,22 @@ Tức là, ta có thể viết
     1&-2.125&-6.375
 \end{bmatrix}\begin{bmatrix}
     2\\-3\\1
-\end{bmatrix},\end{equation}\label{eqmatrix} bằng cách định nghĩa một phép nhân mới, và ta gọi phép nhân này là một phép nhân ma trận với ma trận.
+\end{bmatrix},\end{equation} bằng cách định nghĩa một phép nhân mới, và ta gọi phép nhân này là một phép nhân ma trận với ma trận.
 \vspace{8pt}
 
 Xét một ma trận \(\mathbf{A}_{m\times n}\) và một ma trận \(\mathbf{B}_{n\times p}\), \emph{tích của của chúng là một ma trận \(\mathbf{C}_{m\times p}\); các cột của ma trận này là các vector, bằng với tích ma trận-vector của ma trận \(\mathbf{A}\) và các cột tương ứng  của ma trận \(B\).}
 \vspace{8pt}
 
 Đồng thời, ta cũng nhận thấy rằng tích ma trận-vector cũng là một tích ma trận-ma trận, vì vector là một ma trận có một cột. Do đó, để tổng quát, ta định nghĩa phép nhân ma trận với ma trận như sau: 
-\begin{equation}
-    \mathbf{C}_{ij}=\mathbf{AB}_{ij}=\sum_{k=1}^n \mathbf{A}_{ik}\mathbf{B}_{kj}.
-\end{equation}\label{eq2.2.2}
+\begin{equation}\label{eq2.2.2}
+    \mathbf{C}_{ij}=(\mathbf{AB})_{ij}=\sum_{k=1}^n \mathbf{A}_{ik}\mathbf{B}_{kj}.
+\end{equation}
 Hay, nói cách khác, phần tử thứ \((i,j)\) của \(\mathbf{C}\) bằng tích vô hướng của hàng thứ \(i\) của ma trận \(\mathbf{A}\) với cột thứ \(j\) của ma trận \(\mathbf{B}\).
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.5\linewidth]{Tuan2/Figures/matricemultiplication.png}
 \end{figure}
-Một phương trình vector mà ta thường gặp tương đương với ba (hoặc hai) phương trình đại số. Còn, như ta đã thấy, phương trình \eqref{eqmatrix} tương đương với bốn phương trình vector, tức là tận 12 phương trình đại số. Điều này chứng tỏ khả năng nén thông tin của ma trận. Một lượng rất lớn thông tin có thể được nén lại trong một ma trận, và ta có thể thực hiện các phép toán trên đó để đồng thời xử lý chúng. 
+Một đẳng thức vector mà ta thường gặp tương đương với ba (hoặc hai) đẳng thức đại số. Còn, như ta đã thấy, hệ hai đẳng thức \eqref{eqmatrix} và \eqref{eq2.2.1} tương đương với bốn đẳng thức vector, tức là tận 12 đẳng thức đại số. Điều này chứng tỏ khả năng nén thông tin của ma trận. Một lượng rất lớn thông tin có thể được nén lại trong một ma trận, và ta có thể thực hiện các phép toán trên đó để đồng thời xử lý chúng. 
 \vspace{8pt}
 
 Để kết thúc phần này, ta hãy xét thêm một ví dụ. Hãy tính tích
