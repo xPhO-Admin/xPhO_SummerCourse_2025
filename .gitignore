@@ -27,3 +27,7 @@
 *.nav
 *.synctex.gz
 *.bcf
+
+#Recordings:
+*.mp4
+*.mkv
