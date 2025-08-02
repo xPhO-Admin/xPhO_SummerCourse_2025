@@ -7,7 +7,7 @@ Một ví dụ  minh hoạ điều này:
 \mathbf{e}_3 =(2;-3),\qquad \text{ và } \mathbf{e}_4 =(1;2).\] 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\linewidth]{Tuan2/Figures/e3e4.png}
+    \includegraphics[width=0.6\linewidth]{Tuan2/Figures/e3e4.png}
 \end{figure}
 Lúc này hai vector cơ sở 3,4 không trực chuẩn và được viết trong toạ độ tạo bởi hai vector cơ sở trực chuẩn 1,2- hai vector được chọn để có toạ độ \((1,0)\) và \((0,1)\).
 
@@ -16,7 +16,7 @@ Mặt khác, nếu hai vector ta chọn chỉ là \(\mathbf{e}_3\) và, chẳng 
 những thứ xảy ra trên đường thẳng đó, thì bất kỳ một (và chỉ một) vector nào nằm trên đó đều là cơ sở cho \emph{không gian}(đường thẳng) mà ta quan tâm.
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{Tuan2/Figures/avectoronaline.png}
+    \includegraphics[width=0.6\textwidth]{Tuan2/Figures/avectoronaline.png}
 \end{figure}
 
 \vspace{8pt}
@@ -426,7 +426,162 @@ Tiếp tục xét các ma trận \(\mathbf{A},\mathbf{B}\), và \(\mathbf{C}\) c
 Chú ý quy luật cuối cùng, tích ma trận không mang tính giao hoán.
 
 \subsection{Phép biến đổi tuyến tính}
+\subsubsection*{Hệ phương trình tuyến tính}
+Đây là một hệ hai phương trình tuyến tính ở dạng tổng quát:
+\begin{align*}
+a_{11}x_{1} + a_{12}x_{2} &= b_{1}, \\
+a_{21}x_{1} + a_{22}x_{2} &= b_{2}.
+\end{align*}
+Một cách viết tương đương tận dụng vector là
+\[\begin{bmatrix}
+    a_{11}\\a_{21}
+\end{bmatrix}x_{1}+\begin{bmatrix}
+    a_{12}\\a_{22}
+\end{bmatrix}x_{2}=\begin{bmatrix}
+    b_{1}\\b_{2}
+\end{bmatrix},\] hay, chính là
+\[\begin{bmatrix}
+    a_{11}&a_{12}\\
+    a_{21}&a_{22}
+\end{bmatrix}\begin{bmatrix}
+    x_{1}\\x_{2}
+\end{bmatrix}=\begin{bmatrix}
+    b_{1}\\b_{2}
+\end{bmatrix}.\] Phương trình này có thể được ký hiệu hoá thành \[\mathbf{A}\mathbf{x}=\mathbf{b}.\]
+Sau khi giải hệ phương trình kia, nghiệm thu được sẽ có dạng
+\begin{align*}
+x_{1} &= a_{11}^{-1}b_{1} + a_{12}^{-1}b_{2}, \\
+x_{2} &= a_{21}^{-1}b_{1} + a_{22}^{-1}b_{2}.
+\end{align*}
+Với \(a_{ij}^{-1}\) là một con số nào đó có vị trí tương ứng với \(a_{ij}\); và hệ này cũng tương đương Với
+\[\begin{bmatrix}
+    x_{1}\\x_{2}
+\end{bmatrix}=\begin{bmatrix}
+    a_{11}^{-1}&a_{12}^{-1}\\
+    a_{21}^{-1}&a_{22}^{-1}
+\end{bmatrix}\begin{bmatrix}
+    b_{1}\\b_{2}
+\end{bmatrix}.\] Hay, có thể viết thành \[\mathbf{x}=\mathbf{A}^{-1}\mathbf{b}.\]
+Ta gọi \(\mathbf{A^{-1}}\) là ma trận nghịch đảo của \(\mathbf{A}\). Dễ thấy, nghịch đảo của nghịch đảo của một ma trận là chính nó, điều này nghĩa là
+\[\mathbf{A}\mathbf{A}^{-1}=\mathbf{A}^{-1}\mathbf{A}=\mathbf{I}.\] Ma trận \(\mathbf{I}\) được gọi là ma trận đơn vị, tất cả phần tử trong ma trận vuông này đều bằng 0, trừ các phần tử nằm trên đường chéo, bằng nhau và bằng 1. Đặc tính của nó là 
+\[\mathbf{I}\mathbf{x}=\mathbf{x}.\] Một số ví dụ cho \(\mathbf{I}\):
+\[\begin{bmatrix}
+    1&0\\
+    0&1
+\end{bmatrix},\quad
+\begin{bmatrix}
+    1&0&0\\
+    0&1&0\\
+    0&0&1
+\end{bmatrix}.\]
+Ngoài ra, có thể dễ dàng chứng minh rằng 
+\[\mathbf{C}=\mathbf{AB}\implies \mathbf{C}^{-1}=\mathbf{B}^{-1}\mathbf{A}^{-1}.\] Đây sẽ là một bài tập nhỏ.
+\subsubsection*{Toán tử tuyến tính}
+Từ những gì mới biết được, hãy làm một so sánh nhỏ:
+\begin{center}
+\begin{tabular}{|c|c|c|}
+  \hline
+   & Ma trận & Hàm số \\
+  \hline
+  Dạng chuẩn & \(\mathbf{A}\mathbf{x}=\mathbf{b}\) & \(f(x)=y\) \\
+  \hline
+   Nghịch đảo& \(\mathbf{x}=\mathbf{A}^{-1}\mathbf{b}\) & \(x=f^{-1}(y)\) \\
+  \hline
+\end{tabular}
+\end{center}
+Như vậy thì việc nhân một ma trận với một vector là tương đồng với đặt vector đó làm đầu vào của một hàm, và đầu ra của một hàm như vậy là một vector khác.
+Tuy nhiên, thay vì dùng từ \emph{hàm}, một thuật ngữ mới được sử dụng: \emph{biến đổi}. Đối với một vector \(\mathbf{u}\in\mathbb{R}^n\), một biến đổi \(T\)\footnote{T: transformation=map} biến
+nó thành một vector mới \(\mathbf{v}\in\mathbb{R}^m\). Ngược lại, một biến đổi \(T^{-1}\) sẽ trả \(\mathbf{v}\) trở lại \(\mathbf{u}\). Nhưng có phải ta luôn có 
+\[\mathbf{A}\mathbf{x}=T(\mathbf{x})\] không? Không. Giả sử xét một biến đổi 
+\[T\left(\begin{bmatrix}
+    x_1\\x_2
+\end{bmatrix}\right)=\begin{bmatrix}
+    x_{1}^2 +x_{2}^2 \\x_{1}^2 -x_{2}^2
+\end{bmatrix},\] ta sẽ không thể tìm thấy một ma trận nào làm được điều này cả. Và hoá ra là bảng so sánh của ta thiếu một số thứ quan trọng:
+\begin{center}
+\begin{tabular}{|c|c|c|}
+  \hline
+   & Ma trận & Hàm số \\
+  \hline
+  Dạng chuẩn & \(\mathbf{A}\mathbf{x}=\mathbf{b}\) & \(f(x)=y\) \\
+  \hline
+   Nghịch đảo& \(\mathbf{x}=\mathbf{A}^{-1}\mathbf{b}\) & \(x=f^{-1}(y)\) \\
+  \hline
+  Tính tuyến tính & \(\mathbf{A}(\mathbf{x}_1+\mathbf{x}_2)=\mathbf{A}\mathbf{x}_1 +\mathbf{A}\mathbf{x}_2\) &\(f(x_1 +x_2)=f(x_1)+f(x_2)\)\\
+  Tính đồng nhất & \(\mathbf{A}(\alpha\mathbf{x})=\alpha\mathbf{A}\mathbf{x}\)&\(f(\alpha x)=\alpha f(x)\)\\
+  \hline
+\end{tabular}
+\end{center}
+Một hàm số có đầy đủ tính chất như trong bảng đề cập được gọi là một hàm tuyến tính; do đó, phép biến đổi mà ta cần quan tâm đến cũng phải là một biến đổi tuyến tính. Vì vậy, ma trận được gọi là một \textbf{\emph{toán tử tuyến tính}}.
+\begin{definition}
+    Một biến đổi tuyến tính\footnote{L: linear transformation} là biến đổi \(L: \mathbb{R}^n \rightarrow\mathbb{R}^m\) thoả mãn hai đặc tính:
+    \[\text{tuyến tính:}\quad L(\mathbf{u}+\mathbf{v})=L(\mathbf{u})+L(\mathbf{v}),\]
+    \[\text{tuyến tính:}\quad L(\alpha\mathbf{v})=\alpha L(\mathbf{v}).\]
+\end{definition}
+Từ đây dễ dàng chứng minh được hai hệ quả quan trọng:
+\begin{enumerate}
+    \item \(T(\mathbf{0})=\mathbf{0}\).
+    \item \(T(\alpha_{1}\mathbf{e}_1+\alpha_2 \mathbf{e}_2 +\cdots +\alpha_n \mathbf{e}_{n})=\alpha_1 T(\mathbf{e}_1)+\alpha_2 T(\mathbf{e}_2)+\cdots +\alpha_n T(\mathbf{e}_n)\).
+\end{enumerate}
+Hệ quả 2 nói rằng nếu \(\mathbf{x}\) là một tổ hợp tuyến tính của một tập hợp các vector, \(T(\mathbf{x})\) vẫn là chính tổ hợp tuyến tính đó của tập hợp chính các vector đó sau biến đổi. 
+Đồng thời có thể viết lại hệ quả 2 theo ngôn ngữ ma trận:
+\[T(\mathbf{x})=\begin{bmatrix}
+    \lvert & \lvert &\lvert &\lvert\\
+    T(\mathbf{e}_1)&T(\mathbf{e}_2)&\cdots&T(\mathbf{e}_n)\\
+     \lvert & \lvert &\lvert &\lvert
+\end{bmatrix}\begin{bmatrix}
+    \alpha_1 \\\alpha_2 \\\vdots\\ \alpha_n
+\end{bmatrix},\] hay \[T(\mathbf{x})=\mathbf{A}\mathbf{x}.\]
+\(\mathbf{A}\) được gọi là ma trận chuẩn của biến đổi \(T\). Hãy lấy ví dụ đơn giản cho một biến đổi kéo với 
+\[T\left(\begin{bmatrix}
+    x_1 \\x_2
+\end{bmatrix}\right)=\begin{bmatrix}
+    x_1 +2x_2 \\x_2
+\end{bmatrix}.\] Áp dụng biến đổi này lên hai vector đơn vị \(\mathbf{e}_1 =(1,0)\) và \(\mathbf{e}_2 =(0,1)\):
+\[\mathbf{e}_1 \rightarrow (1,0),\qquad \mathbf{e}_2 \rightarrow (2,1).\] Với một vector \(\mathbf{x}=(1,1)\):
+\[\mathbf{x}=\begin{bmatrix}
+1\\1
+\end{bmatrix}\rightarrow 1\begin{bmatrix}
+1\\0
+\end{bmatrix}+1\begin{bmatrix}
+2\\1
+\end{bmatrix}=\begin{bmatrix}
+    1&2\\0&1
+\end{bmatrix}\begin{bmatrix}
+    1\\1
+\end{bmatrix}=\begin{bmatrix}
+    3\\1
+\end{bmatrix}.\]
+\subsubsection*{Sự kết hợp các biến đổi tuyến tính}
+Một sự gợi nhắc về hàm hợp cho ta liên tưởng đến trường hợp tương tự cho phép biến đổi hợp. Nói cách khác, một phép biến đổi hợp là một phép biến đổi lấy đều vào là đầu ra của một phép biến đổi khác:
+\[T_2 (T_1 (\mathbf{v}))=T(\mathbf{v})=\mathbf{w}.\] Trong ngữ cảnh của toán tử tuyến tính tương ứng với phép biến đổi tuyến tính, điều này chính là một phép nhân ma trận của các ma trận chuẩn
+\[\mathbf{B}(\mathbf{A}\mathbf{x})=(\mathbf{BA})\mathbf{x}.\]
+Với sự chồng chập của liên tiếp 3 biến đổi tuyến tính,
+\[T_3 (T_2 (T_1 (\mathbf{v})))=T(\mathbf{v})=\mathbf{C}(\mathbf{B}(\mathbf{A}\mathbf{x})).\] Từ đây ta dễ dàng chứng minh quy luật liên kết
+\[\mathbf{C}(\mathbf{BA})=(\mathbf{CB})\mathbf{A}=(\mathbf{C}\mathbf{B}\mathbf{A}).\]
+\subsubsection*{Minh hoạ cho phép biến đổi tuyến tính}
+Có thể thấy rằng một phép biến đổi \(L: \mathbb{R}^n \rightarrow \mathbb{R}^m\) có toán tử tuyến tính tương ứng là một ma trận \(m\times n\); nhưng
+sau đây ta sẽ chủ yếu minh hoạ cho trường hợp \(m=n\), tức ma trận chuẩn là một ma trận vuông \(n\times n\), do đó phép biến đổi giữ nguyên chiều của không gian vector.
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\linewidth]{Tuan2/Figures/LT1.png}
+    \centering{Một phép biến đổi tuyến tính}
+    \label{LT1}
+\end{figure}
+\ref{LT1} là một minh hoạ cho phép biến đổi tuyến tính ứng với ma trận \[\begin{bmatrix}
+    1&2\\2&1
+\end{bmatrix},\] các nút của lưới màu xanh thể hiện cho các vector sau biến đổi, điểm O vẫn ở nguyên chỗ (hệ quả 1), đường thẳng màu đỏ là đường thẳng màu xám sau biến đổi.
+Ta tổng kết các tiêu chí cho hình ảnh của "lưới" sau một phép biến đổi tuyến tính\footnote{Xem trong 3Blue1Brown cho các hình ảnh về phép biến đổi phi tuyến}:
+\begin{itemize}
+    \item Điểm O giữa nguyên vị trí.
+    \item Các đường kẻ của lưới song song và cách đều nhau.
+    \item Một đường thẳng vẫn là một đường thẳng.
+\end{itemize}
+
+
+\subsubsection*{Định thức}
+\subsubsection*{Thay đổi cơ sở}
 \subsection{Một số ví dụ khác về không gian vector}\label{morexample}
 
 

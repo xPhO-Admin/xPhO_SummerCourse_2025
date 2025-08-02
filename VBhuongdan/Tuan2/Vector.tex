@@ -32,6 +32,11 @@ Tưởng tượng để xác định vị trí của viên đá, thay vì xác �
     \includegraphics[width=1\textwidth]{Tuan2/Figures/congvector.png}
     \caption{$\mathbf{a}+\mathbf{b}+\mathbf{c}+\mathbf{d}=\mathbf{AB}$}
 \end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{Tuan2/Figures/quy_tac_hbh.png}
+    \caption{Quy tắc hình bình hành}
+\end{figure}
 Chú ý rằng, về tổng quát, \(\lvert \mathbf{a}+\mathbf{b}\rvert\neq a+b\).
 \subsubsection{Tích một vector với một đại lượng vô hướng}
 Khi nhân một vector với một đại lượng vô hướng, độ dài của vector sẽ được nhân lên với hệ số bằng đại lượng đó, trong khi hướng của vector không đổi nếu số đó là số dương, đảo chiều nếu số đó là số âm. Đặc biệt, nếu một vector nhân với \(0\), kết quả là vector \(\mathbf{0}=\mathbf{a}+(-\mathbf{a})\).
@@ -44,10 +49,10 @@ Khi nhân một vector với một đại lượng vô hướng, độ dài củ
 \subsubsection{Tích vô hướng hai vector}
 Phép nhân vô hướng hai vector \(\mathbf{a}\) và \(\mathbf{b}\) có kết quả là một đại lượng vô hướng có giá trị bằng:
 \begin{equation}
-    \mathbf{a} \cdot \mathbf{b} = |\mathbf{a}| |\mathbf{b}| \cos (\mathbf{a}, \mathbf{b})
+    \mathbf{a} \cdot \mathbf{b} = |\mathbf{a}| |\mathbf{b}| \cos (\mathbf{a}, \mathbf{b}).
 \end{equation}
 Trong đó, \(\cos (\mathbf{a}, \mathbf{b})\) chỉ góc giữa hai vector \(\mathbf{a} \text{ và }\mathbf{b}\).
-Ý nghĩa của phép nhân vô hướng được thể hiện như hình vẽ:
+Phép nhân vô hướng được thể hiện như hình vẽ:
 \begin{figure}[H]
     \centering
     \includegraphics[width=1\textwidth]{Tuan2/Figures/tichcham.png}
@@ -60,12 +65,16 @@ Phép nhân có hướng hai vector \(\mathbf{a}\) và \(\mathbf{b}\) có kết 
     \includegraphics[width=1\textwidth]{Tuan2/Figures/tichcheo.png}
     \caption{phép nhân có hướng hai vector}
 \end{figure}
-Vector này có độ dài bằng:
+Vector này có độ lớn bằng
 \begin{equation}
     |\mathbf{a} \times \mathbf{b}| = |\mathbf{a}| |\mathbf{b}| \sin (\mathbf{a}, \mathbf{b})
 \end{equation}
-Chiều của vector này, theo quy ước,  được xác định bằng quy tắc bàn tay phải, hoặc quy tắc vặn nút chai (như hình vẽ).
-
+với chiều, theo quy ước,  được xác định bằng quy tắc bàn tay phải, hoặc quy tắc vặn nút chai (như hình vẽ).
+Ngoài ra, độ lớn của tích có hướng chính là diện tích của hình bình hành tạo bởi hai vector.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{Tuan2/Figures/meaningofcrossproduct.png}
+\end{figure} 
 
 \subsection{Đạo hàm vector}
 \begin{definition}
@@ -104,6 +113,7 @@ Tương tự, trong không gian hai chiều, một vector cơ sở chuẩn hóa 
 Xét một vector khác, \(\mathbf{w}=c\mathbf{e}_1 +d\mathbf{e}_2\), vậy \[\mathbf{v}+\mathbf{w}=(a+c)\mathbf{e}_1 +(b+d)\mathbf{e}_2 .\]
 Điều này nghĩa là, để đến vị trí được xác định bởi vector \(\mathbf{v}+\mathbf{w}\), ta đi từ vị trí ban đầu theo hướng của \(\mathbf{e}_1\) một khoảng bằng \(a+c\), rồi theo hướng của \(\mathbf{e}_2\) một khoảng bằng \(b+d\). Quay lại ví dụ ban đầu, ta thấy rằng nếu biết sẵn thông tin của \(\mathbf{e}_1\) và \(\mathbf{e}_2\), \(\mathbf{v}+\mathbf{w}\) được xác định qua mảng số \((a+c,b+d)\); 
 tương tự, có thể viết \(\mathbf{v}=(a,b)\) hay \(\mathbf{w}=(c,d)\) để \(\mathbf{v}+\mathbf{w}=(a+c,b+d)\). \(a\) và \(b\) được gọi là các \emph{toạ độ} của vector \(\mathbf{v}\), cũng như \(c\) và \(d\) được gọi là các toạ độ của \(\mathbf{w}\).
+Với trường hợp ba chiều, một vector có thể được biểu diễn bằng mảng số \((a,b,c)\).
 \vspace{8pt}
 
 Chú ý rằng các vector cơ sở cũng có toạ độ. Cụ thể, \((1,0)\) là toạ độ của \(\mathbf{e}_1\), và (\(0,1\)) là toạ độ của \(\mathbf{e}_2\). Trong trường hợp ba chiều, \(\mathbf{e}_1\), \(\mathbf{e}_2\), và \(\mathbf{e}_3\) có toạ độ lần lượt là \((1,0,0), (0,1,0), (0,0,1)\).
