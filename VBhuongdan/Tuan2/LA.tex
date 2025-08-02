@@ -424,7 +424,30 @@ Tiếp tục xét các ma trận \(\mathbf{A},\mathbf{B}\), và \(\mathbf{C}\) c
     \item Quy luật giao hoán: \(\mathbf{AB} \neq \mathbf{BA}\).
 \end{enumerate}
 Chú ý quy luật cuối cùng, tích ma trận không mang tính giao hoán.
+\vspace{8pt}
 
+\textbf{Ma trận chuyển vị.}
+\begin{definition}
+    Ma trận chuyển vị của ma trận \(\mathbf{A}\), ký hiệu là \(\mathbf{A}^T\), là ma trận có các thành phần sao cho \[(\mathbf{A}^T)_{ij}=\mathbf{A}_{ji}.\]
+\end{definition}
+Ví dụ: \[\mathbf{A}=\begin{bmatrix}
+    1&2\\3&4
+\end{bmatrix}\implies \mathbf{A}^T =\begin{bmatrix}
+    1&3\\2&4
+\end{bmatrix}.\] Ta thấy các thành phần nằm trên đường chéo của ma trận sẽ vẫn giữ nguyên vị trí sau chuyển vị.
+Phép chuyển vị có một tính chất quan trọng là đổi thứ tự của phép nhân ma trận, cụ thể 
+\[(\mathbf{AB})^T =\mathbf{B}^T \mathbf{A}^T .\] Đồng thời, đối với một các vector được biểu diễn trong (và chỉ trong) một hệ cơ sở trực chuẩn, tích vô hướng giữa hai vector chính là phép nhân ma trận 
+giữa một trong hai vector đó với chuyển vị của vector còn lại. Thật vậy, 
+\[\mathbf{v}\cdot \mathbf{u}=\mathbf{v}^T \mathbf{u}=\mathbf{u}^T \mathbf{v}.\] 
+Ví dụ: \[\begin{bmatrix}
+    1\\2
+\end{bmatrix}\cdot\begin{bmatrix}
+    -1\\3
+\end{bmatrix}=\begin{bmatrix}
+    1&2
+\end{bmatrix}\begin{bmatrix}
+    -1\\3
+\end{bmatrix}=5.\]
 \subsection{Phép biến đổi tuyến tính}
 \subsubsection*{Hệ phương trình tuyến tính}
 Đây là một hệ hai phương trình tuyến tính ở dạng tổng quát:
@@ -520,20 +543,20 @@ Một hàm số có đầy đủ tính chất như trong bảng đề cập đư
 \end{definition}
 Từ đây dễ dàng chứng minh được hai hệ quả quan trọng:
 \begin{enumerate}
-    \item \(T(\mathbf{0})=\mathbf{0}\).
-    \item \(T(\alpha_{1}\mathbf{e}_1+\alpha_2 \mathbf{e}_2 +\cdots +\alpha_n \mathbf{e}_{n})=\alpha_1 T(\mathbf{e}_1)+\alpha_2 T(\mathbf{e}_2)+\cdots +\alpha_n T(\mathbf{e}_n)\).
+    \item \(L(\mathbf{0})=\mathbf{0}\).
+    \item \(L(\alpha_{1}\mathbf{e}_1+\alpha_2 \mathbf{e}_2 +\cdots +\alpha_n \mathbf{e}_{n})=\alpha_1 L(\mathbf{e}_1)+\alpha_2 L(\mathbf{e}_2)+\cdots +\alpha_n L(\mathbf{e}_n)\).
 \end{enumerate}
-Hệ quả 2 nói rằng nếu \(\mathbf{x}\) là một tổ hợp tuyến tính của một tập hợp các vector, \(T(\mathbf{x})\) vẫn là chính tổ hợp tuyến tính đó của tập hợp chính các vector đó sau biến đổi. 
+Hệ quả 2 nói rằng nếu \(\mathbf{x}\) là một tổ hợp tuyến tính của một tập hợp các vector, \(L(\mathbf{x})\) vẫn là chính tổ hợp tuyến tính đó của tập hợp chính các vector đó sau biến đổi. 
 Đồng thời có thể viết lại hệ quả 2 theo ngôn ngữ ma trận:
-\[T(\mathbf{x})=\begin{bmatrix}
+\[L(\mathbf{x})=\begin{bmatrix}
     \lvert & \lvert &\lvert &\lvert\\
-    T(\mathbf{e}_1)&T(\mathbf{e}_2)&\cdots&T(\mathbf{e}_n)\\
+    L(\mathbf{e}_1)&L(\mathbf{e}_2)&\cdots&L(\mathbf{e}_n)\\
      \lvert & \lvert &\lvert &\lvert
 \end{bmatrix}\begin{bmatrix}
     \alpha_1 \\\alpha_2 \\\vdots\\ \alpha_n
-\end{bmatrix},\] hay \[T(\mathbf{x})=\mathbf{A}\mathbf{x}.\]
-\(\mathbf{A}\) được gọi là ma trận chuẩn của biến đổi \(T\). Hãy lấy ví dụ đơn giản cho một biến đổi kéo với 
-\[T\left(\begin{bmatrix}
+\end{bmatrix},\] hay \[L(\mathbf{x})=\mathbf{A}\mathbf{x}.\]
+\(\mathbf{A}\) được gọi là ma trận chuẩn của biến đổi \(L\). Hãy lấy ví dụ đơn giản cho một biến đổi kéo với 
+\[L\left(\begin{bmatrix}
     x_1 \\x_2
 \end{bmatrix}\right)=\begin{bmatrix}
     x_1 +2x_2 \\x_2
@@ -554,10 +577,10 @@ Hệ quả 2 nói rằng nếu \(\mathbf{x}\) là một tổ hợp tuyến tính
 \end{bmatrix}.\]
 \subsubsection*{Sự kết hợp các biến đổi tuyến tính}
 Một sự gợi nhắc về hàm hợp cho ta liên tưởng đến trường hợp tương tự cho phép biến đổi hợp. Nói cách khác, một phép biến đổi hợp là một phép biến đổi lấy đều vào là đầu ra của một phép biến đổi khác:
-\[T_2 (T_1 (\mathbf{v}))=T(\mathbf{v})=\mathbf{w}.\] Trong ngữ cảnh của toán tử tuyến tính tương ứng với phép biến đổi tuyến tính, điều này chính là một phép nhân ma trận của các ma trận chuẩn
+\[L_2 (L_1 (\mathbf{v}))=L(\mathbf{v})=\mathbf{w}.\] Trong ngữ cảnh của toán tử tuyến tính tương ứng với phép biến đổi tuyến tính, điều này chính là một phép nhân ma trận của các ma trận chuẩn
 \[\mathbf{B}(\mathbf{A}\mathbf{x})=(\mathbf{BA})\mathbf{x}.\]
 Với sự chồng chập của liên tiếp 3 biến đổi tuyến tính,
-\[T_3 (T_2 (T_1 (\mathbf{v})))=T(\mathbf{v})=\mathbf{C}(\mathbf{B}(\mathbf{A}\mathbf{x})).\] Từ đây ta dễ dàng chứng minh quy luật liên kết
+\[L_3 (L_2 (L_1 (\mathbf{v})))=L(\mathbf{v})=\mathbf{C}(\mathbf{B}(\mathbf{A}\mathbf{x})).\] Từ đây ta dễ dàng chứng minh quy luật liên kết
 \[\mathbf{C}(\mathbf{BA})=(\mathbf{CB})\mathbf{A}=(\mathbf{C}\mathbf{B}\mathbf{A}).\]
 \subsubsection*{Minh hoạ cho phép biến đổi tuyến tính}
 Có thể thấy rằng một phép biến đổi \(L: \mathbb{R}^n \rightarrow \mathbb{R}^m\) có toán tử tuyến tính tương ứng là một ma trận \(m\times n\); nhưng
@@ -565,11 +588,11 @@ sau đây ta sẽ chủ yếu minh hoạ cho trường hợp \(m=n\), tức ma t
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.6\linewidth]{Tuan2/Figures/LT1.png}
-    \centering{Một phép biến đổi tuyến tính}
+    \includegraphics[width=0.5\linewidth]{Tuan2/Figures/LT1.png}
+    \caption{Một phép biến đổi tuyến tính}
     \label{LT1}
 \end{figure}
-\ref{LT1} là một minh hoạ cho phép biến đổi tuyến tính ứng với ma trận \[\begin{bmatrix}
+Hình \ref{LT1} là một minh hoạ cho phép biến đổi tuyến tính ứng với ma trận \[\mathbf{A}=\begin{bmatrix}
     1&2\\2&1
 \end{bmatrix},\] các nút của lưới màu xanh thể hiện cho các vector sau biến đổi, điểm O vẫn ở nguyên chỗ (hệ quả 1), đường thẳng màu đỏ là đường thẳng màu xám sau biến đổi.
 Ta tổng kết các tiêu chí cho hình ảnh của "lưới" sau một phép biến đổi tuyến tính\footnote{Xem trong 3Blue1Brown cho các hình ảnh về phép biến đổi phi tuyến}:
@@ -578,8 +601,152 @@ Ta tổng kết các tiêu chí cho hình ảnh của "lưới" sau một phép 
     \item Các đường kẻ của lưới song song và cách đều nhau.
     \item Một đường thẳng vẫn là một đường thẳng.
 \end{itemize}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\linewidth]{Tuan2/Figures/LT2.png}
+    \caption{}
+    \label{LT2}
+\end{figure}
+Vẫn xét biến đổi đó, hình \ref{LT2} thể hiện sự biến đổi của vector \(\mathbf{v}\):
+\[\mathbf{v}=\begin{bmatrix}
+    1\\0.5
+\end{bmatrix}\rightarrow L\rightarrow L(\mathbf{v})=\begin{bmatrix}
+    2\\2.5
+\end{bmatrix}.\] Nhắc lại, ta đạt được \(L(\mathbf{v})\) điều này bằng cách nhân \(\mathbf{v}\) với ma trận chuẩn \(\mathbf{A}\), đây đơn giản là lấy 1 nhân với \(L(\mathbf{e}_1)\) (cột thứ nhất của \(\mathbf{A}\)) rồi cộng với 0.5 nhân \(L(\mathbf{e}_2)\) (cột thứ hai của \(\mathbf{A}\)).
+Để biến đổi ngược từ "lưới" hiện tại về "lưới" vuông đằng sau, ta chỉ cần áp dụng một biến đổi với ma trận \(\mathbf{A}^{-1}\) là ma trận nghịch đảo của \(\mathbf{A}\).
+\vspace{8pt}
 
+Vậy là ta đã có một hình ảnh trực quan về phép biến đổi tuyến tính. Tiếp đến sẽ là một số phép biến đổi điển hình.
+\vspace{8pt}
 
+\emph{Phép biến đổi cắt.}\newline
+Phương trình cho một biến đổi cắt 2D là 
+\[
+L\left(\begin{bmatrix}
+    x_1 \\x_2
+ \end{bmatrix}\right)=\begin{bmatrix}
+    x_1 +\lambda x_2 \\x_2
+ \end{bmatrix}, \text{ hoặc}\quad 
+ \begin{bmatrix}
+    x_1 \\\lambda x_1 +x_2
+ \end{bmatrix}.
+\] Tương ứng, ma trận đặc trưng là 
+\[\begin{bmatrix}
+    1&\lambda\\0&1
+\end{bmatrix},\] hoặc 
+\[\begin{bmatrix}
+    1&0\\\lambda&1
+\end{bmatrix}.\]
+Rõ ràng ở trên ta đã có một ví dụ với ma trận 
+\[
+\begin{bmatrix}
+    1&2\\0&1
+ \end{bmatrix},
+\]
+ dễ thấy rằng cơ sở thứ nhất được giữ nguyên, chỉ có cơ sở thứ hai được kéo chéo sang phải; và minh hoạ cho nó là 
+ \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\linewidth]{Tuan2/Figures/LT3}
+ \end{figure}
+Nếu hình ảnh này trông quen thuộc, bạn có thể đã đoán được phần nào: phép biến đổi được thể hiện trong Hình~\ref{LT1} chính là kết hợp của hai phép biến đổi cắt và gần giống cắt.
+Thực vậy,
+\[
+\begin{bmatrix}
+    1&2\\2&1
+ \end{bmatrix}=
+ \begin{bmatrix}
+    1&0\\2&1
+ \end{bmatrix}
+ \begin{bmatrix}
+    1&2\\0&-3
+ \end{bmatrix}.
+\]
+Nghĩa là ta trước tiên áp dụng ma trận biến đổi 
+\[
+\mathbf{A}_1 =
+\begin{bmatrix}
+    1&2\\0&-3
+ \end{bmatrix},
+\]
+rồi lại biến đổi thông qua ma trận 
+\[
+\mathbf{A}_2 =
+\begin{bmatrix}
+    1&0\\2&1
+ \end{bmatrix}.
+\]
+ \begin{figure}[H]
+    \centering
+    \begin{subfigure}[t]{0.48\textwidth}
+        \centering
+        \includegraphics[width=0.9\linewidth]{Tuan2/Figures/LT4.png}
+        \caption{Phép biến đổi của \(\mathbf{A}_1\)}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[t]{0.48\textwidth}
+        \centering
+        \includegraphics[width=0.9\linewidth]{Tuan2/Figures/LT5.png}
+        \caption{Phép biến đổi của \(\mathbf{A}_2\)}
+    \end{subfigure}
+ \end{figure}
+ Ta có thể đọc thấu đáo sự kết hợp này: \(\mathbf{A}_1\) chỉ thay đổi \(\mathbf{e}_2\) về cột thứ hai của \(\mathbf{A}_2\), rồi tiếp đó \(\mathbf{A}_2\) chỉ thay đổi \(\mathbf{e}_1\) về cột thứ nhất của \(\mathbf{A}\).
+ \vspace{8pt}
+
+\emph{Phép giãn nở.}\newline
+Biến đổi cho một giãn nở 2D là 
+\[L\left(\begin{bmatrix}
+    x_1 \\x_2
+\end{bmatrix}\right)=\begin{bmatrix}
+    \lambda_1 x_1 \\\lambda_2 x_2
+\end{bmatrix}.\] Như vậy ma trận chuẩn cho phép biến đổi này là một ma trận đường chéo,  có dạng
+\[\mathbf{D}=\begin{bmatrix}
+    \lambda_1 &0\\0&\lambda_2
+\end{bmatrix}.\] Sau đây là ví dụ cho \(\lambda_1=3, \lambda_2 =5\):
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{Tuan2/Figures/LT6}
+\end{figure}
+Chú ý rằng, 
+\[\mathbf{D}^{-1}=\begin{bmatrix}
+    \lambda_{1}^{-1}&0\\0&\lambda_{2}^{-1}
+\end{bmatrix}.\]
+\emph{Phép quay.}\newline Đây là một biến đổi đặc biệt. Các vector sau biến đổi giữ nguyên độ lớn, nhưng đầu mút được quay đi một góc \(\theta\) bất kỳ nào đó.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\linewidth]{Tuan2/Figures/rotation.png}
+\end{figure}
+Ma trận chuẩn cho phép quay 2D là 
+\[\mathbf{R}=\begin{bmatrix}
+    \cos\theta &-\sin\theta\\
+    \sin\theta &\cos\theta
+\end{bmatrix}.\] Đối với các cơ sở trực chuẩn, có một tính chất đặc biệt cần lưu ý là 
+\[\mathbf{R}^{-1}=\mathbf{R}^T .\] Một số ví dụ cụ thể:
+\begin{enumerate}
+    \item Phép quay 90 độ theo chiều dương \[\mathbf{R}=\begin{bmatrix}
+        0&-1\\1&0
+    \end{bmatrix}.\]
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.3\linewidth]{Tuan2/Figures/LT7.png}
+    \end{figure}
+    \item Phép quay 90 độ theo chiều âm: \[\mathbf{R}=\begin{bmatrix}
+        0&1\\-1&0
+    \end{bmatrix}.\]
+    \item Phép quay 30 độ theo chiều dương: \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.3\linewidth]{Tuan2/Figures/LT8.png}
+    \end{figure}
+    \item Kéo rồi quay 90 độ:
+    \[\begin{bmatrix}
+        0&-1\\1&0
+    \end{bmatrix}\begin{bmatrix}
+        1&1\\0&1
+    \end{bmatrix}.\] \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.3\linewidth]{Tuan2/Figures/LT9.png}
+    \end{figure}
+\end{enumerate}
+Hãy xem 3Blue1Brown cho một trực quan hoá biến đổi tuyến tính 3D.
 \subsubsection*{Định thức}
 \subsubsection*{Thay đổi cơ sở}
 \subsection{Một số ví dụ khác về không gian vector}\label{morexample}
