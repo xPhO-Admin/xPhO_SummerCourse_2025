@@ -1,4 +1,5 @@
 \subsection{Không gian vector}
+Tiếp tục đào sâu vào một khía cạnh của các khái niệm đã được nhắc tới, ta sẽ phát hiện thêm nhiều điều kỳ thú. Sau đây chính là một minh chứng.
 \subsubsection*{Cơ sở}
 Dựa theo định nghĩa, một hệ vector cơ sở là hệ vector sao cho mọi vector trong không gian đều có thể được phân tích thành một \emph{tổ hợp tuyến tính} của chúng. Nói cách khác, giả sử ta có hai vector cơ sở \(\mathbf{e}_i\) và \(\mathbf{e}_j\), một vector \(\mathbf{v}\) bất kỳ có thể được viết thành \[\mathbf{v}=\alpha\mathbf{e}_1 +\beta\mathbf{e}_2.\] Ta lại xét một hệ cơ sở khác gồm hai vector \(\mathbf{e}_{3}, \mathbf{e}_4\), lúc này \[\mathbf{v}=\gamma\mathbf{e}_3 +\sigma\mathbf{e}_4.\]
 Một ví dụ  minh hoạ điều này:
@@ -66,19 +67,19 @@ Dưới góc nhìn của một tập hợp, ta quay lại với ba ví dụ quen
     \item Trục số thực: \(\mathbb{R}^1\)
     \begin{figure}[H]
         \centering
-        \includegraphics[width=0.8\linewidth]{Tuan2/Figures/1Dvectorspace.png}
+        \includegraphics[width=0.4\linewidth]{Tuan2/Figures/1Dvectorspace.png}
     \end{figure}
     Rõ ràng, tập hợp các số thực \(\mathbb{R}\) cũng là một không gian vector với duy nhất một vector cơ sở là \(1\) (hoặc bất kỳ số thực nào khác). Mỗi vector có thể được biểu diễn bằng một toạ độ -một điểm trên trục số, và từ đó là toàn bộ hệ sinh.
     \item Mặt phẳng toạ độ: \(\mathbb{R}^2\)
     \begin{figure}[H]
         \centering
-        \includegraphics[width=0.6\linewidth]{Tuan2/Figures/2Dvectorspace.png}
+        \includegraphics[width=0.4\linewidth]{Tuan2/Figures/2Dvectorspace.png}
     \end{figure}
     Với không gian vector quen thuộc này, ta kí hiệu nó là \(\mathbb{R}^2\). Hai cơ sở quen thuộc là \((1;0)\) và \((0;1)\), với mỗi vector được biểu diễn bằng hai toạ độ, và do đó là một nút của hai đường thẳng vuông góc với trục tung, trục hoành. Rồi từ đó là toàn bộ hệ sinh.
     \item Không gian hình học: \(\mathbb{R}^3\)
     \begin{figure}[H]
         \centering
-        \includegraphics[width=0.6\linewidth]{Tuan2/Figures/3Dvectorspace.png}
+        \includegraphics[width=0.4\linewidth]{Tuan2/Figures/3Dvectorspace.png}
     \end{figure}
     Với trường hợp này, ta cần ba vector cơ sở và tương ứng là ba toạ độ cho mỗi vector. Hệ sinh của không gian được minh hoạ như trong hình.
 \end{enumerate}
@@ -129,6 +130,10 @@ Hơn nữa, vector \(\mathbf{0}\) tự nó tạo thành một không gian vector
 \end{figure}
 
 \subsection{Giới thiệu về ma trận}
+Một cái nhìn toàn cảnh về vector mang đến một trực giác về vị trí chung nhất của từng khái niệm trong bức tranh rộng lớn. Nhưng sự tương quan giữa chúng thì sao? Những liên kết, biến đổi giữa chúng thì sao? Để bắt đầu 
+khảo sát, trước tiên hay làm quen với một công cụ truyền tải thông tin mạnh mẽ hơn mảng một chiều-ma trận.
+\vspace{8pt}
+
 Ta xét bảng số- mảng số hai chiều sau:
 \[ \mathbf{A}=
 \begin{bmatrix}
@@ -449,6 +454,7 @@ Ví dụ: \[\begin{bmatrix}
     -1\\3
 \end{bmatrix}=5.\]
 \subsection{Phép biến đổi tuyến tính}
+Vector, và rồi ma trận đã được giới thiệu cùng cách chúng vận hành. Vậy liệu có một ý nghĩa cốt lõi nào đó nằm đằng sau tất cả những biểu thức toán đó?  
 \subsubsection*{Hệ phương trình tuyến tính}
 Đây là một hệ hai phương trình tuyến tính ở dạng tổng quát:
 \begin{align*}
@@ -462,7 +468,7 @@ Một cách viết tương đương tận dụng vector là
     a_{12}\\a_{22}
 \end{bmatrix}x_{2}=\begin{bmatrix}
     b_{1}\\b_{2}
-\end{bmatrix},\] hay, chính là
+\end{bmatrix},\] hay,
 \[\begin{bmatrix}
     a_{11}&a_{12}\\
     a_{21}&a_{22}
@@ -470,8 +476,8 @@ Một cách viết tương đương tận dụng vector là
     x_{1}\\x_{2}
 \end{bmatrix}=\begin{bmatrix}
     b_{1}\\b_{2}
-\end{bmatrix}.\] Phương trình này có thể được ký hiệu hoá thành \[\mathbf{A}\mathbf{x}=\mathbf{b}.\]
-Sau khi giải hệ phương trình kia, nghiệm thu được sẽ có dạng
+\end{bmatrix}.\] Phương trình này có thể được viết lại thành thành \[\mathbf{A}\mathbf{x}=\mathbf{b}.\]
+Đồng thời, sau khi giải hệ phương trình kia, nghiệm thu được sẽ có dạng
 \begin{align*}
 x_{1} &= a_{11}^{-1}b_{1} + a_{12}^{-1}b_{2}, \\
 x_{2} &= a_{21}^{-1}b_{1} + a_{22}^{-1}b_{2}.
@@ -484,7 +490,7 @@ Với \(a_{ij}^{-1}\) là một con số nào đó có vị trí tương ứng v
     a_{21}^{-1}&a_{22}^{-1}
 \end{bmatrix}\begin{bmatrix}
     b_{1}\\b_{2}
-\end{bmatrix}.\] Hay, có thể viết thành \[\mathbf{x}=\mathbf{A}^{-1}\mathbf{b}.\]
+\end{bmatrix}.\] Nói cách khác, \[\mathbf{x}=\mathbf{A}^{-1}\mathbf{b}.\]
 Ta gọi \(\mathbf{A^{-1}}\) là ma trận nghịch đảo của \(\mathbf{A}\). Dễ thấy, nghịch đảo của nghịch đảo của một ma trận là chính nó, điều này nghĩa là
 \[\mathbf{A}\mathbf{A}^{-1}=\mathbf{A}^{-1}\mathbf{A}=\mathbf{I}.\] Ma trận \(\mathbf{I}\) được gọi là ma trận đơn vị, tất cả phần tử trong ma trận vuông này đều bằng 0, trừ các phần tử nằm trên đường chéo, bằng nhau và bằng 1. Đặc tính của nó là 
 \[\mathbf{I}\mathbf{x}=\mathbf{x}.\] Một số ví dụ cho \(\mathbf{I}\):
@@ -612,7 +618,7 @@ Vẫn xét biến đổi đó, hình \ref{LT2} thể hiện sự biến đổi c
     1\\0.5
 \end{bmatrix}\rightarrow L\rightarrow L(\mathbf{v})=\begin{bmatrix}
     2\\2.5
-\end{bmatrix}.\] Nhắc lại, ta đạt được \(L(\mathbf{v})\) điều này bằng cách nhân \(\mathbf{v}\) với ma trận chuẩn \(\mathbf{A}\), đây đơn giản là lấy 1 nhân với \(L(\mathbf{e}_1)\) (cột thứ nhất của \(\mathbf{A}\)) rồi cộng với 0.5 nhân \(L(\mathbf{e}_2)\) (cột thứ hai của \(\mathbf{A}\)).
+\end{bmatrix}.\] Nhắc lại, ta đạt được  điều này bằng cách nhân \(\mathbf{v}\) với ma trận chuẩn \(\mathbf{A}\), đây đơn giản là lấy 1 nhân với \(L(\mathbf{e}_1)\) (cột thứ nhất của \(\mathbf{A}\)) rồi cộng với 0.5 nhân \(L(\mathbf{e}_2)\) (cột thứ hai của \(\mathbf{A}\)).
 Để biến đổi ngược từ "lưới" hiện tại về "lưới" vuông đằng sau, ta chỉ cần áp dụng một biến đổi với ma trận \(\mathbf{A}^{-1}\) là ma trận nghịch đảo của \(\mathbf{A}\).
 \vspace{8pt}
 
@@ -748,7 +754,55 @@ Ma trận chuẩn cho phép quay 2D là
 \end{enumerate}
 Hãy xem 3Blue1Brown cho một trực quan hoá biến đổi tuyến tính 3D.
 \subsubsection*{Định thức}
-\subsubsection*{Thay đổi cơ sở}
+Một điều hữu dụng bất ngờ khi nghiên cứu một phép biến đổi là đánh giá rằng một phép biến đổi như thế đã kéo giãn hay ép nhỏ một thứ đi bao nhiêu;
+cụ thể với trường hợp 2D, đó là nghiên cứu tỷ lệ đặc trưng của sự tăng hay giảm của diện tích một vùng trên mặt phẳng. 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\linewidth]{Tuan2/Figures/det1.png}\
+    \caption{}
+    \label{DT1}
+\end{figure}
+Ta xét một phép biến đổi tuyến tính \(L\) với ma trận biến đổi tổng quát
+\[\mathbf{A}=\begin{bmatrix}
+    a&b\\c&d
+\end{bmatrix}.\] Dưới phép biến đổi này, hai vector đơn vị trở thành \(L(\mathbf{e}_1)=(a,c)\) và \(L(\mathbf{e}_2)=(b,c)\); chúng tạo thành hình bình hành trong hình \ref{DT1}. Đây sẽ là một bài tập nhỏ: Chứng minh rằng diện tích hình bình hành đó được tương đương với 
+\[ad-bc.\] Vì vậy bất cứ hình vuông đơn vị (có diện tích bằng 1 đơn vị diện tích) nào trong mặt phẳng cũng bị biến đổi thành một hình bình hành có diện tích \(ad-bc\). Còn hình vuông \(2\times 2\) thì sao? Nó được biến đổi thành một hình bình hành có diện tích \(4(ad-bc)\).
+Vì vậy, \(ad-bc\) chính là tỷ lệ phóng to/thu nhỏ của phép biến đổi. Nhưng với một miền cong trong mặt phẳng thì sao? Phép toán tích phân được giới thiệu trong tuần 3 nói rằng diện tích bất kỳ một hình nào đều có thể được tính bởi tổng diện tích của vô số hình vuông vô cùng bé. Do đó tất cả các hình nằm trên mặt phẳng
+đều bị thu phóng với tỷ lệ \(ad-bc\) sau phép biến đổi. Tỷ lệ này được gọi là \emph{định thức của ma trận biến đổi}, ký hiệu \(\det(\mathbf{A})\) hoặc \(\lvert \mathbf{A}\rvert\).
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\linewidth]{Tuan2/Figures/det2.png}
+\end{figure}
+Vậy định thức cho một không gian ba chiều được nhìn nhận như thế nào? Vấn đề này sẽ được để lại cho độc giả với vài gợi ý nhỏ đính kèm:
+\begin{enumerate}
+    \item Đại lượng đặc trưng cho độ lớn của một vùng trong không gian ba chiều là gì?
+    \item Hình khối tạo bởi ba vector không đồng phẳng gọi là gì?
+    \item Ý nghĩa đằng sau việc một phép nhân có hướng của hai vector có thể được biểu diễn bởi một định thức; nghĩa là
+    \[\mathbf{a}\times \mathbf{b}=\begin{vmatrix}
+        \mathbf{e}_1 &\mathbf{e}_2 &\mathbf{e}_3\\
+        a_1 & a_2 & a_3 \\
+        b_1 & b_2 &b_3
+    \end{vmatrix}.\]
+\end{enumerate}
+Các tính chất của định thức có thể được suy ra đơn thuần bằng trực giác về một phép biến đổi tuyến tính. Chẳng hạn,
+\[\det(\mathbf{A}_3 \mathbf{A}_1)=\det(\mathbf{A}_2)\det(\mathbf{A}_1).\]
+Nhưng vai trò của định thức là gì trong ngữ cảnh này? Mọi thứ hoá ra đều gắn với liệu định thức của một ma trận bằng hay khác 0.
+Chuyện gì xảy ra khi định thức của một ma trận bằng 0? Hoặc, câu hỏi trực quan hơn là biến đổi tuyến tính của một ma trận có định thức bằng 0 mang đến một hình ảnh như thế nào. Diện tích của các hình sau biến đổi bằng 0? Đúng, nhưng 
+như vậy nói lên điều gì? Rõ ràng sẽ thật tầm thường nếu ta đang đề cập tới một ma trận có toàn bộ phần tử đều bằng 0. Câu trả lời có thể được tìm thấy ở hình ảnh quen thuộc sau:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{Tuan2/Figures/avectoronaline.png}
+\end{figure} 
+Bạn còn nhớ ví dụ về hai vector \(\mathbf{e}_3\) và \(2\mathbf{e}_3\) chứ? Cho chúng vào trong một ma trận
+\[\mathbf{A}=\begin{bmatrix}
+    2&4\\
+    -3&-6
+\end{bmatrix},\] và không ngoài dự đoán \(\det(\mathbf{A})=0.\) Tất cả các vector nằm trên mặt phẳng đều bị ép vào trong đường thẳng màu đỏ, diện tích của bất cứ vùng nào sau biến đổi đều bằng 0.
+Đối với một phép biến đổi như thế, ta sẽ không thể tìm được một phép biến đổi ngược lại nào đưa mọi thứ về như cũ. Nghĩa là
+\[\det(\mathbf{A})=0\implies \mathbf{A}^{-1}\text{ không tồn tại}.\] Bởi, điều đó là nằm ngoài khả năng của một hàm, giống như bất cứ số nào nhân với 0 đều bằng 0, nhưng sẽ không có phép toán nào làm điều ngược lại, từ 0 lấy ra tất cả các con số khác.
+Thành thử, một ma trận có thể nghịch đảo khi và chỉ khi định thức của nó khác 0. Cuối cùng, hãy nhớ rằng 
+\[\mathbf{A}\mathbf{x}=\mathbf{0}\implies \det(\mathbf{A})=0.\footnote{Vì sao?}\]
+\subsubsection*{Chuyển cơ sở}
 \subsection{Một số ví dụ khác về không gian vector}\label{morexample}
 
 
