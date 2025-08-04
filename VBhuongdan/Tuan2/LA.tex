@@ -753,6 +753,77 @@ Ma trận chuẩn cho phép quay 2D là
     \end{figure}
 \end{enumerate}
 Hãy xem 3Blue1Brown cho một trực quan hoá biến đổi tuyến tính 3D.
+\subsubsection*{Chuyển cơ sở}
+Có một chiếc bàn, dài một khoảng nào đó và hai chiếc thước, mỗi chiếc thước chia mốc khác nhau. Kết quả đo chiều dài chiếc bàn thực hiện bởi hai chiếc thước do đó là khác nhau. 
+Song, nếu ta biết tương quan tỉ lệ giữa độ chia của hai chiếc thước, cũng biết số đo của một chiếc, ta sẽ biết được số đo của chiếc còn lại. Đó là ví dụ một chiều cho việc tính toán toạ độ
+của một vector trên hai cơ sở khác nhau. Vậy, trường hợp hai chiều, ba chiều, và hơn nữa cần được xử lý thế nào? 
+\vspace{8pt}
+
+Ta hãy liên tưởng tới ví dụ xác định hòn đá lúc đầu. Vị trí của hòn đá sẽ không thay đổi bất kể ta có thay đổi đơn vị đo, hay là cách thức xác định hòn đá. Dù là đi theo hướng bắc rồi sang đông, hay là đi theo hướng đông nam rồi lại đi về phía bắc. 
+Nhưng với những thông tin về toạ độ trên các hệ cơ sở khác nhau, làm sao để suy ra được thông tin về một hệ khác? Hãy cùng quay lại ví dụ đầu tiên của phần \ref{coso}.
+\vspace{8pt}
+
+Vector \(\mathbf{v}\) được phân tích theo hai hệ cơ sở:
+\begin{itemize}
+    \item Hệ \(\mathcal{A}\): \(\mathbf{e}_1 ,\mathbf{e}_2\),
+    \item Hệ \(\mathcal{B}\): \(\mathbf{e}_3 ,\mathbf{e}_4\).
+\end{itemize}
+Trong hệ \(\mathcal{A}\), \[\mathbf{v}_{\mathcal{A}}=\begin{bmatrix}
+    5\\3
+\end{bmatrix}.\] Trong hệ \(\mathcal{B}\), \[\mathbf{v}_{\mathcal{B}}=\begin{bmatrix}
+    1\\3
+\end{bmatrix}.\] Giữa hai cách biểu diễn này có liên hệ gì? Nhớ lại rằng
+\[\mathbf{e}_3 =2\mathbf{e}_1 +(-3)\mathbf{e}_4 ,\quad \mathbf{e}_4 =1\mathbf{e}_1 +2\mathbf{e}_2 .\]
+Nói cách khác, \[(\mathbf{e}_3)_{\mathcal{A}}=\begin{bmatrix}
+    2\\-3
+\end{bmatrix},\quad (\mathbf{e}_{4})_{\mathcal{A}}=\begin{bmatrix}
+    1\\2
+\end{bmatrix}.\] Ta nhận được điều gì? Ta nhận được
+\[\begin{bmatrix}
+    2&1\\-3&2
+\end{bmatrix}\begin{bmatrix}
+    1\\3
+\end{bmatrix}=\begin{bmatrix}
+    5\\3
+\end{bmatrix},\] hay
+\[\mathbf{P}\mathbf{v}_{\mathcal{B}}=\mathbf{v}_{\mathcal{A}}.\] Ngạc nhiên rằng nếu ta đem ma trận \(\mathbf{P}\) nhân với 
+\((\mathbf{e}_1)_{\mathcal{A}}\) và \((\mathbf{e}_2)_{\mathcal{A}}\), ta sẽ nhận được \((\mathbf{e}_3)_{\mathcal{A}}\) và \((\mathbf{e}_4)_{\mathcal{A}}\). Vậy mà nếu nhân \(\mathbf{P}\) với \(\mathbf{v}_{\mathcal{B}}\), ta có được \(\mathbf{v}_{\mathcal{A}}\)!
+Song, hoàn toàn hợp lý. Bởi lẽ \[\mathbf{P}(\mathbf{e}_3)_{\mathcal{B}}=(\mathbf{e}_3)_{\mathcal{A}},\]
+\[\mathbf{P}(\mathbf{e}_4)_{\mathcal{B}}=(\mathbf{e}_4)_{\mathcal{A}}.\] 
+Rõ ràng, ta cũng có \[\mathbf{P}^{-1}\mathbf{v}_{\mathcal{A}}=\mathbf{v}_{\mathcal{B}}.\]
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\linewidth]{Tuan2/Figures/LT10.png}
+    \caption{Lưới của hai hệ cơ sở}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\linewidth]{Tuan2/Figures/final.png}
+    \caption{Một tóm tắt nhỏ}
+\end{figure}
+\emph{Ví dụ}: Một đường tròn bán kính \(R\) lăn không trượt với tốc độ không đổi, nghĩa là toạ độ của tâm đường tròn được cho bởi \((R\theta,R)\). Hãy xác định toạ độ của điểm M trong hệ toạ độ \(Oxy\), biểu diễn kết quả theo tham số \(\theta\).
+\[\begin{bmatrix}
+    x(\theta)\\y(\theta)
+\end{bmatrix}=?\]
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{Tuan2/Figures/cycloidexample.png}
+\end{figure}
+\emph{Giải.} 
+\[\begin{bmatrix}
+    x\\y
+\end{bmatrix}=\begin{bmatrix}
+    \cos\phi&-\sin\phi \\\sin\phi&\cos\phi
+\end{bmatrix}\begin{bmatrix}
+    x'\\y'
+\end{bmatrix}+\begin{bmatrix}
+    R\theta\\R
+\end{bmatrix},\] với \(\phi=\pi-\theta.\) Như vậy, 
+\[\begin{bmatrix}
+    x\\y
+\end{bmatrix}=R\begin{bmatrix}
+    \theta-\sin\theta\\1-\cos\theta
+\end{bmatrix}.\] Quỹ đạo của điểm M chính là đường Cycloid.
 \subsubsection*{Định thức}
 Một điều hữu dụng bất ngờ khi nghiên cứu một phép biến đổi là đánh giá rằng một phép biến đổi như thế đã kéo giãn hay ép nhỏ một thứ đi bao nhiêu;
 cụ thể với trường hợp 2D, đó là nghiên cứu tỷ lệ đặc trưng của sự tăng hay giảm của diện tích một vùng trên mặt phẳng. 
@@ -802,77 +873,6 @@ Bạn còn nhớ ví dụ về hai vector \(\mathbf{e}_3\) và \(2\mathbf{e}_3\)
 \[\det(\mathbf{A})=0\implies \mathbf{A}^{-1}\text{ không tồn tại}.\] Bởi, điều đó là nằm ngoài khả năng của một hàm, giống như bất cứ số nào nhân với 0 đều bằng 0, nhưng sẽ không có phép toán nào làm điều ngược lại, từ 0 lấy ra tất cả các con số khác.
 Thành thử, một ma trận có thể nghịch đảo khi và chỉ khi định thức của nó khác 0. Cuối cùng, hãy nhớ rằng 
 \[\mathbf{A}\mathbf{x}=\mathbf{0}\implies \det(\mathbf{A})=0.\footnote{Vì sao?}\]
-\subsubsection*{Chuyển cơ sở}
-Có một chiếc bàn, dài một khoảng nào đó và hai chiếc thước, mỗi chiếc thước chia mốc khác nhau. Kết quả đo chiều dài chiếc bàn thực hiện bởi hai chiếc thước do đó là khác nhau. 
-Song, nếu ta biết tương quan tỉ lệ giữa độ chia của hai chiếc thước, cũng biết số đo của một chiếc, ta sẽ biết được số đo của chiếc còn lại. Đó là ví dụ một chiều cho việc tính toán toạ độ
-của một vector trên hai cơ sở khác nhau. Vậy, trường hợp hai chiều, ba chiều, và hơn nữa cần được xử lý thế nào? 
-\vspace{8pt}
-
-Ta hãy liên tưởng tới ví dụ xác định hòn đá lúc đầu. Vị trí của hòn đá sẽ không thay đổi bất kể ta có thay đổi đơn vị đo, hay là cách thức xác định hòn đá. Dù là đi theo hướng bắc rồi sang đông, hay là đi theo hướng đông nam rồi lại đi về phía bắc. 
-Nhưng với những thông tin về toạ độ trên các hệ cơ sở khác nhau, làm sao để suy ra được thông tin về một hệ khác? Hãy cùng quay lại ví dụ đầu tiên của phần \ref{coso}.
-\vspace{8pt}
-
-Vector \(\mathbf{v}\) được phân tích theo hai hệ cơ sở:
-\begin{itemize}
-    \item Hệ \(\mathcal{A}\): \(\mathbf{e}_1 ,\mathbf{e}_2\),
-    \item Hệ \(\mathcal{B}\): \(\mathbf{e}_3 ,\mathbf{e}_4\).
-\end{itemize}
-Trong hệ \(\mathcal{A}\), \[\mathbf{v}_{\mathcal{A}}=\begin{bmatrix}
-    5\\3
-\end{bmatrix}.\] Trong hệ \(\mathcal{B}\), \[\mathbf{v}_{\mathcal{B}}=\begin{bmatrix}
-    1\\3
-\end{bmatrix}.\] Giữa hai cách biểu diễn này có liên hệ gì? Nhớ lại rằng
-\[\mathbf{e}_3 =2\mathbf{e}_1 +(-3)\mathbf{e}_4 ,\quad \mathbf{e}_4 =1\mathbf{e}_1 +2\mathbf{e}_2 .\]
-Nói cách khác, \[(\mathbf{e}_3)_{\mathcal{A}}=\begin{bmatrix}
-    2\\-3
-\end{bmatrix},\quad (\mathbf{e}_{4})_{\mathcal{A}}=\begin{bmatrix}
-    1\\2
-\end{bmatrix}.\] Ta nhận được điều gì? Ta nhận được
-\[\begin{bmatrix}
-    2&1\\-3&2
-\end{bmatrix}\begin{bmatrix}
-    1\\3
-\end{bmatrix}=\begin{bmatrix}
-    5\\3
-\end{bmatrix},\] hay
-\[\mathbf{P}\mathbf{v}_{\mathcal{B}}=\mathbf{v}_{\mathcal{A}}.\] Ngạc nhiên rằng nếu ta đem ma trận \(\mathbf{P}\) nhân với 
-\((\mathbf{e}_1)_{\mathcal{A}}\) và \((\mathbf{e}_2)_{\mathcal{A}}\), ta sẽ nhận được \((\mathbf{e}_3)_{\mathcal{A}}\) và \((\mathbf{e}_4)_{\mathcal{A}}\). Vậy mà nếu nhân \(\mathbf{P}\) với \(\mathbf{v}_{\mathcal{B}}\), ta có được \(\mathbf{v}_{\mathcal{A}}\)!
-Song, hoàn toàn hợp lý. Bởi lẽ \[\mathbf{P}(\mathbf{e}_3)_{\mathcal{B}}=(\mathbf{e}_3)_{\mathcal{A}},\]
-\[\mathbf{P}(\mathbf{e}_4)_{\mathcal{B}}=(\mathbf{e}_4)_{\mathcal{A}}.\] 
-Rõ ràng, ta cũng có \[\mathbf{P}^{-1}\mathbf{v}_{\mathcal{A}}=\mathbf{v}_{\mathcal{B}}.\]
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.4\linewidth]{Tuan2/Figures/LT10.png}
-    \caption{Biến đổi của ma trận \(\mathbf{P}\)}
-\end{figure}
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.4\linewidth]{Tuan2/Figures/final.png}
-    \caption{Một tóm tắt nhỏ}
-\end{figure}
-\emph{Ví dụ}: Một đường tròn bán kính \(R\) lăn không trượt với tốc độ không đổi, nghĩa là toạ độ của tâm đường tròn được cho bởi \((R\theta,R)\). Hãy xác định toạ độ của điểm M trong hệ toạ độ \(Oxy\), biểu diễn kết quả theo tham số \(\theta\).
-\[\begin{bmatrix}
-    x(\theta)\\y(\theta)
-\end{bmatrix}=?\]
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.8\linewidth]{Tuan2/Figures/cycloidexample.png}
-\end{figure}
-\emph{Giải.} 
-\[\begin{bmatrix}
-    x\\y
-\end{bmatrix}=\begin{bmatrix}
-    \cos\phi&-\sin\phi \\\sin\phi&\cos\phi
-\end{bmatrix}\begin{bmatrix}
-    x'\\y'
-\end{bmatrix}+\begin{bmatrix}
-    R\theta\\R
-\end{bmatrix},\] với \(\phi=\pi-\theta.\) Như vậy, 
-\[\begin{bmatrix}
-    x\\y
-\end{bmatrix}=R\begin{bmatrix}
-    \theta-\sin\theta\\1-\cos\theta
-\end{bmatrix}.\] Quỹ đạo của điểm M chính là đường Cycloid.
 \subsection{Một số ví dụ khác về không gian vector}\label{morexample}
 
 
