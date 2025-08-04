@@ -374,3 +374,33 @@ Dễ thấy, \begin{align*}
 \end{enumerate}
 Chú ý quy luật cuối cùng, tích ma trận không mang tính giao hoán.
 \end{frame}
+\begin{frame}
+    \frametitle{Phép chuyển vị}
+    \begin{tcolorbox}[colback=blue!10, colframe=blue!50!black]
+        Ma trận chuyển vị của ma trận \(\mathbf{A}\), ký hiệu là \(\mathbf{A}^T\), là ma trận có các thành phần sao cho \[(\mathbf{A}^T)_{ij}=\mathbf{A}_{ji}.\]
+    \end{tcolorbox}
+    \[\mathbf{A}=\begin{bmatrix}
+    1&2\\3&4
+\end{bmatrix}\implies \mathbf{A}^T =\begin{bmatrix}
+    1&3\\2&4
+\end{bmatrix}.\]
+\end{frame}
+\begin{frame}
+    \frametitle{Tính chất của ma trận chuyển vị}
+    \begin{enumerate}
+        \item Chuyển vị của phép nhân ma trận
+        \[(\mathbf{AB})^T =\mathbf{B}^T \mathbf{A}^T .\]
+        \item Tích vô hướng của hai vector được biểu diễn trong hệ cơ sở trực chuẩn
+        \[\mathbf{v}\cdot \mathbf{u}=\mathbf{v}^T \mathbf{u}=\mathbf{u}^T \mathbf{v}.\] 
+    \end{enumerate}
+    \emph{Ví dụ.}
+    \[\begin{bmatrix}
+    1\\2
+\end{bmatrix}\cdot\begin{bmatrix}
+    -1\\3
+\end{bmatrix}=\begin{bmatrix}
+    1&2
+\end{bmatrix}\begin{bmatrix}
+    -1\\3
+\end{bmatrix}=5.\]
+\end{frame}
