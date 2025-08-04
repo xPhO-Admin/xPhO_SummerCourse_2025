@@ -1,0 +1,61 @@
+\begin{frame}
+    \frametitle{Hệ phương trình tuyến tính}
+    Một hệ hai phương trình tuyến tính ở dạng tổng quát:
+\begin{align*}
+a_{11}x_{1} + a_{12}x_{2} &= b_{1}, \\
+a_{21}x_{1} + a_{22}x_{2} &= b_{2}.
+\end{align*}
+Tương đương với,
+\[\begin{bmatrix}
+    a_{11}\\a_{21}
+\end{bmatrix}x_{1}+\begin{bmatrix}
+    a_{12}\\a_{22}
+\end{bmatrix}x_{2}=\begin{bmatrix}
+    b_{1}\\b_{2}
+\end{bmatrix};\]
+\[\begin{bmatrix}
+    a_{11}&a_{12}\\
+    a_{21}&a_{22}
+\end{bmatrix}\begin{bmatrix}
+    x_{1}\\x_{2}
+\end{bmatrix}=\begin{bmatrix}
+    b_{1}\\b_{2}
+\end{bmatrix}.\]
+Hệ phương trình tuyến tính được gói gọn thành 
+\[\mathbf{A}\mathbf{x}=\mathbf{b}.\]
+\end{frame}
+\begin{frame}
+    \frametitle{Nghiệm của hệ phương trình tuyến tính}
+    Nghiệm của hệ phương trình tuyến tính đó ở dạng tổng quát:
+    \begin{align*}
+x_{1} &= a_{11}^{-1}b_{1} + a_{12}^{-1}b_{2}, \\
+x_{2} &= a_{21}^{-1}b_{1} + a_{22}^{-1}b_{2}.
+\end{align*}
+Viết lại trong ngôn ngữ của vector:
+\[\begin{bmatrix}
+    x_{1}\\x_{2}
+\end{bmatrix}=\begin{bmatrix}
+    a_{11}^{-1}&a_{12}^{-1}\\
+    a_{21}^{-1}&a_{22}^{-1}
+\end{bmatrix}\begin{bmatrix}
+    b_{1}\\b_{2}
+\end{bmatrix}.\]
+\[\implies \mathbf{x}=\mathbf{A}^{-1}\mathbf{b}\]
+\end{frame}
+\begin{frame}
+    \frametitle{Ma trận nghịch đảo}
+    \begin{tcolorbox}[colback=blue!10, colframe=blue!50!black, title=Định nghĩa]
+        \(\mathbf{A}^{-1}\) được gọi là ma trận nghịch đảo của \(\mathbf{A}\), và thoả mãn
+        \[\mathbf{A}\mathbf{A}^{-1}=\mathbf{A}^{-1}\mathbf{A}=\mathbf{I},\] với \(\mathbf{I}\) là ma trận đơn vị, thoả mãn \(\mathbf{I}\mathbf{x}=\mathbf{x}\).
+    \end{tcolorbox}
+Ví dụ cho \(\mathbf{I}\):
+\[\begin{bmatrix}
+    1&0\\
+    0&1
+\end{bmatrix},\quad
+\begin{bmatrix}
+    1&0&0\\
+    0&1&0\\
+    0&0&1
+\end{bmatrix}.\]
+\end{frame}

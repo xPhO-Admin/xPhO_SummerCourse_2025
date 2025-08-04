@@ -1,29 +1,31 @@
 \begin{frame}
-\frametitle{Vector đơn vị}
-\begin{tcolorbox}[colback=blue!10, colframe=blue!50!black, title=Định nghĩa]
-    Một vector đơn vị là một vector có độ dài bằng 1. Ví dụ, nếu \(\mathbf{a}\) là một vector bất kỳ, thì vector đơn vị theo hướng của \(\mathbf{a}\) được tính bằng:
-\begin{equation}
-    \mathbf{u} = \frac{\mathbf{a}}{|\mathbf{a}|} 
-\end{equation}
-Vector này có độ dài bằng 1 và cùng hướng với \(\mathbf{a}\).
-\end{tcolorbox}
+    \frametitle{Cơ sở vector trong mặt phẳng}
+    Với \(\mathbf{e}_1 ,\mathbf{e}_2\) không nằm trên cùng một đường thẳng,
+    \[\mathbf{v}=a\mathbf{e}_1 +b\mathbf{e}_2 ; \qquad \mathbf{w}=c\mathbf{e}_1 +d\mathbf{e}_2 .\]
+    Tổng của hai vector này \[\mathbf{v}+\mathbf{w}=(a+c)\mathbf{e}_1 +(b+d)\mathbf{e}_2 .\]
 \end{frame}
-
 \begin{frame}
-\frametitle{Cơ sở vector}
-\begin{tcolorbox}[colback=blue!10, colframe=blue!50!black, title=Định nghĩa]
-    Một vector cơ sở chuẩn hóa là một tập hợp các vector độc lập tuyến tính mà mọi vector trong không gian có thể được biểu diễn như một tổ hợp tuyến tính của các vector trong cơ sở đó.
-\end{tcolorbox}
+    \frametitle{Toạ độ trên mặt phẳng-Mảng hai chiều}
+    Những vector trên có thể được viết thành
+    \begin{align*}
+    \mathbf{v} &= (a,b),\\
+    \mathbf{w} &= (c,d),\\
+    \mathbf{v}+\mathbf{w} &= (a+c,b+d).
+    \end{align*}
+    \begin{itemize}
+        \item Toạ độ của \(\mathbf{v}\) là \(v_1 =a\) và \(v_2 =b\).
+        \item Toạ độ của \(\mathbf{w}\) là \(w_1 =c\) và \(w_2 =d\).
+    \end{itemize}
 \end{frame}
-
 \begin{frame}
-\frametitle{Cơ sở vector}
+\frametitle{Cơ sở vector trong không gian}
 \begin{columns}
 \begin{column}{0.5\textwidth}
-Trong không gian ba chiều, một vector cơ sở chuẩn hóa là tập hợp của ba vector đơn vị không đồng phẳng. Một vector có thể được xác định bằng cách biểu diễn nó dưới dạng tổ hợp tuyến tính của các vector đơn vị trong cơ sở.
+Với \(\mathbf{e}_1 ,\mathbf{e}_2 ,\mathbf{e}_3\) không cùng nằm trên một mặt phẳng, 
 \begin{equation}
     \mathbf{u}=a\mathbf{e}_1+b\mathbf{e}_2+c\mathbf{e}_3
 \end{equation}
+\[\mathbf{u}=(u_1 ,u_2 ,u_3)=(a,b,c).\]
 \end{column}
 \begin{column}{0.5\textwidth}
 \begin{figure}
@@ -34,22 +36,68 @@ Trong không gian ba chiều, một vector cơ sở chuẩn hóa là tập hợp
 \end{column}
 \end{columns}
 \end{frame}
-
 \begin{frame}
-\frametitle{Hệ tọa độ Descartes}
+\frametitle{Vector đơn vị}
 \begin{tcolorbox}[colback=blue!10, colframe=blue!50!black, title=Định nghĩa]
-    Hệ tọa độ Descartes là một hệ tọa độ trực chuẩn, được xác định bởi một gốc tọa độ \(O\) và một vector cơ sở trực chuẩn (\(\mathbf{e}_1, \mathbf{e}_2, \mathbf{e}_3\)). Trong hệ tọa độ này, một điểm \(M\) trong không gian được xác định bởi ba tọa độ \((x, y, z)=(r_1, r_2, r_3)\),
-    \begin{equation}
-        \mathbf{r}=\mathbf{OM} = x\mathbf{e}_1 + y\mathbf{e}_2 + z\mathbf{e}_3.
-    \end{equation}
+    Một vector đơn vị là một vector có độ dài bằng 1:
+\begin{equation}
+    \mathbf{u} = \frac{\mathbf{a}}{|\mathbf{a}|} 
+\end{equation}
+Vector này  cùng hướng với \(\mathbf{a}\).
 \end{tcolorbox}
 \end{frame}
 
 \begin{frame}
 \frametitle{Hệ tọa độ Descartes}
+\(\{\mathbf{e}_1 ,\mathbf{e}_2 ,\mathbf{e}_3\}\) là một tập hợp các vector trực chuẩn (trực giao và chuẩn hoá):
+\[
+        \mathbf{r}=\mathbf{OM} = x\mathbf{e}_1 + y\mathbf{e}_2 + z\mathbf{e}_3 =(x,y,z).
+    \]
 \begin{figure}
 \centering
-\includegraphics[width=1\textwidth]{Slides/Figure/toadodescartes.png}
+\includegraphics[width=12cm, height=4.5cm]{Slides/Figure/toadodescartes.png}
 \caption{Hệ tọa độ Descartes \(Oxyz\)}
 \end{figure}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Tính chất của hệ cơ sở trực chuẩn}
+    Tích vô hướng của các vector cơ sở:
+    \begin{equation*}
+    \mathbf{e}_i \cdot \mathbf{e}_j =\delta_{ij}.
+\end{equation*}Ký hiệu Kronecker: \begin{equation*}
+\begin{array}{l}
+     \delta_{ij}=\Bigg\{
+    \begin{array}{ll}
+      1  & \text{, nếu } i=j. \\
+      0  & \text{, nếu } i\neq j.
+    \end{array}
+\end{array}
+\end{equation*}
+Do đó,
+\begin{equation}
+    \mathbf{a}\cdot\mathbf{b}= \sum_{i=1}^{3}\sum_{j=1}^{3}a_i b_j \delta_{ij}= \sum_{i=1}^{3} a_i b_i = a_1 b_1 + a_2 b_2 + a_3 b_3.
+\end{equation}
+\end{frame}
+\begin{frame}
+    \frametitle{Tính chất của hệ cơ sở trực chuẩn}
+    Tích có hướng của các vector cơ sở:
+    \begin{equation*}
+        \mathbf{e}_i \times\mathbf{e}_j =\mathbf{e}_k \varepsilon_{ijk}.
+    \end{equation*}
+    Ký hiệu Levi-Civita:
+    \begin{equation*}
+\begin{array}{l}
+        \varepsilon_{ijk}=\Bigg\{
+        \begin{array}{ll}
+        1  & \text{, nếu } (i,j,k)=(1,2,3) \text{ hoặc } (2,3,1) \text{ hoặc } (3,1,2).\\
+        -1 & \text{, nếu } (i,j,k)=(1,3,2) \text{ hoặc } (2,1,3) \text{ hoặc } (3,2,1).\\
+        0  & \text{, nếu } i=j \text{ hoặc } j=k \text{ hoặc } k=i.
+        \end{array}
+\end{array}
+\end{equation*}
+Do đó, 
+\begin{equation}
+    \mathbf{a} \times \mathbf{b} = \sum_{i=1}^{3}\sum_{j=1}^{3}\sum_{k=1}^{3}\varepsilon_{ijk} a_i b_j  \mathbf{e}_k.
+\end{equation}
 \end{frame}
