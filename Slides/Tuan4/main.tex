@@ -1,0 +1,102 @@
+\documentclass[aspectratio=169, t]{beamer} % Ratio 16:9
+\usepackage[T5]{fontenc}
+\usepackage{lmodern}
+\usepackage{graphicx} 
+\usepackage{array}
+\usepackage{longtable} % for long table
+\usepackage{chngcntr}
+\counterwithin{figure}{section}
+\usepackage{tcolorbox}
+\renewcommand{\familydefault}{\sfdefault} % Font
+
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{siunitx}
+
+% \definecolor{BlueDefault}{rgb}{0.2,0.2,0.7}
+\definecolor{BlueDefault}{RGB}{14,47,95}
+
+
+% Hide navigation 
+\setbeamertemplate{navigation symbols}{}
+
+% Setup background
+\newcommand{\normalbackground}{%
+    \usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{Slides/Background/Normal_slide_xPhO.pdf}}%
+}
+
+\newcommand{\titlebackground}{%
+    \usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{Slides/Background/Title_slide_xPhO.pdf}}%
+}
+
+% Change the title color to white
+\setbeamercolor{frametitle}{fg=white} 
+
+% push the title up by \raisebox
+\setbeamertemplate{frametitle}{%
+    \vspace{0.3em}
+    \hspace{-1em} \insertframetitle
+    \vspace{2mm}
+}
+
+% Number of slide
+\setbeamertemplate{footline}{%
+    \hfill
+    \insertframenumber/\inserttotalframenumber
+    \hspace{7.5mm}
+    \vspace{3.5mm}
+}
+
+%% Make Table of Contents %%
+\AtBeginSubsection[]{
+  \begin{frame}
+    \frametitle{Mục lục}
+    \tableofcontents[currentsubsection]
+\end{frame}
+}
+
+%% Section numbering %%
+\setbeamertemplate{section in toc}[sections numbered]
+\setbeamertemplate{subsection in toc}[subsections numbered]
+
+
+\renewcommand{\figurename}{Hình}
+\renewcommand{\tablename}{Bảng}
+
+
+%%%%% Bibliography %%%%%
+\usepackage[backend=biber,style=ieee]{biblatex}
+\addbibresource{myrefs.bib}
+
+\usepackage{url}
+\usepackage{hyperref}
+\hypersetup{
+	colorlinks=true,
+	linkcolor=BlueDefault,
+	filecolor=BlueDefault,
+    citecolor=BlueDefault,
+	urlcolor=BlueDefault,
+	pdftitle={Overleaf Example},
+	pdfpagemode=FullScreen,
+}
+
+\begin{document}
+
+\titlebackground
+
+\input{Slides/Title.tex}
+
+\normalbackground
+
+\section{Tương tác vật lý}
+\input{Slides/Interaction.tex}
+\section{Ba định luật của Newton}
+\input{Slides/Newton3laws.tex}
+
+\section{Các lực}
+\input{Slides/Forces.tex}
+\section{Phương pháp}
+\input{Slides/Method.tex}
+\input{Slides/Bibliography.tex}
+
+\end{document}
