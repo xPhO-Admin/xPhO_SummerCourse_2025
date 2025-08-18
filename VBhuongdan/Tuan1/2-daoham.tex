@@ -26,7 +26,7 @@ Cũng từ hình vẽ trên, ta có thể thấy đạo hàm chính là hệ s�
     y=f(a)+f'(a)(x-a)
 \end{equation}
 
-Một ví dụ Vật Lý có thể kể đến là chuyển động của một vật. Nếu ta xét hàm số $s(t)$ là quãng đường vật đi được theo thời gian $t$, thì đạo hàm của nó tại thời điểm $t$ chính là vận tốc của vật tại thời điểm đó, kí hiệu là $v(t)=s'(t)$.
+
 
 \subsection{Một số quy tắc đạo hàm}
 Dưới đây là đạo hàm của một số hàm thông dung:
@@ -123,3 +123,7 @@ Từ kí hiệu bên trên, ta có thể viết lại đạo hàm theo cách kh�
 \textit{Ví dụ: \(f(x)=\sqrt{x^2+1}\) có thể được viết lại dưới dạng hàm hợp \(f(g(x))\) với \(g(x)=x^2+1\).}
 
 \textbf{Lưu ý:} Quy tắc đạo hàm hợp không đơn giản chỉ là khử đi tử và mẫu số giống như phép nhân phân số vì ý nghĩa của kí hiệu Leibniz không hoàn toàn giống với phân số thông thường. Việc chứng minh quy tắc này sẽ phức tạp hơn và sẽ là nhiệm vụ của bạn trong bài tập ....
+
+\subsection{Về tính toán số}
+Giả sử ta muốn tính đạo hàm của \(y(x)\) bằng các công cụ lập trình, sẽ là tự nhiên nếu sử dụng trục tiếp định nghĩa của đạo hàm:
+\[y(x_0+\epsilon)\approx y(x_0)+\epsilon y'(x_0).\] Ở đây \(\epsilon\) là một con số rất nhỏ, ví dụ như \(0.01\), hay nếu cần chính xác hơn, có thể là \(0.001\),v.v. Như vậy, việc ta cần làm chỉ là khai báo hàm \(y(x)\) rồi chọn một bước nhảy thích hợp. Ta có thể làm điều tương tự đối với các đạo hàm cấp cao hơn: \[y'(x_0 +\epsilon)\approx y'(x_0)+\epsilon y''(x_0).\]

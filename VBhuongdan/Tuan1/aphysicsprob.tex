@@ -1,0 +1,23 @@
+Vật lý bắt đầu từ sự quan sát điều thay đổi và không thay đổi. Khi vị trí của hai thứ nào đó thay đổi, chúng ta, một cách tự nhiên, sẽ thấy vật nào hoàn thành sự thay đổi đó trước, hay sau. Ta cần một đại lượng đặc trưng cho sự so sánh này. Có một đại lượng như thế, đó là tốc độ (trung bình), được định nghĩa là tỷ số giữa khoảng cách di chuyển được và thời gian tương ứng, hay
+\[\overline{v}=\frac{\Delta s}{\Delta t}.\] 
+Khi đo tốc độ của một vật thể đang chuyển động trong một khoảng thời gian quanh một thời điểm nào đó, quãng đường mà nó di chuyển được cũng được đo, cùng với thời gian tương ứng và sai số không thể tránh khỏi của phép đo.
+\vspace{8pt}
+
+Hãy xem xét một ví dụ nhỏ. Giả sử bạn quan sát một vật di chuyển trên một quãng đường, ban đầu là \(1000m\), rồi rút xuống còn \(1m\), rồi đến \(0.01m\). Ở cỡ \(1000m\), các sai số cỡ \(10m\), \(10s\) là không đáng kể. Tốc độ trung bình phản ảnh tốt trạng thái chuyển động của vật. Nhưng với \(1m\), sai lệch nhỏ cỡ \(0.01s\) hay \(0.05m\) cũng có thể làm thay đổi tốc độ trung bình một cách rõ rệt. Với các cỡ nhỏ, tinh vi hơn, giá trị đo càng bị ảnh hưởng mạnh bởi những nhiễu động bé nhỏ.
+Chẳng hạn, việc đo thời gian đi hết \(1cm\) của một người đang chạy, cũng như vậy, là không có ý nghĩa bởi sự dao động dữ dội của giá trị đo.  
+\vspace{8pt}
+
+Thành thử, ta cần một khái niệm, một đại lượng có thể tính được, không bị ràng buộc bởi những vấn đề đo lường(tức là thuần tuý toán học), và có thể phản ánh được trạng thái chuyển động của vật. Tức là với mọi sai số và bậc độ lớn mà ta quan tâm, ta đều có thể thu được sự chính xác cần thiết. 
+\begin{definition}\label{def:instantaneous_speed}
+    Tốc độ tức thời của một vật tại một thời điểm là giới hạn của tốc độ trung bình khi khoảng thời gian tiến tới không.
+\end{definition}
+Nghĩa là, tốc độ tức thời tồn tại tại một thời điểm nào đó, ta luôn có thể tìm được một khoảng thời gian đo đủ nhỏ \(\delta\) sao cho kết quả đo tốc độ trung bình trên khoảng đó sai số không quá \(\epsilon\) so với tốc độ tức thời tại thời điểm được xét. Từ đây, ta đi tới một định nghĩa khác (chặt chẽ hơn) cho giới hạn:
+\begin{definition}
+    Ta nói rằng \[\lim_{x\rightarrow a}f(x)=L\] nếu với mọi số thực dương \(\epsilon\) nhỏ tuỳ ý, luôn tồn tại một số thực dương \(\delta\) sao cho 
+    \[0<\lvert x-a\rvert <\epsilon \quad\implies \quad \lvert f(x)-L\rvert <\delta.\]
+\end{definition}
+Trong trường hợp đang bàn luận của chúng ta, \(x\) chính là \(t\), \(a\) đại diện cho thời điểm đang được xét, \(f(x)\) là tốc độ trung bình của vật trong khoảng thời gian \((t-\delta,t+\delta)\), và \(L\) là tốc độ tức thời tại thời điểm \(t\).
+\vspace{8pt}
+
+Hơn nữa, từ định nghĩa \ref{def:instantaneous_speed}, dễ thấy rằng tốc độ tức thời chính là đạo hàm của quãng đường theo thời gian tại thời điểm đó, hay 
+\[v(\tau)=\lim_{t\rightarrow\tau}\frac{\Delta s}{t-\tau}=\frac{\text{d}s}{\text{d}t}\Big|_{t=\tau}.\]
