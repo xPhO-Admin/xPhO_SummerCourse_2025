@@ -1,0 +1,46 @@
+\documentclass{standalone}
+
+\usepackage{pgfplots} %%%%%% Regression %%%%
+\pgfplotsset{compat = newest}
+\usepackage{pgfplotstable}
+\usepackage{tikz}
+\usepackage{tikz-3dplot} %%%%%% Draw %%%%%%
+\usepackage{tikz,tkz-euclide}
+\usetikzlibrary{arrows,calc,patterns}
+\usetikzlibrary{quotes,angles}
+\usetikzlibrary{shapes.geometric}
+\usepackage{circuitikz} %%%%% Circuit %%%%
+\usetikzlibrary{decorations.pathmorphing,patterns}
+\usepackage{amsmath}
+\setlength{\unitlength}{1cm}
+\usepackage[T5]{fontenc}
+\renewcommand*\familydefault{\sfdefault}
+\usepackage{helvet,sfmath}
+\begin{document}
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,15225); %set diagram left start at 0, and has height of 15225
+
+%Straight Lines [id:da5367557950672546] 
+\draw    (199,5596) -- (264.5,5596) ;
+\draw [shift={(266.5,5596)}, rotate = 180] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Curve Lines [id:da8842052647948668] 
+\draw    (284.5,5618) .. controls (258.5,5634) and (189.5,5632) .. (172.5,5619) ;
+%Straight Lines [id:da7998315398226672] 
+\draw    (172.5,5619) -- (169.62,5616.12) ;
+\draw [shift={(167.5,5614)}, rotate = 45] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (8.93,-4.29) -- (0,0) -- (8.93,4.29) -- cycle    ;
+
+% Text Node
+\draw (156,5583) node [anchor=north west][inner sep=0.75pt]    {$y( x)$};
+% Text Node
+\draw (271,5584) node [anchor=north west][inner sep=0.75pt]    {$y'( x)$};
+% Text Node
+\draw (198,5568) node [anchor=north west][inner sep=0.75pt]   [align=left] {Đạo hàm};
+% Text Node
+\draw (212,5633) node [anchor=north west][inner sep=0.75pt]    {$???$};
+
+
+\end{tikzpicture}
+\end{document}

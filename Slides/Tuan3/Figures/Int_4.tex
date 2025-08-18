@@ -1,0 +1,35 @@
+\documentclass{standalone}
+
+\usepackage{pgf,tikz}
+\usepackage[active,tightpage]{preview}
+\usepackage{pgfplots}
+\usepackage[OT1]{fontenc}
+\renewcommand*\familydefault{\sfdefault}
+\usepackage{helvet,sfmath}
+\usetikzlibrary{intersections}
+\PreviewEnvironment{tikzpicture}
+\setlength\PreviewBorder{5pt}
+\usetikzlibrary{arrows}
+\usetikzlibrary{positioning}
+\tikzset{>=stealth',inner sep=0pt,outer sep=2pt}
+\begin{document}
+\begin{tikzpicture}[scale=1.2]
+\def\a{1.5}
+\def\b{6.2}
+\def\c{3.7}
+\def\L{0.1} % width of interval
+
+\pgfmathsetmacro{\Va}{2*sin(\a r+1)+4} \pgfmathresult
+\pgfmathsetmacro{\Vb}{2*sin(\b r+1)+4} \pgfmathresult
+\pgfmathsetmacro{\Vc}{2*sin(\c r+1)+4} \pgfmathresult
+
+\draw[->,thick] (-0.5,0) -- (7,0) coordinate (x axis) node[below] {$x$};
+\draw[->,thick] (0,-0.5) -- (0,7) coordinate (y axis) node[left] {$y$};
+\foreach \f in {1.5,1.6,...,6.3} {\pgfmathparse{2*sin(\f r+1)+4} \pgfmathresult
+\draw[fill=blue!20] (\f-\L/2,\pgfmathresult |- x axis) -- (\f-\L/2,\pgfmathresult) -- (\f+\L/2,\pgfmathresult) -- (\f+\L/2,\pgfmathresult |- x axis) -- cycle;}
+\node at (\a-\L/2,-5pt) {\footnotesize{\Large $a=x_0$}};
+\node at (\b,-5pt) {\footnotesize{\Large $b=x_n$}};
+
+\draw[blue,thick,smooth,samples=100,domain=1.45:6.2] plot(\x,{2*sin(\x r+1)+4});
+\end{tikzpicture}
+\end{document}

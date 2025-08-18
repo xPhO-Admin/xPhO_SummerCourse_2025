@@ -1,0 +1,48 @@
+\documentclass{standalone}
+
+\usepackage[OT1]{fontenc}
+\renewcommand*\familydefault{\sfdefault}
+\usepackage{helvet,sfmath}
+\usepackage{siunitx}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows,calc,patterns}
+% \usetikzlibrary{intersections, calc, arrows.meta}
+\usepackage{tikz,tkz-euclide}
+
+\begin{document}
+
+\begin{tikzpicture}[scale=0.8]
+    %% Background
+    \draw[draw=none] (-5.5,-5.5) rectangle (5.5,5.5);
+    %%Decartes_coordinate
+    \draw[-Stealth] (0,0) to (0,5);
+    \draw[-Stealth] (0,0) to (5,0);
+    \draw[-Stealth] (0,0) to (-4,-3);
+    \draw[fill=black] (0,0) circle (0.05);
+    \draw 
+    (4.5,0) node[above]{\(y\)}
+    (0,4.5) node[left]{\(z\)}
+    (-3.6,-2.6) node[left]{\(x\)};
+
+    %%projection
+    \draw[fill=black] (1.4,2.05) circle (0.05);
+    \draw[dashed]
+    (1.4,-1.4) to (1.4,2.05)
+    (1.4,-1.4) to (-1.85,-1.4) to (-1.85,2.05) to (1.4,2.05)
+    (1.4,-1.4) to (3.25,0) to (3.25,3.45) to (1.4,2.05)
+    (3.25,3.45) to (0,3.45) to (-1.85,2.05)
+    ;
+    %%unit vector
+    \draw[-Stealth] (1.4,2.05) to (0.8,1.25);
+    \draw[-Stealth] (1.4,2.05) to (2.4,2.05);
+    \draw[-Stealth] (1.4,2.05) to (1.4,3.05);
+    \draw
+    (1.2,1.4) node{\(\mathbf{\hat{x}}\)}
+    (2.2,1.7) node{\(\mathbf{\hat{y}}\)}
+    (1.2,3) node{\(\mathbf{\hat{z}}\)}
+    ;
+
+\end{tikzpicture}
+
+\end{document}

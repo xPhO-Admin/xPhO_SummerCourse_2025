@@ -1,0 +1,40 @@
+\documentclass{standalone}
+
+\usepackage{pgf,tikz}
+\usepackage[active,tightpage]{preview}
+\usepackage{pgfplots}
+\usepackage[OT1]{fontenc}
+\renewcommand*\familydefault{\sfdefault}
+\usepackage{helvet,sfmath}
+\usetikzlibrary{intersections}
+\PreviewEnvironment{tikzpicture}
+\setlength\PreviewBorder{5pt}
+\usetikzlibrary{arrows}
+\usetikzlibrary{positioning}
+\tikzset{>=stealth',inner sep=0pt,outer sep=2pt}
+\begin{document}
+\begin{tikzpicture}[scale=1.2]
+\def\a{1.7}
+\def\b{5.7}
+\def\c{3.7}
+\def\L{0.5} % width of interval
+
+\pgfmathsetmacro{\Va}{2*sin(\a r+1)+4} \pgfmathresult
+\pgfmathsetmacro{\Vb}{2*sin(\b r+1)+4} \pgfmathresult
+\pgfmathsetmacro{\Vc}{2*sin(\c r+1)+4} \pgfmathresult
+
+\draw[->,thick] (-0.5,0) -- (7,0) coordinate (x axis) node[below] {$x$};
+\draw[->,thick] (0,-0.5) -- (0,7) coordinate (y axis) node[left] {$y$};
+\foreach \f in {1.7,2.2,...,6.2} {\pgfmathparse{2*sin(\f r+1)+4} \pgfmathresult
+\draw[fill=blue!20] (\f-\L/2,\pgfmathresult |- x axis) -- (\f-\L/2,\pgfmathresult) -- (\f+\L/2,\pgfmathresult) -- (\f+\L/2,\pgfmathresult |- x axis) -- cycle;}
+\node at (\a-\L/2,-5pt) {\large{$a=x_0$}};
+\node at (\b+\L/2+\L,-5pt) {\large{$b=x_n$}};
+\draw[blue] (\c-\L/2,0) -- (\c-\L/2,\Vc) -- (\c+\L/2,\Vc) -- (\c+\L/2,0);
+\draw[dashed] (\c,-0.2) node[below] {\large{$\xi_i$}} -- (\c,\Vc) -- (0,\Vc) node[left] {\large$f(\xi_i)$};
+\node at (\a+5*\L/2,-5pt) {\large{$x_{i-1}$}};
+\node at (\a+7*\L/2,-5pt) {\large{$x_i$}};
+\node at (\a+5*\L,-5pt) {\large{$x_{i+1}$}};
+\draw[blue,thick,smooth,samples=100,domain=1.45:6.2] plot(\x,{2*sin(\x r+1)+4});
+\filldraw[black] (\c,\Vc) circle (.03cm);
+\end{tikzpicture}
+\end{document}
