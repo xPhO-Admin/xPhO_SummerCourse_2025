@@ -1,0 +1,38 @@
+\begin{frame}{Hệ DĐ cưỡng bức}
+    \begin{center}
+        \resizebox{0.7\linewidth}{!}{\input{Content/Image/2.3_1}}
+    \end{center}
+    Lúc này hệ sẽ chịu thêm một lực cưỡng bức \(\mathbf{F_3}\). Tổng lực tác động lên vật
+    \begin{equation}
+        \displaystyle \mathbf{F} =  - k \mathbf{x} - b \mathbf{x'} + F_0 \cos{(\Omega t + \phi)} \mathbf{e_x}.
+    \end{equation}
+\end{frame}
+\begin{frame}{Hệ DĐ cưỡng bức - PTVP}
+    Lúc này ta sẽ đi giải phương trình vi phân
+    \begin{equation}
+        mx'' = -kx -bx' + F_0 \cos{(\Omega t + \phi)}
+    \end{equation}
+    Cụ thể, ta sẽ đi giải lần lượt nghiệm thuần nhất và nghiệm riêng.
+    \begin{equation*}
+        x = x_{0} + x_r.
+    \end{equation*}
+    Để giải nghiệm thuần nhất, ta đi giải phương trình vi phân sau
+    \begin{equation*}
+    x''_{tn} + {\displaystyle \frac{b}{m}} x'_{tn} + {\displaystyle \frac{k}{m}} x'_{tn} = 0.
+    \end{equation*}
+\end{frame}
+\begin{frame}{Nghiệm riêng}
+    Ta đặt
+    \begin{equation*}
+        x_r = A \cos{\left(\Omega t + \phi\right)} + B \sin{\left(\Omega t + \phi\right)}
+    \end{equation*}
+    Thế vào phương trình vi phân, ta đồng nhất \(\sin{()}\) và \(\cos{()}\) hai vế, ta có
+    \begin{equation}
+        \begin{array}{ccc}
+        A &=& \displaystyle \frac{F_0}{m} \frac{\omega^2 - \Omega^2}{\left(\omega^2 - \Omega^2 \right)^2 + \left( c \Omega \right)^2}. 
+        \\
+        \\
+        B &=& \displaystyle \frac{F_0}{m} \frac{c \Omega}{\left(\omega^2 - \Omega^2 \right)^2 + \left( c \Omega \right)^2}.
+        \end{array}
+    \end{equation}
+\end{frame}

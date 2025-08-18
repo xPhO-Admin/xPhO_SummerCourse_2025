@@ -1,0 +1,42 @@
+\begin{frame}{2 khối lượng - 3 lò xo}
+    Hệ dao động liên kết cơ bản đầu tiên chúng ta tìm hiểu là hệ 2 khối lượng 3 lò xo. Bỏ qua độ dài tự nhiên của lò xo.
+    \vspace{2mm}
+    \begin{center}
+        \scalebox{1}{\input{Content/Image/3.1_1}}
+    \end{center}
+    Tổng hợp lực tác dụng lên $m_1$ và $m_2$ là
+    \begin{equation}
+    \left\{
+    \begin{array}{ccc}
+    m_1 x_1'' &=& - k_1 x_1 + k_2 (x_2 - x_1) \\
+    m_2 x_2'' &=& - k_3 x_2 + k_2 (x_1 - x_2).
+    \end{array}
+    \right.
+    \label{3.1_1}
+    \end{equation}
+\end{frame}
+
+\begin{frame}{2 khối lượng - 3 lò xo}
+    Ta xét trường hợp đơn giản $k_1 = k_3$, $m_1 = m_2 = m$. 
+
+    Cách 1: Thay trường hợp trên vào, ta thu được hệ
+    \begin{equation}
+    \left\{
+    \begin{array}{ccc}
+    m_1 x_1'' &=& - k_1 x_1 + k_2 (x_2 - x_1) \\
+    m_2 x_2'' &=& - k_1 x_2 + k_2 (x_1 - x_2).
+    \end{array}
+    \right.
+    \label{3.1_2}
+    \end{equation}
+    Để giải hệ phương trình trên, ta lấy lần lượt tính $(x_1'' - x_2'')$ và $(x_1''+x_2'')$.
+    \begin{equation}
+    \left\{
+        \begin{array}{ccc}
+        m(x_1''+x_2'') &=& -k_1(x_1+x_2) \\
+        m(x_1''-x_2'') &=& -(k_1+k_2)(x_1 - x_2).
+        \end{array}
+    \right.
+    \end{equation}
+    
+\end{frame}

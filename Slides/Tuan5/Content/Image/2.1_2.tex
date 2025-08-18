@@ -1,0 +1,59 @@
+
+
+
+% Pattern Info
+ 
+\tikzset{
+pattern size/.store in=\mcSize, 
+pattern size = 5pt,
+pattern thickness/.store in=\mcThickness, 
+pattern thickness = 0.3pt,
+pattern radius/.store in=\mcRadius, 
+pattern radius = 1pt}
+\makeatletter
+\pgfutil@ifundefined{pgf@pattern@name@_sq81xq6mf}{
+\pgfdeclarepatternformonly[\mcThickness,\mcSize]{_sq81xq6mf}
+{\pgfqpoint{0pt}{0pt}}
+{\pgfpoint{\mcSize+\mcThickness}{\mcSize+\mcThickness}}
+{\pgfpoint{\mcSize}{\mcSize}}
+{
+\pgfsetcolor{\tikz@pattern@color}
+\pgfsetlinewidth{\mcThickness}
+\pgfpathmoveto{\pgfqpoint{0pt}{0pt}}
+\pgfpathlineto{\pgfpoint{\mcSize+\mcThickness}{\mcSize+\mcThickness}}
+\pgfusepath{stroke}
+}}
+\makeatother
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,15225); %set diagram left start at 0, and has height of 15225
+
+%Straight Lines [id:da857908311406453] 
+\draw    (393.5,14972) -- (394,15057) ;
+%Straight Lines [id:da29061278759721887] 
+\draw    (619.5,15057) -- (394,15057) ;
+%Shape: Rectangle [id:dp9455351102890761] 
+\draw  [draw opacity=0][pattern=_sq81xq6mf,pattern size=6pt,pattern thickness=0.75pt,pattern radius=0pt, pattern color={rgb, 255:red, 0; green, 0; blue, 0}] (393.5,14972) -- (368.5,14972) -- (368.5,15057) -- (393.5,15057) -- cycle ;
+%Shape: Resistor [id:dp1655417168724569] 
+\draw   (393.75,15014.5) -- (410.4,15014.5) -- (414.1,15005.63) -- (421.5,15023.38) -- (428.9,15005.63) -- (436.3,15023.38) -- (443.7,15005.63) -- (451.1,15023.38) -- (458.5,15005.63) -- (465.9,15023.38) -- (469.6,15014.5) -- (486.25,15014.5) ;
+%Shape: Square [id:dp5547088787123857] 
+\draw   (486.5,14972) -- (571.5,14972) -- (571.5,15057) -- (486.5,15057) -- cycle ;
+%Straight Lines [id:da9821701492442481] 
+\draw    (638.5,15087) -- (532.5,15087) ;
+\draw [shift={(532.5,15087)}, rotate = 360] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (0,5.59) -- (0,-5.59)   ;
+\draw [shift={(641.5,15087)}, rotate = 180] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (8.93,-4.29) -- (0,0) -- (8.93,4.29) -- cycle    ;
+%Straight Lines [id:da4621297135617979] 
+\draw    (532.5,15087) -- (423.5,15087) ;
+
+% Text Node
+\draw (435,14980) node [anchor=north west][inner sep=0.75pt]   [align=left] {k};
+% Text Node
+\draw (641.5,15087) node [anchor=north west][inner sep=0.75pt]   [align=left] {x};
+% Text Node
+\draw (529,15014.5) node   [align=left] {M};
+% Text Node
+\draw (532.5,15095) node [anchor=north] [inner sep=0.75pt]   [align=left] {O};
+
+
+\end{tikzpicture}

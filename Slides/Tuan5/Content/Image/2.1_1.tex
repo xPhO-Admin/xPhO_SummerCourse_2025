@@ -1,0 +1,76 @@
+
+
+
+% Pattern Info
+ 
+\tikzset{
+pattern size/.store in=\mcSize, 
+pattern size = 5pt,
+pattern thickness/.store in=\mcThickness, 
+pattern thickness = 0.3pt,
+pattern radius/.store in=\mcRadius, 
+pattern radius = 1pt}
+\makeatletter
+\pgfutil@ifundefined{pgf@pattern@name@_bjzsyyhfx}{
+\pgfdeclarepatternformonly[\mcThickness,\mcSize]{_bjzsyyhfx}
+{\pgfqpoint{0pt}{0pt}}
+{\pgfpoint{\mcSize+\mcThickness}{\mcSize+\mcThickness}}
+{\pgfpoint{\mcSize}{\mcSize}}
+{
+\pgfsetcolor{\tikz@pattern@color}
+\pgfsetlinewidth{\mcThickness}
+\pgfpathmoveto{\pgfqpoint{0pt}{0pt}}
+\pgfpathlineto{\pgfpoint{\mcSize+\mcThickness}{\mcSize+\mcThickness}}
+\pgfusepath{stroke}
+}}
+\makeatother
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,15225); %set diagram left start at 0, and has height of 15225
+
+%Straight Lines [id:da437877768560178] 
+\draw    (129,6269) -- (129,6301) ;
+%Straight Lines [id:da3724100858381515] 
+\draw    (473.5,6301) -- (129,6301) ;
+%Shape: Rectangle [id:dp7198122251048675] 
+\draw  [draw opacity=0][pattern=_bjzsyyhfx,pattern size=6pt,pattern thickness=0.75pt,pattern radius=0pt, pattern color={rgb, 255:red, 0; green, 0; blue, 0}] (129,6269) -- (103.5,6269) -- (103.5,6301) -- (129,6301) -- cycle ;
+%Shape: Resistor [id:dp36636194347067563] 
+\draw   (129,6285) -- (145.65,6285) -- (149.35,6276.13) -- (156.75,6293.88) -- (164.15,6276.13) -- (171.55,6293.88) -- (178.95,6276.13) -- (186.35,6293.88) -- (193.75,6276.13) -- (201.15,6293.88) -- (204.85,6285) -- (221.5,6285) ;
+%Shape: Square [id:dp9363148260133486] 
+\draw   (221.5,6269) -- (253.5,6269) -- (253.5,6301) -- (221.5,6301) -- cycle ;
+%Shape: Square [id:dp6956049205778242] 
+\draw  [dash pattern={on 0.84pt off 2.51pt}] (266.5,6269) -- (298.5,6269) -- (298.5,6301) -- (266.5,6301) -- cycle ;
+%Straight Lines [id:da8946582938824832] 
+\draw    (470.5,6332) -- (282.5,6332) ;
+\draw [shift={(282.5,6332)}, rotate = 360] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (0,5.59) -- (0,-5.59)   ;
+\draw [shift={(473.5,6332)}, rotate = 180] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (8.93,-4.29) -- (0,0) -- (8.93,4.29) -- cycle    ;
+%Straight Lines [id:da3156418836856203] 
+\draw    (282.5,6332) -- (121.5,6332) ;
+%Straight Lines [id:da3718838593743382] 
+\draw    (244.5,6254) -- (287,6254) ;
+\draw [shift={(241.5,6254)}, rotate = 0] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (8.93,-4.29) -- (0,0) -- (8.93,4.29) -- cycle    ;
+%Straight Lines [id:da06935968887205124] 
+\draw    (185.5,6332) -- (282.5,6332) ;
+\draw [shift={(185.5,6332)}, rotate = 180] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (0,5.59) -- (0,-5.59)   ;
+%Straight Lines [id:da7035616424166616] 
+\draw    (282.5,6332) -- (379.5,6332) ;
+\draw [shift={(379.5,6332)}, rotate = 180] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (0,5.59) -- (0,-5.59)   ;
+
+% Text Node
+\draw (166,6251) node [anchor=north west][inner sep=0.75pt]   [align=left] {k};
+% Text Node
+\draw (469.5,6338) node [anchor=north west][inner sep=0.75pt]   [align=left] {x};
+% Text Node
+\draw (237.5,6285) node   [align=left] {m};
+% Text Node
+\draw (282.5,6340) node [anchor=north] [inner sep=0.75pt]   [align=left] {O};
+% Text Node
+\draw (258,6230) node [anchor=north west][inner sep=0.75pt]   [align=left] {x};
+% Text Node
+\draw (380,6340) node [anchor=north] [inner sep=0.75pt]   [align=left] {A};
+% Text Node
+\draw (180,6340) node [anchor=north] [inner sep=0.75pt]   [align=left] {\mbox{-} A};
+
+
+\end{tikzpicture}

@@ -1,0 +1,186 @@
+\subsubsection{Dao động có cản khô}
+\begin{frame}{Hệ DĐ có cản khô}
+    \begin{center}
+        \resizebox{1\linewidth}{!}{\input{Content/Image/2.2_1}}
+    \end{center}
+    Lúc này hệ chịu thêm một lực ma sát khô. Tổng lực tác động lên vật
+
+\end{frame}
+\begin{frame}{Hệ DĐ có cản khô - PTVP}
+    Lúc này ta giải cùng lúc hai phương trình vi phân
+    \begin{equation}
+    \left\{
+        \begin{split}
+            m x'' &= -kx + \mu N \\
+            m x'' &= -kx - \mu N
+        \end{split}
+    \right.
+    \end{equation}
+    Đặt \(a=x-\mu N/k\) và \(b=x+\mu N/k\) ta có.
+    \begin{equation}
+    \left\{
+        \begin{split}
+        a'' + \omega^2 a &= 0 \\
+        b'' + \omega^2 b &= 0
+        \end{split}
+    \right.
+    \end{equation}
+    Ta có hai nghiệm:
+    \begin{equation}
+    \left\{
+        \begin{array}{ccc}
+        a &=&\displaystyle x -\frac{\mu N}{k} = A \cos{(\omega t + \varphi_a)} 
+        \\
+        \\
+        b &=&\displaystyle x +\frac{\mu N}{k} = B \cos{(\omega t + \varphi_b)}
+        \end{array}
+    \right.
+    \end{equation}
+\end{frame}
+
+\begin{frame}{Hệ DĐ có cản khô - PTVP}
+    Nghiệm \(a\) ứng với trường hợp vật đang đi cùng chiều dương. Nghiệm \(b\) ứng với trường hợp vật đang đi ngược chiều dương. 
+    \vspace{2mm}
+
+    Trường hợp vật đi giống nghiệm \(a\)
+    \vspace{5mm}
+    
+    \begin{center}
+        \input{Content/Image/2.2_3}
+    \end{center}
+\end{frame}
+\begin{frame}{Hệ DĐ có cản khô - PTVP}
+    Trường hợp vật đi giống nghiệm \(b\)
+    \vspace{5mm}
+    
+    \begin{center}
+        \input{Content/Image/2.2_4}
+    \end{center}
+    Trong một chu kỳ, vật tham gia lần lượt cả hai quy luật chuyển động. Lấy ví dụ sau.
+
+\end{frame}
+\begin{frame}{Hệ DĐ có cản khô - Biên độ}
+    \begin{center}
+        \scalebox{0.6}{\input{Content/Image/2.2_5}}
+    \end{center}
+\end{frame}
+\begin{frame}{Hệ DĐ có cản khô - Biên độ}
+    Công thức liên hệ giữa hai biên độ liên tiếp là 
+    \begin{equation}
+        A_{k+1} = A_k - 2 \mu mg/k
+    \end{equation}
+\end{frame}
+\subsubsection{Dao động có cản nhớt}
+\begin{frame}{Hệ DĐ có cản nhớt}
+    \begin{center}
+        \resizebox{0.6\linewidth}{!}{\input{Content/Image/2.2_2}}
+    \end{center}
+    Lúc này hệ sẽ chịu thêm một lực ma sát nhớt \(\mathbf{F_2}\). Tổng lực tác động lên vật
+    \begin{equation}
+        \displaystyle \mathbf{F} =  - k \mathbf{x} - b \mathbf{x'}.
+    \end{equation}
+\end{frame}
+\begin{frame}{Hệ DĐ có cản nhớt - PTVP}
+    Lúc này ta sẽ đi giải phương trình vi phân
+    \begin{equation}
+        mx'' = -kx -b x'.
+    \end{equation}
+    Ta đặt \(\omega^2 = k/m\), \(2\gamma = b/m\), ta có phương trình
+    \begin{equation*}
+        x'' + 2 \gamma x' + \omega^2 x = 0.
+    \end{equation*}
+    Phương trình đặc trưng
+    \begin{equation}
+    \lambda^2 + 2 \gamma \lambda + \omega^2 = 0.
+    \end{equation}
+    \(\Delta\) của phương trình đặc trưng
+    \begin{equation}
+        \Delta = 4 (\gamma^2 -\omega^2)
+    \end{equation}
+\end{frame}
+\begin{frame}{Trường hợp 1: \(\Delta <0\)}
+    Ta giải \(\lambda\)
+    \begin{equation*}
+        \lambda_{1,2} =  - \gamma \pm i \sqrt{\omega^2 - \gamma^2}.
+    \end{equation*}
+    Nghiệm tổng quát
+    \begin{equation}
+    \begin{array}{cl}
+    x &= A e^{\lambda_1 t} + B e^{\lambda_2 t} \\
+    &= e^{-\gamma t} \left(A e^{i\sqrt{\omega^2 - \gamma^2} \ t} + B e^{- i\sqrt{\omega^2 - \gamma^2} \ t} \right).
+    \end{array}
+    \end{equation}
+    Để x là một số thuần thực thì
+    \begin{equation*}
+    \left\{
+    \begin{array}{ccc}
+    A + B &=& C \cos \phi \\
+    A - B &=& i C \sin \phi
+    \end{array}
+    \right.
+    \end{equation*}
+
+\end{frame}
+\begin{frame}{Trường hợp 1: \(\Delta <0\)}
+    Ta đặt
+    \begin{equation}
+        x = C e^{-\gamma t}  \cos{\left(\sqrt{\omega^2 - \gamma^2} \ t + \phi \right)}.
+    \end{equation}
+\end{frame}
+\begin{frame}{Trường hợp 2: \(\Delta > 0\)}
+    Ta giải \(\lambda\)
+    \begin{equation*}
+        \lambda_{1,2} =  - \gamma \pm  \sqrt{\gamma^2 - \omega^2}.
+    \end{equation*}    
+    Nghiệm tổng quát:
+    \begin{equation}
+    \begin{array}{cl}
+    x &= A e^{\lambda_1 t} + B e^{\lambda_2 t} \\
+    &= e^{-\gamma t} \left(A e^{\sqrt{\gamma^2 - \omega^2} \ t} + B e^{- \sqrt{\gamma^2 - \omega^2} \ t} \right).
+    \end{array}
+    \end{equation}
+\end{frame}
+\begin{frame}{Trường hợp 2: \(\Delta > 0\)}
+    
+\end{frame}
+\begin{frame}{Trường hợp 3: \(\Delta = 0\)}
+    Ta giải \(\lambda\)
+    \begin{equation*}
+        \lambda =  - \gamma.
+    \end{equation*} 
+    Nghiệm tổng quát
+    \begin{equation}
+        x = e^{-\gamma t} \left(A + Bt \right).
+    \end{equation}
+\end{frame}
+\begin{frame}{Tổng kết}
+    Với \(\alpha, \beta, \gamma \in \mathbf{R}\). Xét phương trình đặc trưng
+    \begin{equation*}
+        \alpha \lambda^2 + \beta \lambda + \gamma = 0.
+    \end{equation*}
+    \begin{equation*}
+        \begin{array}{|l|c|}
+        \hline
+        \text{Trường hợp} & \text{Nghiệm} \\ 
+        \hline
+        \begin{array}{l}
+        \Delta < 0 \\
+        \lambda = a + ib
+        \end{array}
+        & x = C e^{-at} \cos(bt + \varphi) \\
+        \hline
+        \begin{array}{l}
+        \Delta > 0 \\
+        \lambda = \lambda_{1,2}
+        \end{array}
+        & x = Ae^{\lambda_1 t} + B e^{\lambda_2 t} \\
+        \hline
+        \begin{array}{l}
+        \Delta = 0 \\
+        \lambda = a
+        \end{array}
+        & x = e^{at} (A + Bt) \\
+        \hline
+        \end{array}
+    \end{equation*}
+\end{frame}
