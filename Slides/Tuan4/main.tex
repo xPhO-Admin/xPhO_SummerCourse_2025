@@ -48,12 +48,21 @@
 }
 
 %% Make Table of Contents %%
+%% Make Table of Contents %%
 \AtBeginSubsection[]{
-  \begin{frame}
-    \frametitle{Mục lục}
-    \tableofcontents[currentsubsection]
-\end{frame}
+    \begin{frame}
+        \frametitle{Mục lục}
+        \begin{columns}
+            \begin{column}{0.48\textwidth}
+                \tableofcontents[sections={1-2}, currentsubsection]
+            \end{column}
+            \begin{column}{0.48\textwidth}
+                \tableofcontents[sections={3-}, currentsubsection]
+            \end{column}
+        \end{columns}
+    \end{frame}
 }
+
 
 %% Section numbering %%
 \setbeamertemplate{section in toc}[sections numbered]
