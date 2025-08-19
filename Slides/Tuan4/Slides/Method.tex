@@ -64,8 +64,8 @@ Trên một cái nêm khối lượng \(M\) có góc nghiêng \(\alpha\) so vớ
 \begin{align*}
     \begin{cases}
         \mathbf{F_{ms1}}+\mathbf{N_1}+m\mathbf{g}=m\mathbf{a_1} \\
-        -F_{ms1}+mg\sin\alpha=m (\ddot{q_2}+\ddot{q_1}\cos\alpha) \\
-        N_1-mg\cos\alpha=m\ddot{q_1}\sin\alpha
+        -F_{ms1}+mg\sin\alpha=m (\ddot q_2+\ddot q_1\cos\alpha) \\
+        N_1-mg\cos\alpha=m\ddot q_1\sin\alpha
     \end{cases}
 \end{align*}
 \end{column}
@@ -119,5 +119,69 @@ M\mu_2
 \begin{itemize}
     \item Kiểm tra thứ nguyên: \([ML^2T^{-2}]\) của gia tốc.
     \item Việc gọi ra các lực liên kết như \(N_1\), \(N_2\) có thể áp dụng được cho một loạt bài toán khác.
+\end{itemize}
+\end{frame}
+
+\subsection{Ví dụ 2}
+\begin{frame}{Ví dụ 2}
+    Một quả cầu có khối lượng \(m\), thể tích \(V\) được nhúng trong một chất lỏng có khối lượng riêng \(\rho\). Khi di chuyển ở trong chất lỏng, vật chiu một lực cản nhớt \(\mathbf F_c=-k\mathbf v\). Biết rằng ban đầu vật xuất phát tại gốc tọa độ với vận tốc \(mathbf v_0\) theo phương x. Tìm tọa độ của vật theo thời gian.
+\begin{figure}
+    \centering
+    \includegraphics[width=0.4\textwidth]{Slides/Figure/masatnhot.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Ví dụ 2}
+\begin{columns}
+    \begin{column}{0.5\textwidth}
+\textbf{Bước 1: Phân tích lực.}
+\end{column}
+    \begin{column}{0.5\textwidth}  
+\begin{figure}
+    \centering
+    \includegraphics[width=0.7\textwidth]{Slides/Figure/masatnhot1.png}
+\end{figure}
+\end{column}
+\end{columns}
+\textbf{Bước 2: Thiết lập hệ phương trình 2 ẩn \(x\), \(y\) từ \(m\mathbf a=\mathbf F_c+\mathbf F_A+m\mathbf g\).}
+\scriptsize
+\begin{columns}
+\begin{column}{0.5\textwidth}
+\begin{align*}
+    \text{Phương x:}\quad
+    \begin{cases}
+    m\ddot{x} = -k\dot{x}. \\
+    m\int_{v_0}^{\dot{x}} \dfrac{d\dot x}{\dot x} = -k\int_0^t dt. \\
+    \dot x=v_0 \exp(\dfrac{-kt}{m}).
+    \end{cases}
+\end{align*}
+\end{column}
+\begin{column}{0.5\textwidth}
+\begin{align*}
+    \text{Phương z:}\quad
+    \begin{cases}    
+    m\ddot{z} = -\rho g V + mg - k\dot{z}. \\
+    m\int_{0}^{\dot z} \dfrac{d(k\dot z+\rho g V-mg)}{k\dot z+\rho g V-mg} =-k\int_0^t dt.\\
+    \dot{z} = \left(\dfrac{mg - \rho g V}{k}\right)\left[1 - \exp\left(-\frac{k t}{m}\right)\right].
+    \end{cases}
+\end{align*}
+\end{column}
+\end{columns}
+\normalsize
+\end{frame}
+
+\begin{frame}{Ví dụ 2}
+Tích phân theo thời gian 2 phương tình trên:
+\begin{equation*}
+    x(t) = \dfrac{m}{k}v_0\left(1 - \exp\left(-\dfrac{kt}{m}\right)\right).
+\end{equation*}
+\begin{equation*}
+    z(t) = \dfrac{mg - \rho g V}{k}t - \dfrac{m}{k}\left(\dfrac{mg - \rho g V}{k}\right)\left[1 - \exp\left(-\dfrac{kt}{m}\right)\right].
+\end{equation*}
+\textbf{Bước 3: Kiểm tra và đánh giá}
+\begin{itemize}
+    \item Kiểm tra thứ nguyên: \([L]\) của tọa độ.
+    \item Khi \(m\to\infty\) hoặc \(k\to 0\), từ khai triển Taylor: \(x(t)\approx v_0 t\) và \(z(t)\approx \frac12 g t^2\).
+    \item Khi trọng lực bằng lực đẩy Archimedes: \(z(t)=0\).
 \end{itemize}
 \end{frame}
