@@ -37,7 +37,7 @@
 
 \subsection{Ví dụ 1}
 \begin{frame}{Ví dụ 1}
-Trên một cái nêm khối lượng \(M\) có góc nghiêng \(\alpha\) so với mặt đất đặt một vật có khối lượng \(m\). Hệ số ma sát giữa vật và nêm là \(mu_1\), giữa nêm và mặt đất là \(mu_2\). Tìm gia tốc của vật và nêm.
+Trên một cái nêm khối lượng \(M\) có góc nghiêng \(\alpha\) so với mặt đất đặt một vật có khối lượng \(m\). Hệ số ma sát giữa vật và nêm là \(\mu_1\), giữa nêm và mặt đất là \(\mu_2\). Tìm gia tốc của vật và nêm.
 \begin{figure}
     \centering
     \includegraphics[width=0.5\textwidth]{Slides/Figure/wedgemass.png}
@@ -74,7 +74,7 @@ Trên một cái nêm khối lượng \(M\) có góc nghiêng \(\alpha\) so vớ
     \begin{cases}
         -\mathbf{N_1}-\mathbf{F_{ms1}}+\mathbf{N_2}+\mathbf{F_{ms2}}+M\mathbf{g}=M\mathbf{a_2}\\
         -N_1\cos\alpha-F_{ms1}\sin\alpha+N_2-Mg=0\\
-        -N_1\sin\alpha+F_{ms1}\cos\alpha+F_{ms2}=M\ddot q_2
+        -N_1\sin\alpha+F_{ms1}\cos\alpha+F_{ms2}=M\ddot{q_1}
     \end{cases}
 \end{align*}
 \end{column}
@@ -93,12 +93,27 @@ Trên một cái nêm khối lượng \(M\) có góc nghiêng \(\alpha\) so vớ
 \begin{frame}{Ví dụ 1}
     Giải hệ phương trình trên ta được:
     \begin{equation*}
-    \ddot q_1 = g\dfrac{M(-\mu_2+\sin\alpha-\mu_1\cos\alpha)\;-\;m\cos\alpha(\mu_1\cos\alpha-\sin\alpha+\mu_2\cos\alpha+\mu_1\mu_2\sin\alpha)}
-{m\sin\alpha(\mu_1\cos\alpha-\sin\alpha+\mu_2\cos\alpha+\mu_1\mu_2\sin\alpha)+M(\mu_1\sin\alpha+\cos\alpha)}
+    \ddot q_1 =g
+\frac{
+M\mu_2
++m\Big[(\mu_1 \mu_2 -1)\sin\alpha\cos\alpha
++\mu_1\cos^2\alpha
++\mu_2\cos^2\alpha
+\Big]
+}
+{M - m\Big[(\mu_1\mu_2 -1)\sin^2\alpha
++(\mu_1+\mu_2)\sin\alpha\cos\alpha
+\Big]}
     \end{equation*}
     \begin{equation*}
-        \ddot q_2 = g\dfrac{M(\mu_2\cos\alpha+\mu_1\mu_2\sin\alpha)\;+\;m(\mu_1\cos\alpha-\sin\alpha+\mu_2\cos\alpha+\mu_1\mu_2\sin\alpha)}
-{m\sin\alpha(\mu_1\cos\alpha-\sin\alpha+\mu_2\cos\alpha+\mu_1\mu_2\sin\alpha)+M(\mu_1\sin\alpha+\cos\alpha)}
+        \ddot q_2 =
+-g\frac{(M+m)\Big[
+(\mu_1\mu_2 -1)\sin\alpha
++(\mu_1 +\mu_2)\cos\alpha
+\Big]}
+{M - m\Big[(\mu_1\mu_2 -1)\sin^2\alpha
++(\mu_1+\mu_2)\sin\alpha\cos\alpha
+\Big]}
     \end{equation*}
 \textbf{Bước 3: Kiểm tra và đánh giá}
 \begin{itemize}
