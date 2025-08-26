@@ -12,14 +12,14 @@
     m_2 x_2'' &=& - k_3 x_2 + k_2 (x_1 - x_2).
     \end{array}
     \right.
-    \label{3.1_1}
+    \label{eq:3.1_1}
     \end{equation}
 \end{frame}
 
 \begin{frame}{2 khối lượng - 3 lò xo}
     Ta xét trường hợp đơn giản $k_1 = k_3$, $m_1 = m_2 = m$. 
 
-    Cách 1: Thay trường hợp trên vào, ta thu được hệ
+    Thay trường hợp trên vào, ta thu được hệ
     \begin{equation}
     \left\{
     \begin{array}{ccc}
@@ -27,16 +27,45 @@
     m_2 x_2'' &=& - k_1 x_2 + k_2 (x_1 - x_2).
     \end{array}
     \right.
-    \label{3.1_2}
+    \label{eq:3.1_2}
     \end{equation}
     Để giải hệ phương trình trên, ta lấy lần lượt tính $(x_1'' - x_2'')$ và $(x_1''+x_2'')$.
     \begin{equation}
     \left\{
         \begin{array}{ccc}
         m(x_1''+x_2'') &=& -k_1(x_1+x_2) \\
-        m(x_1''-x_2'') &=& -(k_1+k_2)(x_1 - x_2).
+        m(x_1''-x_2'') &=& -(k_1+2k_2)(x_1 - x_2).
         \end{array}
     \right.
     \end{equation}
-    
+    Đặt \(q_1 = x_1 + x_2\) và \(q_2 = x_1 - x_2\)
+    \begin{equation}
+    \left\{
+    \begin{array}{ccl}
+    {q}_1'' + \omega_1^2 q_1 &= 0 & \ , \text{với} \ \omega_1^2 = k_1/m \\
+    {q}_2'' + \omega_2^2 q_2 &= 0 & \ , \text{với} \ \omega_2^2 = (k_1+2k_2)/m
+    \end{array}
+    \right.
+    \end{equation}
+\end{frame}
+\begin{frame}{2 khối lượng - 3 lò xo}
+    Như vậy, ta giải được
+    \begin{equation}
+    \left\{ 
+    \begin{array}{ccc}
+    q_1 = x_1 + x_2 &=& A \cos{\left( \omega_1 t + \varphi_1\right)} \\
+    q_2 = x_1 - x_2 &=& B \cos{\left( \omega_2 t + \varphi_2 \right)}
+    \end{array}
+    \right.
+    \end{equation}
+    Biến đổi ta được
+    \begin{equation}
+    \left\{ 
+    \begin{array}{ccc}
+    x_1 &=& \frac12 \left(A \cos{\left( \omega_1 t + \varphi_1\right)} + B \cos{\left( \omega_2 t + \varphi_2 \right)} \right) \\
+    \\
+    x_2 &=& \frac12 \left(A \cos{\left( \omega_1 t + \varphi_1\right)} - B \cos{\left( \omega_2 t + \varphi_2 \right)} \right)
+    \end{array}
+    \right.
+    \end{equation}
 \end{frame}

@@ -1,64 +1,17 @@
-\begin{frame}{Ma trận của định luật II}
-Xét hệ phương trình từ định luật II Newton
-    \begin{equation*}
-    \left\{
-    \begin{array}{cccccc}
-    m_1 x_1'' &=& - (k_1+k_2) x_1 &+& k_2 x_2 \\
-    m_2 x_2'' &=&  k_2 x_1 &+& -(k_1+ k_3) x_2
-    \end{array}
-    \right.
-    \end{equation*}
-Ta có thể viết hệ phương trình thành
-\begin{equation}
-    \left[
-    \begin{array}{cc}
-    -(k_1+k_2) & k_2 \\
-    k_2 & -(k_1+ k_3)
-    \end{array}
-    \right] 
-    \left[
-    \begin{array}{c}
-    x_1 \\
-    x_2
-    \end{array}
-    \right] =  
-    \left[
-    \begin{array}{cc}
-    m_1 & 0 \\
-    0 & m_2 
-    \end{array}
-    \right] 
-    \left[
-    \begin{array}{c}
-    x_1'' \\
-    x_2''
-    \end{array}
-    \right]
-\end{equation}
-Hay ta có thể viết
-\begin{equation}
-    [\mathbf{K}] 
-    \left[
-    \begin{array}{c}
-    x_1 \\
-    x_2
-    \end{array}
-    \right]= [\mathbf{M}] 
-    \left[
-    \begin{array}{c}
-    x_1'' \\
-    x_2''
-    \end{array}
-    \right]
-\end{equation}
-\end{frame}
-
-\begin{frame}{Ma trận của định luật II}
-    Vậy \([\mathbf{K}] \in L : \mathcal{X} \rightarrow \mathcal{X}''\). Còn \([\mathbf{M}]\) là ma trận đường chéo. 
-    \vspace{2mm}
-
-    Gọi vector \(q \in \mathcal{X}\) và \(q'' \in \mathcal{X}''\). Liên hệ giữa chúng là
-    \begin{equation}
-        [\mathbf{K}] q = [\mathbf{M}] q''.
-    \end{equation}
+\begin{frame}{Không gian \(\mathcal{X}\)}
+    \begin{center}
+        \begin{minipage}{0.4\linewidth}
+            \begin{center}
+                \resizebox{1\linewidth}{!}{\input{Content/Image/3.2_1}}
+            \end{center}
+        \end{minipage}
+        \hspace{1mm}
+        \begin{minipage}{0.4\linewidth}
+            Gọi \(q\) là một vector trong không gian \(\mathcal{X}\). \(q\) là một tổ hợp tuyến tính 
+            \begin{equation}
+                q = \sum_{i=1}^{2} a_i x_i.
+                \label{eq:3.2}
+            \end{equation}
+        \end{minipage}
+    \end{center}
 \end{frame}

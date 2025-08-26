@@ -1,0 +1,174 @@
+\begin{frame}{Bài 1}
+Giải lại hệ sau bằng phương pháp chéo hoá. Với \(m_1=m_2=m\), \(k_1=k_3=2k_2\).
+\begin{center}
+    \resizebox{1\linewidth}{!}{\input{Content/Image/3.1_1}}
+\end{center}
+\end{frame}
+\begin{frame}{Bài 1: Giải}
+    Từ phương trình (\ref{eq:3.3_2}), ta có ma trận
+    \begin{equation*}
+    \left[
+    \begin{array}{cc}
+    -(k_1+k_2) & k_2 \\
+    k_2 & -(k_1+ k_2)
+    \end{array}
+    \right] 
+    \left[
+    \begin{array}{c}
+    x_1 \\
+    x_2
+    \end{array}
+    \right] =  
+    \left[
+    \begin{array}{cc}
+    m_1 & 0 \\
+    0 & m_2 
+    \end{array}
+    \right] 
+    \left[
+    \begin{array}{c}
+    x_1'' \\
+    x_2''
+    \end{array}
+    \right]
+    \end{equation*}
+    Dựa vào giả thiết \(m_1=m_2=m\) và \(k_1 = k_3=2k_2\), ta tính định thức sau
+    \begin{equation*}
+        \det{\left(\left[
+    \begin{array}{cc}
+    -3 & 1 \\
+    1 & -3
+    \end{array}
+    \right]  -  \frac{m}{k_2} \lambda^2 
+    \left[
+    \begin{array}{cc}
+        1 & 0 \\
+        0 & 1
+    \end{array}
+    \right]
+    \right) 
+    } = 0
+    \end{equation*}
+    Ta giải ra
+    \begin{equation*}
+    \begin{array}{clccc}
+    &\displaystyle\frac{m}{k_2} \lambda^2 = -2 \ &\text{hoặc}&\displaystyle \ \frac{m}{k_2} \lambda^2=-4 \\
+    \Rightarrow &\displaystyle \lambda= \pm i \sqrt{\frac{2k_2}{m}} \ &\text{hoặc}&\displaystyle \ \lambda = \pm i \sqrt{\frac{4k_2}{m}}
+    \end{array}
+    \end{equation*}
+\end{frame}
+\begin{frame}{Bài 1: Giải}
+    Với \(\displaystyle \lambda= \pm i \sqrt{\frac{2k_2}{m}}\)
+    \begin{equation*}
+    \begin{array}{crc}
+    &
+    \left(\left[
+    \begin{array}{cc}
+    -3 & 1 \\
+    1 & -3
+    \end{array}
+    \right]  +  2
+    \left[
+    \begin{array}{cc}
+        1 & 0 \\
+        0 & 1
+    \end{array}
+    \right]
+    \right) \left[
+    \begin{array}{c}
+    x_1 \\ x_2
+    \end{array}\right] &= 0 \\ \\
+    \Rightarrow & 
+    \left[
+    \begin{array}{cc}
+        -1 & 1 \\
+        1 & -1
+    \end{array}
+    \right] \left[
+    \begin{array}{c}
+    x_1 \\
+    x_2
+    \end{array}\right] &=0 \\ \\
+    \Rightarrow & x_1 &= x_2 
+    \end{array}
+    \end{equation*}
+    Vậy vector riêng tương ứng là
+    \begin{equation*}
+        q_1 = \left[
+        \begin{array}{c}
+        1 \\
+        1
+        \end{array}
+        \right]
+    \end{equation*}
+\end{frame}
+\begin{frame}{Bài 1: Giải}
+    Với \(\displaystyle \ \lambda = \pm i \sqrt{\frac{4k_2}{m}}\)
+    \begin{equation*}
+    \begin{array}{crc}
+    &
+    \left(\left[
+    \begin{array}{cc}
+    -3 & 1 \\
+    1 & -3
+    \end{array}
+    \right]  +  4
+    \left[
+    \begin{array}{cc}
+        1 & 0 \\
+        0 & 1
+    \end{array}
+    \right]
+    \right) \left[
+    \begin{array}{c}
+    x_1 \\ x_2
+    \end{array}\right] &= 0 \\ \\
+    \Rightarrow & 
+    \left[
+    \begin{array}{cc}
+        1 & 1 \\
+        1 & 1
+    \end{array}
+    \right] \left[
+    \begin{array}{c}
+    x_1 \\
+    x_2
+    \end{array}\right] &=0 \\ \\
+    \Rightarrow & x_1 &= -x_2 
+    \end{array}
+    \end{equation*}
+    Vậy vector riêng tương ứng là
+    \begin{equation*}
+        q_2 = \left[
+        \begin{array}{c}
+        1 \\
+        -1
+        \end{array}
+        \right]
+    \end{equation*}
+\end{frame}
+\begin{frame}{Bài 1: Giải}
+    Nghiệm tổng quát
+    \begin{equation*}
+    \displaystyle
+        q_{tq} = \left[
+        \begin{array}{c}
+        x_1 \\
+        x_2
+        \end{array}
+        \right]
+        = 
+        \left[
+        \begin{array}{c}
+        1 \\ 1
+        \end{array}
+        \right] 
+        \left( A_1 e^{i \sqrt{\frac{2k_2}{m}}t}  + A_2 e^{- i \sqrt{\frac{2k_2}{m}}t}\right) +  
+        \left[
+        \begin{array}{c}
+        1 \\ -1
+        \end{array}
+        \right] \left( A_3 e^{ i \sqrt{\frac{4k_2}{m}}t} + A_4 e^{ - i \sqrt{\frac{4k_2}{m}}t}\right)
+    \end{equation*}
+    
+\end{frame}

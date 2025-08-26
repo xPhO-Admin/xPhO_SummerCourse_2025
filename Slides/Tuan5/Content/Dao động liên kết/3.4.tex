@@ -1,0 +1,204 @@
+\begin{frame}{Ý tưởng chính}
+    Để nó có thể xuất hiện phương trình giống với phương trình dao động, ta mong muốn ánh xạ $\mathbf{[M]^{-1}}\mathbf{[K]}$ sẽ "bảo toàn hệ số".
+    \begin{center}
+        \resizebox{0.8\linewidth}{!}{\input{Content/Image/3.4_1}}
+    \end{center}
+\end{frame}
+\begin{frame}{Ý tưởng chính}
+    Bây giờ, ta sẽ giả sử những điều sau
+    \begin{enumerate}[\textbullet]
+        \item \(x_1 = A e^{\lambda t}  ; \ x_2 = B e^{\lambda t} \Rightarrow [q]_{\mathcal{X}} = 
+            \left[
+            \begin{array}{c}
+            A  \\
+            B 
+            \end{array} \right] \) \cite{morin2008introduction} \cite{taylor2005classic}
+        \item Thoả điều kiện "bảo toàn hệ số".
+    \end{enumerate}
+    Nếu thoả điều kiện hai, thì ta có thể viết
+    \begin{equation}
+        [q'']_{\mathcal{X}''} = \lambda^2             
+        \left[
+            \begin{array}{c}
+            A  \\
+            B 
+            \end{array} 
+        \right].
+        \label{eq:3.4_1}
+    \end{equation}
+    Đưa vào phương trình (\ref{eq:3.3_3}), ta có
+    \begin{equation}
+        \Big(\mathbf{[K]} - \lambda^2 \mathbf{[M]}\Big) 
+        \left[
+            \begin{array}{c}
+            A  \\
+            B 
+            \end{array} 
+        \right] = 0.
+        \label{eq:3.4_2}
+    \end{equation}
+\end{frame}
+
+\begin{frame}{Chéo hoá ma trận}
+    Ta tìm hiểu về khái niệm Eigenvalue và Eigenvector. \cite{gilbert2009introduction}
+    \vspace{2mm}
+
+    Cho phép toán sau, với \(\mathbf{[A]}\) là ma trận ánh xạ tuyến tính; \(\mathbf{v}\) là vector
+    \begin{equation}
+        \mathbf{[A]} \mathbf{v} = \lambda \mathbf{v} \ \ \text{Hay} \ \ \Big( \mathbf{[A]} - \lambda \mathbf{[E]} \Big) \mathbf{v} = 0
+        \label{eq:3.4_3}
+    \end{equation}
+    Eigenvector, là những vector \(\mathbf{v}\) thoả phương trình trên; Eigenvalue, là những giá trị \(\lambda\) tương ứng với vector \(\mathbf{v}\) là Eigenvector.
+    \vspace{2mm}
+
+    \textbf{Bước 1:} Tìm giá trị \(\lambda\) thoả (tính chất nghiệm không tầm thường)
+    \begin{equation}
+        \det \Big( \mathbf{[A]} - \lambda \mathbf{[E]} \Big) = 0.
+        \label{eq:3.4_4}
+    \end{equation}
+\end{frame}
+\begin{frame}{Chéo hoá ma trận}
+    \textbf{Bước 2:} Thay các giá trị \(\lambda\) vào phương trình (???) để tìm eigenvector \(\mathbf{v}\).
+    \vspace{2mm}
+
+    \textbf{Bước 3:} Ta thu được \(\lambda_1, \lambda_2\) và các vector \(\mathbf{v_1}, \mathbf{v_2}\). Ta sẽ viết được
+    \begin{equation}
+        \mathbf{[A]} = \left[\mathbf{v_1} \ \mathbf{v_2}\right] 
+        \left[
+        \begin{array}{cc}
+        \lambda_1 & 0 \\
+        0 & \lambda_2 
+        \end{array}
+        \right] \left[\mathbf{v_1} \ \mathbf{v_2}\right]^{-1}
+        \label{3.4_5}
+    \end{equation}
+    \begin{center}
+        \begin{minipage}{0.45\linewidth}
+            \textbf{Ví dụ:} Chéo hoá ma trận \(\mathbf{[B]}\).
+            \begin{equation*}
+                \mathbf{[B]} = 
+                \left[
+                \begin{array}{cc}
+                    3 & -3 \\
+                    2 & -4
+                \end{array}
+                \right]
+            \end{equation*}
+            \pause
+            \textbf{Giải}
+
+            B1: giải \(\det \Big(\mathbf{[B]} - \lambda \mathbf{[E]} \Big)=0\), ta có \(\lambda = 2,-3\).
+        \end{minipage}
+        \hspace{5mm}
+        \begin{minipage}{0.45\linewidth}
+            B2: Với \(\lambda = 2\), ta giải hệ \(\left[
+            \begin{array}{cc}
+                3 - 2 & -3 \\
+                2 & -4 -2
+            \end{array}\right] \left[
+            \begin{array}{c}
+            A \\
+            B
+            \end{array}\right] = 0\)
+            \vspace{2mm}
+
+            \(\rightarrow \mathbf{v_1} = \left[
+            \begin{array}{c}
+            A \\
+            B
+            \end{array}\right] = \left[
+            \begin{array}{c}
+            3 \\
+            1
+            \end{array}\right] \)
+        \end{minipage}
+    \end{center}
+\end{frame}
+\begin{frame}{Chéo hoá ma trận}
+    \textbf{Bước 2:} Thay các giá trị \(\lambda\) vào phương trình (???) để tìm eigenvector \(\mathbf{v}\).
+    \vspace{2mm}
+
+    \textbf{Bước 3:} Ta thu được \(\lambda_1, \lambda_2\) và các vector \(\mathbf{v_1}, \mathbf{v_2}\). Ta sẽ viết được
+    \begin{equation}
+        \mathbf{[A]} = \left[\mathbf{v_1} \ \mathbf{v_2}\right] 
+        \left[
+        \begin{array}{cc}
+        \lambda_1 & 0 \\
+        0 & \lambda_2 
+        \end{array}
+        \right] \left[\mathbf{v_1} \ \mathbf{v_2}\right]^{-1}
+        \label{eq:3.4_6}
+    \end{equation}
+    \begin{center}
+        \begin{minipage}{0.45\linewidth}
+            \textbf{Ví dụ:} Chéo hoá ma trận \(\mathbf{[B]}\).
+            \begin{equation*}
+                \mathbf{[B]} = 
+                \left[
+                \begin{array}{cc}
+                    3 & -3 \\
+                    2 & -4
+                \end{array}
+                \right]
+            \end{equation*}
+            \textbf{Giải}
+
+            B1: giải \(\det \Big(\mathbf{[B]} - \lambda \mathbf{[E]} \Big)=0\), ta có \(\lambda = 2,-3\).
+        \end{minipage}
+        \hspace{5mm}
+        \begin{minipage}{0.45\linewidth}
+            B2: Tương tự, với \(\lambda = -3 \ \text{thì}\) 
+            \vspace{2mm}
+            
+            \( \mathbf{v_2} = \left[
+            \begin{array}{c}
+            A \\
+            B
+            \end{array}\right] = \left[
+            \begin{array}{c}
+            1 \\
+            2
+            \end{array}\right]  \)
+
+            B3: \[\mathbf{[B]} = \left[
+                \begin{array}{cc}
+                    3 & 1 \\
+                    1 & 2
+                \end{array}
+                \right]                 
+                \left[
+                \begin{array}{cc}
+                    2 & 0 \\
+                    0 & -3
+                \end{array}
+                \right]                
+                \left[
+                \begin{array}{cc}
+                    3 & 1 \\
+                    1 & 2
+                \end{array}
+                \right]^{-1}
+                \]
+        \end{minipage}
+    \end{center}
+\end{frame}
+\begin{frame}{Ý tưởng chính}
+
+    Chúng ta sẽ tìm \(\lambda\) để thoả mãn phương trình (\ref{eq:3.4_2}), ta có tính chất nghiệm không tầm thường
+    \begin{equation}
+        \det{\Big( \mathbf{[K]} - \lambda^2 \mathbf{[M]}\Big)} = 0.
+        \label{eq:3.4_7}
+    \end{equation}
+    Sau giải ra được \(\lambda\), ta thế chúng ngược lại để tìm vector \(q\) tương ứng. Những vector \(q\) được gọi là \textit{toạ độ trực giao}. Hoặc còn gọi là các \textbf{mode dao động}.
+\end{frame}
+
+\begin{frame}{Nghiệm tổng quát}
+    Giả sử ta tìm được n vector \(q\), ứng với mỗi vector \(q_i\) có \(k_i\) trị riêng \(\lambda\) (eigenvalue). \(\lambda_{ij}\) là trị riêng thứ \(j\) ứng với vector \(q_i\).
+    \begin{equation}
+    q_{tq} = 
+    \left[\begin{array}{c}
+    x_1 \\ x_2
+    \end{array}\right] \displaystyle = q_1 \sum_{i=0}^{k_1} A_{1i} e^{\lambda_{1i} t} + ... +  q_n \sum_{i=1}^{k_n} A_{ni} e^{\lambda_{ni} t}
+    \label{eq:3.4_8}
+    \end{equation}
+\end{frame}

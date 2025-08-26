@@ -1,0 +1,79 @@
+\begin{frame}{Số phức}
+    \begin{center}
+        \begin{minipage}{0.4\linewidth}
+            \resizebox{1\linewidth}{!}{\input{Content/Image/1.1_1}}
+        \end{minipage}
+        \hspace{2mm}
+        \begin{minipage}{0.4\linewidth}
+            Số ảo \(\mathbf{i}\) được định nghĩa \cite{gilbert2009introduction}
+            \begin{equation}
+                i = \sqrt{-1}.
+                \label{eq:1.1_1}
+            \end{equation}
+            Không gian số phức là 
+            \begin{equation*}
+                \mathcal{C} = (a,b) | a,b \in \mathcal{R}
+            \end{equation*}
+        \end{minipage}
+    \end{center}
+\end{frame}
+
+\begin{frame}{Công thức euler}
+    \begin{mdframed}[backgroundcolor=BlueDefault!10, linecolor=BlueDefault, linewidth=0.5pt, roundcorner=1pt]
+        Công thức euler gọi là phép quay một góc \(\theta\) trong mặt phẳng phức.
+        \begin{equation}
+            e^{i\theta} = \cos{\theta} + i \sin{\theta}
+            \label{eq:1.1_2}
+        \end{equation}
+    \end{mdframed}
+    \vspace{2mm}
+    
+    Ví dụ: áp dụng phép quay \(\theta\) cho số phức \(z = a + i b\)
+    \begin{center}
+        \begin{minipage}{0.4\linewidth}
+            \begin{equation*}
+            \begin{split}
+                z' &= \left[\begin{array}{cc}
+               \cos{\theta}  & -\sin{\theta} \\
+               \sin{\theta}  & \cos{\theta}
+            \end{array} \right] \left[
+            \begin{array}{c}
+                a \\
+                b
+            \end{array}
+            \right]  \\
+            &= (a + i b) e^{i\theta}
+            \end{split}
+            \end{equation*}
+        \end{minipage}
+        \hspace{1mm}
+        \begin{minipage}{0.4\linewidth}
+            \begin{center}
+                \resizebox{1\linewidth}{!}{\input{Content/Image/1.1_2}}
+            \end{center}
+        \end{minipage}
+    \end{center}
+\end{frame}
+\begin{frame}{Số phức}
+    \begin{mdframed}[backgroundcolor=BlueDefault!10, linecolor=BlueDefault, linewidth=0.5pt, roundcorner=1pt]
+        Công thức euler còn là cách biểu diễn khác của số phức.
+        \begin{equation}
+            z = |z| e^{i\theta} = |z|(\cos{\theta} + i \sin{\theta})
+            \label{eq:1.1_3}
+        \end{equation}
+        Với \(|z|\) là module của số phức \(z\), \(\theta\) là góc lệch của so với trục thực.
+    \end{mdframed}
+    \begin{center}
+        \begin{minipage}{0.4\linewidth}
+        \resizebox{1\linewidth}{!}{\input{Content/Image/1.1_3}}
+        \end{minipage}
+        \hspace{3mm}
+        \begin{minipage}{0.35\linewidth}
+        Liên hợp phức: 
+        \begin{equation}
+            z = a + ib \rightarrow \overline{z} = a - ib.
+            \label{eq:1.1_4}
+        \end{equation}
+        \end{minipage}
+    \end{center}
+\end{frame}

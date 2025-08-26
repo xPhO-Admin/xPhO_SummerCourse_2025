@@ -1,0 +1,121 @@
+\begin{frame}{PTVP bậc 2 thuần nhất}
+    Ta gọi một PTVP là bậc 2  thuần nhất khi nó có dạng \cite{morin2008introduction}
+    \begin{equation}
+        a_0 x + a_1 x' + a_2 x'' = 0.
+        \label{eq:1.3_1}
+    \end{equation}
+    Ta giả sử \(x\) có dạng \(x = A e^{\lambda t}\). Ta thế vào phương trình \ref{eq:1.3_1}. 
+    \begin{equation*}
+    \begin{split}
+        & A e^{\lambda t} ( a_0 + a_1 \lambda + a_2 \lambda_2) = 0
+        \\
+       \Rightarrow \ & a_2 \lambda^2 + a_1 \lambda + a_0 = 0.
+    \end{split}
+    \end{equation*}
+    Ta gọi phương trình đa thức bậc 2 ở trên là "phương trình đặc trưng". 
+    \begin{equation*}
+        \Delta = a_1^2 - 4 a_0 a_2.
+    \end{equation*}
+\end{frame}
+
+\begin{frame}{Các trường hợp}
+    \textbf{Trường hợp 1:} \(\Delta < 0\)
+    \vspace{2mm}
+
+    Khi này, nghiệm \(\lambda\) sẽ có dạng
+    \begin{equation*}
+    \displaystyle 
+        \lambda_{1,2} = -\frac{a_1 \pm i \sqrt{4 a_0 a_2 - a_1^2}}{2} \equiv \alpha \pm i \beta.
+    \end{equation*}
+    Các nghiệm của PTVP lần lượt là
+    \begin{equation*}
+        x_1 =  e^{\lambda_1 t}; \ x_2 =  e^{\lambda_2 t}.
+    \end{equation*}
+    Nghiệm tổng quát
+    \begin{equation*}
+    \begin{split}
+        x_{tq} &= A_1 e^{\lambda_1 t} + A_2 e^{\lambda_2 t} \\
+        &= e^{\alpha t} \left( A_1 e^{i\beta t} + A_2 e^{-i\beta t} \right).
+    \end{split}
+    \end{equation*}
+\end{frame}
+\begin{frame}{Các trường hợp}
+    Do \(x_{tq}\) là hàm thực, nên ta có những điều kiện sau
+    \begin{equation*}
+    \left\{
+    \begin{array}{ccc}
+    A_1 + A_2 &=& C \cos \phi \\
+    A_1 - A_2 &=& i C \sin \phi
+    \end{array}
+    \right.
+    \end{equation*}
+    Dựa vào công thức euler, ta sẽ thu được
+    \begin{equation*}
+        x_{tq} = C e^{\alpha t} \cos{(\beta t + \varphi)}.
+    \end{equation*}
+\end{frame}
+\begin{frame}{Các trường hợp}
+    \textbf{Trường hợp 2:} \(\Delta > 0\)
+    \vspace{2mm}
+
+    Khi này, nghiệm \(\lambda\) sẽ có dạng
+    \begin{equation*}
+        \lambda_{1,2} = -\frac{a_1 \pm  \sqrt{a_1^2-4 a_2 a_0}}{2}.
+    \end{equation*}
+    Các nghiệm của PTVP lần lượt là
+    \begin{equation*}
+        x_1 = e^{\lambda_1 t} ; \ x_2 = e^{\lambda_2 t}.
+    \end{equation*}
+    Nghiệm tổng quát
+    \begin{equation*}
+        x_{tq} = A_1 e^{\lambda_1 t} + A_2e^{\lambda_2 t}.
+    \end{equation*}
+\end{frame}
+\begin{frame}{Các trường hợp}
+    \textbf{Trường hợp 3:} \(\Delta =0\)
+    \vspace{2mm}
+
+    Khi này, nghiệm \(\lambda\) sẽ có dạng
+    \begin{equation*}
+        \lambda = -\frac{a_1}{2}.
+    \end{equation*}
+
+    Các nghiệm của PTVP lần lượt là 
+    \begin{equation*}
+        x_1 = e^{\lambda t}; \ x_2 = t e^{\lambda t}.
+    \end{equation*}
+    Nghiệm tổng quát
+    \begin{equation*}
+    \begin{split}
+        x_{tq} &= A_1 e^{\lambda t} + A_2 t e^{\lambda t} \\
+        &=e^{\lambda t} (A_1 + A_2 t).
+    \end{split}
+    \end{equation*}
+\end{frame}
+\begin{frame}{Tổng kết}
+    \begin{equation*}
+        \begin{array}{|l|c|}
+        \hline
+        \text{Trường hợp} & \text{Nghiệm} \\ 
+        \hline
+        \begin{array}{l}
+        \Delta < 0 \\
+        \lambda = a + ib
+        \end{array}
+        & x = C e^{-at} \cos(bt + \varphi) \\
+        \hline
+        \begin{array}{l}
+        \Delta > 0 \\
+        \lambda = \lambda_{1,2}
+        \end{array}
+        & x = Ae^{\lambda_1 t} + B e^{\lambda_2 t} \\
+        \hline
+        \begin{array}{l}
+        \Delta = 0 \\
+        \lambda = a
+        \end{array}
+        & x = e^{at} (A + Bt) \\
+        \hline
+        \end{array}
+    \end{equation*}
+\end{frame}

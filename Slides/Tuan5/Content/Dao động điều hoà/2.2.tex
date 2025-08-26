@@ -15,6 +15,7 @@
             m x'' &= -kx - \mu N
         \end{split}
     \right.
+    \label{eq:2.2_1}
     \end{equation}
     Đặt \(a=x-\mu N/k\) và \(b=x+\mu N/k\) ta có.
     \begin{equation}
@@ -24,6 +25,7 @@
         b'' + \omega^2 b &= 0
         \end{split}
     \right.
+    \label{2.2_2}
     \end{equation}
     Ta có hai nghiệm:
     \begin{equation}
@@ -35,6 +37,7 @@
         b &=&\displaystyle x +\frac{\mu N}{k} = B \cos{(\omega t + \varphi_b)}
         \end{array}
     \right.
+    \label{eq:2.2_3}
     \end{equation}
 \end{frame}
 
@@ -68,6 +71,7 @@
     Công thức liên hệ giữa hai biên độ liên tiếp là 
     \begin{equation}
         A_{k+1} = A_k - 2 \mu mg/k
+        \label{eq:2.2_4}
     \end{equation}
 \end{frame}
 \subsubsection{Dao động có cản nhớt}
@@ -78,12 +82,14 @@
     Lúc này hệ sẽ chịu thêm một lực ma sát nhớt \(\mathbf{F_2}\). Tổng lực tác động lên vật
     \begin{equation}
         \displaystyle \mathbf{F} =  - k \mathbf{x} - b \mathbf{x'}.
+        \label{eq:2.2_5}
     \end{equation}
 \end{frame}
 \begin{frame}{Hệ DĐ có cản nhớt - PTVP}
     Lúc này ta sẽ đi giải phương trình vi phân
     \begin{equation}
         mx'' = -kx -b x'.
+        \label{eq:2.2_6}
     \end{equation}
     Ta đặt \(\omega^2 = k/m\), \(2\gamma = b/m\), ta có phương trình
     \begin{equation*}
@@ -92,10 +98,12 @@
     Phương trình đặc trưng
     \begin{equation}
     \lambda^2 + 2 \gamma \lambda + \omega^2 = 0.
+    \label{eq:2.2_7}
     \end{equation}
     \(\Delta\) của phương trình đặc trưng
     \begin{equation}
         \Delta = 4 (\gamma^2 -\omega^2)
+        \label{eq:2.2_8}
     \end{equation}
 \end{frame}
 \begin{frame}{Trường hợp 1: \(\Delta <0\)}
@@ -109,8 +117,9 @@
     x &= A e^{\lambda_1 t} + B e^{\lambda_2 t} \\
     &= e^{-\gamma t} \left(A e^{i\sqrt{\omega^2 - \gamma^2} \ t} + B e^{- i\sqrt{\omega^2 - \gamma^2} \ t} \right).
     \end{array}
+    \label{eq:2.2_9}
     \end{equation}
-    Để x là một số thuần thực thì
+    Để x là một hàm thuần thực thì
     \begin{equation*}
     \left\{
     \begin{array}{ccc}
@@ -125,7 +134,25 @@
     Ta đặt
     \begin{equation}
         x = C e^{-\gamma t}  \cos{\left(\sqrt{\omega^2 - \gamma^2} \ t + \phi \right)}.
+        \label{eq:2.2_10}
     \end{equation}
+    \begin{figure}[!htb]
+        \centering
+        \begin{tikzpicture}[scale=0.65]
+          \begin{axis}[
+              domain=0:5,
+              samples=100,
+              axis lines=middle,
+              xlabel=$t$,
+              ylabel=$x$
+            ]
+            \addplot[blue, thick, dash pattern=on 5pt off 2pt] {e^(-x)};
+            \addplot[blue, thick, dash pattern=on 5pt off 2pt] {-e^(-x)};
+            \addplot[blue, thick] {e^(-x)*cos(deg(5*x + 5))};
+          \end{axis}
+        \end{tikzpicture}
+        \caption{Hàm \(e^{-t} \cos{\left(5t + 5 \right)}\)}
+    \end{figure}
 \end{frame}
 \begin{frame}{Trường hợp 2: \(\Delta > 0\)}
     Ta giải \(\lambda\)
@@ -138,10 +165,25 @@
     x &= A e^{\lambda_1 t} + B e^{\lambda_2 t} \\
     &= e^{-\gamma t} \left(A e^{\sqrt{\gamma^2 - \omega^2} \ t} + B e^{- \sqrt{\gamma^2 - \omega^2} \ t} \right).
     \end{array}
+    \label{eq:2.2_11}
     \end{equation}
 \end{frame}
 \begin{frame}{Trường hợp 2: \(\Delta > 0\)}
-    
+\begin{figure}[!htb]
+    \centering
+    \begin{tikzpicture}[scale=0.8]
+      \begin{axis}[
+          domain=0:2,
+          samples=100,
+          axis lines=middle,
+          xlabel=$t$,
+          ylabel=$x$
+        ]
+        \addplot[blue, thick] {20*e^(-(5-2)*x) +10*e^(-(5+2)*x};
+      \end{axis}
+    \end{tikzpicture}
+    \caption{Hàm \(20 e^{-(5-2)t} + 10 e^{-(5+2)t}\)}
+\end{figure}
 \end{frame}
 \begin{frame}{Trường hợp 3: \(\Delta = 0\)}
     Ta giải \(\lambda\)
@@ -151,7 +193,23 @@
     Nghiệm tổng quát
     \begin{equation}
         x = e^{-\gamma t} \left(A + Bt \right).
+        \label{eq:2.2_12}
     \end{equation}
+    \begin{figure}[!htb]
+    \centering
+    \begin{tikzpicture}[scale=0.57]
+      \begin{axis}[
+          domain=0:2,
+          samples=100,
+          axis lines=middle,
+          xlabel=$t$,
+          ylabel=$x$
+        ]
+        \addplot[blue, thick] {e^(-5*x)*(20 + 10*x)};
+      \end{axis}
+    \end{tikzpicture}
+    \caption{Hàm \(e^{-5t} \left(20 + 10t\right)\)}
+    \end{figure}
 \end{frame}
 \begin{frame}{Tổng kết}
     Với \(\alpha, \beta, \gamma \in \mathbf{R}\). Xét phương trình đặc trưng
