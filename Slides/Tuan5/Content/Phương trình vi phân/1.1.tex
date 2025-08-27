@@ -33,7 +33,12 @@
         \begin{minipage}{0.4\linewidth}
             \begin{equation*}
             \begin{split}
-                z' &= \left[\begin{array}{cc}
+                \left[
+            \begin{array}{c}
+                a' \\
+                b'
+            \end{array}
+            \right]  &= \left[\begin{array}{cc}
                \cos{\theta}  & -\sin{\theta} \\
                \sin{\theta}  & \cos{\theta}
             \end{array} \right] \left[
@@ -42,7 +47,7 @@
                 b
             \end{array}
             \right]  \\
-            &= (a + i b) e^{i\theta}
+           z' &=  e^{i\theta}z
             \end{split}
             \end{equation*}
         \end{minipage}
