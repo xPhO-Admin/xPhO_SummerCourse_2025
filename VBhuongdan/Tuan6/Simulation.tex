@@ -111,11 +111,11 @@ Kết hợp 2 PT trên và điều kiện biên Dirichlet, ta có hệ phương 
 
 \begin{equation}
     \begin{bmatrix}
-        1 & 0 & 0 \\ 1/h^2 & -2/h^2 & 1/h^2 \\ 0 & -1/h^2 & 1/h^2 
+        1 & 0 & 0 \\ 1/h^2 & -2/h^2 & 1/h^2 \\ 0 & -1/h & 1/h 
     \end{bmatrix}\begin{bmatrix}
         u_1 \\ u_2 \\ u_3 
     \end{bmatrix} = \begin{bmatrix}
-        2 \\ x_2 \\ 1
+        2 \\ -x_2 \\ 1
     \end{bmatrix}
 \end{equation}
 
@@ -371,80 +371,3 @@ Dưới đây là các kết quả thu được với số phần tử thay đ�
 \end{figure}
 
 \textbf{\textcolor{red}{Cau hoi: Đưa ra một số nhận xét về các phương pháp đã trình bày? (ưu điểm, nhược điểm, độ chính xác, xem xét đến khả năng của mỗi phương pháp trong các miền 2D, 3D, etc.)}}
-
-\subsection{Tích phân số theo thời gian}
-
-Phương trình Poisson khảo sát bên trên là một phương trình không phụ thuộc vào thời gian. Câu hỏi đặt ra là nếu với những bài toán có phụ thuộc vào thời gian thì các phương pháp bên trên có giải được không. Câu trả lời là hoàn toàn có thể. Ý tưởng chung là miền tích phân thời gian cũng sẽ được rời rạc hóa thành các bước thời gian $t_0, t_1, t_2, t_3, t_4, \dots, t_n$ với $\Delta t = (t_n-t_0)/n$.
-
-Với phương pháp sai phân hữu hạn chúng ta sẽ xấp xỉ đạo hàm theo thời gian bằng các sai phân. Lúc này ngoài việc giải phương trình tuyến tính để tìm giá trị tại các nút thì chúng ta còn cần sử dụng các vòng lặp để tính giá trị tại các bước thời gian tiếp theo (VD: phương pháp Euler, phương pháp Crank-Nicolson, etc.). Phần này sẽ không được trình bày trong bài viết này, tuy nhiên nếu bạn muốn tìm hiểu thêm thì có thể tham khảo các tài liệu về phương pháp sai phân hữu hạn theo thời gian.
-
-Đối với phương pháp phần tử hữu hạn ngoài ma trận ${\bf K}$ và vector ${\bf F}$ bên trên, chúng ta còn cần một ma trận ${\bf M}$ để mô tả khối lượng của hệ thống. Phương trình phần tử hữu hạn tổng quát lúc này sẽ có dạng:
-
-
-\begin{equation}\label{eq_PTHH_general}
-    {\bf M}\ddot{\bf u} + {\bf C}\dot{\bf u} + {\bf K}{\bf u} = {\bf F}
-\end{equation}
-
-Chúng ta dễ dàng nhận thấy rằng phương trình này có dạng tương tự như phương trình của bài toán dao động điều hòa 2 bậc tự do mà chúng ta đã học ở trên \textcolor{red}{!!!}.
-
-Một trong những phương pháp số để tính toán phương trình dạng này là phương pháp Runge-Kutta. Phương pháp này là một phương pháp lặp để giải phương trình đạo hàm bậc nhất.
-
-\begin{equation}
-    \frac{d {\bf u}}{d t}={\bf f}(t,{\bf u}) ,\quad {\bf u}\left(t_0\right)={\bf u}_0
-\end{equation}
-
-Trên python, phương pháp này có sẵn trong thư viện \textbf{scipy.integrate}. Để sử dụng chúng ta dùng hàm \textbf{odeint}. Trong tài liệu này chúng ta sẽ không đi sâu vào phương pháp Runge-Kutta, tuy nhiên bạn có thể tham khảo thêm trong các tài liệu về phương pháp số hoặc tài liệu của thư viện \textbf{scipy.integrate}. Thay vào đó chúng ta sẽ tìm hiểu về cách áp dụng phương pháp này để giải phương trình phần tử hữu hạn.
-
-Một điểm cần lưu ý là phương pháp này giải phương trình đạo hàm bậc 1 theo thời gian. Còn phương trình của chúng ta là phương trình đạo hàm bậc 2 theo thời gian. Để giải quyết vấn đề này chúng ta cần thực hiện một thao tác đổi biến.
-
-Bước đầu tiên là biến đổi phương trình \cref{eq_PTHH_general} về dạng phương trình đạo hàm bậc nhất. Để làm được điều này, chúng ta sẽ định nghĩa các biến mới: ${\bf u}_1 = {\bf u}$ và ${\bf u}_2 = \dot{\bf u}$. Do đó ta có: $\dot{\bf u}_1 = \dot{\bf u}$ va $\dot{\bf u}_2 = \ddot{\bf u}$.
-
-Thay các biến mới vào phương trình \cref{eq_PTHH_general}, ta có:
-
-\begin{equation}
-    \begin{aligned}
-    &\begin{cases}
-        \dot{\bf u}_1 &= {\bf u}_2 \\
-        \dot{\bf u}_2 &= {\bf M}^{-1}\left(-{\bf K}{\bf u}_1-{\bf C}{\bf u}_2 + {\bf F}\right)
-    \end{cases} \\
-    \Rightarrow &\begin{bmatrix}
-        \dot{\bf u}_1 \\ \dot{\bf u}_2
-    \end{bmatrix} = \begin{bmatrix}
-        {\bf O} & {\bf I} \\
-        -{\bf M}^{-1}{\bf K} & -{\bf M}^{-1}{\bf C}
-    \end{bmatrix}\begin{bmatrix}
-        {\bf u}_1 \\ {\bf u}_2
-    \end{bmatrix} + \begin{bmatrix}
-        {\bf O} \\ {\bf M}^{-1}{\bf F}
-    \end{bmatrix} \\
-    \Leftrightarrow & \dot{\bf U} = {\bf A} {\bf U} + {\bf B}
-    \end{aligned}
-\end{equation}
-
-Từ đây chúng ta có thể sử dụng hàm \textbf{odeint} để giải phương trình đạo hàm bậc nhất này và tìm các giá trị của ${\bf U}$ theo từng bước thời gian.
-
-Phương pháp Runge-Kutta là một phương pháp mạnh mẽ và linh hoạt để  tính tích phân số. Tuy nhiên nó có một nhược điểm khi áp dụng cho phương trình phần tử hữu hạn. Đó là việc áp dụng phương pháp Runge-Kutta sẽ làm tăng bậc tự do của phương trình. Trong phương trình phần tử hữu hạn, số lượng bậc tự do phụ thuộc vào số lượng phần tử và có thể lên đến hàng nghìn hoặc hàng triệu. Vì vậy, Runge-Kutta không phải là một phương pháp tối ưu trong trường hợp này.
-
-Thay vào đó, chúng ta sẽ sử dụng phương pháp Newmark để giải phương trình phần tử hữu hạn. Phương pháp Newmark là một phương pháp tích phân số theo thời gian được sử dụng rộng rãi trong cơ học tính toán. Nó cho phép tính toán các giá trị của ${\bf u}$ và $\dot{\bf u}$ tại các bước thời gian tiếp theo dựa trên các giá trị tại bước thời gian trước đó. Nguyên lý của phương pháp này là xấp xỉ các đạo hàm bậc nhất và bậc 2 của nghiệm theo thời gian như sau:
-
-\begin{equation}\label{eq_newmark}
-    \begin{aligned}
-    \dot{\bf u}_{n+1} &\approx \dot{\bf u}_n+(1-\gamma) \Delta t \ddot{\bf u}_n+\gamma \Delta t \ddot{\bf u}_{n+1}\\
-    {\bf u}_{n+1} &\approx {\bf u}_n+\Delta t \dot{\bf u}_n+\left(\frac{1}{2}-\beta\right)(\Delta t)^2 \ddot{\bf u}_n+\beta(\Delta t)^2 \ddot{\bf u}_{n+1}
-\end{aligned}
-\end{equation}
-
-$(\gamma, \beta)$ là các tham số Newmark. Một vài giá trị thường được sử dụng là $(1/2, 1/4)$, $(1/2, 1/6)$, $(1/2, 0)$.
-
-Thay PT \cref{eq_newmark} vào \cref{eq_PTHH_general}, ta có:
-
-\begin{equation}
-    \begin{aligned}
-    \ddot{\bf u}_{n+1}={\bf S}^{-1}\left[{\bf F}_{n+1}-[{\bf C}\left(\dot{\bf u}_n\right.\right. & \left.+(1-\gamma) \Delta t \ddot{\bf u}_n\right) \\
-& \left.-{\bf K}\left({\bf u}_n+\Delta t \dot{\bf u}_n+\left(\frac{1}{2}-\beta\right)(\Delta t)^2 \ddot{\bf u}_n\right)\right]
-\end{aligned}
-\end{equation}
-
-Với ${\bf S} = {\bf M} + {\bf C}\gamma\Delta t + {\bf K}\beta(\Delta t)^2$.
-
-Để thực hiện tích phân số chúng ta làm như sau. Ở thời điểm ban đầu $t_0=0$, chúng ta đã biết ${\bf u}_0$ và $\dot{\bf u}_0$. Chúng ta có thể tính được $\ddot{\bf u}_0$ từ phương trình \cref{eq_PTHH_general}. Từ đó, chúng ta tìm được $\ddot{\bf u}_1$. ${\bf u}_1$ và $\dot{\bf u}_1$ được suy ra từ \cref{eq_newmark}. Tiếp tục như vậy, chúng ta sẽ tìm được tất cả các giá trị tại thời điểm tiếp theo.
