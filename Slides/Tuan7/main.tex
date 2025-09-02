@@ -1,0 +1,147 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%  xPhO LaTeX Beamer Template  %%%%%
+%%%%%  Date: 17/03/2025            %%%%%
+%%%%%  Authors:                    %%%%%
+%%%%%       Nguyen Thanh Long      %%%%%
+%%%%%       Nguyen Le Mai Huong    %%%%%
+%%%%%       Nguyen Minh Phuong     %%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[aspectratio=169, t]{beamer} % Ratio 16:9
+\usepackage[T5]{fontenc}
+\usepackage{lmodern}
+\usepackage{graphicx} 
+\usepackage{array}
+\usepackage{longtable} % for long table
+\usepackage{chngcntr}
+\counterwithin{figure}{section}
+\usepackage{tcolorbox}
+\renewcommand{\familydefault}{\sfdefault} % Font
+
+\usepackage{caption}
+\usepackage{siunitx}
+
+\usepackage{tikz}
+\usetikzlibrary{patterns}
+\usepackage{subcaption}
+\let\vec\relax
+\newcommand{\vec}[1]{\textbf{#1}}
+
+\usepackage{multicol}
+
+\usepackage{mdframed}
+
+% \definecolor{BlueDefault}{rgb}{0.2,0.2,0.7}
+\definecolor{BlueDefault}{RGB}{14,47,95}
+
+
+% Hide navigation 
+\setbeamertemplate{navigation symbols}{}
+
+% Setup background
+\newcommand{\normalbackground}{%
+    \usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{Background/Normal_slide_xPhO.pdf}}%
+}
+
+\newcommand{\titlebackground}{%
+    \usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{Background/Title_slide_xPhO.pdf}}%
+}
+
+% Change the title color to white
+\setbeamercolor{frametitle}{fg=white} 
+
+% push the title up by \raisebox
+\setbeamertemplate{frametitle}{%
+    \vspace{0.3em}
+    \hspace{-1em} \insertframetitle
+    \vspace{2mm}
+}
+
+% Number of slide
+\setbeamertemplate{footline}{%
+    \hfill
+    \insertframenumber/\inserttotalframenumber
+    \hspace{7.5mm}
+    \vspace{3.5mm}
+}
+
+%% Make Table of Contents %%
+\AtBeginSection[]{
+    \begin{frame}
+        \frametitle{Mục lục}
+            \tableofcontents[currentsubsection]
+    \end{frame}
+}
+
+%% Section numbering %%
+\setbeamertemplate{section in toc}[sections numbered]
+\setbeamertemplate{subsection in toc}[subsections numbered]
+
+
+\renewcommand{\figurename}{Hình}
+\renewcommand{\tablename}{Bảng}
+
+%%%%%%%%%% Pictures drawing %%%%%%%%%%%%%
+
+\usepackage{pgfplots} %%%%%% Regression %%%%
+\pgfplotsset{compat = newest}
+\usepackage{pgfplotstable}
+\usepackage{tikz}
+\usepackage{tikz-3dplot} %%%%%% Draw %%%%%%
+\usepackage{tikz,tkz-euclide}
+\usetikzlibrary{arrows,calc,patterns}
+\usetikzlibrary{quotes,angles}
+\usetikzlibrary{shapes.geometric}
+\usepackage{circuitikz} %%%%% Circuit %%%%
+\usetikzlibrary{decorations.pathmorphing,patterns}
+
+
+%%%%% Bibliography %%%%%
+\usepackage[backend=biber,style=ieee]{biblatex}
+\addbibresource{citation.bib}
+
+\usepackage{url}
+\usepackage{hyperref}
+\hypersetup{
+	colorlinks=true,
+	linkcolor=BlueDefault,
+	filecolor=BlueDefault,
+    citecolor=BlueDefault,
+	urlcolor=BlueDefault,
+	pdftitle={Overleaf Example},
+	pdfpagemode=FullScreen,
+}
+
+%%%%%%%%%% Color setup %%%%%%%%%%%%%
+
+\RequirePackage{xcolor}
+\definecolor{wsdred}{HTML}{8E1728}
+\definecolor{wsdgrey}{HTML}{75787B}
+\renewcommand{\normalcolor}{\color{wsdred}}
+\colorlet{ColorOr}{white}
+
+\begin{document}
+
+\titlebackground
+
+\input{Content/Title}
+
+\normalbackground
+
+\section{Vấn đề khởi động}
+\input{Content/Introproblem.tex}
+
+\section{Các định luật bảo toàn}
+\input{Content/conservation_laws1.tex}
+\input{Content/conservation_laws2.tex}
+
+\section{Một vài ứng dụng}
+\input{Content/Application.tex}
+
+\section{Bất biến trong một số bài toán khác}
+\input{Content/invariants.tex}
+
+\input{Content/Bibliography}
+
+
+\end{document}
