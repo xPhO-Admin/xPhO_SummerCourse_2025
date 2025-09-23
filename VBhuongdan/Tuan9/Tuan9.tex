@@ -33,7 +33,7 @@ Với điều kiện biên xác định tại \(t_1\) và \(t_2\), việc hàm t
     \delta S = \int_{t_1}^{t_2} \left( \frac{\partial L}{\partial \mathbf{q}} \delta \mathbf{q} + \frac{\partial L}{\partial \mathbf{\dot{q}}} \delta \mathbf{\dot{q}} \right) \mathrm{d}t.
 \end{equation}
 
-Áp dụng định lý Leibniz cho biến phân \(\delta \mathbf{\dot{q}} = \mathrm{d}\left( \delta \mathbf{q} \right)\mathrm{d}t\)
+Áp dụng định lý Leibniz cho biến phân \(\delta \mathbf{\dot{q}} = \mathrm{d}\left( \delta \mathbf{q} \right) /\mathrm{d}t\)
 \begin{equation}
     \dfrac{\partial L}{\partial \mathbf{\dot{q}}} \delta \mathbf{\dot{q}} = \frac{\partial L}{\partial \mathbf{\dot{q}}} \frac{\mathrm{d}}{\mathrm{d}t} \delta \mathbf{q} = \frac{\mathrm{d}}{\mathrm{d}t} \left( \frac{\partial L}{\partial \mathbf{\dot{q}}} \delta \mathbf{q} \right) - \frac{\mathrm{d}}{\mathrm{d}t} \left( \frac{\partial L}{\partial \mathbf{\dot{q}}} \right) \delta \mathbf{q}.
 \end{equation}
@@ -78,7 +78,7 @@ hay
 
 Trong trường hợp hàm Lagrange không phụ thuộc vào biến thời gian \(t\), tức là \(\partial L/\partial t = 0\), ta tìm được một đại lượng bảo toàn
 \begin{equation}
-    H = L - \mathbf{\dot{q}} \dfrac{\partial L}{\partial \mathbf{\dot{q}}}.
+    H = \mathbf{\dot{q}} \dfrac{\partial L}{\partial \mathbf{\dot{q}}} - L.
 \end{equation}
 Đại lượng này được gọi là tích phân Euler, hay trong cơ học giải tích là hàm Hamilton của hệ.
 
