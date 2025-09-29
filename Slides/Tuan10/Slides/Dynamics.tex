@@ -1,0 +1,72 @@
+\subsection{Động năng và ma trận quán tính}
+
+\begin{frame}{Động năng và ma trận quán tính}
+    \begin{itemize}
+        \item Động năng:
+    \end{itemize}
+    \begin{equation}
+        T = \sum_{i=1}^N \dfrac{1}{2} v_i^T m_i v_i + \sum_{j=1}^M \dfrac{1}{2} \omega_j I_j \omega = \dfrac{1}{2} \dot{q}^T \left( \sum_{k=1}^L J_k^T m_k J_k \right) \dot{q} = \dfrac{1}{2} \dot{q}^T H \dot{q}.
+    \end{equation}
+    \begin{itemize}
+        \item Ma trận quán tính
+    \end{itemize}
+    \begin{equation}
+        H = \sum_{k=1}^L J_k^T m_k J_k.
+    \end{equation}
+\end{frame}
+
+\subsection{Phương trình động lực học đầy đủ và ma trận Christoffel}
+
+\begin{frame}{Phương trình động lực học và ma trận Christoffel}
+    \begin{columns}
+        \column{0.4\textwidth}
+        \begin{itemize}
+            \item Hàm Lagrangian: \( L = T - U\)
+            \item Phương trình Euler Lagrange:
+        \end{itemize}
+        \begin{equation}
+            \dfrac{d}{dt} \left( \dfrac{\partial L}{\partial \dot{q}_i} \right) - \dfrac{\partial L}{\partial q_i} = 0.
+        \end{equation}
+        Phân tách hàm Lagrangian và bổ sung lực suy rộng
+        \begin{equation}
+            \dfrac{d}{dt} \left( \dfrac{\partial T}{\partial \dot{q}_i} \right) - \dfrac{\partial T}{\partial q_i} = - \dfrac{\partial U}{\partial q_i} + F_i.
+        \end{equation}
+        \column{0.6\textwidth}
+        \begin{itemize}
+            \item Lời giải tổng quát
+        \end{itemize}
+        \begin{equation}
+            H(q) \ddot{q} + C(q, \dot{q}) \dot{q} = -\nabla U(q) + F.
+        \end{equation}
+        \begin{itemize}
+            \item Phần tử hàng \(i\) cột \(j\) của ma trận Chrisoffel
+        \end{itemize}
+        \begin{equation}
+            C_{ij} = \sum_{k=1}^{n} \frac{1}{2} \left( \frac{\partial H_{ik}}{\partial q_j} + \frac{\partial H_{jk}}{\partial q_i} - \frac{\partial H_{ij}}{\partial q_k} \right) \dot{q}_k.
+        \end{equation}
+    \end{columns}
+\end{frame}
+
+\subsection{Mô phỏng chuyển động bằng phương pháp số}
+
+\begin{frame}{Mô phỏng hệ Robotic bằng phương pháp số}
+    \begin{itemize}
+        \item Hệ phương trình vi phân
+    \end{itemize}
+    \begin{align}
+        \dfrac{d}{dt} q &= \dot{q}, \\
+        \dfrac{d}{dt} \dot{q} &= H(q)^{-1} \left[ - C(q,\dot{q}) \dot{q} -\nabla U(q) + F \right].
+    \end{align}
+    \vspace{-5mm}
+    \begin{itemize}
+        \item Lấy sai phân, rời rạc hóa biểu thức trong mô phỏng số
+    \end{itemize}
+    \begin{align}
+        q|_{t+\Delta t} &= q|_{t} + \dot{q} \Delta t, \\
+        \dot{q}|_{t+\Delta t} &= \dot{q}|_t + H(q)^{-1} \left[ - C(q,\dot{q}) \dot{q} -\nabla U(q) + F \right] \Delta t.
+    \end{align}
+    \vspace{-5mm}
+    \begin{itemize}
+        \item Chọn \(\Delta t\) rất nhỏ và tiến hành rất nhiều vòng lặp, thu được đồ thị của \(q\) và \(\dot{q}\) theo thời gian.
+    \end{itemize}
+\end{frame}
