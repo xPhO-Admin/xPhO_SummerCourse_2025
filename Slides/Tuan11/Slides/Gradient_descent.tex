@@ -1,0 +1,69 @@
+\subsection{Thuật toán Gradient Descent}
+
+\begin{frame}{Thuật toán Gradient Descent}
+    \begin{itemize}
+        \item Tìm cực tiểu của hàm mất mát \(L(\boldsymbol{\theta})\) mà không cần tính ma trận nghịch đảo.
+        \item Cập nhật tham số: \(\boldsymbol{\theta} \leftarrow \boldsymbol{\theta} - \eta \nabla L(\boldsymbol{\theta})\), với \(\eta\) là tốc độ học (learning rate).
+        \item Lặp lại quá trình cho đến khi hội tụ.
+    \end{itemize}
+
+\begin{columns}
+    \begin{column}{0.5\textwidth}
+        Ví dụ: \(L (\theta) = 3 + (y - \theta x - 1)^2\) \\
+        với bộ giá trị \((x, y) = (1, 2)\)
+        \begin{itemize}
+            \item Tính đạo hàm: \(\nabla L = 2(y - \theta x - 1)(-x)\)
+            \item Cập nhật tham số: \(\theta_{n+1} = \theta_n - \eta \nabla L\).
+            \item Dừng thuật toán khi \(|L(\theta_{n+1}) - L(\theta_n)| < \epsilon\).
+        \end{itemize}
+    Chọn \(\theta_0 = 0\), \(\eta = 0.4\)!
+    \end{column}
+    \begin{column}{0.5\textwidth}
+        \vspace{-8mm}
+        \begin{table}
+            \centering
+            \caption{Quá trình hội tụ của thuật toán Gradient Descent.}
+            \begin{tabular}{c|c|c}
+                \hline
+                Bước & \(\theta\) & \(L(\theta)\) \\
+                \hline
+                0 & 0.0 & 4.0 \\
+                1 & 0.8 & 3.04 \\
+                2 & 0.96 & 3.0016 \\
+                3 & 0.992 & 3.00000012 \\
+                4 & 0.99968 & 3.000000102 \\
+                5 & 0.999936 & 3.000000004 \\
+                \hline
+            \end{tabular}
+            \label{tab:gradient_descent}
+        \end{table}
+    \end{column}
+\end{columns}
+\end{frame}
+
+\subsection{Các thuật tối ưu khác}
+
+\begin{frame}{Các thuật tối ưu khác}
+    \begin{itemize}
+        \item Tối ưu Newton:
+    \end{itemize}
+    \begin{equation}
+        \boldsymbol{\theta}_{n+1} = \boldsymbol{\theta}_n - \eta \mathbf{H}^{-1} \nabla L(\boldsymbol{\theta}_n),
+    \end{equation}
+    với \(\mathbf{H}\) là ma trận Hessian của \(L\), tức là \(\mathbf{H} = \nabla^2 L(\boldsymbol{\theta})\).
+    \begin{itemize}
+        \item Tối ưu Gauss-Newton:
+    \end{itemize}
+    \begin{equation}
+        \boldsymbol{\theta}_{n+1} = \boldsymbol{\theta}_n - \eta (\mathbf{J}^T \mathbf{J})^{-1} \mathbf{J}^T \mathbf{r},
+    \end{equation}
+    với \(\mathbf{J}\) là ma trận Jacobian của vector sai số \(\mathbf{r}\).
+    \begin{itemize}
+        \item Tối ưu Levenberg-Marquardt (Kết hợp giữa Gradient Descent và Gauss-Newton).
+    \end{itemize}
+    \begin{equation}
+        \boldsymbol{\theta}_{n+1} = \boldsymbol{\theta}_n - \eta (\mathbf{J}^T \mathbf{J} + \lambda \mathbf{I})^{-1} \mathbf{J}^T \mathbf{r},
+    \end{equation}
+    với \(\lambda\) là tham số điều chỉnh.
+\end{frame}
+

@@ -1,0 +1,121 @@
+\subsection{Bài toán hồi quy và hồi quy tuyến tính}
+
+\begin{frame}{Bài toán hồi quy và hồi quy tuyến tính}
+\begin{columns}
+\column{0.4\textwidth}
+    \vspace{-4mm}
+    \begin{table}
+        \centering
+        \begin{tabular}{|c|c|c|c|}
+            \hline
+            \(x\) & \(y\) & \(x\) & \(y\) \\
+            \hline
+            1.01 & 1.45 & 10.97 & 6.53 \\
+            2.04 & 2.03 & 11.94 & 6.98 \\
+            2.98 & 2.47 & 12.98 & 7.53 \\
+            3.95 & 3.01 & 13.95 & 8.00 \\
+            5.01 & 3.49 & 15.01 & 8.50 \\
+            5.99 & 4.02 & 15.99 & 8.93 \\
+            7.02 & 4.47 & 17.02 & 9.49 \\
+            7.98 & 4.95 & 18.07 & 10.02 \\
+            9.03 & 5.52 & 19.06 & 10.52 \\
+            10.01 & 6.02 & 19.91 & 11.03 \\
+            \hline
+        \end{tabular}
+        \caption{Dữ liệu mẫu.}
+    \end{table}
+
+\column{0.6\textwidth}
+    \begin{itemize}
+        \item Bài toán: Tìm hàm \(f(x)\) sao cho \(y \approx f(x)\).
+    \end{itemize}
+    Dự đoán mô hình: \(f(x) = \beta_0 + \beta_1 x\).
+
+    \begin{itemize}
+        \item Tham số cần tìm: \(\boldsymbol{\theta} = (\beta_0, \beta_1)\).
+        \item Hàm mất mát (Mean Squared Error):
+        \[
+        L(\boldsymbol{\theta}) = \frac{1}{N} \sum_{i=1}^{N} (y_i - f(x_i; \boldsymbol{\theta}))^2
+        \]
+        với \(N\) là số lượng mẫu dữ liệu.
+        \item Mục tiêu: Tìm \(\boldsymbol{\theta}\) sao cho \(L(\boldsymbol{\theta})\) nhỏ nhất.
+    \end{itemize}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Nghiệm của hồi quy tuyến tính}
+
+\begin{columns}
+\column{0.5\textwidth}
+    \begin{itemize}
+        \item Điều kiện đủ để hàm mất mát đạt cực tiểu:
+    \end{itemize}
+    \begin{align}
+        \frac{\partial L(\boldsymbol{\theta})}{\partial \beta_0} &= -\frac{2}{N} \sum_{i=1}^{N} (y_i - \beta_0 - \beta_1 x_i) = 0, \\
+        \frac{\partial L(\boldsymbol{\theta})}{\partial \beta_1} &= -\frac{2}{N} \sum_{i=1}^{N} (y_i - \beta_0 - \beta_1 x_i) x_i = 0.
+    \end{align}
+    \textbf{Có thể thử với máy tính cầm tay Casio!}
+\column{0.5\textwidth}
+    \begin{itemize}
+        \item Giải hệ phương trình trên, ta được nghiệm:
+    \end{itemize}
+    \begin{align}
+        \beta_1 &= \frac{N \sum_{i=1}^{N} x_i y_i - \sum_{i=1}^{N} x_i \sum_{i=1}^{N} y_i}{N \sum_{i=1}^{N} x_i^2 - (\sum_{i=1}^{N} x_i)^2}, \\
+        \beta_0 &= \frac{1}{N} \sum_{i=1}^{N} y_i - \beta_1 \frac{1}{N} \sum_{i=1}^{N} x_i.
+    \end{align}
+    Vậy hàm hồi quy tuyến tính là:
+    \[
+    f(x) = 0.961 + 0.499x.
+    \]
+\end{columns}
+\end{frame}
+
+\begin{frame}{Hồi quy tuyến tính đa biến}
+
+    \begin{itemize}
+        \item Mô hình hồi quy tuyến tính đa biến \cite{VHTiep2020}:
+    \end{itemize}
+    \begin{equation}
+        f(\mathbf{x}) = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \ldots + \beta_p x_p = \boldsymbol{\theta}^T \mathbf{x},
+    \end{equation}
+    với \(\mathbf{x} = (1, x_1, x_2, \ldots, x_p)\) là vector đặc trưng, và \(\boldsymbol{\theta} = (\beta_0, \beta_1, \ldots, \beta_p)\) là vector tham số.
+    \begin{itemize}
+        \item Hàm mất mát (Mean Squared Error):
+    \end{itemize}
+    \begin{equation}
+        L(\boldsymbol{\theta}) = \frac{1}{N} \sum_{i=1}^{N} (y_i - \boldsymbol{\theta}^T \mathbf{x}_i)^2.
+    \end{equation}
+    \begin{itemize}
+        \item Kết quả tính hồi quy:
+    \end{itemize}
+    \begin{equation}
+        \boldsymbol{\theta} = (\mathbf{X}^T \mathbf{X})^{-1} \mathbf{X}^T \mathbf{y},
+    \end{equation}
+
+\end{frame}
+
+\subsection{Mở rộng mô hình hồi quy}
+
+\begin{frame}{Hồi quy đa biến và hồi quy đa thức}
+    \begin{itemize}
+        \item Mở rộng với trường hợp \(\boldsymbol{\theta}\) tuyến tính.
+    \end{itemize}
+    Ví dụ:
+    \begin{equation}
+        f(x) = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \beta_3 \sin (x_1) + \beta_4 x_1 \cos (x_2) + \beta_5 x_2^2.
+    \end{equation}
+    Dữ liệu mở rộng 
+    \begin{equation}
+        \mathbf{x} = (1, x_1, x_2, \sin (x_1), x_1 \cos (x_2), x_2^2).
+    \end{equation}
+
+    \begin{itemize}
+        \item Coi hồi quy đa thức là trường hợp đặc biệt của hồi quy đa biến.
+    \end{itemize}
+    \begin{equation}
+        \mathbf{x} = (1, x, x^2, x^3, \ldots, x^d).
+    \end{equation}
+
+    Điểm yếu: \textbf{Nhạy cảm với nhiễu!}
+\end{frame}
+

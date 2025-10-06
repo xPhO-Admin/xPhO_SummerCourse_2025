@@ -1,16 +1,27 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%  xPhO LaTeX Beamer Template  %%%%%
+%%%%%  Date: 17/03/2025            %%%%%
+%%%%%  Authors:                    %%%%%
+%%%%%       Nguyen Thanh Long      %%%%%
+%%%%%       Nguyen Le Mai Huong    %%%%%
+%%%%%       Nguyen Minh Phuong     %%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \documentclass[aspectratio=169, t]{beamer} % Ratio 16:9
 \usepackage[T5]{fontenc}
 \usepackage{lmodern}
 \usepackage{graphicx} 
 \usepackage{array}
 \usepackage{longtable} % for long table
+
+\usepackage{amsmath}
+
 \usepackage{chngcntr}
 \counterwithin{figure}{section}
-\usepackage{tcolorbox}
+
 \renewcommand{\familydefault}{\sfdefault} % Font
 
 \usepackage{caption}
-\usepackage{subcaption}
 \usepackage{siunitx}
 
 % \definecolor{BlueDefault}{rgb}{0.2,0.2,0.7}
@@ -22,11 +33,11 @@
 
 % Setup background
 \newcommand{\normalbackground}{%
-    \usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{Slides/Background/Normal_slide_xPhO.pdf}}%
+    \usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{Background/Normal_slide_xPhO.pdf}}%
 }
 
 \newcommand{\titlebackground}{%
-    \usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{Slides/Background/Title_slide_xPhO.pdf}}%
+    \usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{Background/Title_slide_xPhO.pdf}}%
 }
 
 % Change the title color to white
@@ -36,7 +47,7 @@
 \setbeamertemplate{frametitle}{%
     \vspace{0.3em}
     \hspace{-1em} \insertframetitle
-    \vspace{2mm}
+    % \vspace{2mm}
 }
 
 % Number of slide
@@ -48,20 +59,12 @@
 }
 
 %% Make Table of Contents %%
-\AtBeginSubsection[]{
-    \begin{frame}
-        \frametitle{Mục lục}
-        \begin{columns}
-            \begin{column}{0.48\textwidth}
-                \tableofcontents[sections={1-2}, currentsubsection]
-            \end{column}
-            \begin{column}{0.48\textwidth}
-                \tableofcontents[sections={3-4}, currentsubsection]
-            \end{column}
-        \end{columns}
-    \end{frame}
+\AtBeginSection[]{
+  \begin{frame}
+  \frametitle{Mục lục}
+  \tableofcontents[currentsection]
+  \end{frame}
 }
-
 
 %% Section numbering %%
 \setbeamertemplate{section in toc}[sections numbered]
@@ -74,7 +77,7 @@
 
 %%%%% Bibliography %%%%%
 \usepackage[backend=biber,style=ieee]{biblatex}
-\addbibresource{myrefs.bib}
+\addbibresource{citation.bib}
 
 \usepackage{url}
 \usepackage{hyperref}
@@ -92,19 +95,26 @@
 
 \titlebackground
 
-\input{Slides/Title.tex}
+\input{Slides/Title}
 
 \normalbackground
 
-\section{Tương tác vật lý}
-\input{Slides/Interaction.tex}
-\section{Ba định luật của Newton}
-\input{Slides/Newton3laws.tex}
+\section{Phân tích thứ nguyên}
 
-\section{Các lực}
-\input{Slides/Forces.tex}
-\section{Phương pháp}
-\input{Slides/Method.tex}
-\input{Slides/Bibliography.tex}
+\input{Slides/Dimensional_Analysis}
+
+\section{Machine learning và bài toán hồi quy}
+
+\input{Slides/Regression}
+
+\section{Tối ưu hàm giá trị}
+
+\input{Slides/Gradient_descent}
+
+% \section{Học sâu}
+
+% \input{Slides/Deep_Learning}
+
+\input{Slides/Bibliography}
 
 \end{document}
